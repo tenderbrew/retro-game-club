@@ -51,6 +51,12 @@ a:hover {
   font-weight: 700;
 }
 
+.logo-image {
+  height: 40px;
+  width: auto;
+  display: block;
+}
+
 .logo-mark {
   display: inline-flex;
   align-items: center;
@@ -160,6 +166,69 @@ h3 {
   border-radius: 0;
   padding: 1rem;
   border: 1px solid #444444;
+}
+
+.year-calendar {
+  margin-top: 2rem;
+}
+
+.year-calendar-grid {
+  margin-top: 0.75rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.75rem;
+}
+
+.month-card {
+  background-color: #333333;
+  border: 1px solid #444444;
+  padding: 0.75rem;
+}
+
+.month-boxart {
+  width: 100%;
+  max-width: 140px;
+  height: 200px;
+  object-fit: contain;
+  margin: 0 auto 0.5rem;
+  display: block;
+  border: 1px solid #555555;
+  background-color: #2a2a2a;
+}
+
+.month-name {
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #cccccc;
+  margin-bottom: 0.25rem;
+}
+
+.month-game {
+  display: block;
+  font-size: 1rem;
+  margin-bottom: 0.15rem;
+}
+
+.month-platform {
+  font-size: 0.85rem;
+  color: #b3b3b3;
+}
+
+.month-empty {
+  opacity: 0.7;
+  font-style: italic;
+}
+
+.game-boxart {
+  width: 100%;
+  max-width: 300px;
+  height: 400px;
+  object-fit: contain;
+  margin: 0 0 1.5rem;
+  display: block;
+  border: 1px solid #555555;
+  background-color: #2a2a2a;
 }
 
 .sidebar ul {
