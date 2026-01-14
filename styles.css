@@ -12,11 +12,12 @@ body {
 }
 
 a {
-  color: inherit;
-  text-decoration: none;
+  color: #d4af37;
+  text-decoration: underline;
 }
 
 a:hover {
+  color: #f4cf5a;
   text-decoration: underline;
 }
 
@@ -168,6 +169,16 @@ h3 {
   border: 1px solid #444444;
 }
 
+.card-image {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  margin: 0 auto 1rem;
+  display: block;
+  border: 1px solid #555555;
+  background-color: #2a2a2a;
+}
+
 .year-calendar {
   margin-top: 2rem;
 }
@@ -305,6 +316,137 @@ h3 {
 .stats-source a {
   color: #ffffff;
   text-decoration: underline;
+}
+
+/* Club Achievements */
+.club-achievements {
+  background-color: #333333;
+  border: 1px solid #444444;
+  padding: 1.25rem;
+  margin: 1.5rem 0;
+}
+
+.club-achievements h3 {
+  margin: 0 0 1rem;
+  font-size: 1.1rem;
+}
+
+.achievement-group {
+  margin-bottom: 1.5rem;
+}
+
+.achievement-group:last-child {
+  margin-bottom: 0;
+}
+
+.achievement-group h4 {
+  margin: 0 0 0.75rem;
+  font-size: 0.95rem;
+  font-weight: normal;
+  color: #cccccc;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.achievement-group h4::before {
+  font-size: 1.1rem;
+}
+
+.achievement-group.gold h4::before {
+  content: "🏆";
+}
+
+.achievement-group.silver h4::before {
+  content: "🥈";
+}
+
+.achievement-group.bronze h4::before {
+  content: "🦩";
+}
+
+.achievement-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.achievement-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background-color: #2a2a2a;
+  border: 1px solid #444444;
+  padding: 0.4rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+
+.achievement-badge:hover {
+  background-color: #3a3a3a;
+  border-color: #555555;
+}
+
+.achievement-badge::before {
+  font-size: 1rem;
+}
+
+.achievement-group.gold .achievement-badge::before {
+  content: "🥇";
+}
+
+.achievement-group.silver .achievement-badge::before {
+  content: "🥈";
+}
+
+.achievement-group.bronze .achievement-badge::before {
+  content: "🦩";
+}
+
+/* Community Art */
+.community-art {
+  background-color: #333333;
+  border: 1px solid #444444;
+  padding: 1.25rem;
+  margin: 1.5rem 0;
+}
+
+.community-art h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.1rem;
+}
+
+.community-art .art-credit {
+  margin: 0 0 1rem;
+  font-size: 0.9rem;
+  color: #cccccc;
+  font-style: italic;
+}
+
+.art-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.art-item {
+  background-color: #2a2a2a;
+  border: 1px solid #444444;
+  border-radius: 6px;
+  overflow: hidden;
+  transition: all 0.2s ease;
+}
+
+.art-item:hover {
+  border-color: #555555;
+  transform: translateY(-2px);
+}
+
+.art-item img {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 @media (max-width: 800px) {
