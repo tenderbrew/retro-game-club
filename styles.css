@@ -263,6 +263,50 @@ h3 {
   color: #aaaaaa;
 }
 
+.game-stats {
+  background-color: #333333;
+  border: 1px solid #444444;
+  padding: 1.25rem;
+  margin: 1.5rem 0;
+}
+
+.game-stats h3 {
+  margin: 0 0 0.75rem;
+  font-size: 1.1rem;
+}
+
+.game-stats table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 0.75rem;
+}
+
+.game-stats th {
+  background-color: #2a2a2a;
+  padding: 0.5rem;
+  text-align: left;
+  font-size: 0.85rem;
+  font-weight: normal;
+  color: #cccccc;
+  border: 1px solid #444444;
+}
+
+.game-stats td {
+  padding: 0.5rem;
+  border: 1px solid #444444;
+  font-size: 0.95rem;
+}
+
+.stats-source {
+  margin: 0;
+  font-size: 0.85rem;
+}
+
+.stats-source a {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
 @media (max-width: 800px) {
   .header-inner {
     flex-direction: column;
