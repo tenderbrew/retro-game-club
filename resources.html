@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Resources | Retro Game Club</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <div class="logo">
+          <img
+            src="nintendopipeline.png"
+            alt="Nintendo Pipeline graphic"
+            class="logo-image"
+          />
+          <span class="logo-mark">RGC</span>
+          <span class="logo-text">Retro Game Club</span>
+        </div>
+        <nav class="main-nav">
+          <a href="index.html">Home</a>
+          <a href="game-of-the-month.html">Past Games</a>
+          <a href="resources.html">Resources</a>
+          <a href="gallery.html">Gallery</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="site-main container">
+      <section class="content">
+        <h1>Resources</h1>
+        <p>
+          Helpful resources, guides, and links for playing retro games.
+        </p>
+        <p>
+          ROMs
+        </p>
+        <p>
+          <a href="https://r-roms.github.io/" target="_blank" rel="noopener noreferrer">Visit the r/Roms Megathread →</a>
+        </p>
+        <p>
+          Emulation front ends
+        </p>
+        <p>
+          <a href="https://www.retrobat.org/" target="_blank" rel="noopener noreferrer">Retrobat (simple, Windows) →</a>
+        </p>
+        <p>
+          <a href="https://www.launchbox-app.com/" target="_blank" rel="noopener noreferrer">Launchbox (complex, Windows) →</a>
+        </p>
+        <p><a href="index.html">Back to home</a></p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>&copy; <span id="year"></span> Retro Game Club</p>
+      </div>
+      <script>
+        document.getElementById("year").textContent =
+          new Date().getFullYear();
+      </script>
+    </footer>
+  </body>
+</html>

@@ -20,10 +20,9 @@
         </div>
         <nav class="main-nav">
           <a href="index.html#home">Home</a>
-          <a href="game-of-the-month.html">Game of the Month</a>
-          <a href="#">Articles (coming soon)</a>
-          <a href="#">Gallery (coming soon)</a>
-          <a href="#">About (coming soon)</a>
+          <a href="game-of-the-month.html">Past Games</a>
+          <a href="resources.html">Resources</a>
+          <a href="gallery.html">Gallery</a>
         </nav>
       </div>
     </header>
@@ -31,12 +30,11 @@
     <main class="site-main container" id="home">
       <section class="hero">
         <div class="hero-text">
-          <h1>Welcome to Retro Game Club</h1>
+          <h1>Retro Game Club by Nintendo Pipeline</h1>
           <p>
-            A simple starter layout you can customize. Swap in your own
-            content, images, and colors.
+            A monthly game club focused on discussing, critquing and berating.
           </p>
-          <a href="#games" class="btn-primary">Browse Classics</a>
+          <a href="2026-january-mega-man-legends.html" class="btn-primary">See the current game</a>
         </div>
       </section>
 
@@ -50,41 +48,48 @@
           <ul class="card-list">
             <li class="card">
               <img src="images/home/waverace.png" alt="Wave Race 64" class="card-image" />
-              <h3>Game of the Month</h3>
+              <h3>Past Games</h3>
               <p>
-                Browse the full 2025–2026 calendar of monthly picks on the
-                dedicated page.
+                Browse the full calendar of all past games.
               </p>
               <p><a href="game-of-the-month.html">View calendar &rarr;</a></p>
             </li>
             <li class="card">
-              <h3>Articles (coming soon)</h3>
-              <p>Long-form write-ups about games, hardware, and sessions.</p>
+              <img src="images/home/chronotrigger.png" alt="Chrono Trigger" class="card-image" />
+              <h3>Resources</h3>
+              <p>Emulation guides, links, and more!</p>
+              <p><a href="resources.html">View resources &rarr;</a></p>
             </li>
             <li class="card">
-              <h3>Gallery (coming soon)</h3>
-              <p>Screenshots and photos from meetups and play sessions.</p>
+              <img src="images/home/snatcher.png" alt="Snatcher" class="card-image" />
+              <h3>Gallery</h3>
+              <p>Media shared by the community.</p>
+              <p><a href="gallery.html">View gallery &rarr;</a></p>
             </li>
           </ul>
 
-          <h2 id="events">Upcoming Events</h2>
+          <h2 id="events">Upcoming Group Events</h2>
           <p>
-            Another section below the cards. You can duplicate this pattern for
-            more sections.
+            No current upcoming group events planned. Please keep an eye out for updates.
           </p>
         </article>
 
         <aside class="sidebar">
-          <h2>Sidebar</h2>
-          <p>
-            Use this area for links, quick info, or anything that supports the
-            main content.
-          </p>
-          <ul>
-            <li>Latest news</li>
-            <li>Popular posts</li>
-            <li>External links</li>
-          </ul>
+          <h2>Important Dates</h2>
+          <div class="date-list">
+            <div class="date-item">
+              <div class="date-range">January 1–19, 2026</div>
+              <div class="date-description">Play Mega Man Legends</div>
+            </div>
+            <div class="date-item">
+              <div class="date-range">January 19–26, 2026</div>
+              <div class="date-description">Discuss Mega Man Legends and make website submissions</div>
+            </div>
+            <div class="date-item">
+              <div class="date-range">January 26–31, 2026</div>
+              <div class="date-description">Voting period for February's game</div>
+            </div>
+          </div>
         </aside>
       </section>
 
@@ -111,6 +116,50 @@
         // Set current year in footer
         document.getElementById("year").textContent =
           new Date().getFullYear();
+
+        // Automatically update "See the current game" link to the most recent month
+        (function() {
+          const now = new Date();
+          const currentYear = now.getFullYear();
+          const currentMonth = now.getMonth() + 1; // 1-12
+
+          // Define all games in chronological order
+          const games = [
+            { year: 2025, month: 1, file: "2025-january-super-punch-out.html" },
+            { year: 2025, month: 2, file: "2025-february-god-of-war.html" },
+            { year: 2025, month: 3, file: "2025-march-kirby-64.html" },
+            { year: 2025, month: 4, file: "2025-april-billy-hatcher.html" },
+            { year: 2025, month: 5, file: "2025-may-snatcher.html" },
+            { year: 2025, month: 6, file: "2025-june-gamecube-on-switch-online.html" },
+            { year: 2025, month: 7, file: "2025-july-resident-evil-2.html" },
+            { year: 2025, month: 8, file: "2025-august-umihara-kawase.html" },
+            { year: 2025, month: 9, file: "2025-september-gran-turismo-2.html" },
+            { year: 2025, month: 10, file: "2025-october-koudelka.html" },
+            { year: 2025, month: 11, file: "2025-november-brave-fencer-musashi.html" },
+            { year: 2025, month: 12, file: "2025-december-nights.html" },
+            { year: 2026, month: 1, file: "2026-january-mega-man-legends.html" }
+          ];
+
+          // Find the most recent game (current or past month)
+          let currentGame = games[0]; // Default to first game
+          for (let i = 0; i < games.length; i++) {
+            const game = games[i];
+            const gameDate = new Date(game.year, game.month - 1, 1);
+            const nowDate = new Date(currentYear, currentMonth - 1, 1);
+
+            if (gameDate <= nowDate) {
+              currentGame = game;
+            } else {
+              break;
+            }
+          }
+
+          // Update the link
+          const currentGameLink = document.querySelector('.hero-text .btn-primary');
+          if (currentGameLink) {
+            currentGameLink.href = currentGame.file;
+          }
+        })();
       </script>
     </footer>
   </body>
