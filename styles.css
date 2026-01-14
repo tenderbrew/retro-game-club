@@ -109,14 +109,21 @@ a:hover {
   font-size: clamp(1.8rem, 3vw, 2.4rem);
   font-family: "Courier New", "Courier", monospace;
   font-weight: bold;
-  color: #00ff41;
+  color: #d4af37;
   text-shadow:
-    0 0 5px #00ff41,
-    0 0 10px #00ff41,
-    0 0 20px #00ff41,
-    2px 2px 0px rgba(0, 255, 65, 0.3);
-  letter-spacing: 0.05em;
+    2px 0 0 #000000,
+    -2px 0 0 #000000,
+    0 2px 0 #000000,
+    0 -2px 0 #000000,
+    2px 2px 0 #000000,
+    -2px -2px 0 #000000,
+    2px -2px 0 #000000,
+    -2px 2px 0 #000000;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
+  image-rendering: pixelated;
+  -webkit-font-smoothing: none;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .hero-text p {
