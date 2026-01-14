@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Retro Game Club</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <div class="logo">
+          <span class="logo-mark">RGC</span>
+          <span class="logo-text">Retro Game Club</span>
+        </div>
+        <nav class="main-nav">
+          <a href="#home">Home</a>
+          <a href="#games">Games</a>
+          <a href="#events">Events</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="site-main container" id="home">
+      <section class="hero">
+        <div class="hero-text">
+          <h1>Welcome to Retro Game Club</h1>
+          <p>
+            A simple starter layout you can customize. Swap in your own
+            content, images, and colors.
+          </p>
+          <a href="#games" class="btn-primary">Browse Classics</a>
+        </div>
+      </section>
+
+      <section class="layout">
+        <article class="content">
+          <h2 id="games">Featured Games</h2>
+          <p>
+            This is the main content area. Use it for descriptions, screenshots,
+            or articles. On larger screens this sits next to the sidebar; on
+            smaller screens it stacks vertically.
+          </p>
+          <ul class="card-list">
+            <li class="card">
+              <h3>Game Title One</h3>
+              <p>Short description about this retro game.</p>
+            </li>
+            <li class="card">
+              <h3>Game Title Two</h3>
+              <p>Another game description goes here.</p>
+            </li>
+            <li class="card">
+              <h3>Game Title Three</h3>
+              <p>Feel free to replace these with real content.</p>
+            </li>
+          </ul>
+
+          <h2 id="events">Upcoming Events</h2>
+          <p>
+            Another section below the cards. You can duplicate this pattern for
+            more sections.
+          </p>
+        </article>
+
+        <aside class="sidebar">
+          <h2>Sidebar</h2>
+          <p>
+            Use this area for links, quick info, or anything that supports the
+            main content.
+          </p>
+          <ul>
+            <li>Latest news</li>
+            <li>Popular posts</li>
+            <li>External links</li>
+          </ul>
+        </aside>
+      </section>
+
+      <section class="contact" id="contact">
+        <h2>Contact</h2>
+        <p>
+          This is a simple placeholder contact section. Later you can add a real
+          form or email link here.
+        </p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>&copy; <span id="year"></span> Retro Game Club</p>
+        <p class="small-text">Built with a basic HTML &amp; CSS layout.</p>
+      </div>
+      <script>
+        // Set current year in footer
+        document.getElementById("year").textContent =
+          new Date().getFullYear();
+      </script>
+    </footer>
+  </body>
+</html>
+
