@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Trophy Challenges | Retro Game Club</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <div class="logo">
+          <img
+            src="nintendopipeline.png"
+            alt="Nintendo Pipeline graphic"
+            class="logo-image"
+          />
+          <span class="logo-mark">RGC</span>
+          <span class="logo-text">Retro Game Club</span>
+        </div>
+        <nav class="main-nav">
+          <a href="index.html">Home</a>
+          <a href="game-of-the-month.html">Past Games</a>
+          <a href="resources.html">Resources</a>
+          <a href="gallery.html">Gallery</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="site-main container">
+      <section class="content">
+        <h1>Trophy Challenges</h1>
+        <p>
+          Compete with other club members in monthly challenges and earn trophies for your achievements. Track your progress, compare scores, and prove you're the ultimate retro gaming champion!
+        </p>
+        <p>
+          Challenge categories include speedruns, high scores, completion percentages, and special themed events. New challenges are posted at the beginning of each month.
+        </p>
+
+        <div class="trophy-gallery">
+          <h2>January 2025 - Super Punch-Out!!</h2>
+          <div class="trophy-grid">
+            <a href="trophy-super-punch-out-highscore.html" class="trophy-card">
+              <img src="images/trophies/super-punch-out-highscore.png" alt="High Score Trophy" class="trophy-card-image" />
+              <h3>High Score</h3>
+              <p class="trophy-tier gold">Gold Trophy</p>
+            </a>
+            <a href="trophy-super-punch-out-beatgame.html" class="trophy-card">
+              <img src="images/trophies/super-punch-out-beatgame.png" alt="Beat Game Trophy" class="trophy-card-image" />
+              <h3>Beat Game</h3>
+              <p class="trophy-tier silver">Silver Trophy</p>
+            </a>
+          </div>
+
+          <h2>February 2025 - God of War</h2>
+          <div class="trophy-grid">
+            <a href="trophy-god-of-war-beatnormal.html" class="trophy-card">
+              <img src="images/trophies/god-of-war-beatnormal.png" alt="Beat on Normal Trophy" class="trophy-card-image" />
+              <h3>Beat Game on Normal</h3>
+              <p class="trophy-tier gold">Gold Trophy</p>
+            </a>
+            <a href="trophy-god-of-war-beateasy.html" class="trophy-card">
+              <img src="images/trophies/god-of-war-beateasy.png" alt="Beat on Easy Trophy" class="trophy-card-image" />
+              <h3>Beat Game on Easy</h3>
+              <p class="trophy-tier silver">Silver Trophy</p>
+            </a>
+          </div>
+
+          <h2>March 2025 - Kirby 64: The Crystal Shards</h2>
+          <div class="trophy-grid">
+            <a href="trophy-kirby-64-100percent.html" class="trophy-card">
+              <img src="images/trophies/kirby-64-100percent.png" alt="100% Completion Trophy" class="trophy-card-image" />
+              <h3>100% Completion</h3>
+              <p class="trophy-tier gold">Gold Trophy</p>
+            </a>
+            <a href="trophy-kirby-64-beatgame.html" class="trophy-card">
+              <img src="images/trophies/kirby-64-beatgame.png" alt="Beat Game Trophy" class="trophy-card-image" />
+              <h3>Beat Game but Didn't Get 100%</h3>
+              <p class="trophy-tier silver">Silver Trophy</p>
+            </a>
+          </div>
+
+          <h2>April 2025 - Billy Hatcher and the Giant Egg</h2>
+          <div class="trophy-grid">
+            <a href="trophy-billy-hatcher-beatlevel.html" class="trophy-card">
+              <img src="images/trophies/billy-hatcher-beatlevel.png" alt="Beat Every Level Trophy" class="trophy-card-image" />
+              <h3>Beat Every Level</h3>
+              <p class="trophy-tier gold">Gold Trophy</p>
+            </a>
+            <a href="trophy-billy-hatcher-beatgame.html" class="trophy-card">
+              <img src="images/trophies/billy-hatcher-beatgame.png" alt="Beat Game Trophy" class="trophy-card-image" />
+              <h3>Beat Game</h3>
+              <p class="trophy-tier silver">Silver Trophy</p>
+            </a>
+          </div>
+        </div>
+
+        <p><a href="index.html">Back to home</a></p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>&copy; <span id="year"></span> Retro Game Club</p>
+      </div>
+      <script>
+        document.getElementById("year").textContent =
+          new Date().getFullYear();
+      </script>
+    </footer>
+  </body>
+</html>

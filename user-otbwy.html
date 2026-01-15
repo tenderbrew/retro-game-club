@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>OTBWY | Retro Game Club</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <div class="logo">
+          <img
+            src="nintendopipeline.png"
+            alt="Nintendo Pipeline graphic"
+            class="logo-image"
+          />
+          <span class="logo-mark">RGC</span>
+          <span class="logo-text">Retro Game Club</span>
+        </div>
+        <nav class="main-nav">
+          <a href="index.html">Home</a>
+          <a href="game-of-the-month.html">Past Games</a>
+          <a href="resources.html">Resources</a>
+          <a href="gallery.html">Gallery</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="site-main container">
+      <section class="content">
+        <div class="user-profile">
+          <div class="user-header">
+            <div class="user-avatar">
+              <img src="images/users/default.png" alt="OTBWY's avatar" />
+            </div>
+            <div class="user-info">
+              <h1 class="user-name">OTBWY</h1>
+              <p class="user-slogan">"Beat game on normal difficulty"</p>
+              <p class="user-bio">
+                Casual yet dedicated player who enjoys the journey as much as the destination. Fan of adventure games and exploration.
+              </p>
+            </div>
+          </div>
+
+          <div class="user-stats">
+            <div class="stat-item">
+              <span class="stat-number">0</span>
+              <span class="stat-label">Trophies</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">0</span>
+              <span class="stat-label">Challenges Completed</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">0</span>
+              <span class="stat-label">Games Played</span>
+            </div>
+          </div>
+
+          <div class="user-trophies">
+            <h2>Trophy Collection</h2>
+            <p class="trophy-empty">No trophies yet. Start completing challenges to earn your first trophy!</p>
+          </div>
+        </div>
+
+        <p><a href="index.html">Back to home</a></p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>&copy; <span id="year"></span> Retro Game Club</p>
+      </div>
+      <script>
+        document.getElementById("year").textContent =
+          new Date().getFullYear();
+      </script>
+    </footer>
+  </body>
+</html>

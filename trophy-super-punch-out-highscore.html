@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>High Score - Super Punch-Out!! | Retro Game Club</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <div class="logo">
+          <img
+            src="nintendopipeline.png"
+            alt="Nintendo Pipeline graphic"
+            class="logo-image"
+          />
+          <span class="logo-mark">RGC</span>
+          <span class="logo-text">Retro Game Club</span>
+        </div>
+        <nav class="main-nav">
+          <a href="index.html">Home</a>
+          <a href="game-of-the-month.html">Past Games</a>
+          <a href="resources.html">Resources</a>
+          <a href="gallery.html">Gallery</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="site-main container">
+      <section class="content">
+        <div class="trophy-page">
+          <div class="trophy-header">
+            <img
+              src="images/trophies/super-punch-out-highscore.png"
+              alt="Super Punch-Out!! High Score Trophy"
+              class="trophy-image-large"
+            />
+            <div class="trophy-info">
+              <h1>High Score</h1>
+              <p class="trophy-game">Super Punch-Out!!</p>
+              <p class="trophy-tier gold">Gold Trophy</p>
+            </div>
+          </div>
+
+          <div class="trophy-description">
+            <h2>Achievement</h2>
+            <p>Achieved the highest score across all four circuits in Super Punch-Out!!</p>
+            <p class="trophy-note">Contact 1upmuffin if you have a higher score to claim this trophy.</p>
+          </div>
+
+          <div class="trophy-winners">
+            <h2>Trophy Holders</h2>
+            <div class="winner-list">
+              <div class="winner-item">
+                <img src="images/users/default.png" alt="Asadasa's avatar" class="winner-avatar" />
+                <div class="winner-details">
+                  <h3><a href="user-asadasa.html">Asadasa</a></h3>
+                  <p class="winner-score">196290, 231800, 344690, 410410 (circuits in order)</p>
+                  <p class="winner-date">January 2025</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="trophy-related">
+            <h2>Related</h2>
+            <p><a href="2025-january-super-punch-out.html">← Back to Super Punch-Out!! game page</a></p>
+            <p><a href="trophy-challenges.html">View all trophy challenges</a></p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>&copy; <span id="year"></span> Retro Game Club</p>
+      </div>
+      <script>
+        document.getElementById("year").textContent =
+          new Date().getFullYear();
+      </script>
+    </footer>
+  </body>
+</html>

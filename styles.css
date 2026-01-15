@@ -512,6 +512,363 @@ h3 {
   display: block;
 }
 
+/* User Profile */
+.user-profile {
+  background-color: #2a2a2a;
+  border: 1px solid #444444;
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+.user-header {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #444444;
+}
+
+.user-avatar {
+  flex-shrink: 0;
+}
+
+.user-avatar img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 3px solid #d4af37;
+  background-color: #333333;
+  object-fit: cover;
+}
+
+.user-info {
+  flex-grow: 1;
+}
+
+.user-name {
+  margin: 0 0 0.5rem;
+  font-size: 2rem;
+  color: #d4af37;
+}
+
+.user-slogan {
+  margin: 0 0 1rem;
+  font-style: italic;
+  color: #cccccc;
+  font-size: 1.1rem;
+}
+
+.user-bio {
+  margin: 0;
+  color: #ffffff;
+  line-height: 1.6;
+}
+
+.user-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #444444;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #d4af37;
+  line-height: 1;
+  margin-bottom: 0.25rem;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: #cccccc;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.user-trophies h2 {
+  margin: 0 0 1rem;
+  font-size: 1.5rem;
+  color: #ffffff;
+}
+
+.trophy-empty {
+  text-align: center;
+  padding: 2rem;
+  color: #999999;
+  font-style: italic;
+}
+
+.trophy-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.trophy-item {
+  background-color: #333333;
+  border: 1px solid #444444;
+  padding: 1rem;
+  text-align: center;
+  border-radius: 8px;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.trophy-item:hover {
+  transform: translateY(-4px);
+  border-color: #d4af37;
+}
+
+.trophy-image {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 0.75rem;
+  display: block;
+}
+
+.trophy-name {
+  margin: 0 0 0.5rem;
+  font-size: 1rem;
+  color: #d4af37;
+}
+
+.trophy-description {
+  margin: 0 0 0.5rem;
+  font-size: 0.85rem;
+  color: #cccccc;
+  line-height: 1.4;
+}
+
+.trophy-date {
+  margin: 0;
+  font-size: 0.75rem;
+  color: #999999;
+}
+
+/* Trophy Page Styles */
+.trophy-page {
+  background-color: #2a2a2a;
+  border: 1px solid #444444;
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+.trophy-header {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #444444;
+  align-items: center;
+}
+
+.trophy-image-large {
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+  background-color: #333333;
+  border: 3px solid #d4af37;
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.trophy-info h1 {
+  margin: 0 0 0.5rem;
+  font-size: 2rem;
+  color: #d4af37;
+}
+
+.trophy-game {
+  font-size: 1.2rem;
+  color: #cccccc;
+  margin: 0 0 0.5rem;
+}
+
+.trophy-tier {
+  font-weight: bold;
+  font-size: 1rem;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.trophy-tier.gold {
+  color: #ffd700;
+}
+
+.trophy-tier.silver {
+  color: #c0c0c0;
+}
+
+.trophy-tier.bronze {
+  color: #cd7f32;
+}
+
+.trophy-description {
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #444444;
+}
+
+.trophy-description h2 {
+  color: #d4af37;
+  margin: 0 0 1rem;
+  font-size: 1.5rem;
+}
+
+.trophy-description p {
+  color: #cccccc;
+  line-height: 1.6;
+  margin: 0 0 1rem;
+}
+
+.trophy-note {
+  font-style: italic;
+  color: #999999;
+  font-size: 0.9rem;
+}
+
+.trophy-winners {
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #444444;
+}
+
+.trophy-winners h2 {
+  color: #d4af37;
+  margin: 0 0 1rem;
+  font-size: 1.5rem;
+}
+
+.winner-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.winner-item {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  background-color: #333333;
+  border: 1px solid #444444;
+  padding: 1rem;
+  border-radius: 4px;
+}
+
+.winner-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 2px solid #d4af37;
+  background-color: #2a2a2a;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.winner-details h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.2rem;
+}
+
+.winner-details h3 a {
+  color: #d4af37;
+  text-decoration: none;
+}
+
+.winner-details h3 a:hover {
+  text-decoration: underline;
+}
+
+.winner-score {
+  margin: 0 0 0.25rem;
+  color: #cccccc;
+  font-size: 0.9rem;
+}
+
+.winner-date {
+  margin: 0;
+  color: #999999;
+  font-size: 0.85rem;
+}
+
+.trophy-related h2 {
+  color: #d4af37;
+  margin: 0 0 1rem;
+  font-size: 1.5rem;
+}
+
+.trophy-related p {
+  margin: 0 0 0.5rem;
+}
+
+/* Trophy Gallery Styles */
+.trophy-gallery {
+  margin: 2rem 0;
+}
+
+.trophy-gallery h2 {
+  color: #d4af37;
+  margin: 2rem 0 1rem;
+  font-size: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #444444;
+}
+
+.trophy-gallery h2:first-child {
+  margin-top: 0;
+}
+
+.trophy-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #2a2a2a;
+  border: 2px solid #444444;
+  padding: 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.trophy-card:hover {
+  transform: translateY(-4px);
+  border-color: #d4af37;
+  box-shadow: 0 4px 8px rgba(212, 175, 55, 0.2);
+}
+
+.trophy-card-image {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+  background-color: #333333;
+  border: 2px solid #d4af37;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.trophy-card h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.1rem;
+  color: #ffffff;
+}
+
+.trophy-card .trophy-tier {
+  margin: 0;
+}
+
 @media (max-width: 800px) {
   .header-inner {
     flex-direction: column;
@@ -524,6 +881,27 @@ h3 {
 
   .layout {
     grid-template-columns: 1fr;
+  }
+
+  .user-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .user-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .trophy-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .winner-item {
+    flex-direction: column;
+    text-align: center;
   }
 }
 
@@ -540,6 +918,14 @@ h3 {
   .sidebar,
   .contact {
     padding: 1.25rem;
+  }
+
+  .user-profile {
+    padding: 1.5rem;
+  }
+
+  .trophy-grid {
+    grid-template-columns: 1fr;
   }
 }
 
