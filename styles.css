@@ -617,6 +617,51 @@ h3 {
   background-size: 140%;
 }
 
+/* Specific trophy images */
+.achievement-group.trophy-super-punch-out-highscore h4::before {
+  background-image: url("images/trophies/trophy-super-punch-out-highscore.png");
+}
+
+.achievement-group.trophy-super-punch-out-beatgame h4::before {
+  background-image: url("images/trophies/trophy-super-punch-out-beatgame.png");
+}
+
+.achievement-group.trophy-god-of-war-beatnormal h4::before {
+  background-image: url("images/trophies/trophy-god-of-war-beatnormal.png");
+}
+
+.achievement-group.trophy-god-of-war-beateasy h4::before {
+  background-image: url("images/trophies/trophy-god-of-war-beateasy.png");
+}
+
+.achievement-group.trophy-kirby-64-100percent h4::before {
+  background-image: url("images/trophies/trophy-kirby-64-100percent.png");
+}
+
+.achievement-group.trophy-kirby-64-beatgame h4::before {
+  background-image: url("images/trophies/trophy-kirby-64-beatgame.png");
+}
+
+.achievement-group.trophy-billy-hatcher-beatlevel h4::before {
+  background-image: url("images/trophies/trophy-billy-hatcher-beatlevel.png");
+}
+
+.achievement-group.trophy-billy-hatcher-beatgame h4::before {
+  background-image: url("images/trophies/trophy-billy-hatcher-beatgame.png");
+}
+
+.achievement-group.trophy-mega-man-legends-busterparts h4::before {
+  background-image: url("images/trophies/trophy-mega-man-legends-busterparts.png");
+}
+
+.achievement-group.trophy-mega-man-legends-minigamesscore h4::before {
+  background-image: url("images/trophies/trophy-mega-man-legends-minigamesscore.png");
+}
+
+.achievement-group.trophy-mega-man-legends-beatgame h4::before {
+  background-image: url("images/trophies/trophy-mega-man-legends-beatgame.png");
+}
+
 .achievement-list {
   display: flex;
   flex-wrap: wrap;
