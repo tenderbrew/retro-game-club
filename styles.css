@@ -1506,3 +1506,53 @@ h3 {
   }
 }
 
+/* Sidebar Divider */
+.sidebar-divider {
+  border: none;
+  border-top: 1px solid #444444;
+  margin: 1.5rem 0;
+}
+
+/* RSS Feed Styles */
+.rss-feed {
+  margin-top: 0.5rem;
+}
+
+.rss-loading,
+.rss-error {
+  font-size: 0.85rem;
+  color: #999999;
+  font-style: italic;
+}
+
+.rss-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.rss-item {
+  padding: 0.75rem;
+  background-color: #2a2a2a;
+  border: 1px solid #444444;
+  border-radius: 4px;
+}
+
+.rss-title {
+  display: block;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  margin-bottom: 0.25rem;
+}
+
+.rss-date {
+  font-size: 0.8rem;
+  color: #999999;
+}
+
+.rss-source {
+  margin-top: 0.75rem;
+  margin-bottom: 0;
+  font-size: 0.85rem;
+}
+

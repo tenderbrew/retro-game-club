@@ -186,6 +186,13 @@
               <div class="date-description">Voting period for February's game</div>
             </div>
           </div>
+
+          <hr class="sidebar-divider" />
+
+          <h2>RetroRGB News</h2>
+          <div id="retrorgb-feed" class="rss-feed">
+            <p class="rss-loading">Loading articles...</p>
+          </div>
         </aside>
       </section>
 
@@ -254,6 +261,44 @@
           if (currentGameLink) {
             currentGameLink.href = currentGame.file;
           }
+        })();
+
+        // Fetch and display RetroRGB RSS feed
+        (function() {
+          const feedContainer = document.getElementById('retrorgb-feed');
+          const rssUrl = 'https://retrorgb.com/feed';
+          const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}&count=3`;
+
+          fetch(apiUrl)
+            .then(response => response.json())
+            .then(data => {
+              if (data.status === 'ok' && data.items && data.items.length > 0) {
+                let html = '<div class="rss-list">';
+                data.items.slice(0, 3).forEach(item => {
+                  const pubDate = new Date(item.pubDate);
+                  const formattedDate = pubDate.toLocaleDateString('en-US', {
+                    month: 'short',
+                    day: 'numeric',
+                    year: 'numeric'
+                  });
+                  html += `
+                    <div class="rss-item">
+                      <a href="${item.link}" target="_blank" rel="noopener noreferrer" class="rss-title">${item.title}</a>
+                      <div class="rss-date">${formattedDate}</div>
+                    </div>
+                  `;
+                });
+                html += '</div>';
+                html += '<p class="rss-source"><a href="https://retrorgb.com/" target="_blank" rel="noopener noreferrer">Visit RetroRGB &rarr;</a></p>';
+                feedContainer.innerHTML = html;
+              } else {
+                feedContainer.innerHTML = '<p class="rss-error">Unable to load feed.</p>';
+              }
+            })
+            .catch(error => {
+              console.error('RSS fetch error:', error);
+              feedContainer.innerHTML = '<p class="rss-error">Unable to load feed.</p>';
+            });
         })();
       </script>
     </footer>
