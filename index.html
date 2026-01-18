@@ -267,37 +267,77 @@
         (function() {
           const feedContainer = document.getElementById('retrorgb-feed');
           const rssUrl = 'https://retrorgb.com/feed';
-          const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}&count=3`;
 
-          fetch(apiUrl)
+          // Try multiple RSS-to-JSON services as fallbacks
+          const apis = [
+            `https://api.allorigins.win/get?url=${encodeURIComponent(rssUrl)}`,
+            `https://corsproxy.io/?${encodeURIComponent(rssUrl)}`
+          ];
+
+          function parseRSS(xmlText) {
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(xmlText, 'text/xml');
+            const items = doc.querySelectorAll('item');
+            const results = [];
+            items.forEach((item, index) => {
+              if (index < 3) {
+                results.push({
+                  title: item.querySelector('title')?.textContent || '',
+                  link: item.querySelector('link')?.textContent || '',
+                  pubDate: item.querySelector('pubDate')?.textContent || ''
+                });
+              }
+            });
+            return results;
+          }
+
+          function displayFeed(items) {
+            if (items.length > 0) {
+              let html = '<div class="rss-list">';
+              items.forEach(item => {
+                const pubDate = new Date(item.pubDate);
+                const formattedDate = pubDate.toLocaleDateString('en-US', {
+                  month: 'short',
+                  day: 'numeric',
+                  year: 'numeric'
+                });
+                html += `
+                  <div class="rss-item">
+                    <a href="${item.link}" target="_blank" rel="noopener noreferrer" class="rss-title">${item.title}</a>
+                    <div class="rss-date">${formattedDate}</div>
+                  </div>
+                `;
+              });
+              html += '</div>';
+              html += '<p class="rss-source"><a href="https://retrorgb.com/" target="_blank" rel="noopener noreferrer">Visit RetroRGB &rarr;</a></p>';
+              feedContainer.innerHTML = html;
+              return true;
+            }
+            return false;
+          }
+
+          // Try allorigins first
+          fetch(apis[0])
             .then(response => response.json())
             .then(data => {
-              if (data.status === 'ok' && data.items && data.items.length > 0) {
-                let html = '<div class="rss-list">';
-                data.items.slice(0, 3).forEach(item => {
-                  const pubDate = new Date(item.pubDate);
-                  const formattedDate = pubDate.toLocaleDateString('en-US', {
-                    month: 'short',
-                    day: 'numeric',
-                    year: 'numeric'
-                  });
-                  html += `
-                    <div class="rss-item">
-                      <a href="${item.link}" target="_blank" rel="noopener noreferrer" class="rss-title">${item.title}</a>
-                      <div class="rss-date">${formattedDate}</div>
-                    </div>
-                  `;
-                });
-                html += '</div>';
-                html += '<p class="rss-source"><a href="https://retrorgb.com/" target="_blank" rel="noopener noreferrer">Visit RetroRGB &rarr;</a></p>';
-                feedContainer.innerHTML = html;
-              } else {
-                feedContainer.innerHTML = '<p class="rss-error">Unable to load feed.</p>';
+              const items = parseRSS(data.contents);
+              if (!displayFeed(items)) {
+                throw new Error('No items parsed');
               }
             })
-            .catch(error => {
-              console.error('RSS fetch error:', error);
-              feedContainer.innerHTML = '<p class="rss-error">Unable to load feed.</p>';
+            .catch(() => {
+              // Fallback to corsproxy
+              fetch(apis[1])
+                .then(response => response.text())
+                .then(text => {
+                  const items = parseRSS(text);
+                  if (!displayFeed(items)) {
+                    feedContainer.innerHTML = '<p class="rss-error">Unable to load feed.</p>';
+                  }
+                })
+                .catch(() => {
+                  feedContainer.innerHTML = '<p class="rss-error">Unable to load feed.</p>';
+                });
             });
         })();
       </script>
