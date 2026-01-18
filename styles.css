@@ -104,6 +104,29 @@ a:hover {
   margin-bottom: 2rem;
 }
 
+.hero-banner {
+  display: block;
+  margin: 0 auto 1.5rem;
+  max-width: 500px;
+  background-color: #1a1a1a;
+  border-radius: 0.75rem;
+  padding: 0.75rem;
+  border: 1px solid #444444;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.hero-banner:hover {
+  border-color: #d4af37;
+  transform: translateY(-2px);
+}
+
+.hero-banner-image {
+  width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  display: block;
+}
+
 .hero-text h1 {
   margin: 0 0 0.5rem;
   font-size: clamp(1.8rem, 3vw, 2.4rem);
