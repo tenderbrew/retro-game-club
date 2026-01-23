@@ -735,8 +735,8 @@ h3 {
 .achievement-group h4::before {
   content: "";
   display: inline-block;
-  width: 150px;
-  height: 150px;
+  width: 300px;
+  height: 300px;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -975,7 +975,7 @@ h3 {
 
 .trophy-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
   gap: 1.5rem;
   margin-top: 1rem;
   align-items: start;
@@ -984,10 +984,11 @@ h3 {
 .trophy-item {
   background-color: #333333;
   border: 1px solid #444444;
-  padding: 1rem;
+  padding: 1.5rem;
   text-align: center;
   border-radius: 8px;
   transition: transform 0.2s ease, border-color 0.2s ease;
+  min-width: 200px;
 }
 
 .trophy-item:hover {
@@ -996,8 +997,8 @@ h3 {
 }
 
 .trophy-image {
-  width: 80px;
-  height: 80px;
+  width: 160px;
+  height: 160px;
   margin: 0 auto 0.75rem;
   display: block;
 }
@@ -1039,8 +1040,8 @@ h3 {
 }
 
 .trophy-image-large {
-  width: 200px;
-  height: 200px;
+  width: 400px;
+  height: 400px;
   object-fit: contain;
   background-color: #333333;
   border: 3px solid #d4af37;
@@ -1213,11 +1214,12 @@ h3 {
   align-items: center;
   background-color: #2a2a2a;
   border: 2px solid #444444;
-  padding: 1.5rem;
+  padding: 2rem;
   border-radius: 8px;
   text-decoration: none;
   transition: all 0.3s ease;
   text-align: center;
+  min-width: 340px;
 }
 
 .trophy-card:hover {
@@ -1227,8 +1229,8 @@ h3 {
 }
 
 .trophy-card-image {
-  width: 150px;
-  height: 150px;
+  width: 300px;
+  height: 300px;
   object-fit: contain;
   background-color: #333333;
   border: 2px solid #d4af37;
@@ -1632,6 +1634,30 @@ h3 {
 
   .trophy-grid {
     grid-template-columns: 1fr;
+  }
+
+  .trophy-card {
+    min-width: unset;
+    width: 100%;
+  }
+
+  .trophy-card-image {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    aspect-ratio: 1;
+  }
+
+  .trophy-image-large {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    aspect-ratio: 1;
+  }
+
+  .achievement-group h4::before {
+    width: 200px;
+    height: 200px;
   }
 }
 
