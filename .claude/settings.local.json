@@ -1,7 +1,9 @@
 {
   "permissions": {
     "allow": [
-      "Bash(grep:*)"
+      "Bash(grep:*)",
+      "Bash(powershell -Command \"Set-Location 'c:\\\\Users\\\\ericm\\\\Documents\\\\retro_game_club')",
+      "Bash(Get-ChildItem -Filter '*.html')"
     ]
   }
 }

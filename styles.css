@@ -403,6 +403,92 @@ h3 {
   color: #ffffff;
 }
 
+.top-players-empty {
+  text-align: center;
+  color: #888888;
+  font-style: italic;
+  margin: 1rem 0;
+}
+
+.top-players-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  counter-reset: player-rank;
+}
+
+.top-players-list li {
+  counter-increment: player-rank;
+  margin-bottom: 0;
+}
+
+.top-players-list li:not(:last-child) {
+  border-bottom: 1px solid #333333;
+}
+
+.top-player-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  background-color: transparent;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.top-player-item:hover {
+  background-color: #333333;
+}
+
+.top-players-list li:nth-child(1) .top-player-item {
+  background-color: rgba(212, 175, 55, 0.1);
+  border-left: 4px solid #d4af37;
+}
+
+.top-players-list li:nth-child(2) .top-player-item {
+  background-color: rgba(192, 192, 192, 0.1);
+  border-left: 4px solid #c0c0c0;
+}
+
+.top-players-list li:nth-child(3) .top-player-item {
+  background-color: rgba(205, 127, 50, 0.1);
+  border-left: 4px solid #cd7f32;
+}
+
+.top-player-item::before {
+  content: "#" counter(player-rank);
+  font-weight: bold;
+  color: #d4af37;
+  min-width: 2rem;
+  font-size: 1.1rem;
+}
+
+.top-player-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #444444;
+}
+
+.top-player-name {
+  flex: 1;
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.top-player-trophies {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.leaderboard-empty {
+  text-align: center;
+  color: #888888;
+  font-style: italic;
+  padding: 2rem 1rem;
+}
+
 @media (max-width: 700px) {
   .top-players-podium {
     flex-direction: column;
@@ -479,12 +565,24 @@ h3 {
   font-style: italic;
 }
 
+.game-boxart-link {
+  display: block;
+  max-width: 300px;
+  margin: 0 0 1.5rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.game-boxart-link:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+}
+
 .game-boxart {
   width: 100%;
   max-width: 300px;
   height: 400px;
   object-fit: contain;
-  margin: 0 0 1.5rem;
+  margin: 0;
   display: block;
   border: 1px solid #555555;
   background-color: #2a2a2a;
@@ -880,6 +978,7 @@ h3 {
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 1.5rem;
   margin-top: 1rem;
+  align-items: start;
 }
 
 .trophy-item {
@@ -1146,6 +1245,95 @@ h3 {
 
 .trophy-card .trophy-tier {
   margin: 0;
+}
+
+.trophy-card h4 {
+  margin: 0 0 0.5rem;
+  font-size: 1.1rem;
+  color: #ffffff;
+}
+
+/* Trophy card wrapper for game pages - includes winners below */
+.trophy-card-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.trophy-card-wrapper .trophy-card {
+  flex: 1;
+}
+
+.trophy-winners {
+  margin-top: 0.75rem;
+  padding: 0.75rem;
+  background-color: #1a1a1a;
+  border-radius: 0 0 8px 8px;
+  text-align: center;
+}
+
+.trophy-winners p {
+  margin: 0;
+  color: #888888;
+  font-style: italic;
+  font-size: 0.9rem;
+}
+
+.trophy-winners .achievement-list {
+  justify-content: center;
+}
+
+.other-participants {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background-color: #2a2a2a;
+  border-radius: 8px;
+  border: 1px solid #444444;
+}
+
+.other-participants h4 {
+  margin: 0 0 1rem;
+  color: #cccccc;
+  font-size: 1rem;
+}
+
+.other-participants .achievement-list {
+  justify-content: flex-start;
+}
+
+.other-participants p {
+  margin: 0;
+  color: #888888;
+  font-style: italic;
+}
+
+/* High score leaderboard styling */
+.highscore-list {
+  margin-top: 0.75rem;
+  border-top: 1px solid #444444;
+  padding-top: 0.75rem;
+}
+
+.highscore-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.4rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+}
+
+.highscore-item:nth-child(odd) {
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+.highscore-circuit {
+  color: #aaaaaa;
+}
+
+.highscore-score {
+  color: #d4af37;
+  font-weight: bold;
+  font-family: "Courier New", monospace;
 }
 
 /* User Gallery Styles */
@@ -1577,5 +1765,153 @@ h3 {
   margin-top: 0.75rem;
   margin-bottom: 0;
   font-size: 0.85rem;
+}
+
+/* Game Page Infobox Layout */
+.game-header {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.game-description {
+  flex: 1;
+}
+
+.game-description h1 {
+  margin: 0 0 1rem;
+  color: #d4af37;
+  font-size: 1.8rem;
+}
+
+.game-description p {
+  margin: 0 0 1rem;
+  line-height: 1.7;
+  color: #cccccc;
+}
+
+.game-description p:last-child {
+  margin-bottom: 0;
+}
+
+.game-infobox {
+  width: 280px;
+  flex-shrink: 0;
+  background-color: #2a2a2a;
+  border: 1px solid #444444;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.game-infobox-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-bottom: 1px solid #444444;
+  transition: opacity 0.2s ease;
+}
+
+.game-infobox-image:hover {
+  opacity: 0.9;
+}
+
+.game-infobox-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.game-infobox-table tr {
+  border-bottom: 1px solid #333333;
+}
+
+.game-infobox-table tr:last-child {
+  border-bottom: none;
+}
+
+.game-infobox-table th {
+  text-align: left;
+  padding: 0.6rem 0.75rem;
+  background-color: #1a1a1a;
+  color: #d4af37;
+  font-size: 0.85rem;
+  font-weight: normal;
+  width: 90px;
+  vertical-align: top;
+}
+
+.game-infobox-table td {
+  padding: 0.6rem 0.75rem;
+  font-size: 0.9rem;
+  color: #ffffff;
+  vertical-align: top;
+}
+
+.game-infobox-hltb {
+  padding: 0.75rem;
+  background-color: #1a1a1a;
+  border-top: 1px solid #444444;
+}
+
+.game-infobox-hltb h4 {
+  margin: 0 0 0.5rem;
+  font-size: 0.85rem;
+  color: #d4af37;
+  text-align: center;
+}
+
+.game-infobox-hltb-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+  text-align: center;
+}
+
+.hltb-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.hltb-label {
+  font-size: 0.7rem;
+  color: #999999;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.hltb-time {
+  font-size: 0.9rem;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.game-infobox-source {
+  display: block;
+  text-align: center;
+  padding: 0.5rem;
+  font-size: 0.8rem;
+  color: #999999;
+  background-color: #1a1a1a;
+  border-top: 1px solid #333333;
+}
+
+.game-infobox-source:hover {
+  color: #d4af37;
+}
+
+@media (max-width: 800px) {
+  .game-header {
+    flex-direction: column;
+  }
+
+  .game-infobox {
+    width: 100%;
+    max-width: 350px;
+    margin: 0 auto;
+  }
+
+  .game-description h1 {
+    text-align: center;
+  }
 }
 

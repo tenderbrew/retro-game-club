@@ -45,69 +45,72 @@
 
       <section class="top-players">
         <div class="top-players-container">
-          <h2>Top Players</h2>
-          <div class="top-players-podium">
-            <div class="podium-position rank-2">
-              <div class="podium-rank">#2</div>
-              <a href="user-anton.html" class="podium-player">
-                <img src="images/users/anton.png" alt="Anton" class="podium-avatar" />
-                <span class="podium-name">Anton</span>
+          <h2>2026 Top Players</h2>
+          <p class="top-players-empty">No trophies earned yet in 2026. Be the first!</p>
+          <p class="top-players-link"><a href="leaderboards.html">View full leaderboard →</a></p>
+        </div>
+      </section>
+
+      <section class="top-players">
+        <div class="top-players-container">
+          <h2>2025 Top Players</h2>
+          <ol class="top-players-list">
+            <li>
+              <a href="user-asadasa.html" class="top-player-item">
+                <img src="images/users/asadasa.png" alt="Asadasa" class="top-player-avatar" />
+                <span class="top-player-name">Asadasa</span>
+                <span class="top-player-trophies">
+                  <span class="trophy-gold">13</span>
+                  <span class="trophy-silver">0</span>
+                  <span class="trophy-bronze">0</span>
+                </span>
               </a>
-              <div class="podium-trophies">
-                <span class="trophy-gold">7</span>
-                <span class="trophy-silver">0</span>
-                <span class="trophy-bronze">0</span>
-              </div>
-            </div>
-            <div class="podium-position rank-1">
-              <div class="podium-rank">#1</div>
-              <a href="user-asadasa.html" class="podium-player">
-                <img src="images/users/asadasa.png" alt="Asadasa" class="podium-avatar" />
-                <span class="podium-name">Asadasa</span>
+            </li>
+            <li>
+              <a href="user-anton.html" class="top-player-item">
+                <img src="images/users/anton.png" alt="Anton" class="top-player-avatar" />
+                <span class="top-player-name">Anton</span>
+                <span class="top-player-trophies">
+                  <span class="trophy-gold">7</span>
+                  <span class="trophy-silver">0</span>
+                  <span class="trophy-bronze">0</span>
+                </span>
               </a>
-              <div class="podium-trophies">
-                <span class="trophy-gold">13</span>
-                <span class="trophy-silver">0</span>
-                <span class="trophy-bronze">0</span>
-              </div>
-            </div>
-            <div class="podium-position rank-3">
-              <div class="podium-rank">#3</div>
-              <a href="user-poochy.html" class="podium-player">
-                <img src="images/users/poochy.png" alt="Poochy" class="podium-avatar" />
-                <span class="podium-name">Poochy</span>
+            </li>
+            <li>
+              <a href="user-poochy.html" class="top-player-item">
+                <img src="images/users/poochy.png" alt="Poochy" class="top-player-avatar" />
+                <span class="top-player-name">Poochy</span>
+                <span class="top-player-trophies">
+                  <span class="trophy-gold">5</span>
+                  <span class="trophy-silver">1</span>
+                  <span class="trophy-bronze">0</span>
+                </span>
               </a>
-              <div class="podium-trophies">
-                <span class="trophy-gold">5</span>
-                <span class="trophy-silver">1</span>
-                <span class="trophy-bronze">0</span>
-              </div>
-            </div>
-            <div class="podium-position rank-4">
-              <div class="podium-rank">#4</div>
-              <a href="user-hugh.html" class="podium-player">
-                <img src="images/users/hugh.png" alt="Hugh" class="podium-avatar" />
-                <span class="podium-name">Hugh</span>
+            </li>
+            <li>
+              <a href="user-hugh.html" class="top-player-item">
+                <img src="images/users/hugh.png" alt="Hugh" class="top-player-avatar" />
+                <span class="top-player-name">Hugh</span>
+                <span class="top-player-trophies">
+                  <span class="trophy-gold">4</span>
+                  <span class="trophy-silver">1</span>
+                  <span class="trophy-bronze">0</span>
+                </span>
               </a>
-              <div class="podium-trophies">
-                <span class="trophy-gold">4</span>
-                <span class="trophy-silver">1</span>
-                <span class="trophy-bronze">0</span>
-              </div>
-            </div>
-            <div class="podium-position rank-5">
-              <div class="podium-rank">#5</div>
-              <a href="user-zou.html" class="podium-player">
-                <img src="images/users/zou.png" alt="Zou" class="podium-avatar" />
-                <span class="podium-name">Zou</span>
+            </li>
+            <li>
+              <a href="user-zou.html" class="top-player-item">
+                <img src="images/users/zou.png" alt="Zou" class="top-player-avatar" />
+                <span class="top-player-name">Zou</span>
+                <span class="top-player-trophies">
+                  <span class="trophy-gold">3</span>
+                  <span class="trophy-silver">2</span>
+                  <span class="trophy-bronze">0</span>
+                </span>
               </a>
-              <div class="podium-trophies">
-                <span class="trophy-gold">3</span>
-                <span class="trophy-silver">2</span>
-                <span class="trophy-bronze">0</span>
-              </div>
-            </div>
-          </div>
+            </li>
+          </ol>
           <p class="top-players-link"><a href="leaderboards.html">View full leaderboard →</a></p>
         </div>
       </section>
@@ -283,7 +286,7 @@
             const items = doc.querySelectorAll('item');
             const results = [];
             items.forEach((item, index) => {
-              if (index < 3) {
+              if (index < 5) {
                 results.push({
                   title: item.querySelector('title')?.textContent || '',
                   link: item.querySelector('link')?.textContent || '',
