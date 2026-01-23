@@ -1249,8 +1249,13 @@ h3 {
 
 .trophy-card h4 {
   margin: 0 0 0.5rem;
-  font-size: 1.1rem;
+  font-size: 0.95rem;
   color: #ffffff;
+  min-height: 2.4em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.2;
 }
 
 /* Trophy card wrapper for game pages - includes winners below */
@@ -1765,6 +1770,108 @@ h3 {
   margin-top: 0.75rem;
   margin-bottom: 0;
   font-size: 0.85rem;
+}
+
+/* Event Card */
+.event-card {
+  display: flex;
+  gap: 1rem;
+  background-color: #333333;
+  border: 1px solid #444444;
+  border-radius: 4px;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+.event-date {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #d4af37;
+  color: #1a1a1a;
+  padding: 0.75rem 1rem;
+  border-radius: 4px;
+  min-width: 60px;
+  text-align: center;
+}
+
+.event-month {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+}
+
+.event-day {
+  font-size: 1.5rem;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.event-details {
+  flex: 1;
+}
+
+.event-title {
+  margin: 0 0 0.25rem;
+  font-size: 1.1rem;
+  color: #ffffff;
+}
+
+.event-time {
+  margin: 0 0 0.5rem;
+  font-size: 0.9rem;
+  color: #d4af37;
+}
+
+.event-description {
+  margin: 0 0 0.75rem;
+  font-size: 0.9rem;
+  color: #cccccc;
+}
+
+.event-calendar-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+}
+
+.event-calendar-links span {
+  color: #999999;
+}
+
+.event-calendar-links a {
+  color: #d4af37;
+  text-decoration: none;
+  padding: 0.25rem 0.5rem;
+  border: 1px solid #444444;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.event-calendar-links a:hover {
+  background-color: #444444;
+  border-color: #d4af37;
+}
+
+@media (max-width: 500px) {
+  .event-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .event-date {
+    flex-direction: row;
+    gap: 0.5rem;
+    padding: 0.5rem 0.75rem;
+  }
+
+  .event-day {
+    font-size: 1.2rem;
+  }
 }
 
 /* Game Page Infobox Layout */
