@@ -46,7 +46,41 @@
       <section class="top-players">
         <div class="top-players-container">
           <h2>2026 Top Players</h2>
-          <p class="top-players-empty">No trophies earned yet in 2026. Be the first!</p>
+          <ol class="top-players-list">
+            <li>
+              <a href="user-tender.html" class="top-player-item">
+                <img src="images/users/tender.gif" alt="Tender" class="top-player-avatar" />
+                <span class="top-player-name">Tender</span>
+                <span class="top-player-trophies">
+                  <span class="trophy-gold">1</span>
+                  <span class="trophy-silver">1</span>
+                  <span class="trophy-bronze">1</span>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="user-asadasa.html" class="top-player-item">
+                <img src="images/users/asadasa.png" alt="Asadasa" class="top-player-avatar" />
+                <span class="top-player-name">Asadasa</span>
+                <span class="top-player-trophies">
+                  <span class="trophy-gold">0</span>
+                  <span class="trophy-silver">0</span>
+                  <span class="trophy-bronze">1</span>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="user-kb.html" class="top-player-item">
+                <img src="images/users/kb.png" alt="KB" class="top-player-avatar" />
+                <span class="top-player-name">KB</span>
+                <span class="top-player-trophies">
+                  <span class="trophy-gold">0</span>
+                  <span class="trophy-silver">0</span>
+                  <span class="trophy-bronze">1</span>
+                </span>
+              </a>
+            </li>
+          </ol>
           <p class="top-players-link"><a href="leaderboards.html">View full leaderboard →</a></p>
         </div>
       </section>
@@ -171,44 +205,7 @@
           </ul>
 
           <h2 id="events">Upcoming Group Events</h2>
-          <div class="event-card">
-            <div class="event-date">
-              <span class="event-month">Jan</span>
-              <span class="event-day">24</span>
-            </div>
-            <div class="event-details">
-              <h3 class="event-title">Mega Man Legends Roundtable on Discord</h3>
-              <p class="event-time">Saturday, January 24, 2026 at 12:00 PM EST</p>
-              <p class="event-description">Join us on Discord to discuss Mega Man Legends!</p>
-              <div class="event-calendar-links">
-                <span>Add to calendar:</span>
-                <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Mega%20Man%20Legends%20Roundtable%20on%20Discord&dates=20260124T170000Z/20260124T180000Z&details=Join%20the%20Retro%20Game%20Club%20on%20Discord%20to%20discuss%20Mega%20Man%20Legends!" target="_blank" rel="noopener">Google</a>
-                <a href="https://outlook.live.com/calendar/0/deeplink/compose?subject=Mega%20Man%20Legends%20Roundtable%20on%20Discord&startdt=2026-01-24T17:00:00Z&enddt=2026-01-24T18:00:00Z&body=Join%20the%20Retro%20Game%20Club%20on%20Discord%20to%20discuss%20Mega%20Man%20Legends!" target="_blank" rel="noopener">Outlook</a>
-                <a href="#" class="ics-download" onclick="downloadICS(); return false;">iCal/ICS</a>
-              </div>
-            </div>
-          </div>
-          <script>
-            function downloadICS() {
-              const icsContent = `BEGIN:VCALENDAR
-VERSION:2.0
-PRODID:-//Retro Game Club//EN
-BEGIN:VEVENT
-DTSTART:20260124T170000Z
-DTEND:20260124T180000Z
-SUMMARY:Mega Man Legends Roundtable on Discord
-DESCRIPTION:Join the Retro Game Club on Discord to discuss Mega Man Legends!
-END:VEVENT
-END:VCALENDAR`;
-              const blob = new Blob([icsContent], { type: 'text/calendar' });
-              const url = URL.createObjectURL(blob);
-              const a = document.createElement('a');
-              a.href = url;
-              a.download = 'mega-man-legends-roundtable.ics';
-              a.click();
-              URL.revokeObjectURL(url);
-            }
-          </script>
+          <p>No upcoming events scheduled. Check back soon!</p>
         </article>
 
         <aside class="sidebar">
