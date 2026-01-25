@@ -32,6 +32,55 @@
     <main class="site-main container">
       <section class="content">
         <h1>Gallery</h1>
+        <p>Fan art and screenshots submitted by club members.</p>
+
+        <div class="gallery-section">
+          <h2>Kirby 64: The Crystal Shards</h2>
+          <div class="community-art">
+            <p class="art-credit">Art by Jenny</p>
+            <div class="art-gallery">
+              <div class="art-item">
+                <img src="images/art/kirby 64/jenny/kirby1.png" alt="Kirby fan art by Jenny" class="art-thumbnail" onclick="openLightbox(this.src)" />
+              </div>
+              <div class="art-item">
+                <img src="images/art/kirby 64/jenny/kirby2.png" alt="Kirby fan art by Jenny" class="art-thumbnail" onclick="openLightbox(this.src)" />
+              </div>
+              <div class="art-item">
+                <img src="images/art/kirby 64/jenny/kirby3.png" alt="Kirby fan art by Jenny" class="art-thumbnail" onclick="openLightbox(this.src)" />
+              </div>
+              <div class="art-item">
+                <img src="images/art/kirby 64/jenny/kirby4.png" alt="Kirby fan art by Jenny" class="art-thumbnail" onclick="openLightbox(this.src)" />
+              </div>
+              <div class="art-item">
+                <img src="images/art/kirby 64/jenny/kirby5.png" alt="Kirby fan art by Jenny" class="art-thumbnail" onclick="openLightbox(this.src)" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-section">
+          <h2>Mega Man Legends</h2>
+          <div class="community-art">
+            <p class="art-credit">Screenshots by <a href="user-anton.html">Anton</a></p>
+            <div class="art-gallery">
+              <div class="art-item">
+                <img src="images/art/mega man legends/anton/Mega_Man_Legends_USA-260110-055855.png" alt="Mega Man Legends screenshot by Anton" class="art-thumbnail" onclick="openLightbox(this.src)" />
+              </div>
+              <div class="art-item">
+                <img src="images/art/mega man legends/anton/Mega_Man_Legends_USA-260125-055140.png" alt="Mega Man Legends screenshot by Anton" class="art-thumbnail" onclick="openLightbox(this.src)" />
+              </div>
+              <div class="art-item">
+                <img src="images/art/mega man legends/anton/Mega_Man_Legends_USA-260125-055619.png" alt="Mega Man Legends screenshot by Anton" class="art-thumbnail" onclick="openLightbox(this.src)" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+          <span class="lightbox-close">&times;</span>
+          <img id="lightbox-img" class="lightbox-content" />
+        </div>
+
         <p><a href="index.html">Back to home</a></p>
       </section>
     </main>
@@ -43,6 +92,21 @@
       <script>
         document.getElementById("year").textContent =
           new Date().getFullYear();
+
+        function openLightbox(src) {
+          document.getElementById('lightbox').style.display = 'flex';
+          document.getElementById('lightbox-img').src = src;
+          document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+          document.getElementById('lightbox').style.display = 'none';
+          document.body.style.overflow = '';
+        }
+
+        document.addEventListener('keydown', function(e) {
+          if (e.key === 'Escape') closeLightbox();
+        });
       </script>
     </footer>
   </body>

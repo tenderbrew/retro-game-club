@@ -102,6 +102,7 @@
               <div class="trophy-winners">
                 <div class="achievement-list">
                   <a href="user-tender.html" class="achievement-badge">Tender</a>
+                  <a href="user-anton.html" class="achievement-badge">Anton</a>
                 </div>
               </div>
             </div>
@@ -115,6 +116,7 @@
               <div class="trophy-winners">
                 <div class="achievement-list">
                   <a href="user-tender.html" class="achievement-badge">Tender</a>
+                  <a href="user-anton.html" class="achievement-badge">Anton</a>
                 </div>
               </div>
             </div>
@@ -130,6 +132,7 @@
                   <a href="user-asadasa.html" class="achievement-badge">Asadasa</a>
                   <a href="user-tender.html" class="achievement-badge">Tender</a>
                   <a href="user-kb.html" class="achievement-badge">KB</a>
+                  <a href="user-anton.html" class="achievement-badge">Anton</a>
                 </div>
               </div>
             </div>
@@ -143,6 +146,27 @@
           </div>
         </div>
 
+        <div class="community-art">
+          <h3>Community Screenshots</h3>
+          <p class="art-credit">Screenshots by <a href="user-anton.html">Anton</a></p>
+          <div class="art-gallery">
+            <div class="art-item">
+              <img src="images/art/mega man legends/anton/Mega_Man_Legends_USA-260110-055855.png" alt="Mega Man Legends screenshot by Anton" class="art-thumbnail" onclick="openLightbox(this.src)" />
+            </div>
+            <div class="art-item">
+              <img src="images/art/mega man legends/anton/Mega_Man_Legends_USA-260125-055140.png" alt="Mega Man Legends screenshot by Anton" class="art-thumbnail" onclick="openLightbox(this.src)" />
+            </div>
+            <div class="art-item">
+              <img src="images/art/mega man legends/anton/Mega_Man_Legends_USA-260125-055619.png" alt="Mega Man Legends screenshot by Anton" class="art-thumbnail" onclick="openLightbox(this.src)" />
+            </div>
+          </div>
+        </div>
+
+        <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+          <span class="lightbox-close">&times;</span>
+          <img id="lightbox-img" class="lightbox-content" />
+        </div>
+
         <p><a href="index.html">Back to home</a></p>
       </section>
     </main>
@@ -154,6 +178,21 @@
       <script>
         document.getElementById("year").textContent =
           new Date().getFullYear();
+
+        function openLightbox(src) {
+          document.getElementById('lightbox').style.display = 'flex';
+          document.getElementById('lightbox-img').src = src;
+          document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+          document.getElementById('lightbox').style.display = 'none';
+          document.body.style.overflow = '';
+        }
+
+        document.addEventListener('keydown', function(e) {
+          if (e.key === 'Escape') closeLightbox();
+        });
       </script>
     </footer>
   </body>

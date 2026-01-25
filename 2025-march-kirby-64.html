@@ -144,24 +144,29 @@
 
         <div class="community-art">
           <h3>Community Art</h3>
-          <p class="art-credit">Art by Jenny</p>
+          <p class="art-credit">Art by <a href="gallery.html">Jenny</a></p>
           <div class="art-gallery">
             <div class="art-item">
-              <img src="images/art/kirby 64/kirby1.png" alt="Kirby fan art by Jenny" />
+              <img src="images/art/kirby 64/jenny/kirby1.png" alt="Kirby fan art by Jenny" class="art-thumbnail" onclick="openLightbox(this.src)" />
             </div>
             <div class="art-item">
-              <img src="images/art/kirby 64/kirby2.png" alt="Kirby fan art by Jenny" />
+              <img src="images/art/kirby 64/jenny/kirby2.png" alt="Kirby fan art by Jenny" class="art-thumbnail" onclick="openLightbox(this.src)" />
             </div>
             <div class="art-item">
-              <img src="images/art/kirby 64/kirby3.png" alt="Kirby fan art by Jenny" />
+              <img src="images/art/kirby 64/jenny/kirby3.png" alt="Kirby fan art by Jenny" class="art-thumbnail" onclick="openLightbox(this.src)" />
             </div>
             <div class="art-item">
-              <img src="images/art/kirby 64/kirby4.png" alt="Kirby fan art by Jenny" />
+              <img src="images/art/kirby 64/jenny/kirby4.png" alt="Kirby fan art by Jenny" class="art-thumbnail" onclick="openLightbox(this.src)" />
             </div>
             <div class="art-item">
-              <img src="images/art/kirby 64/kirby5.png" alt="Kirby fan art by Jenny" />
+              <img src="images/art/kirby 64/jenny/kirby5.png" alt="Kirby fan art by Jenny" class="art-thumbnail" onclick="openLightbox(this.src)" />
             </div>
           </div>
+        </div>
+
+        <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+          <span class="lightbox-close">&times;</span>
+          <img id="lightbox-img" class="lightbox-content" />
         </div>
 
         <p><a href="index.html">Back to home</a></p>
@@ -175,6 +180,21 @@
       <script>
         document.getElementById("year").textContent =
           new Date().getFullYear();
+
+        function openLightbox(src) {
+          document.getElementById('lightbox').style.display = 'flex';
+          document.getElementById('lightbox-img').src = src;
+          document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+          document.getElementById('lightbox').style.display = 'none';
+          document.body.style.overflow = '';
+        }
+
+        document.addEventListener('keydown', function(e) {
+          if (e.key === 'Escape') closeLightbox();
+        });
       </script>
     </footer>
   </body>
