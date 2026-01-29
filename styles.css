@@ -174,6 +174,7 @@ a:hover {
   grid-template-columns: 2fr 1fr;
   gap: 2rem;
   align-items: stretch;
+  margin-bottom: 2rem;
 }
 
 .content,
@@ -1181,6 +1182,9 @@ h3 {
   border-radius: 4px;
   text-align: center;
   transition: transform 0.2s ease, border-color 0.2s ease;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
 }
 
 .winner-item:hover {
@@ -1205,15 +1209,7 @@ h3 {
 .winner-details h3 {
   margin: 0 0 0.5rem;
   font-size: 1.1rem;
-}
-
-.winner-details h3 a {
   color: #d4af37;
-  text-decoration: none;
-}
-
-.winner-details h3 a:hover {
-  text-decoration: underline;
 }
 
 .winner-score {
