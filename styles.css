@@ -32,10 +32,12 @@ a:hover {
 
 .site-header {
   background-color: #2a2a2a;
-  padding: 0.75rem 0;
-  border-bottom: 1px solid #444444;
+  padding: 0.75rem 1rem;
+  border: 1px solid #444444;
+  border-radius: 8px;
   position: sticky;
-  top: 0;
+  top: 0.5rem;
+  margin: 0.5rem 1rem;
   z-index: 10;
   color: #ffffff;
 }
@@ -87,13 +89,12 @@ a:hover {
 }
 
 .main-nav {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   font-size: 0.85rem;
   background-color: #1a1a1a;
   border: 1px solid #444444;
-  border-radius: 4px;
+  border-radius: 8px;
   overflow: hidden;
 }
 
@@ -103,27 +104,44 @@ a:hover {
   border-right: 1px solid #444444;
   border-bottom: 1px solid #444444;
   transition: background-color 0.2s ease, color 0.2s ease;
-  flex: 1 1 25%;
   text-align: center;
   box-sizing: border-box;
 }
 
-.main-nav a:nth-child(4) {
+.main-nav a:nth-child(4n) {
   border-right: none;
 }
 
-.main-nav a:nth-child(n+5) {
+.main-nav a:nth-last-child(-n+4) {
   border-bottom: none;
-}
-
-.main-nav a:last-child {
-  border-right: none;
 }
 
 .main-nav a:hover {
   background-color: #d4af37;
   color: #000000;
   text-decoration: none;
+}
+
+@media (max-width: 600px) {
+  .main-nav {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .main-nav a:nth-child(4n) {
+    border-right: 1px solid #444444;
+  }
+
+  .main-nav a:nth-child(2n) {
+    border-right: none;
+  }
+
+  .main-nav a:nth-last-child(-n+4) {
+    border-bottom: 1px solid #444444;
+  }
+
+  .main-nav a:nth-last-child(-n+2) {
+    border-bottom: none;
+  }
 }
 
 .site-main {
@@ -250,7 +268,7 @@ a:hover {
 .sidebar,
 .contact {
   background-color: #2a2a2a;
-  border-radius: 0;
+  border-radius: 8px;
   padding: 1.5rem;
   border: 1px solid #444444;
 }
@@ -326,7 +344,7 @@ h3 {
   display: flex;
   flex-direction: column;
   background-color: #333333;
-  border-radius: 0;
+  border-radius: 8px;
   padding: 1rem;
   border: 1px solid #444444;
 }
@@ -381,7 +399,7 @@ h3 {
 .top-players {
   background-color: #2a2a2a;
   border: 1px solid #444444;
-  border-radius: 0;
+  border-radius: 8px;
   padding: 1.25rem;
   margin: 1.5rem 0;
 }
@@ -566,18 +584,11 @@ h3 {
 }
 
 .top-players-list {
-  list-style: none;
   padding: 0;
   margin: 0;
-  counter-reset: player-rank;
 }
 
-.top-players-list li {
-  counter-increment: player-rank;
-  margin-bottom: 0;
-}
-
-.top-players-list li:not(:last-child) {
+.top-players-list > div:not(:last-child) {
   border-bottom: 1px solid #333333;
 }
 
@@ -595,23 +606,22 @@ h3 {
   background-color: #333333;
 }
 
-.top-players-list li:nth-child(1) .top-player-item {
+.top-player-item.rank-1 {
   background-color: rgba(212, 175, 55, 0.1);
   border-left: 4px solid #d4af37;
 }
 
-.top-players-list li:nth-child(2) .top-player-item {
+.top-player-item.rank-2 {
   background-color: rgba(192, 192, 192, 0.1);
   border-left: 4px solid #c0c0c0;
 }
 
-.top-players-list li:nth-child(3) .top-player-item {
+.top-player-item.rank-3 {
   background-color: rgba(205, 127, 50, 0.1);
   border-left: 4px solid #cd7f32;
 }
 
-.top-player-item::before {
-  content: "#" counter(player-rank);
+.top-player-rank {
   font-weight: bold;
   color: #d4af37;
   min-width: 2rem;
@@ -668,11 +678,255 @@ h3 {
   }
 }
 
+/* Hall of Fame Champions Section */
+.hof-champions {
+  background-color: #1a1a1a;
+  border: 4px double #d4af37;
+  border-radius: 8px;
+  padding: 2rem 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow:
+    inset 0 0 30px rgba(212, 175, 55, 0.1),
+    0 0 20px rgba(212, 175, 55, 0.2);
+}
+
+.hof-podium {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.hof-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  min-width: 180px;
+}
+
+.hof-card:hover {
+  transform: translateY(-8px);
+}
+
+.hof-card.hof-gold {
+  background: linear-gradient(180deg, #2a2a2a 0%, rgba(212, 175, 55, 0.15) 100%);
+  border: 3px solid #d4af37;
+  padding: 2rem 1.5rem;
+  min-width: 220px;
+  order: 2;
+  box-shadow:
+    0 0 30px rgba(212, 175, 55, 0.4),
+    inset 0 0 20px rgba(212, 175, 55, 0.1);
+}
+
+.hof-card.hof-gold:hover {
+  box-shadow:
+    0 0 50px rgba(212, 175, 55, 0.6),
+    inset 0 0 30px rgba(212, 175, 55, 0.2);
+}
+
+.hof-card.hof-silver {
+  background: linear-gradient(180deg, #2a2a2a 0%, rgba(192, 192, 192, 0.15) 100%);
+  border: 3px solid #c0c0c0;
+  order: 1;
+  box-shadow: 0 0 20px rgba(192, 192, 192, 0.3);
+}
+
+.hof-card.hof-silver:hover {
+  box-shadow: 0 0 40px rgba(192, 192, 192, 0.5);
+}
+
+.hof-card.hof-bronze {
+  background: linear-gradient(180deg, #2a2a2a 0%, rgba(205, 127, 50, 0.15) 100%);
+  border: 3px solid #cd7f32;
+  order: 3;
+  box-shadow: 0 0 20px rgba(205, 127, 50, 0.3);
+}
+
+.hof-card.hof-bronze:hover {
+  box-shadow: 0 0 40px rgba(205, 127, 50, 0.5);
+}
+
+.hof-rank {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #1a1a1a;
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-weight: bold;
+  font-family: "Courier New", monospace;
+  font-size: 0.9rem;
+}
+
+.hof-gold .hof-rank {
+  color: #d4af37;
+  border: 2px solid #d4af37;
+}
+
+.hof-silver .hof-rank {
+  color: #c0c0c0;
+  border: 2px solid #c0c0c0;
+}
+
+.hof-bronze .hof-rank {
+  color: #cd7f32;
+  border: 2px solid #cd7f32;
+}
+
+.hof-crown {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.hof-gold .hof-crown {
+  font-size: 2.5rem;
+  filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.8));
+}
+
+.hof-avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  border: 3px solid #444444;
+  background-color: #333333;
+}
+
+.hof-gold .hof-avatar {
+  width: 130px;
+  height: 130px;
+  border-color: #d4af37;
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+}
+
+.hof-silver .hof-avatar {
+  border-color: #c0c0c0;
+  box-shadow: 0 0 15px rgba(192, 192, 192, 0.4);
+}
+
+.hof-bronze .hof-avatar {
+  border-color: #cd7f32;
+  box-shadow: 0 0 15px rgba(205, 127, 50, 0.4);
+}
+
+.hof-name {
+  font-size: 1.1rem;
+  font-weight: bold;
+  font-family: "Courier New", monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.5rem;
+  text-shadow: 1px 1px 0 #000000;
+}
+
+.hof-gold .hof-name {
+  color: #d4af37;
+  font-size: 1.3rem;
+}
+
+.hof-silver .hof-name {
+  color: #c0c0c0;
+}
+
+.hof-bronze .hof-name {
+  color: #cd7f32;
+}
+
+.hof-trophy-count {
+  font-size: 1rem;
+  color: #cccccc;
+  margin-bottom: 0.75rem;
+}
+
+.hof-gold .hof-trophy-count {
+  font-size: 1.2rem;
+  color: #ffffff;
+}
+
+.hof-breakdown {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.hof-points {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: bold;
+  font-family: "Courier New", monospace;
+  color: #888888;
+}
+
+.hof-gold .hof-points {
+  color: #d4af37;
+  font-size: 1.1rem;
+  text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+}
+
+.hof-silver .hof-points {
+  color: #c0c0c0;
+}
+
+.hof-bronze .hof-points {
+  color: #cd7f32;
+}
+
+.hof-title {
+  margin-top: 1rem;
+  padding: 0.4rem 0.8rem;
+  background-color: #d4af37;
+  color: #000000;
+  font-size: 0.7rem;
+  font-weight: bold;
+  font-family: "Courier New", monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+}
+
+.hof-leaderboard .leaderboard-header .latest-col,
+.hof-leaderboard .leaderboard-row .latest-col {
+  display: none;
+}
+
+@media (max-width: 700px) {
+  .hof-podium {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hof-card.hof-gold {
+    order: 1;
+  }
+
+  .hof-card.hof-silver {
+    order: 2;
+  }
+
+  .hof-card.hof-bronze {
+    order: 3;
+  }
+
+  .hof-card {
+    width: 100%;
+    max-width: 280px;
+  }
+}
+
 .year-calendar {
   margin-top: 2rem;
   background-color: #2a2a2a;
   border: 1px solid #444444;
-  border-radius: 4px;
+  border-radius: 8px;
   padding: 1.25rem;
 }
 
@@ -707,7 +961,7 @@ h3 {
 .month-card {
   background-color: #1a1a1a;
   border: 2px solid #444444;
-  border-radius: 4px;
+  border-radius: 8px;
   padding: 0;
   max-width: 220px;
   overflow: hidden;
@@ -1548,7 +1802,7 @@ h3 {
   background-color: #333333;
   border: 1px solid #444444;
   padding: 1.5rem 1rem;
-  border-radius: 4px;
+  border-radius: 8px;
   text-align: center;
   transition: transform 0.2s ease, border-color 0.2s ease;
   text-decoration: none;
@@ -1623,7 +1877,7 @@ h3 {
 .hop-to {
   background-color: #2a2a2a;
   border: 1px solid #444444;
-  border-radius: 4px;
+  border-radius: 8px;
   padding: 1rem;
   margin-bottom: 1.5rem;
   text-align: center;
@@ -1854,7 +2108,7 @@ h3 {
   margin: 1.5rem 0;
   background-color: #2a2a2a;
   border: 1px solid #444444;
-  border-radius: 4px;
+  border-radius: 8px;
   padding: 1.25rem;
 }
 
@@ -1872,7 +2126,7 @@ h3 {
   background-color: #1a1a1a;
   border: 2px solid #444444;
   padding: 1rem;
-  border-radius: 4px;
+  border-radius: 8px;
   text-decoration: none;
   transition: all 0.2s ease;
   text-align: center;
@@ -1919,7 +2173,7 @@ h3 {
 
 .leaderboard-header {
   display: grid;
-  grid-template-columns: 80px 1fr 2fr 180px 80px;
+  grid-template-columns: 80px 1fr 2fr 180px 80px 80px;
   gap: 1rem;
   padding: 1rem;
   background-color: #1a1a1a;
@@ -1930,7 +2184,7 @@ h3 {
 
 .leaderboard-row {
   display: grid;
-  grid-template-columns: 80px 1fr 2fr 180px 80px;
+  grid-template-columns: 80px 1fr 2fr 180px 80px 80px;
   gap: 1rem;
   padding: 1rem;
   border-bottom: 1px solid #333333;
@@ -2057,10 +2311,21 @@ h3 {
   font-size: 1.1rem;
 }
 
+.points-col {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: #d4af37;
+  font-size: 1.1rem;
+  font-family: "Courier New", monospace;
+  text-shadow: 1px 1px 0 #000000;
+}
+
 @media (max-width: 1100px) {
   .leaderboard-header,
   .leaderboard-row {
-    grid-template-columns: 60px 1fr 150px 80px;
+    grid-template-columns: 60px 1fr 150px 80px 80px;
     gap: 0.5rem;
     font-size: 0.9rem;
   }
@@ -2073,7 +2338,7 @@ h3 {
 @media (max-width: 700px) {
   .leaderboard-header,
   .leaderboard-row {
-    grid-template-columns: 50px 1fr 120px;
+    grid-template-columns: 50px 1fr 120px 60px;
     gap: 0.5rem;
     font-size: 0.85rem;
   }
@@ -2197,7 +2462,7 @@ h3 {
 .resource-card {
   background-color: #2a2a2a;
   border: 1px solid #444444;
-  border-radius: 4px;
+  border-radius: 8px;
   padding: 1.5rem;
   transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
@@ -2245,7 +2510,7 @@ h3 {
   padding: 1rem;
   background-color: #333333;
   border: 1px solid #444444;
-  border-radius: 4px;
+  border-radius: 8px;
   text-decoration: none;
   transition: all 0.2s ease;
 }
@@ -2307,7 +2572,7 @@ h3 {
   padding: 0.75rem;
   background-color: #2a2a2a;
   border: 1px solid #444444;
-  border-radius: 4px;
+  border-radius: 8px;
 }
 
 .rss-title {
@@ -2334,7 +2599,7 @@ h3 {
   gap: 1rem;
   background-color: #333333;
   border: 1px solid #444444;
-  border-radius: 4px;
+  border-radius: 8px;
   padding: 1rem;
   margin: 1rem 0;
 }
@@ -2476,7 +2741,7 @@ h3 {
   flex-shrink: 0;
   background-color: #2a2a2a;
   border: 1px solid #444444;
-  border-radius: 4px;
+  border-radius: 8px;
   overflow: hidden;
 }
 

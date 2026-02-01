@@ -6,7 +6,8 @@
       "Bash(Get-ChildItem -Filter '*.html')",
       "Bash(powershell -ExecutionPolicy Bypass -File \"c:\\\\Users\\\\ericm\\\\Documents\\\\retro_game_club\\\\update_nav.ps1\")",
       "Bash(del \"c:\\\\Users\\\\ericm\\\\Documents\\\\retro_game_club\\\\update_nav.ps1\")",
-      "Bash(powershell -Command:*)"
+      "Bash(powershell -Command:*)",
+      "Bash(del \"c:\\\\Users\\\\ericm\\\\Documents\\\\retro_game_club\\\\fix-trophy-links.ps1\")"
     ]
   }
 }
