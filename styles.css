@@ -109,8 +109,12 @@ a:hover {
   overflow: hidden;
 }
 
-.main-nav-mobile {
-  display: none;
+.nav-toggle {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
 }
 
 .main-nav-details {
@@ -118,6 +122,10 @@ a:hover {
   flex-direction: column;
   align-items: flex-end;
   gap: 0.5rem;
+}
+
+.main-nav-mobile {
+  display: none;
 }
 
 .main-nav-summary {
@@ -157,6 +165,7 @@ a:hover {
   transition: transform 0.2s ease;
 }
 
+.nav-toggle:checked + .main-nav-summary .main-nav-summary-icon,
 .main-nav-details[open] .main-nav-summary-icon {
   transform: rotate(180deg);
 }
@@ -186,20 +195,48 @@ a:hover {
 }
 
 @media (min-width: 801px) {
-  .main-nav-desktop {
-    display: grid;
-  }
-
+  .nav-toggle,
   .main-nav-summary {
     display: none;
   }
 
-  .main-nav-details {
-    display: none;
+  .main-nav {
+    display: grid;
+    position: static;
   }
 
+  .main-nav-desktop {
+    display: grid;
+  }
+
+  .main-nav-details,
   .main-nav-mobile {
     display: none;
+  }
+}
+
+@media (max-width: 800px) {
+  .site-header {
+    position: sticky;
+  }
+
+  .header-inner {
+    position: relative;
+  }
+
+  .main-nav {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    right: 0;
+    top: calc(100% + 0.4rem);
+    min-width: 220px;
+    z-index: 20;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+  }
+
+  .nav-toggle:checked ~ .main-nav {
+    display: flex;
   }
 }
 
@@ -212,21 +249,8 @@ a:hover {
     display: flex;
   }
 
-  .site-header {
-    position: sticky;
-  }
-
-  .header-inner {
-    position: relative;
-  }
-
   .main-nav-details {
     position: relative;
-  }
-
-  .main-nav {
-    display: flex;
-    flex-direction: column;
   }
 
   .main-nav a {
@@ -2608,27 +2632,9 @@ h3 {
 }
 
 @media (max-width: 800px) {
-  .main-nav-desktop {
-    display: none;
-  }
-
-  .main-nav-details {
-    display: flex;
-  }
-
   .header-inner {
     flex-direction: row;
     align-items: center;
-  }
-
-  .main-nav-details {
-    align-items: flex-end;
-    width: auto;
-  }
-
-  .main-nav-details[open] .main-nav {
-    width: 100%;
-    margin-top: 0.5rem;
   }
 
   .main-nav-summary {
