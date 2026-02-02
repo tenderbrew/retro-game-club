@@ -3,6 +3,14 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WX2NTMVS3Y"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-WX2NTMVS3Y');
+    </script>
     <title>Retro Game Club by Nintendo Pipeline</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
@@ -31,6 +39,12 @@
     </header>
 
     <main class="site-main container" id="home">
+      <a href="https://discord.gg/2qv6qQbw4A" target="_blank" class="discord-banner">
+        <span class="discord-icon">💬</span>
+        <span class="discord-text">Join our Discord community</span>
+        <span class="discord-arrow">→</span>
+      </a>
+
       <section class="hero">
         <div class="hero-text">
           <p class="speech-bubble">
@@ -165,9 +179,29 @@
           <hr class="sidebar-divider" />
 
           <h2>RetroRGB News</h2>
-          <div id="retrorgb-feed" class="rss-feed">
-            <p class="rss-loading">Loading articles...</p>
+          <div class="rss-list">
+            <div class="rss-item">
+              <a href="https://retrorgb.com/the-worst-console-hdmi-cables-ive-ever-tested.html" target="_blank" rel="noopener noreferrer" class="rss-title">The WORST Console HDMI Cables I've Ever Tested</a>
+              <div class="rss-date">Feb 1, 2026</div>
+            </div>
+            <div class="rss-item">
+              <a href="https://retrorgb.com/getting-personal-with-the-game-bub.html" target="_blank" rel="noopener noreferrer" class="rss-title">Getting Personal with the Game Bub</a>
+              <div class="rss-date">Jan 31, 2026</div>
+            </div>
+            <div class="rss-item">
+              <a href="https://retrorgb.com/flippermce-open-source-gamecube-memory-card.html" target="_blank" rel="noopener noreferrer" class="rss-title">FlipperMCE: Open Source GameCube Memory Card</a>
+              <div class="rss-date">Jan 30, 2026</div>
+            </div>
+            <div class="rss-item">
+              <a href="https://retrorgb.com/okami-vinyl-soundtrack-repress-pre-order.html" target="_blank" rel="noopener noreferrer" class="rss-title">Okami Vinyl Soundtrack Repress Pre-Order</a>
+              <div class="rss-date">Jan 30, 2026</div>
+            </div>
+            <div class="rss-item">
+              <a href="https://retrorgb.com/analogue-3d-firmware-v1-2-0.html" target="_blank" rel="noopener noreferrer" class="rss-title">Analogue 3D Firmware v1.2.0</a>
+              <div class="rss-date">Jan 30, 2026</div>
+            </div>
           </div>
+          <p class="rss-source"><a href="https://retrorgb.com/" target="_blank" rel="noopener noreferrer">Visit RetroRGB →</a></p>
         </aside>
       </section>
 
@@ -221,18 +255,6 @@
           <p>Check back soon.</p>
       </section>
 
-      <section class="contact" id="contact">
-        <h2>Contact</h2>
-        <p>
-          Join our Discord community to discuss games, share experiences, and connect with other retro gaming enthusiasts.
-        </p>
-        <p>
-          <a href="https://discord.gg/2qv6qQbw4A" target="_blank">Join our Discord →</a>
-        </p>
-        <p>
-          For suggestions to improve this site, email <a href="mailto:realtenderbrew@gmail.com">realtenderbrew@gmail.com</a>
-        </p>
-      </section>
     </main>
 
     <footer class="site-footer">
@@ -268,84 +290,6 @@
             { year: 2026, month: 2, file: "2026-february-legend-of-the-river-king.html" }
           ];
 
-        })();
-
-        // Fetch and display RetroRGB RSS feed
-        (function() {
-          const feedContainer = document.getElementById('retrorgb-feed');
-          const rssUrl = 'https://retrorgb.com/feed';
-
-          // Try multiple RSS-to-JSON services as fallbacks
-          const apis = [
-            `https://api.allorigins.win/get?url=${encodeURIComponent(rssUrl)}`,
-            `https://corsproxy.io/?${encodeURIComponent(rssUrl)}`
-          ];
-
-          function parseRSS(xmlText) {
-            const parser = new DOMParser();
-            const doc = parser.parseFromString(xmlText, 'text/xml');
-            const items = doc.querySelectorAll('item');
-            const results = [];
-            items.forEach((item, index) => {
-              if (index < 5) {
-                results.push({
-                  title: item.querySelector('title')?.textContent || '',
-                  link: item.querySelector('link')?.textContent || '',
-                  pubDate: item.querySelector('pubDate')?.textContent || ''
-                });
-              }
-            });
-            return results;
-          }
-
-          function displayFeed(items) {
-            if (items.length > 0) {
-              let html = '<div class="rss-list">';
-              items.forEach(item => {
-                const pubDate = new Date(item.pubDate);
-                const formattedDate = pubDate.toLocaleDateString('en-US', {
-                  month: 'short',
-                  day: 'numeric',
-                  year: 'numeric'
-                });
-                html += `
-                  <div class="rss-item">
-                    <a href="${item.link}" target="_blank" rel="noopener noreferrer" class="rss-title">${item.title}</a>
-                    <div class="rss-date">${formattedDate}</div>
-                  </div>
-                `;
-              });
-              html += '</div>';
-              html += '<p class="rss-source"><a href="https://retrorgb.com/" target="_blank" rel="noopener noreferrer">Visit RetroRGB &rarr;</a></p>';
-              feedContainer.innerHTML = html;
-              return true;
-            }
-            return false;
-          }
-
-          // Try allorigins first
-          fetch(apis[0])
-            .then(response => response.json())
-            .then(data => {
-              const items = parseRSS(data.contents);
-              if (!displayFeed(items)) {
-                throw new Error('No items parsed');
-              }
-            })
-            .catch(() => {
-              // Fallback to corsproxy
-              fetch(apis[1])
-                .then(response => response.text())
-                .then(text => {
-                  const items = parseRSS(text);
-                  if (!displayFeed(items)) {
-                    feedContainer.innerHTML = '<p class="rss-error">Unable to load feed.</p>';
-                  }
-                })
-                .catch(() => {
-                  feedContainer.innerHTML = '<p class="rss-error">Unable to load feed.</p>';
-                });
-            });
         })();
       </script>
     </footer>

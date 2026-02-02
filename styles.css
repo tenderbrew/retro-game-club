@@ -124,28 +124,29 @@ a:hover {
 
 @media (max-width: 600px) {
   .main-nav {
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .main-nav a {
+    flex: 1 1 25%;
+    padding: 0.4rem 0.5rem;
+    font-size: 0.75rem;
+    border-right: 1px solid #444444;
+    border-bottom: 1px solid #444444;
   }
 
   .main-nav a:nth-child(4n) {
-    border-right: 1px solid #444444;
-  }
-
-  .main-nav a:nth-child(2n) {
     border-right: none;
   }
 
   .main-nav a:nth-last-child(-n+4) {
-    border-bottom: 1px solid #444444;
-  }
-
-  .main-nav a:nth-last-child(-n+2) {
     border-bottom: none;
   }
 }
 
 .site-main {
-  padding: 2rem 1rem 3rem;
+  padding: 1rem 1rem 3rem;
 }
 
 .hero {
@@ -271,6 +272,51 @@ a:hover {
   border-radius: 8px;
   padding: 1.5rem;
   border: 1px solid #444444;
+}
+
+.site-main > .contact {
+  margin-bottom: 2rem;
+}
+
+/* Discord Banner */
+.discord-banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  background: linear-gradient(135deg, #5865F2 0%, #4752c4 100%);
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 2px 8px rgba(88, 101, 242, 0.3);
+}
+
+.discord-banner:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(88, 101, 242, 0.5);
+  color: #fff;
+}
+
+.discord-icon {
+  font-size: 1.25rem;
+}
+
+.discord-text {
+  flex-shrink: 0;
+}
+
+.discord-arrow {
+  opacity: 0.8;
+  transition: transform 0.2s ease;
+}
+
+.discord-banner:hover .discord-arrow {
+  transform: translateX(3px);
 }
 
 h2 {
@@ -920,6 +966,18 @@ h3 {
     width: 100%;
     max-width: 280px;
   }
+
+  .hof-leaderboard .leaderboard-header,
+  .hof-leaderboard .leaderboard-row {
+    grid-template-columns: 40px 1fr 90px 40px 50px;
+  }
+}
+
+@media (max-width: 450px) {
+  .hof-leaderboard .leaderboard-header,
+  .hof-leaderboard .leaderboard-row {
+    grid-template-columns: 32px 1fr 75px 35px 45px;
+  }
 }
 
 .year-calendar {
@@ -956,6 +1014,7 @@ h3 {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
   gap: 1rem;
+  justify-items: center;
 }
 
 .month-card {
@@ -964,8 +1023,21 @@ h3 {
   border-radius: 8px;
   padding: 0;
   max-width: 220px;
+  width: 100%;
   overflow: hidden;
   transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+@media (max-width: 500px) {
+  .year-calendar-grid {
+    grid-template-columns: 1fr;
+    max-width: 280px;
+    margin: 0 auto;
+  }
+
+  .month-card {
+    max-width: 100%;
+  }
 }
 
 .month-card:hover {
@@ -1899,15 +1971,18 @@ h3 {
 }
 
 .hop-to-links {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
   gap: 0.5rem;
+  max-width: 400px;
+  margin: 0 auto;
 }
 
 .hop-to-links a {
-  display: inline-block;
-  padding: 0.35rem 0.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 0.4rem;
   background-color: #1a1a1a;
   border: 1px solid #444444;
   border-radius: 4px;
@@ -1915,12 +1990,26 @@ h3 {
   text-decoration: none;
   font-size: 0.8rem;
   transition: all 0.2s ease;
+  text-align: center;
+  min-height: 2rem;
 }
 
 .hop-to-links a:hover {
   background-color: #d4af37;
   color: #000000;
   border-color: #d4af37;
+}
+
+@media (max-width: 500px) {
+  .hop-to-links {
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 320px;
+  }
+
+  .hop-to-links a {
+    font-size: 0.75rem;
+    padding: 0.45rem 0.3rem;
+  }
 }
 
 .trophy-gallery {
@@ -2338,9 +2427,10 @@ h3 {
 @media (max-width: 700px) {
   .leaderboard-header,
   .leaderboard-row {
-    grid-template-columns: 50px 1fr 120px 60px;
+    grid-template-columns: 40px 1fr 100px 50px;
     gap: 0.5rem;
     font-size: 0.85rem;
+    padding: 0.75rem 0.5rem;
   }
 
   .total-col {
@@ -2348,15 +2438,60 @@ h3 {
   }
 
   .trophies-col {
-    gap: 0.5rem;
-    font-size: 0.8rem;
+    gap: 0.25rem;
+    font-size: 0.75rem;
   }
 
   .trophy-gold,
   .trophy-silver,
   .trophy-bronze {
-    padding: 0.2rem 0.4rem;
-    min-width: 20px;
+    padding: 0.15rem 0.3rem;
+    min-width: 18px;
+    font-size: 0.7rem;
+  }
+
+  .player-avatar {
+    width: 28px;
+    height: 28px;
+  }
+
+  .player-link {
+    gap: 0.4rem;
+  }
+
+  .rank-col {
+    font-size: 0.8rem;
+  }
+
+  .points-col {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 450px) {
+  .leaderboard-header,
+  .leaderboard-row {
+    grid-template-columns: 32px 1fr 80px 45px;
+    gap: 0.3rem;
+    font-size: 0.8rem;
+    padding: 0.6rem 0.4rem;
+  }
+
+  .trophy-gold,
+  .trophy-silver,
+  .trophy-bronze {
+    padding: 0.1rem 0.25rem;
+    min-width: 16px;
+    font-size: 0.65rem;
+  }
+
+  .player-avatar {
+    width: 24px;
+    height: 24px;
+  }
+
+  .player-link span {
+    font-size: 0.75rem;
   }
 }
 
@@ -2409,6 +2544,12 @@ h3 {
   .sidebar,
   .contact {
     padding: 1.25rem;
+  }
+
+  .discord-banner {
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+    gap: 0.5rem;
   }
 
   .user-profile {
