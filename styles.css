@@ -56,6 +56,17 @@ a:hover {
   font-weight: 700;
 }
 
+.logo-link {
+  display: inline-flex;
+  align-items: center;
+  color: inherit;
+  text-decoration: none;
+}
+
+.logo-link:hover {
+  text-decoration: none;
+}
+
 .logo-image {
   height: 40px;
   width: auto;
@@ -1038,6 +1049,11 @@ h3 {
 .hof-leaderboard .leaderboard-header .latest-col,
 .hof-leaderboard .leaderboard-row .latest-col {
   display: none;
+}
+
+.hof-leaderboard .leaderboard-header,
+.hof-leaderboard .leaderboard-row {
+  grid-template-columns: 80px 1fr 180px 80px 80px;
 }
 
 @media (max-width: 700px) {
