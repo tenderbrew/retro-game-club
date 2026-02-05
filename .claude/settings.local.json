@@ -7,7 +7,19 @@
       "Bash(powershell -ExecutionPolicy Bypass -File \"c:\\\\Users\\\\ericm\\\\Documents\\\\retro_game_club\\\\update_nav.ps1\")",
       "Bash(del \"c:\\\\Users\\\\ericm\\\\Documents\\\\retro_game_club\\\\update_nav.ps1\")",
       "Bash(powershell -Command:*)",
-      "Bash(del \"c:\\\\Users\\\\ericm\\\\Documents\\\\retro_game_club\\\\fix-trophy-links.ps1\")"
+      "Bash(del \"c:\\\\Users\\\\ericm\\\\Documents\\\\retro_game_club\\\\fix-trophy-links.ps1\")",
+      "Bash(git -C \"c:\\\\Users\\\\ericm\\\\Documents\\\\retro_game_club\" log --oneline -5)",
+      "Bash(git -C \"c:\\\\Users\\\\ericm\\\\Documents\\\\retro_game_club\" diff index.html styles.css)",
+      "Bash(git -C \"c:\\\\Users\\\\ericm\\\\Documents\\\\retro_game_club\" add index.html styles.css)",
+      "Bash(git -C \"c:\\\\Users\\\\ericm\\\\Documents\\\\retro_game_club\" diff --cached)",
+      "Bash(git -C \"c:\\\\Users\\\\ericm\\\\Documents\\\\retro_game_club\" ls-files)",
+      "Bash(git -C \"c:\\\\Users\\\\ericm\\\\Documents\\\\retro_game_club\" log --oneline --all -- users/user-brannon.html)",
+      "Bash(git -C \"c:\\\\Users\\\\ericm\\\\Documents\\\\retro_game_club\" push --force origin main)",
+      "Bash(git -C \"c:\\\\Users\\\\ericm\\\\Documents\\\\retro_game_club\" commit --allow-empty -m \"Force GitHub Pages rebuild\")",
+      "Bash(git -C \"c:\\\\Users\\\\ericm\\\\Documents\\\\retro_game_club\" add users.html resources.html hall-of-fame.html trophy-challenges.html game-of-the-month.html gallery.html leaderboards.html)",
+      "Bash(git -C \"c:\\\\Users\\\\ericm\\\\Documents\\\\retro_game_club\" commit -m \"Fix Home links to use index.html instead of /\")",
+      "Bash(git -C \"c:\\\\Users\\\\ericm\\\\Documents\\\\retro_game_club\" status --porcelain)",
+      "Bash(git -C \"c:\\\\Users\\\\ericm\\\\Documents\\\\retro_game_club\" add index.html .gitignore)"
     ]
   }
 }
