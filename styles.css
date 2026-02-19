@@ -2918,6 +2918,74 @@ h3 {
   image-rendering: pixelated;
 }
 
+.ctc-cereal {
+  position: absolute;
+  top: 0.8rem;
+  right: 15%;
+  display: block;
+  width: 4px;
+  height: 4px;
+  background: transparent;
+  color: transparent;
+  image-rendering: pixelated;
+  /* pixel-art cereal square with a bite out of the corner */
+  box-shadow:
+    /* row 1 — top edge */
+     4px  0px 0 0 #d4a030,
+     8px  0px 0 0 #e8b840,
+    12px  0px 0 0 #e8b840,
+    16px  0px 0 0 #e8b840,
+    20px  0px 0 0 #d4a030,
+    /* row 2 */
+     0px  4px 0 0 #d4a030,
+     4px  4px 0 0 #f5d870,
+     8px  4px 0 0 #f0c850,
+    12px  4px 0 0 #f0c850,
+    16px  4px 0 0 #e8b840,
+    20px  4px 0 0 #c89028,
+    24px  4px 0 0 #d4a030,
+    /* row 3 */
+     0px  8px 0 0 #e8b840,
+     4px  8px 0 0 #f0c850,
+     8px  8px 0 0 #c89028,
+    12px  8px 0 0 #f0c850,
+    16px  8px 0 0 #c89028,
+    20px  8px 0 0 #f0c850,
+    24px  8px 0 0 #d4a030,
+    /* row 4 */
+     0px 12px 0 0 #e8b840,
+     4px 12px 0 0 #c89028,
+     8px 12px 0 0 #f0c850,
+    12px 12px 0 0 #f5d870,
+    16px 12px 0 0 #f0c850,
+    20px 12px 0 0 #c89028,
+    24px 12px 0 0 #d4a030,
+    /* row 5 */
+     0px 16px 0 0 #d4a030,
+     4px 16px 0 0 #f0c850,
+     8px 16px 0 0 #c89028,
+    12px 16px 0 0 #f0c850,
+    16px 16px 0 0 #e8b840,
+    20px 16px 0 0 #d4a030,
+    /* row 6 — bite taken from bottom-right corner */
+     0px 20px 0 0 #d4a030,
+     4px 20px 0 0 #d4a030,
+     8px 20px 0 0 #e8b840,
+    12px 20px 0 0 #d4a030,
+    16px 20px 0 0 #d4a030,
+    /* row 7 — small bottom edge */
+     4px 24px 0 0 #c89028,
+     8px 24px 0 0 #c89028,
+    12px 24px 0 0 #c89028;
+  transform: scale(4);
+  animation: cereal-wobble 2s ease-in-out infinite;
+}
+
+@keyframes cereal-wobble {
+  0%, 100% { transform: scale(4) rotate(-8deg); }
+  50% { transform: scale(4) rotate(8deg); }
+}
+
 .ctc-tagline {
   font-family: "Press Start 2P", monospace;
   font-size: 0.55rem;
