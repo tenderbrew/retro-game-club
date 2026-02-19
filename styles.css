@@ -2876,11 +2876,14 @@ h3 {
 /* Cinema Toast Crunch */
 .ctc-hero {
   position: relative;
-  background: linear-gradient(180deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%);
-  border: 1px solid #333333;
-  border-radius: 12px;
+  background: #0a0a18;
+  border: 4px solid #f0c040;
+  border-radius: 0;
   overflow: hidden;
   margin-bottom: 1.5rem;
+  box-shadow:
+    inset 0 0 60px rgba(240, 192, 64, 0.05),
+    0 0 0 2px #502800;
 }
 
 .ctc-hero-inner {
@@ -2888,29 +2891,39 @@ h3 {
   padding: 2.5rem 2rem;
   text-align: center;
   background:
-    radial-gradient(ellipse at 30% 0%, rgba(212, 175, 55, 0.08) 0%, transparent 50%),
-    radial-gradient(ellipse at 70% 0%, rgba(212, 175, 55, 0.08) 0%, transparent 50%);
+    repeating-linear-gradient(
+      0deg,
+      transparent 0px,
+      transparent 3px,
+      rgba(0, 0, 0, 0.15) 3px,
+      rgba(0, 0, 0, 0.15) 4px
+    ),
+    radial-gradient(ellipse at 50% 40%, rgba(240, 192, 64, 0.08) 0%, transparent 60%);
 }
 
 .ctc-title {
+  font-family: "Press Start 2P", monospace;
   font-size: 2.2rem;
-  font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 0.15em;
+  line-height: 1.8;
+  letter-spacing: 0.05em;
   margin: 0 0 0.5rem;
-  background: linear-gradient(180deg, #f5e6a3 0%, #d4af37 40%, #b8962e 70%, #d4af37 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.8));
+  color: #f0c040;
+  text-shadow:
+    3px 0 0 #c06800,
+    0 3px 0 #c06800,
+    3px 3px 0 #904800,
+    6px 6px 0 #502800,
+    -2px -2px 0 #ffe080;
+  image-rendering: pixelated;
 }
 
 .ctc-tagline {
-  font-size: 0.9rem;
-  color: #888888;
-  letter-spacing: 0.2em;
+  font-family: "Press Start 2P", monospace;
+  font-size: 0.55rem;
+  color: #8090b0;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  font-family: "Courier New", "Courier", monospace;
   margin: 0;
 }
 
@@ -2962,8 +2975,12 @@ h3 {
 
 @media (max-width: 600px) {
   .ctc-title {
-    font-size: 1.5rem;
-    letter-spacing: 0.1em;
+    font-size: 1.3rem;
+    text-shadow:
+      2px 0 0 #c06800,
+      0 2px 0 #c06800,
+      2px 2px 0 #904800,
+      4px 4px 0 #502800;
   }
 
   .ctc-hero-inner {
@@ -2971,7 +2988,7 @@ h3 {
   }
 
   .ctc-tagline {
-    font-size: 0.75rem;
+    font-size: 0.45rem;
   }
 }
 
