@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://www.googletagmanager.com" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-WX2NTMVS3Y"></script>
     <script>
@@ -12,6 +13,14 @@
       gtag('config', 'G-WX2NTMVS3Y');
     </script>
     <title>Cinema Toast Crunch | Retro Game Club</title>
+    <meta name="description" content="Cinema Toast Crunch — Retro Game Club's movie night companion series featuring retro and classic films." />
+    <meta property="og:title" content="Cinema Toast Crunch | Retro Game Club" />
+    <meta property="og:description" content="Cinema Toast Crunch — Retro Game Club's movie night companion series featuring retro and classic films." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://nintendopipeline.club/cinema-toast-crunch.html" />
+    <meta property="og:image" content="https://nintendopipeline.club/nintendopipeline.png" />
+    <meta property="og:site_name" content="Retro Game Club" />
+    <link rel="icon" type="image/png" href="nintendopipeline.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
@@ -54,7 +63,7 @@
           <div class="ctc-filmstrip-bottom"></div>
         </div>
 
-        <div class="date-list" style="margin-bottom: 1.5rem;">
+        <div class="date-list">
           <div class="date-item">
             <div class="date-box">
               <span class="date-days">Feb 1–15</span>
@@ -72,7 +81,7 @@
         <div class="ctc-stage">
           <div class="ctc-film-card">
             <div class="ctc-spotlight">
-              <img src="images/films/late-spring.jpg" alt="Late Spring (1949) poster" class="ctc-poster" />
+              <img src="images/films/late-spring.jpg" alt="Late Spring (1949) poster" class="ctc-poster" loading="lazy" />
             </div>
             <div class="ctc-film-dates">Feb 1–15</div>
             <h3>Late Spring <span>(1949)</span></h3>
@@ -97,7 +106,7 @@
 
           <div class="ctc-film-card">
             <div class="ctc-spotlight">
-              <img src="images/films/michael-clayton.jpg" alt="Michael Clayton (2007) poster" class="ctc-poster" />
+              <img src="images/films/michael-clayton.jpg" alt="Michael Clayton (2007) poster" class="ctc-poster" loading="lazy" />
             </div>
             <div class="ctc-film-dates">Feb 15–28</div>
             <h3>Michael Clayton <span>(2007)</span></h3>
@@ -124,7 +133,7 @@
 
         <div class="ctc-archive">
           <h2>Previous Selections</h2>
-          <p style="color: #888; font-style: italic;">Coming soon — archive of past film picks.</p>
+          <p class="coming-soon-text">Coming soon — archive of past film picks.</p>
         </div>
 
         <p><a href="index.html">Back to home</a></p>
@@ -133,7 +142,7 @@
 
     <footer class="site-footer">
       <div class="container footer-inner">
-        <p>&copy; <span id="year"></span> Retro Game Club <a href="cinema-toast-crunch.html" class="footer-secret" title="">&#127916;</a></p>
+        <p>&copy; <span id="year"></span> Nintendo Pipeline <a href="cinema-toast-crunch.html" class="footer-secret">&#127916;</a></p>
       </div>
       <script>
         document.getElementById("year").textContent =

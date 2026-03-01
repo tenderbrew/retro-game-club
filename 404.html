@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://www.googletagmanager.com" />
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WX2NTMVS3Y"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-WX2NTMVS3Y');
+    </script>
+    <title>Page Not Found | Retro Game Club</title>
+    <meta name="description" content="Page not found — the page you are looking for does not exist on Retro Game Club." />
+    <meta property="og:title" content="Page Not Found | Retro Game Club" />
+    <meta property="og:description" content="Page not found — the page you are looking for does not exist on Retro Game Club." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://nintendopipeline.club/404.html" />
+    <meta property="og:image" content="https://nintendopipeline.club/nintendopipeline.png" />
+    <meta property="og:site_name" content="Retro Game Club" />
+    <link rel="icon" type="image/png" href="nintendopipeline.png" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="index.html" class="logo-link"><div class="logo"><img
+            src="nintendopipeline.png"
+            alt="Nintendo Pipeline graphic"
+            class="logo-image" /><span class="logo-text">Retro Game Club</span></div></a>
+                <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+        <label for="nav-toggle" class="main-nav-summary" aria-label="Toggle navigation">
+          <span class="main-nav-summary-label">Menu</span>
+          <span class="main-nav-summary-icon">v</span>
+        </label>
+        <nav class="main-nav" aria-label="Primary">
+          <a href="index.html">Home</a>
+          <a href="game-of-the-month.html">Past Games</a>
+          <a href="resources.html">Resources</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="trophy-challenges.html">Trophies</a>
+          <a href="users.html">Users</a>
+          <a href="leaderboards.html">Leaderboards</a>
+          <a href="hall-of-fame.html">Hall of Fame</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="site-main container">
+      <section class="content error-page-content">
+        <h1>404</h1>
+        <p class="error-page-message">The page you're looking for doesn't exist.</p>
+        <p><a href="index.html" class="btn-primary">Back to Home</a></p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>&copy; <span id="year"></span> Nintendo Pipeline <a href="cinema-toast-crunch.html" class="footer-secret">&#127916;</a></p>
+      </div>
+      <script>
+        document.getElementById("year").textContent =
+          new Date().getFullYear();
+      </script>
+    </footer>
+  </body>
+</html>

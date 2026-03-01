@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://www.googletagmanager.com" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-WX2NTMVS3Y"></script>
     <script>
@@ -12,6 +13,14 @@
       gtag('config', 'G-WX2NTMVS3Y');
     </script>
     <title>Retro Game Club by Nintendo Pipeline</title>
+    <meta name="description" content="Retro Game Club — a monthly retro gaming community. Play classic games together and earn trophies." />
+    <meta property="og:title" content="Retro Game Club by Nintendo Pipeline" />
+    <meta property="og:description" content="Retro Game Club — a monthly retro gaming community. Play classic games together and earn trophies." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://nintendopipeline.club/" />
+    <meta property="og:image" content="https://nintendopipeline.club/nintendopipeline.png" />
+    <meta property="og:site_name" content="Retro Game Club" />
+    <link rel="icon" type="image/png" href="nintendopipeline.png" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -27,7 +36,7 @@
           <span class="main-nav-summary-icon">v</span>
         </label>
         <nav class="main-nav" aria-label="Primary">
-          <a href="index.html#home">Home</a>
+          <a href="index.html">Home</a>
           <a href="game-of-the-month.html">Past Games</a>
           <a href="resources.html">Resources</a>
           <a href="gallery.html">Gallery</a>
@@ -40,7 +49,7 @@
     </header>
 
     <main class="site-main container" id="home">
-      <a href="https://discord.gg/2qv6qQbw4A" target="_blank" class="discord-banner">
+      <a href="https://discord.gg/2qv6qQbw4A" target="_blank" rel="noopener noreferrer" class="discord-banner">
         <span class="discord-icon">💬</span>
         <span class="discord-text">Join our Discord community</span>
         <span class="discord-arrow">→</span>
@@ -53,7 +62,7 @@
             Apes together, game
           </p>
           <a href="games/2026-march-ape-escape.html" class="hero-banner">
-            <img src="images/home/ape-escape-banner.png" alt="Ape Escape - Current Game" class="hero-banner-image" />
+            <img src="images/home/ape-escape-banner.png" alt="Ape Escape - Current Game" class="hero-banner-image" loading="lazy" />
           </a>
           <a href="games/2026-march-ape-escape.html" class="btn-primary">See the current game →</a>
         </div>
@@ -65,76 +74,76 @@
             <div class="top-players-container">
               <h2>2026 Top Players</h2>
               <div class="top-players-list">
+                <div class="top-players-header">
+                  <span class="top-player-rank"></span>
+                  <span class="top-player-header-spacer"></span>
+                  <span class="top-player-name"></span>
+                  <span class="top-player-trophies-header">Trophies</span>
+                  <span class="top-player-header-label">Count</span>
+                  <span class="top-player-header-label">Points</span>
+                </div>
                 <div>
                   <a href="users/user-tender.html" class="top-player-item rank-1">
                     <span class="top-player-rank">#1</span>
-                    <img src="images/users/tender.gif" alt="Tender" class="top-player-avatar" />
+                    <img src="images/users/tender.gif" alt="Tender" class="top-player-avatar" loading="lazy" />
                     <span class="top-player-name">Tender</span>
                     <span class="top-player-trophies">
                       <span class="trophy-gold">1</span>
-                      <span class="trophy-silver">1</span>
-                      <span class="trophy-bronze">1</span>
+                      <span class="trophy-silver">2</span>
+                      <span class="trophy-bronze">2</span>
                     </span>
+                    <span class="top-player-total">5</span>
+                    <span class="top-player-points">22</span>
                   </a>
                 </div>
                 <div>
-                  <a href="users/user-anton.html" class="top-player-item rank-1">
-                    <span class="top-player-rank">#1</span>
-                    <img src="images/users/anton.png" alt="Anton" class="top-player-avatar" />
+                  <a href="users/user-anton.html" class="top-player-item rank-2">
+                    <span class="top-player-rank">#2</span>
+                    <img src="images/users/anton.png" alt="Anton" class="top-player-avatar" loading="lazy" />
                     <span class="top-player-name">Anton</span>
                     <span class="top-player-trophies">
                       <span class="trophy-gold">1</span>
                       <span class="trophy-silver">1</span>
                       <span class="trophy-bronze">1</span>
                     </span>
-                  </a>
-                </div>
-                <div>
-                  <a href="users/user-asadasa.html" class="top-player-item rank-3">
-                    <span class="top-player-rank">#3</span>
-                    <img src="images/users/asadasa.png" alt="Asadasa" class="top-player-avatar" />
-                    <span class="top-player-name">Asadasa</span>
-                    <span class="top-player-trophies">
-                      <span class="trophy-gold">0</span>
-                      <span class="trophy-silver">0</span>
-                      <span class="trophy-bronze">1</span>
-                    </span>
+                    <span class="top-player-total">3</span>
+                    <span class="top-player-points">16</span>
                   </a>
                 </div>
                 <div>
                   <a href="users/user-kb.html" class="top-player-item rank-3">
                     <span class="top-player-rank">#3</span>
-                    <img src="images/users/kb.png" alt="KB" class="top-player-avatar" />
-                    <span class="top-player-name">KB</span>
+                    <img src="images/users/kb.png" alt="kb" class="top-player-avatar" loading="lazy" />
+                    <span class="top-player-name">kb</span>
                     <span class="top-player-trophies">
                       <span class="trophy-gold">0</span>
-                      <span class="trophy-silver">0</span>
-                      <span class="trophy-bronze">1</span>
+                      <span class="trophy-silver">1</span>
+                      <span class="trophy-bronze">2</span>
                     </span>
+                    <span class="top-player-total">3</span>
+                    <span class="top-player-points">7</span>
                   </a>
                 </div>
                 <div>
-                  <a href="users/user-zou.html" class="top-player-item rank-3">
-                    <span class="top-player-rank">#3</span>
-                    <img src="images/users/zou.png" alt="Zou" class="top-player-avatar" />
-                    <span class="top-player-name">Zou</span>
+                  <a href="users/user-asadasa.html" class="top-player-item">
+                    <span class="top-player-rank">#4</span>
+                    <img src="images/users/asadasa.png" alt="Asadasa" class="top-player-avatar" loading="lazy" />
+                    <span class="top-player-name">Asadasa</span>
                     <span class="top-player-trophies">
                       <span class="trophy-gold">0</span>
                       <span class="trophy-silver">0</span>
-                      <span class="trophy-bronze">1</span>
+                      <span class="trophy-bronze">2</span>
                     </span>
+                    <span class="top-player-total">2</span>
+                    <span class="top-player-points">2</span>
                   </a>
                 </div>
                 <div>
-                  <a href="users/user-1defined.html" class="top-player-item rank-3">
-                    <span class="top-player-rank">#3</span>
-                    <img src="images/users/1defined.png" alt="1defined" class="top-player-avatar" />
-                    <span class="top-player-name">1defined</span>
-                    <span class="top-player-trophies">
-                      <span class="trophy-gold">0</span>
-                      <span class="trophy-silver">0</span>
-                      <span class="trophy-bronze">1</span>
-                    </span>
+                  <a href="leaderboards.html" class="top-player-item">
+                    <span class="top-player-rank">#5</span>
+                    <span class="top-player-name">2 players tied</span>
+                    <span class="top-player-total">1</span>
+                    <span class="top-player-points">1</span>
                   </a>
                 </div>
               </div>
@@ -145,76 +154,76 @@
             <div class="top-players-container">
               <h2>2025 Top Players</h2>
               <div class="top-players-list">
+                <div class="top-players-header">
+                  <span class="top-player-rank"></span>
+                  <span class="top-player-header-spacer"></span>
+                  <span class="top-player-name"></span>
+                  <span class="top-player-trophies-header">Trophies</span>
+                  <span class="top-player-header-label">Count</span>
+                  <span class="top-player-header-label">Points</span>
+                </div>
                 <div>
                   <a href="users/user-asadasa.html" class="top-player-item rank-1">
                     <span class="top-player-rank">#1</span>
-                    <img src="images/users/asadasa.png" alt="Asadasa" class="top-player-avatar" />
+                    <img src="images/users/asadasa.png" alt="Asadasa" class="top-player-avatar" loading="lazy" />
                     <span class="top-player-name">Asadasa</span>
                     <span class="top-player-trophies">
-                      <span class="trophy-gold">13</span>
-                      <span class="trophy-silver">0</span>
+                      <span class="trophy-gold">12</span>
+                      <span class="trophy-silver">1</span>
                       <span class="trophy-bronze">0</span>
                     </span>
+                    <span class="top-player-total">13</span>
+                    <span class="top-player-points">125</span>
                   </a>
                 </div>
                 <div>
                   <a href="users/user-anton.html" class="top-player-item rank-2">
                     <span class="top-player-rank">#2</span>
-                    <img src="images/users/anton.png" alt="Anton" class="top-player-avatar" />
+                    <img src="images/users/anton.png" alt="Anton" class="top-player-avatar" loading="lazy" />
                     <span class="top-player-name">Anton</span>
                     <span class="top-player-trophies">
-                      <span class="trophy-gold">7</span>
-                      <span class="trophy-silver">0</span>
+                      <span class="trophy-gold">5</span>
+                      <span class="trophy-silver">2</span>
                       <span class="trophy-bronze">0</span>
                     </span>
+                    <span class="top-player-total">7</span>
+                    <span class="top-player-points">60</span>
                   </a>
                 </div>
                 <div>
                   <a href="users/user-poochy.html" class="top-player-item rank-3">
                     <span class="top-player-rank">#3</span>
-                    <img src="images/users/poochy.png" alt="Poochy" class="top-player-avatar" />
+                    <img src="images/users/poochy.png" alt="Poochy" class="top-player-avatar" loading="lazy" />
                     <span class="top-player-name">Poochy</span>
                     <span class="top-player-trophies">
                       <span class="trophy-gold">5</span>
                       <span class="trophy-silver">1</span>
                       <span class="trophy-bronze">0</span>
                     </span>
+                    <span class="top-player-total">6</span>
+                    <span class="top-player-points">55</span>
                   </a>
                 </div>
                 <div>
                   <a href="users/user-hugh.html" class="top-player-item">
                     <span class="top-player-rank">#4</span>
-                    <img src="images/users/hugh.png" alt="Hugh" class="top-player-avatar" />
+                    <img src="images/users/hugh.png" alt="Hugh" class="top-player-avatar" loading="lazy" />
                     <span class="top-player-name">Hugh</span>
                     <span class="top-player-trophies">
                       <span class="trophy-gold">4</span>
                       <span class="trophy-silver">1</span>
                       <span class="trophy-bronze">0</span>
                     </span>
+                    <span class="top-player-total">5</span>
+                    <span class="top-player-points">45</span>
                   </a>
                 </div>
                 <div>
-                  <a href="users/user-zou.html" class="top-player-item">
+                  <a href="leaderboards.html" class="top-player-item">
                     <span class="top-player-rank">#5</span>
-                    <img src="images/users/zou.png" alt="Zou" class="top-player-avatar" />
-                    <span class="top-player-name">Zou</span>
-                    <span class="top-player-trophies">
-                      <span class="trophy-gold">3</span>
-                      <span class="trophy-silver">2</span>
-                      <span class="trophy-bronze">0</span>
-                    </span>
-                  </a>
-                </div>
-                <div>
-                  <a href="users/user-tender.html" class="top-player-item">
-                    <span class="top-player-rank">#5</span>
-                    <img src="images/users/tender.gif" alt="Tender" class="top-player-avatar" />
-                    <span class="top-player-name">Tender</span>
-                    <span class="top-player-trophies">
-                      <span class="trophy-gold">4</span>
-                      <span class="trophy-silver">0</span>
-                      <span class="trophy-bronze">0</span>
-                    </span>
+                    <span class="top-player-name">2 players tied</span>
+                    <span class="top-player-total">4</span>
+                    <span class="top-player-points">40</span>
                   </a>
                 </div>
               </div>
@@ -283,43 +292,43 @@
         <ul class="card-list">
             <li class="card">
               <a href="game-of-the-month.html">
-                <img src="images/home/waverace.png" alt="Wave Race 64" class="card-image" />
+                <img src="images/home/waverace.png" alt="Wave Race 64" class="card-image" loading="lazy" />
               </a>
               <h3><a href="game-of-the-month.html">Past Games</a></h3>
             </li>
             <li class="card">
               <a href="resources.html">
-                <img src="images/home/chronotrigger.png" alt="Chrono Trigger" class="card-image" />
+                <img src="images/home/chronotrigger.png" alt="Chrono Trigger" class="card-image" loading="lazy" />
               </a>
               <h3><a href="resources.html">Resources</a></h3>
             </li>
             <li class="card">
               <a href="gallery.html">
-                <img src="images/home/snatcher.png" alt="Snatcher" class="card-image" />
+                <img src="images/home/snatcher.png" alt="Snatcher" class="card-image" loading="lazy" />
               </a>
               <h3><a href="gallery.html">Gallery</a></h3>
             </li>
             <li class="card">
               <a href="trophy-challenges.html">
-                <img src="images/home/worldchampionships.png" alt="World Championship" class="card-image" />
+                <img src="images/home/worldchampionships.png" alt="World Championship" class="card-image" loading="lazy" />
               </a>
               <h3><a href="trophy-challenges.html">Trophies</a></h3>
             </li>
             <li class="card">
               <a href="users.html">
-                <img src="images/home/users.png" alt="Users" class="card-image" />
+                <img src="images/home/users.png" alt="Users" class="card-image" loading="lazy" />
               </a>
               <h3><a href="users.html">Users</a></h3>
             </li>
             <li class="card">
               <a href="leaderboards.html">
-                <img src="images/home/leaderboards.png" alt="Leaderboards" class="card-image" />
+                <img src="images/home/leaderboards.png" alt="Leaderboards" class="card-image" loading="lazy" />
               </a>
               <h3><a href="leaderboards.html">Leaderboards</a></h3>
             </li>
             <li class="card">
               <a href="hall-of-fame.html">
-                <img src="images/home/halloffame.png" alt="Hall of Fame" class="card-image" />
+                <img src="images/home/halloffame.png" alt="Hall of Fame" class="card-image" loading="lazy" />
               </a>
               <h3><a href="hall-of-fame.html">Hall of Fame</a></h3>
             </li>
@@ -340,39 +349,11 @@
 
     <footer class="site-footer">
       <div class="container footer-inner">
-        <p>&copy; <span id="year"></span> Nintendo Pipeline <a href="cinema-toast-crunch.html" class="footer-secret" title="">&#127916;</a></p>
+        <p>&copy; <span id="year"></span> Nintendo Pipeline <a href="cinema-toast-crunch.html" class="footer-secret">&#127916;</a></p>
       </div>
       <script>
-        // Set current year in footer
         document.getElementById("year").textContent =
           new Date().getFullYear();
-
-        // Automatically update "See the current game" link to the most recent month
-        (function() {
-          const now = new Date();
-          const currentYear = now.getFullYear();
-          const currentMonth = now.getMonth() + 1; // 1-12
-
-          // Define all games in chronological order
-          const games = [
-            { year: 2025, month: 1, file: "2025-january-super-punch-out.html" },
-            { year: 2025, month: 2, file: "2025-february-god-of-war.html" },
-            { year: 2025, month: 3, file: "2025-march-kirby-64.html" },
-            { year: 2025, month: 4, file: "2025-april-billy-hatcher.html" },
-            { year: 2025, month: 5, file: "2025-may-snatcher.html" },
-            { year: 2025, month: 6, file: "2025-june-gamecube-on-switch-online.html" },
-            { year: 2025, month: 7, file: "2025-july-resident-evil-2.html" },
-            { year: 2025, month: 8, file: "2025-august-umihara-kawase.html" },
-            { year: 2025, month: 9, file: "2025-september-gran-turismo-2.html" },
-            { year: 2025, month: 10, file: "2025-october-koudelka.html" },
-            { year: 2025, month: 11, file: "2025-november-brave-fencer-musashi.html" },
-            { year: 2025, month: 12, file: "2025-december-nights.html" },
-            { year: 2026, month: 1, file: "2026-january-mega-man-legends.html" },
-            { year: 2026, month: 2, file: "2026-february-legend-of-the-river-king.html" },
-            { year: 2026, month: 3, file: "2026-march-ape-escape.html" }
-          ];
-
-        })();
       </script>
     </footer>
   </body>
