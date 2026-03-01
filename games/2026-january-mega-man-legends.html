@@ -20,10 +20,16 @@
     <meta property="og:url" content="https://nintendopipeline.club/games/2026-january-mega-man-legends.html" />
     <meta property="og:image" content="https://nintendopipeline.club/images/covers/Mega%20Man%20Legends%20(USA).png" />
     <meta property="og:site_name" content="Retro Game Club" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="January 2026 – Mega Man Legends | Retro Game Club" />
+    <meta name="twitter:description" content="January 2026 game of the month: Mega Man Legends. Trophy challenges, resources, and community discussion." />
+    <meta name="twitter:image" content="https://nintendopipeline.club/images/covers/Mega%20Man%20Legends%20(USA).png" />
     <link rel="icon" type="image/png" href="../nintendopipeline.png" />
+    <link rel="canonical" href="https://nintendopipeline.club/games/2026-january-mega-man-legends.html" />
     <link rel="stylesheet" href="../styles.css" />
   </head>
   <body>
+    <a href="#main-content" class="skip-link">Skip to content</a>
     <header class="site-header">
       <div class="container header-inner">
         <a href="../index.html" class="logo-link"><div class="logo"><img
@@ -48,7 +54,7 @@
       </div>
     </header>
 
-    <main class="site-main container">
+    <main class="site-main container" id="main-content">
       <section class="content">
         <div class="game-header">
           <div class="game-description">
@@ -186,7 +192,7 @@
           </div>
         </div>
 
-        <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <div id="lightbox" class="lightbox">
           <span class="lightbox-close">&times;</span>
           <img id="lightbox-img" class="lightbox-content" alt="" />
         </div>
@@ -215,6 +221,8 @@
           document.getElementById('lightbox').style.display = 'none';
           document.body.style.overflow = '';
         }
+
+        document.getElementById('lightbox').addEventListener('click', closeLightbox);
 
         document.querySelectorAll('.gallery-thumb').forEach(function(img) {
           img.addEventListener('click', function() {

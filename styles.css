@@ -1,4 +1,9 @@
 :root {
+  --font-body: "Garamond", "Times New Roman", serif;
+  --font-heading: "Courier New", "Courier", monospace;
+  --radius-sm: 4px;
+  --radius: 8px;
+  --radius-lg: 12px;
   --color-gold: #d4af37;
   --color-gold-hover: #f4cf5a;
   --color-bg: #1a1a1a;
@@ -8,7 +13,7 @@
   --color-text: #ffffff;
   --color-text-muted: #cccccc;
   --color-text-subtle: #bbbbbb;
-  --color-text-dim: #aaaaaa;
+  --color-text-dim: #b3b3b3;
   --color-black: #000000;
   --color-silver: #c0c0c0;
   --color-bronze: #cd7f32;
@@ -26,7 +31,7 @@
 
 body {
   margin: 0;
-  font-family: "Garamond", "Times New Roman", serif;
+  font-family: var(--font-body);
   font-size: 18px;
   line-height: 1.6;
   background-color: var(--color-bg);
@@ -88,7 +93,7 @@ a:hover {
   background-color: var(--color-bg-card);
   padding: 0.75rem 1rem;
   border: 1px solid var(--color-border);
-  border-radius: 8px;
+  border-radius: var(--radius);
   position: sticky;
   top: 0.5rem;
   max-width: calc(1100px - 2rem);
@@ -131,7 +136,7 @@ a:hover {
 .logo-text {
   font-size: 0.9rem;
   font-weight: 700;
-  font-family: "Courier New", "Courier", monospace;
+  font-family: var(--font-heading);
   color: var(--color-gold);
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -147,7 +152,7 @@ a:hover {
   font-size: 0.85rem;
   background-color: var(--color-bg);
   border: 1px solid var(--color-border);
-  border-radius: 8px;
+  border-radius: var(--radius);
   overflow: hidden;
 }
 
@@ -168,7 +173,7 @@ a:hover {
   border-radius: 999px;
   background-color: var(--color-bg);
   color: var(--color-gold);
-  font-family: "Courier New", "Courier", monospace;
+  font-family: var(--font-heading);
   font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.12em;
@@ -246,170 +251,7 @@ a:hover {
 
 }
 
-@media (max-width: 800px) {
-  .header-inner {
-    position: relative;
-  }
 
-  .main-nav {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    right: 0;
-    top: calc(100% + 0.4rem);
-    min-width: 220px;
-    z-index: 20;
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
-  }
-
-  .nav-toggle:checked ~ .main-nav {
-    display: flex;
-  }
-
-  .header-inner {
-    flex-direction: row;
-    align-items: center;
-  }
-
-  .main-nav-summary {
-    align-self: center;
-    font-size: 0.65rem;
-    padding: 0.3rem 0.7rem;
-    letter-spacing: 0.1em;
-  }
-
-  .logo-text {
-    font-size: 0.75rem;
-    padding: 0.2rem 0.55rem;
-  }
-
-  .logo-image {
-    height: 32px;
-  }
-
-  .layout {
-    grid-template-columns: 1fr;
-  }
-
-  .user-header {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .user-stats {
-    grid-template-columns: 1fr;
-  }
-
-  .trophy-header {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .winner-item {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .game-header {
-    flex-direction: column;
-  }
-
-  .game-infobox {
-    width: 100%;
-    max-width: 350px;
-    margin: 0 auto;
-  }
-
-  .game-description h1 {
-    text-align: center;
-  }
-}
-
-@media (max-width: 600px) {
-  .main-nav a {
-    width: 100%;
-    padding: 0.5rem 0.8rem;
-    font-size: 0.75rem;
-    border-right: none;
-    border-bottom: none;
-    text-align: left;
-  }
-
-  .main-nav a + a {
-    border-top: 1px solid var(--color-border);
-  }
-
-  .site-header {
-    padding: 0.5rem 0.75rem;
-    top: 0.25rem;
-    margin: 0.35rem 0.5rem;
-  }
-
-  .site-main {
-    padding-inline: 0.75rem;
-  }
-
-  .hero {
-    padding: 1.5rem 1.25rem;
-  }
-
-  .content,
-  .sidebar {
-    padding: 1.25rem;
-  }
-
-  .discord-banner {
-    padding: 0.6rem 1rem;
-    font-size: 0.9rem;
-    gap: 0.5rem;
-  }
-
-  .user-profile {
-    padding: 1.5rem;
-  }
-
-  .trophy-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .trophy-card {
-    min-width: unset;
-    width: 100%;
-  }
-
-  .trophy-card-image {
-    width: 100%;
-    max-width: 300px;
-    height: auto;
-    aspect-ratio: 1;
-  }
-
-  .trophy-image-large {
-    width: 100%;
-    max-width: 300px;
-    height: auto;
-    aspect-ratio: 1;
-  }
-
-  .ctc-title {
-    font-size: 1.3rem;
-    text-shadow:
-      2px 0 0 #c06800,
-      0 2px 0 #c06800,
-      2px 2px 0 #904800,
-      4px 4px 0 #502800;
-  }
-
-  .ctc-hero-inner {
-    padding: 1.5rem 1rem;
-  }
-
-  .ctc-tagline {
-    font-size: 0.45rem;
-  }
-}
 
 .site-main {
   padding: 1rem 1rem 3rem;
@@ -470,7 +312,7 @@ a:hover {
 .hero-text h1 {
   margin: 0 0 0.5rem;
   font-size: clamp(1.8rem, 3vw, 2.4rem);
-  font-family: "Courier New", "Courier", monospace;
+  font-family: var(--font-heading);
   font-weight: bold;
   color: var(--color-gold);
   text-shadow:
@@ -534,7 +376,7 @@ a:hover {
   align-items: center;
   justify-content: center;
   padding: 0.6rem 1.3rem;
-  border-radius: 4px;
+  border-radius: var(--radius-sm);
   background-color: var(--color-text);
   color: var(--color-black);
   font-weight: normal;
@@ -567,7 +409,7 @@ a:hover {
 .content,
 .sidebar {
   background-color: var(--color-bg-card);
-  border-radius: 8px;
+  border-radius: var(--radius);
   padding: 1.5rem;
   border: 1px solid var(--color-border);
 }
@@ -581,7 +423,7 @@ a:hover {
   background: linear-gradient(135deg, #5865F2 0%, #4752c4 100%);
   color: var(--color-text);
   padding: 0.75rem 1.5rem;
-  border-radius: 8px;
+  border-radius: var(--radius);
   text-decoration: none;
   font-weight: 600;
   font-size: 1rem;
@@ -632,7 +474,7 @@ h2 {
   margin: 1.5rem 0 1rem 0;
   padding: 0.6rem 1rem;
   font-size: 1.1rem;
-  font-family: "Courier New", "Courier", monospace;
+  font-family: var(--font-heading);
   text-transform: uppercase;
   letter-spacing: 0.1em;
 }
@@ -648,7 +490,7 @@ h2 {
   margin: 0 0 1.5rem 0;
   padding: 0.75rem 1rem;
   font-size: 1.4rem;
-  font-family: "Courier New", "Courier", monospace;
+  font-family: var(--font-heading);
   text-transform: uppercase;
   letter-spacing: 0.15em;
 }
@@ -660,9 +502,9 @@ h3 {
 .card-list {
   list-style: none;
   padding: 0;
-  margin: 1rem 0 1.5rem;
+  margin: 0 0 2rem;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 1rem;
 }
 
@@ -670,9 +512,16 @@ h3 {
   display: flex;
   flex-direction: column;
   background-color: var(--color-bg-alt);
-  border-radius: 8px;
+  border-radius: var(--radius);
   padding: 1rem;
   border: 1px solid var(--color-border);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.card:hover,
+.card:focus-within {
+  transform: translateY(-4px);
+  border-color: var(--color-gold);
 }
 
 .card h3 {
@@ -681,7 +530,7 @@ h3 {
   background-color: var(--color-bg);
   padding: 0.5rem 0.75rem;
   font-size: 0.75rem;
-  font-family: "Courier New", "Courier", monospace;
+  font-family: var(--font-heading);
   text-transform: uppercase;
   letter-spacing: 0.05em;
   width: 100%;
@@ -712,7 +561,6 @@ h3 {
 
 .card-image {
   width: 100%;
-  max-width: 250px;
   aspect-ratio: 4 / 3;
   object-fit: cover;
   margin: 0 auto 1rem;
@@ -737,7 +585,7 @@ h3 {
   margin: 0 0 1.25rem 0;
   padding: 0.75rem 1rem;
   font-size: 1.2rem;
-  font-family: "Courier New", "Courier", monospace;
+  font-family: var(--font-heading);
   text-transform: uppercase;
   letter-spacing: 0.15em;
 }
@@ -859,7 +707,7 @@ h3 {
 .hof-champions {
   background-color: var(--color-bg);
   border: 4px double var(--color-gold);
-  border-radius: 8px;
+  border-radius: var(--radius);
   padding: 2rem 1.5rem;
   margin-bottom: 2rem;
   box-shadow:
@@ -879,14 +727,15 @@ h3 {
   flex-direction: column;
   align-items: center;
   padding: 1.5rem;
-  border-radius: 12px;
+  border-radius: var(--radius-lg);
   text-decoration: none;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
   min-width: 180px;
 }
 
-.hof-card:hover {
+.hof-card:hover,
+.hof-card:focus-visible {
   transform: translateY(-8px);
 }
 
@@ -936,9 +785,9 @@ h3 {
   transform: translateX(-50%);
   background-color: var(--color-bg);
   padding: 0.25rem 0.75rem;
-  border-radius: 12px;
+  border-radius: var(--radius-lg);
   font-weight: bold;
-  font-family: "Courier New", "Courier", monospace;
+  font-family: var(--font-heading);
   font-size: 0.9rem;
 }
 
@@ -997,7 +846,7 @@ h3 {
 .hof-name {
   font-size: 1.1rem;
   font-weight: bold;
-  font-family: "Courier New", "Courier", monospace;
+  font-family: var(--font-heading);
   text-transform: uppercase;
   letter-spacing: 0.1em;
   margin-bottom: 0.5rem;
@@ -1038,7 +887,7 @@ h3 {
   margin-top: 0.5rem;
   font-size: 0.9rem;
   font-weight: bold;
-  font-family: "Courier New", "Courier", monospace;
+  font-family: var(--font-heading);
   color: var(--color-text-dim);
 }
 
@@ -1063,10 +912,10 @@ h3 {
   color: var(--color-black);
   font-size: 0.7rem;
   font-weight: bold;
-  font-family: "Courier New", "Courier", monospace;
+  font-family: var(--font-heading);
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  border-radius: 4px;
+  border-radius: var(--radius-sm);
   box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
 }
 
@@ -1080,93 +929,12 @@ h3 {
   grid-template-columns: 80px 1fr 180px 80px 80px;
 }
 
-@media (max-width: 700px) {
-  .hof-podium {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .hof-card.hof-gold {
-    order: 1;
-  }
-
-  .hof-card.hof-silver {
-    order: 2;
-  }
-
-  .hof-card.hof-bronze {
-    order: 3;
-  }
-
-  .hof-card {
-    width: 100%;
-    max-width: 280px;
-  }
-
-  .hof-leaderboard .leaderboard-header,
-  .hof-leaderboard .leaderboard-row {
-    grid-template-columns: 40px 1fr 90px 40px 50px;
-  }
-
-  .leaderboard-header,
-  .leaderboard-row {
-    grid-template-columns: 40px 1fr 100px 50px;
-    gap: 0.5rem;
-    font-size: 0.85rem;
-    padding: 0.75rem 0.5rem;
-  }
-
-  .total-col {
-    display: none;
-  }
-
-  .trophies-col {
-    gap: 0.25rem;
-    font-size: 0.75rem;
-  }
-
-  .trophy-gold,
-  .trophy-silver,
-  .trophy-bronze {
-    padding: 0.15rem 0.3rem;
-    min-width: 18px;
-    font-size: 0.7rem;
-  }
-
-  .player-avatar {
-    width: 28px;
-    height: 28px;
-  }
-
-  .player-link {
-    gap: 0.4rem;
-  }
-
-  .rank-col {
-    font-size: 0.8rem;
-  }
-
-  .points-col {
-    font-size: 0.85rem;
-  }
-
-  .ctc-stage {
-    grid-template-columns: 1fr;
-    padding: 1.25rem 1rem;
-  }
-
-  .ctc-poster {
-    width: 200px;
-  }
-}
-
-
 
 .year-calendar {
   margin-top: 2rem;
   background-color: var(--color-bg-card);
   border: 1px solid var(--color-border);
-  border-radius: 8px;
+  border-radius: var(--radius);
   padding: 1.25rem;
 }
 
@@ -1177,7 +945,7 @@ h3 {
   margin: 0 0 1rem 0;
   padding: 0.6rem 1rem;
   font-size: 1.3rem;
-  font-family: "Courier New", "Courier", monospace;
+  font-family: var(--font-heading);
   text-transform: uppercase;
   letter-spacing: 0.15em;
 }
@@ -1193,7 +961,7 @@ h3 {
 .month-card {
   background-color: var(--color-bg);
   border: 2px solid var(--color-border);
-  border-radius: 8px;
+  border-radius: var(--radius);
   padding: 0;
   max-width: 220px;
   width: 100%;
@@ -1201,29 +969,8 @@ h3 {
   transition: transform 0.2s ease, border-color 0.2s ease;
 }
 
-@media (max-width: 500px) {
-  .year-calendar-grid {
-    grid-template-columns: 1fr;
-    max-width: 280px;
-    margin: 0 auto;
-  }
-
-  .month-card {
-    max-width: 100%;
-  }
-
-  .hop-to-links {
-    grid-template-columns: repeat(4, 1fr);
-    max-width: 320px;
-  }
-
-  .hop-to-links a {
-    font-size: 0.75rem;
-    padding: 0.45rem 0.3rem;
-  }
-}
-
-.month-card:hover {
+.month-card:hover,
+.month-card:focus-visible {
   transform: translateY(-4px);
   border-color: var(--color-gold);
 }
@@ -1250,7 +997,7 @@ h3 {
   padding: 0.4rem 0.75rem;
   margin: 0;
   text-align: center;
-  font-family: "Courier New", "Courier", monospace;
+  font-family: var(--font-heading);
   border-top: 2px solid var(--color-gold);
   border-bottom: 2px solid var(--color-gold);
   text-shadow: 1px 1px 0 var(--color-black);
@@ -1287,7 +1034,7 @@ h3 {
   margin: 0 0 1rem 0;
   padding: 0.6rem 1rem;
   font-size: 1rem;
-  font-family: "Courier New", "Courier", monospace;
+  font-family: var(--font-heading);
   text-transform: uppercase;
   letter-spacing: 0.1em;
 }
@@ -1304,7 +1051,7 @@ h3 {
 .calendar-month {
   font-weight: bold;
   font-size: 1rem;
-  font-family: "Courier New", "Courier", monospace;
+  font-family: var(--font-heading);
   text-transform: uppercase;
   letter-spacing: 0.1em;
   text-shadow: 1px 1px 0 var(--color-black);
@@ -1313,7 +1060,6 @@ h3 {
 .date-list {
   display: flex;
   flex-direction: column;
-  gap: 0;
   border: 3px double var(--color-gold);
   border-top: none;
   overflow: hidden;
@@ -1346,7 +1092,7 @@ h3 {
 .date-days {
   font-weight: bold;
   font-size: 0.9rem;
-  font-family: "Courier New", "Courier", monospace;
+  font-family: var(--font-heading);
   color: var(--color-gold);
   text-shadow: 1px 1px 0 var(--color-black);
 }
@@ -1383,7 +1129,8 @@ h3 {
   filter: saturate(0.7) brightness(0.8);
 }
 
-.footer-secret:hover {
+.footer-secret:hover,
+.footer-secret:focus-visible {
   text-decoration: none;
   transform: scale(1.2);
   filter: saturate(1) brightness(1.2);
@@ -1401,7 +1148,7 @@ h3 {
   margin: 0 0 1rem;
   padding: 0.5rem 1rem;
   font-size: 1rem;
-  font-family: "Courier New", "Courier", monospace;
+  font-family: var(--font-heading);
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: var(--color-gold);
@@ -1441,7 +1188,7 @@ h3 {
   margin: 1.5rem 0 1rem;
   padding: 0.5rem 1rem;
   font-size: 1.1rem;
-  font-family: "Courier New", "Courier", monospace;
+  font-family: var(--font-heading);
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: var(--color-gold);
@@ -1481,7 +1228,8 @@ h3 {
   transition: border-color 0.2s ease, transform 0.2s ease;
 }
 
-.art-item:hover {
+.art-item:hover,
+.art-item:focus-visible {
   border-color: var(--color-border-hover);
   transform: translateY(-2px);
 }
@@ -1523,7 +1271,7 @@ h3 {
   max-width: 90vw;
   max-height: 90vh;
   object-fit: contain;
-  border-radius: 4px;
+  border-radius: var(--radius-sm);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
 }
 
@@ -1580,7 +1328,7 @@ h3 {
   margin: 0 0 0.75rem;
   padding: 0.6rem 1rem;
   font-size: 1.4rem;
-  font-family: "Courier New", "Courier", monospace;
+  font-family: var(--font-heading);
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: var(--color-gold);
@@ -1629,7 +1377,7 @@ h3 {
   margin: 0 0 1rem;
   padding: 0.6rem 1rem;
   font-size: 1.1rem;
-  font-family: "Courier New", "Courier", monospace;
+  font-family: var(--font-heading);
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: var(--color-gold);
@@ -1656,7 +1404,7 @@ h3 {
   border: 1px solid var(--color-border);
   padding: 1.5rem;
   text-align: center;
-  border-radius: 8px;
+  border-radius: var(--radius);
   transition: transform 0.2s ease, border-color 0.2s ease;
   min-width: 200px;
 }
@@ -1716,7 +1464,7 @@ h3 {
   object-fit: contain;
   background-color: var(--color-bg-alt);
   border: 3px solid var(--color-gold);
-  border-radius: 8px;
+  border-radius: var(--radius);
   padding: 1rem;
 }
 
@@ -1724,7 +1472,7 @@ h3 {
   margin: 0 0 0.75rem;
   padding: 0.6rem 1rem;
   font-size: 1.4rem;
-  font-family: "Courier New", "Courier", monospace;
+  font-family: var(--font-heading);
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: var(--color-gold);
@@ -1767,7 +1515,7 @@ h3 {
   margin: 0 0 1rem;
   padding: 0.5rem 1rem;
   font-size: 1.1rem;
-  font-family: "Courier New", "Courier", monospace;
+  font-family: var(--font-heading);
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: var(--color-gold);
@@ -1798,7 +1546,7 @@ h3 {
   margin: 0 0 1rem;
   padding: 0.5rem 1rem;
   font-size: 1.1rem;
-  font-family: "Courier New", "Courier", monospace;
+  font-family: var(--font-heading);
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: var(--color-gold);
@@ -1818,7 +1566,7 @@ h3 {
   background-color: var(--color-bg-alt);
   border: 1px solid var(--color-border);
   padding: 1.5rem 1rem;
-  border-radius: 8px;
+  border-radius: var(--radius);
   text-align: center;
   transition: transform 0.2s ease, border-color 0.2s ease;
   text-decoration: none;
@@ -1826,7 +1574,8 @@ h3 {
   cursor: pointer;
 }
 
-.winner-item:hover {
+.winner-item:hover,
+.winner-item:focus-visible {
   transform: translateY(-4px);
   border-color: var(--color-gold);
 }
@@ -1868,7 +1617,7 @@ h3 {
   margin: 0 0 1rem;
   padding: 0.5rem 1rem;
   font-size: 1.1rem;
-  font-family: "Courier New", "Courier", monospace;
+  font-family: var(--font-heading);
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: var(--color-gold);
@@ -1884,7 +1633,7 @@ h3 {
 .hop-to {
   background-color: var(--color-bg-card);
   border: 1px solid var(--color-border);
-  border-radius: 8px;
+  border-radius: var(--radius);
   padding: 1rem;
   margin-bottom: 1.5rem;
   text-align: center;
@@ -1897,7 +1646,7 @@ h3 {
   text-transform: uppercase;
   letter-spacing: 0.1em;
   font-size: 0.85rem;
-  font-family: "Courier New", "Courier", monospace;
+  font-family: var(--font-heading);
   margin-bottom: 0.75rem;
   padding: 0.4rem 0.8rem;
   background-color: var(--color-bg);
@@ -1920,7 +1669,7 @@ h3 {
   padding: 0.5rem 0.4rem;
   background-color: var(--color-bg);
   border: 1px solid var(--color-border);
-  border-radius: 4px;
+  border-radius: var(--radius-sm);
   color: var(--color-gold);
   text-decoration: none;
   font-size: 0.8rem;
@@ -1929,7 +1678,8 @@ h3 {
   min-height: 2rem;
 }
 
-.hop-to-links a:hover {
+.hop-to-links a:hover,
+.hop-to-links a:focus-visible {
   background-color: var(--color-gold);
   color: var(--color-black);
   border-color: var(--color-gold);
@@ -1946,7 +1696,7 @@ h3 {
   margin: 1.5rem 0 1rem;
   padding: 0.5rem 1rem;
   font-size: 0.95rem;
-  font-family: "Courier New", "Courier", monospace;
+  font-family: var(--font-heading);
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
@@ -1978,7 +1728,7 @@ h3 {
   background-color: var(--color-bg-card);
   border: 2px solid var(--color-border);
   padding: 2rem;
-  border-radius: 8px;
+  border-radius: var(--radius);
   text-decoration: none;
   transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
   text-align: center;
@@ -2003,7 +1753,7 @@ h3 {
   object-fit: contain;
   background-color: var(--color-bg-alt);
   border: 2px solid var(--color-gold);
-  border-radius: 8px;
+  border-radius: var(--radius);
   padding: 1rem;
   margin-bottom: 1rem;
 }
@@ -2038,7 +1788,7 @@ h3 {
   margin-top: 0.75rem;
   padding: 0.75rem;
   background-color: var(--color-bg);
-  border-radius: 0 0 8px 8px;
+  border-radius: 0 0 var(--radius) var(--radius);
   text-align: center;
 }
 
@@ -2057,7 +1807,7 @@ h3 {
   margin-top: 2rem;
   padding: 1.5rem;
   background-color: var(--color-bg-card);
-  border-radius: 8px;
+  border-radius: var(--radius);
   border: 1px solid var(--color-border);
 }
 
@@ -2080,7 +1830,7 @@ h3 {
   margin-top: 2rem;
   padding: 1.5rem;
   background-color: var(--color-bg-card);
-  border-radius: 8px;
+  border-radius: var(--radius);
   border: 1px solid var(--color-border);
 }
 
@@ -2112,7 +1862,7 @@ h3 {
   justify-content: space-between;
   align-items: center;
   padding: 0.4rem 0.5rem;
-  border-radius: 4px;
+  border-radius: var(--radius-sm);
   font-size: 0.85rem;
 }
 
@@ -2127,7 +1877,7 @@ h3 {
 .highscore-score {
   color: var(--color-gold);
   font-weight: bold;
-  font-family: "Courier New", "Courier", monospace;
+  font-family: var(--font-heading);
 }
 
 /* User Gallery Styles */
@@ -2135,7 +1885,7 @@ h3 {
   margin: 1.5rem 0;
   background-color: var(--color-bg-card);
   border: 1px solid var(--color-border);
-  border-radius: 8px;
+  border-radius: var(--radius);
   padding: 1.25rem;
 }
 
@@ -2153,14 +1903,15 @@ h3 {
   background-color: var(--color-bg);
   border: 2px solid var(--color-border);
   padding: 1rem;
-  border-radius: 8px;
+  border-radius: var(--radius);
   text-decoration: none;
   transition: transform 0.2s ease, border-color 0.2s ease;
   text-align: center;
   overflow: hidden;
 }
 
-.user-card:hover {
+.user-card:hover,
+.user-card:focus-visible {
   transform: translateY(-4px);
   border-color: var(--color-gold);
 }
@@ -2181,7 +1932,7 @@ h3 {
   color: var(--color-gold);
   background-color: var(--color-bg);
   padding: 0.4rem 0.6rem;
-  font-family: "Courier New", "Courier", monospace;
+  font-family: var(--font-heading);
   text-transform: uppercase;
   letter-spacing: 0.05em;
   width: 100%;
@@ -2193,7 +1944,7 @@ h3 {
 .leaderboard {
   background-color: var(--color-bg-card);
   border: 2px solid var(--color-border);
-  border-radius: 8px;
+  border-radius: var(--radius);
   overflow: hidden;
   margin: 2rem 0;
 }
@@ -2218,7 +1969,8 @@ h3 {
   transition: background-color 0.2s ease;
 }
 
-.leaderboard-row:hover {
+.leaderboard-row:hover,
+.leaderboard-row:focus-visible {
   background-color: var(--color-bg-alt);
 }
 
@@ -2306,7 +2058,7 @@ h3 {
 .trophy-bronze {
   display: inline-block;
   padding: 0.25rem 0.5rem;
-  border-radius: 4px;
+  border-radius: var(--radius-sm);
   font-weight: bold;
   min-width: 2rem;
   text-align: center;
@@ -2337,7 +2089,7 @@ h3 {
   justify-content: center;
   min-width: 2.5rem;
   padding: 0.2rem 0.4rem;
-  border-radius: 12px;
+  border-radius: var(--radius-lg);
   font-weight: 600;
   font-size: 0.85rem;
   text-align: center;
@@ -2353,14 +2105,14 @@ h3 {
   justify-content: center;
   min-width: 2.5rem;
   padding: 0.2rem 0.4rem;
-  border-radius: 12px;
+  border-radius: var(--radius-lg);
   font-weight: 600;
   font-size: 0.85rem;
   text-align: center;
   color: var(--color-green);
   background-color: rgba(51, 255, 51, 0.08);
   border: 1px solid rgba(51, 255, 51, 0.2);
-  font-family: "Courier New", "Courier", monospace;
+  font-family: var(--font-heading);
 }
 
 @media (max-width: 1100px) {
@@ -2406,6 +2158,10 @@ h3 {
   .player-link span {
     font-size: 0.75rem;
   }
+
+  .total-col {
+    display: none;
+  }
 }
 
 /* Resources Page Styles */
@@ -2419,12 +2175,13 @@ h3 {
 .resource-card {
   background-color: var(--color-bg-card);
   border: 1px solid var(--color-border);
-  border-radius: 8px;
+  border-radius: var(--radius);
   padding: 1.5rem;
   transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-.resource-card:hover {
+.resource-card:hover,
+.resource-card:focus-visible {
   transform: translateY(-4px);
   border-color: var(--color-gold);
   box-shadow: 0 4px 12px rgba(212, 175, 55, 0.2);
@@ -2438,7 +2195,7 @@ h3 {
   margin: 0 0 1.25rem;
   padding: 0.5rem 1rem;
   font-size: 1.1rem;
-  font-family: "Courier New", "Courier", monospace;
+  font-family: var(--font-heading);
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: var(--color-gold);
@@ -2458,7 +2215,7 @@ h3 {
   padding: 1rem;
   background-color: var(--color-bg-alt);
   border: 1px solid var(--color-border);
-  border-radius: 8px;
+  border-radius: var(--radius);
   text-decoration: none;
   transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
 }
@@ -2495,6 +2252,151 @@ h3 {
   .resource-card-wide {
     grid-column: 1;
   }
+}
+
+/* Rules & FAQ Page */
+.faq-section {
+  margin-bottom: 2rem;
+}
+
+.faq-section h2 {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-gold);
+  border-bottom: 2px solid var(--color-border);
+  padding-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.faq-section p {
+  line-height: 1.6;
+  margin-bottom: 0.75rem;
+}
+
+.faq-trophy-list,
+.faq-steps {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.faq-trophy-list {
+  list-style: none;
+}
+
+.faq-steps {
+  list-style: none;
+  counter-reset: faq-step;
+}
+
+.faq-steps li {
+  counter-increment: faq-step;
+}
+
+.faq-steps li::before {
+  content: counter(faq-step) ".";
+  font-family: var(--font-heading);
+  font-weight: bold;
+  color: var(--color-gold);
+  margin-right: 0.5rem;
+}
+
+.faq-trophy-list li,
+.faq-steps li {
+  padding: 0.5rem 0.75rem;
+  background-color: var(--color-bg-alt);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  line-height: 1.5;
+}
+
+.faq-timeline {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.faq-timeline-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem 1rem;
+  background-color: var(--color-bg-alt);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.faq-timeline-item:last-child {
+  border-bottom: none;
+}
+
+.faq-timeline-date {
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: var(--color-gold);
+  text-shadow: 1px 1px 0 var(--color-black);
+  min-width: 6rem;
+  flex-shrink: 0;
+}
+
+.faq-timeline-desc {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+}
+
+.faq-callout {
+  border-left: 3px solid var(--color-gold);
+  background-color: var(--color-bg-alt);
+  padding: 0.75rem 1rem;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  margin-top: 0.75rem;
+}
+
+.faq-callout p {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--color-text-muted);
+}
+
+.faq-discord-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1.25rem;
+  background-color: #5865F2;
+  border: 2px solid #4752C4;
+  border-radius: var(--radius);
+  color: #fff;
+  text-decoration: none;
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  margin-top: 0.5rem;
+}
+
+.faq-discord-btn:hover,
+.faq-discord-btn:focus-visible {
+  background-color: #4752C4;
+  transform: translateY(-2px);
+}
+
+.faq-discord-icon {
+  font-size: 1.25rem;
+}
+
+.faq-discord-text {
+  flex: 1;
+}
+
+.faq-discord-arrow {
+  font-size: 1.1rem;
 }
 
 /* Sidebar Divider */
@@ -2678,7 +2580,7 @@ h3 {
   gap: 1.5rem;
   background: radial-gradient(ellipse at top center, var(--color-bg) 0%, #0a0a0a 100%);
   border: 1px solid var(--color-bg-alt);
-  border-radius: 12px;
+  border-radius: var(--radius-lg);
   padding: 2rem 1.5rem;
   margin: 1.5rem 0;
 }
@@ -2700,7 +2602,7 @@ h3 {
   position: relative;
   padding: 1.5rem 1rem;
   margin-bottom: 1rem;
-  border-radius: 8px;
+  border-radius: var(--radius);
   background:
     radial-gradient(ellipse at top center, rgba(255, 255, 210, 0.12) 0%, transparent 60%),
     radial-gradient(ellipse at top center, rgba(255, 255, 180, 0.06) 0%, transparent 80%);
@@ -2742,7 +2644,7 @@ h3 {
   padding: 0.3rem 0.8rem;
   margin: 0.75rem 0;
   font-size: 0.75rem;
-  font-family: "Courier New", "Courier", monospace;
+  font-family: var(--font-heading);
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: var(--color-gold);
@@ -2790,7 +2692,7 @@ h3 {
   padding: 0.75rem;
   background-color: var(--color-bg-card);
   border: 1px solid var(--color-border);
-  border-radius: 8px;
+  border-radius: var(--radius);
 }
 
 .rss-title {
@@ -2826,7 +2728,7 @@ h3 {
   margin: 0 0 1rem;
   padding: 0.6rem 1rem;
   font-size: 1.3rem;
-  font-family: "Courier New", "Courier", monospace;
+  font-family: var(--font-heading);
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: var(--color-gold);
@@ -2849,7 +2751,7 @@ h3 {
   flex-shrink: 0;
   background-color: var(--color-bg-card);
   border: 1px solid var(--color-border);
-  border-radius: 8px;
+  border-radius: var(--radius);
   overflow: hidden;
 }
 
@@ -2962,7 +2864,7 @@ h3 {
   margin: 0 0 1rem;
   font-size: 1.5rem;
   color: var(--color-gold);
-  font-family: "Courier New", "Courier", monospace;
+  font-family: var(--font-heading);
   text-transform: uppercase;
   letter-spacing: 0.1em;
 }
@@ -2980,7 +2882,7 @@ h3 {
   background-color: var(--color-bg-alt);
   border: 1px solid var(--color-border);
   padding: 1rem;
-  border-radius: 8px;
+  border-radius: var(--radius);
   text-decoration: none;
   transition: transform 0.2s ease, border-color 0.2s ease;
   text-align: center;
@@ -2997,7 +2899,7 @@ h3 {
   max-width: 200px;
   aspect-ratio: 4 / 3;
   object-fit: cover;
-  border-radius: 4px;
+  border-radius: var(--radius-sm);
   border: 1px solid var(--color-border);
   margin-bottom: 0.75rem;
 }
@@ -3029,6 +2931,316 @@ h3 {
 .coming-soon-text {
   color: var(--color-text-dim);
   font-style: italic;
+}
+
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 1rem;
+  z-index: 100;
+  padding: 0.5rem 1rem;
+  background-color: var(--color-gold);
+  color: var(--color-black);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: var(--radius);
+}
+
+.skip-link:focus {
+  top: 0.5rem;
+}
+
+html {
+  scrollbar-color: var(--color-border) var(--color-bg);
+  scrollbar-width: thin;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: var(--radius-sm);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-border-hover);
+}
+
+@media (max-width: 800px) {
+  .header-inner {
+    position: relative;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .main-nav {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    right: 0;
+    top: calc(100% + 0.4rem);
+    min-width: 220px;
+    z-index: 20;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+  }
+
+  .nav-toggle:checked ~ .main-nav {
+    display: flex;
+  }
+
+  .main-nav-summary {
+    align-self: center;
+    font-size: 0.65rem;
+    padding: 0.3rem 0.7rem;
+    letter-spacing: 0.1em;
+  }
+
+  .logo-text {
+    font-size: 0.75rem;
+    padding: 0.2rem 0.55rem;
+  }
+
+  .logo-image {
+    height: 32px;
+  }
+
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .user-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .user-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .trophy-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .winner-item {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .game-header {
+    flex-direction: column;
+  }
+
+  .game-infobox {
+    width: 100%;
+    max-width: 350px;
+    margin: 0 auto;
+  }
+
+  .game-description h1 {
+    text-align: center;
+  }
+}
+
+@media (max-width: 700px) {
+  .hof-podium {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hof-card.hof-gold {
+    order: 1;
+  }
+
+  .hof-card.hof-silver {
+    order: 2;
+  }
+
+  .hof-card.hof-bronze {
+    order: 3;
+  }
+
+  .hof-card {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .hof-leaderboard .leaderboard-header,
+  .hof-leaderboard .leaderboard-row {
+    grid-template-columns: 40px 1fr 90px 40px 50px;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    padding: 0.75rem 0.5rem;
+  }
+
+  .hof-leaderboard .total-col {
+    display: none;
+  }
+
+  .hof-leaderboard .trophies-col {
+    gap: 0.25rem;
+    font-size: 0.75rem;
+  }
+
+  .hof-leaderboard .trophy-gold,
+  .hof-leaderboard .trophy-silver,
+  .hof-leaderboard .trophy-bronze {
+    padding: 0.15rem 0.3rem;
+    min-width: 18px;
+    font-size: 0.7rem;
+  }
+
+  .hof-leaderboard .player-avatar {
+    width: 28px;
+    height: 28px;
+  }
+
+  .hof-leaderboard .player-link {
+    gap: 0.4rem;
+  }
+
+  .hof-leaderboard .rank-col {
+    font-size: 0.8rem;
+  }
+
+  .hof-leaderboard .points-col {
+    font-size: 0.85rem;
+  }
+
+  .ctc-stage {
+    grid-template-columns: 1fr;
+    padding: 1.25rem 1rem;
+  }
+
+  .ctc-poster {
+    width: 200px;
+  }
+}
+
+@media (max-width: 600px) {
+  .main-nav a {
+    width: 100%;
+    padding: 0.5rem 0.8rem;
+    font-size: 0.75rem;
+    border-right: none;
+    border-bottom: none;
+    text-align: left;
+  }
+
+  .main-nav a + a {
+    border-top: 1px solid var(--color-border);
+  }
+
+  .site-header {
+    padding: 0.5rem 0.75rem;
+    top: 0.25rem;
+    margin: 0.35rem 0.5rem;
+  }
+
+  .site-main {
+    padding-inline: 0.75rem;
+  }
+
+  .hero {
+    padding: 1.5rem 1.25rem;
+  }
+
+  .content,
+  .sidebar {
+    padding: 1.25rem;
+  }
+
+  .discord-banner {
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+    gap: 0.5rem;
+  }
+
+  .user-profile {
+    padding: 1.5rem;
+  }
+
+  .trophy-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .trophy-card {
+    min-width: unset;
+    width: 100%;
+  }
+
+  .trophy-card-image {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    aspect-ratio: 1;
+  }
+
+  .trophy-image-large {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    aspect-ratio: 1;
+  }
+
+  .ctc-title {
+    font-size: 1.3rem;
+    text-shadow:
+      2px 0 0 #c06800,
+      0 2px 0 #c06800,
+      2px 2px 0 #904800,
+      4px 4px 0 #502800;
+  }
+
+  .ctc-hero-inner {
+    padding: 1.5rem 1rem;
+  }
+
+  .ctc-tagline {
+    font-size: 0.45rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .year-calendar-grid {
+    grid-template-columns: 1fr;
+    max-width: 280px;
+    margin: 0 auto;
+  }
+
+  .month-card {
+    max-width: 100%;
+  }
+
+  .hop-to-links {
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 320px;
+  }
+
+  .hop-to-links a {
+    font-size: 0.75rem;
+    padding: 0.45rem 0.3rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 @media print {
@@ -3067,6 +3279,15 @@ h3 {
   .leaderboard-row {
     page-break-inside: avoid;
     break-inside: avoid;
+  }
+  h1, h2, h3,
+  .month-name,
+  .hop-to-label,
+  .hop-to-links a {
+    color: #000 !important;
+  }
+  .layout {
+    grid-template-columns: 1fr;
   }
 }
 
