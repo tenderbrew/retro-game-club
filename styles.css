@@ -1160,12 +1160,7 @@ h3 {
   }
 }
 
-@media (max-width: 450px) {
-  .hof-leaderboard .leaderboard-header,
-  .hof-leaderboard .leaderboard-row {
-    grid-template-columns: 32px 1fr 75px 35px 45px;
-  }
-}
+
 
 .year-calendar {
   margin-top: 2rem;
@@ -2015,24 +2010,18 @@ h3 {
 
 .trophy-card h3 {
   margin: 0 0 0.5rem;
-  font-size: 1.1rem;
-  color: var(--color-text);
-  text-transform: uppercase;
-}
-
-.trophy-card .trophy-tier {
-  margin: 0;
-}
-
-.trophy-card h3 {
-  margin: 0 0 0.5rem;
   font-size: 0.95rem;
   color: var(--color-text);
+  text-transform: uppercase;
   min-height: 2.4em;
   display: flex;
   align-items: center;
   justify-content: center;
   line-height: 1.2;
+}
+
+.trophy-card .trophy-tier {
+  margin: 0;
 }
 
 /* Trophy card wrapper for game pages - includes winners below */
@@ -2388,6 +2377,11 @@ h3 {
 }
 
 @media (max-width: 450px) {
+  .hof-leaderboard .leaderboard-header,
+  .hof-leaderboard .leaderboard-row {
+    grid-template-columns: 32px 1fr 75px 35px 45px;
+  }
+
   .leaderboard-header,
   .leaderboard-row {
     grid-template-columns: 32px 1fr 80px 45px;
