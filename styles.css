@@ -29,6 +29,10 @@
   box-sizing: border-box;
 }
 
+html {
+  overflow-x: hidden;
+}
+
 body {
   margin: 0;
   font-family: var(--font-body);
@@ -36,6 +40,9 @@ body {
   line-height: 1.6;
   background-color: var(--color-bg);
   color: var(--color-text);
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
 }
 
 /* Gold heading accent styles */
@@ -402,16 +409,35 @@ a:hover {
   display: grid;
   grid-template-columns: 2fr 1fr;
   gap: 2rem;
-  align-items: stretch;
+  align-items: start;
   margin-bottom: 2rem;
 }
 
+.layout > .content {
+  grid-column: 1;
+}
+
+.layout > .sidebar {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+}
+
 .content,
-.sidebar {
+.sidebar-section {
   background-color: var(--color-bg-card);
   border-radius: var(--radius);
   padding: 1.5rem;
   border: 1px solid var(--color-border);
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.site-main > .content + .content {
+  margin-top: 2rem;
 }
 
 /* Discord Banner */
@@ -569,6 +595,51 @@ h3 {
   background-color: var(--color-bg-card);
 }
 
+/* Club Stats */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.stat-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1.25rem 1rem;
+  background-color: var(--color-bg-alt);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+}
+
+.stat-value {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: var(--color-gold);
+  text-shadow: 1px 1px 0 var(--color-black);
+  margin-bottom: 0.25rem;
+}
+
+.stat-badge {
+  font-family: var(--font-heading);
+  font-size: 0.65rem;
+  color: var(--color-gold);
+  background-color: rgba(212, 175, 55, 0.1);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: 999px;
+  padding: 0.15rem 0.6rem;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.35rem;
+}
+
+.stat-label {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  line-height: 1.3;
+}
+
 /* Top Players Podium */
 .top-players {
   margin: 0 0 1.5rem 0;
@@ -611,6 +682,7 @@ h3 {
 .top-players-list {
   padding: 0;
   margin: 0;
+  overflow-x: auto;
 }
 
 .top-players-list > div:not(:last-child) {
@@ -1061,7 +1133,6 @@ h3 {
   display: flex;
   flex-direction: column;
   border: 3px double var(--color-gold);
-  border-top: none;
   overflow: hidden;
   margin-bottom: 1.5rem;
 }
@@ -2974,6 +3045,72 @@ html {
 }
 
 @media (max-width: 800px) {
+  .site-main.container {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
+  .site-header {
+    margin: 0 0.5rem;
+    top: 0;
+  }
+
+  .hero {
+    padding: 1.25rem 1rem;
+  }
+
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .layout > .content,
+  .layout > .sidebar {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .top-players-header {
+    display: none;
+  }
+
+  .top-player-item {
+    gap: 0.4rem;
+    padding: 0.6rem 0.5rem;
+  }
+
+  .top-player-rank {
+    min-width: 1.5rem;
+    font-size: 0.9rem;
+  }
+
+  .top-player-avatar {
+    width: 32px;
+    height: 32px;
+  }
+
+  .top-player-name {
+    font-size: 0.9rem;
+  }
+
+  .top-player-trophies {
+    gap: 0.25rem;
+  }
+
+  .top-player-total,
+  .top-player-points {
+    min-width: 2rem;
+    font-size: 0.8rem;
+    padding: 0.15rem 0.3rem;
+  }
+
+  .card-list {
+    grid-template-columns: 1fr;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .header-inner {
     position: relative;
     flex-direction: row;
@@ -3142,20 +3279,23 @@ html {
 
   .site-header {
     padding: 0.5rem 0.75rem;
-    top: 0.25rem;
-    margin: 0.35rem 0.5rem;
   }
 
-  .site-main {
-    padding-inline: 0.75rem;
+  .hero-text h1 {
+    font-size: 1.4rem;
   }
 
-  .hero {
-    padding: 1.5rem 1.25rem;
+  .hero-text .speech-bubble {
+    font-size: 1.1rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .hero-text .btn-primary {
+    font-size: 1.1rem;
   }
 
   .content,
-  .sidebar {
+  .sidebar-section {
     padding: 1.25rem;
   }
 
@@ -3211,6 +3351,24 @@ html {
 }
 
 @media (max-width: 500px) {
+  .site-main.container {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
+  .card {
+    padding: 0.75rem;
+  }
+
+  .content,
+  .sidebar-section {
+    padding: 1rem;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
   .year-calendar-grid {
     grid-template-columns: 1fr;
     max-width: 280px;
