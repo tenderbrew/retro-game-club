@@ -42,7 +42,7 @@
           <span class="main-nav-summary-icon">v</span>
         </label>
         <nav class="main-nav" aria-label="Primary">
-          <a href="../index.html">Home</a>
+          <a href="../rules.html">Rules &amp; FAQ</a>
           <a href="../game-of-the-month.html">Past Games</a>
           <a href="../resources.html">Resources</a>
           <a href="../gallery.html">Gallery</a>
@@ -56,16 +56,29 @@
 
     <main class="site-main container" id="main-content">
       <section class="content">
+        <nav class="game-nav">
+          <a href="2025-november-brave-fencer-musashi.html" class="game-nav-link nav-prev">
+            <span class="game-nav-arrow">&#8249;</span>
+            <span class="game-nav-label"><span class="game-nav-small">Previous</span><span class="game-nav-title">Brave Fencer Musashi</span></span>
+          </a>
+          <a href="2026-january-mega-man-legends.html" class="game-nav-link nav-next">
+            <span class="game-nav-label"><span class="game-nav-small">Next</span><span class="game-nav-title">Mega Man Legends</span></span>
+            <span class="game-nav-arrow">&#8250;</span>
+          </a>
+        </nav>
+
         <div class="game-header">
           <div class="game-description">
             <h1>December 2025 – NiGHTS &amp; Christmas NiGHTS</h1>
+
+
             <p>
               A dreamlike flying action game from Sonic Team where teenagers Elliot and Claris enter the world of Nightopia and merge with NiGHTS to battle Wizeman. Features fluid 3D flight along 2D paths through whimsical, real-time rendered environments. You can fly through waterfalls, soar through tree branches, and bobsled down icy slopes. The flight mechanics and freedom were revolutionary for the time, creating a captivating score-chasing experience.
             </p>
           </div>
           <div class="game-infobox">
             <a href="../trophies/trophy-nights-beatgame.html">
-              <img src="../images/covers/Christmas NiGHTS into Dreams... (USA).png" alt="NiGHTS into dreams box art" class="game-infobox-image" loading="lazy" />
+              <img src="../images/covers/Christmas NiGHTS into Dreams... (USA).png" alt="NiGHTS into dreams box art" class="game-infobox-image" />
             </a>
             <table class="game-infobox-table">
               <tr>
@@ -114,13 +127,21 @@
           </div>
         </div>
 
+        <div class="game-history">
+          <h2>About This Game</h2>
+          <div class="game-history-text">
+            <p>NiGHTS into Dreams was developed by Sonic Team and released for the Sega Saturn in 1996. Directed by Takashi Iizuka and produced by Yuji Naka, the game was born from the team’s desire to create a flying experience that captured the freedom and wonder of lucid dreaming. Players control NiGHTS, a jester-like “Nightmaren” who has rebelled against the evil Wizeman, soaring through dreamscapes while collecting orbs and performing aerial acrobatics. The game was designed around the Saturn’s analog controller—the 3D Control Pad was bundled with NiGHTS and became the console’s signature peripheral.</p>
+            <p>Christmas NiGHTS into Dreams was a separate promotional disc distributed through magazines, demo kiosks, and retail bundles during the 1996 holiday season. It featured a remixed version of the Spring Valley stage with Christmas theming that changed based on the Saturn’s internal clock—playing on December 25th triggered unique events, and other holidays throughout the year each had their own surprises. Together, NiGHTS and Christmas NiGHTS represent some of the Saturn’s finest moments, showcasing a level of artistic vision and technical achievement that helped define Sega’s identity during the 32-bit era.</p>
+          </div>
+        </div>
+
         <div class="club-achievements">
           <h2>Club Achievements</h2>
 
           <div class="trophy-grid">
             <div class="trophy-card-wrapper">
               <a href="../trophies/trophy-nights-beatgame.html" class="trophy-card">
-                <img src="../images/trophies/trophy-nights-beatgame.png" alt="Beat the Game Trophy" class="trophy-card-image" loading="lazy" />
+                <img src="../images/trophies/trophy-nights-beatgame.png" alt="Beat the Game Trophy" class="trophy-card-image" />
                 <h3>Beat the Game</h3>
                 <p class="trophy-tier gold">Gold Trophy</p>
               </a>
@@ -141,7 +162,43 @@
           </div>
         </div>
 
-        <p><a href="../index.html">Back to home</a></p>
+
+        
+        <div class="screenshot-gallery">
+          <h2>Screenshots</h2>
+          <div class="screenshot-grid">
+            <div class="screenshot-item" onclick="openLightbox(this)">
+              <img src="../images/screenshots/nights-1.png" alt="NiGHTS into Dreams gameplay" />
+            </div>
+            <div class="screenshot-item" onclick="openLightbox(this)">
+              <img src="../images/screenshots/nights-2.png" alt="NiGHTS into Dreams flying" />
+            </div>
+            <div class="screenshot-item" onclick="openLightbox(this)">
+              <img src="../images/screenshots/nights-3.png" alt="NiGHTS into Dreams screenshot" />
+            </div>
+            <div class="screenshot-item" onclick="openLightbox(this)">
+              <img src="../images/screenshots/nights-4.png" alt="Christmas NiGHTS gameplay" />
+            </div>
+          </div>
+          <p class="screenshot-credit">Screenshots via <a href="https://gamesdb.launchbox-app.com/" target="_blank" rel="noopener noreferrer">LaunchBox Games Database</a></p>
+        </div>
+
+        <div class="screenshot-lightbox" id="screenshotLightbox" onclick="closeLightbox()">
+          <img id="lightboxImg" src="" alt="Screenshot enlarged" />
+        </div>
+        <script>
+          function openLightbox(el) {
+            var src = el.querySelector('img').src;
+            document.getElementById('lightboxImg').src = src;
+            document.getElementById('screenshotLightbox').classList.add('active');
+          }
+          function closeLightbox() {
+            document.getElementById('screenshotLightbox').classList.remove('active');
+          }
+          document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeLightbox();
+          });
+        </script>
       </section>
     </main>
 

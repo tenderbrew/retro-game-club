@@ -49,7 +49,6 @@ body {
 .content > h2,
 .content > h1,
 .top-players-container h2,
-.year-calendar h2,
 .sidebar h2,
 .club-achievements h2,
 .gallery-section h2,
@@ -63,15 +62,13 @@ body {
 .resource-title,
 .game-description h1,
 .user-gallery-contributions h2 {
-  border: 4px double var(--color-gold);
-  text-shadow:
-    2px 2px 0 var(--color-black),
-    -1px -1px 0 var(--color-black),
-    1px -1px 0 var(--color-black),
-    -1px 1px 0 var(--color-black);
-  box-shadow:
-    inset 0 0 10px rgba(212, 175, 55, 0.2),
-    0 0 10px rgba(212, 175, 55, 0.3);
+  border: none;
+  border-left: 3px solid var(--color-gold);
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), transparent);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  box-shadow: none;
+  text-shadow: 1px 1px 0 var(--color-black);
+  text-align: left;
 }
 
 a {
@@ -148,19 +145,20 @@ a:hover {
   text-transform: uppercase;
   letter-spacing: 0.1em;
   text-shadow: 1px 1px 0 var(--color-black);
-  border: 2px double var(--color-gold);
+  border: none;
+  border-left: 3px solid var(--color-gold);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
   padding: 0.3rem 0.8rem;
-  background-color: var(--color-bg);
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), transparent);
+  white-space: nowrap;
 }
 
 .main-nav {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  font-size: 0.85rem;
-  background-color: var(--color-bg);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius);
-  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  font-size: 0.8rem;
+  justify-content: center;
 }
 
 .nav-toggle {
@@ -189,10 +187,12 @@ a:hover {
   transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
 
-.main-nav-summary:hover {
-  background-color: var(--color-gold);
-  color: var(--color-black);
-  border-color: var(--color-gold);
+@media (hover: hover) {
+  .main-nav-summary:hover {
+    background-color: var(--color-gold);
+    color: var(--color-black);
+    border-color: var(--color-gold);
+  }
 }
 
 .main-nav-summary::-webkit-details-marker {
@@ -217,31 +217,30 @@ a:hover {
 }
 
 .main-nav a {
-  position: relative;
-  padding: 0.5rem 0.9rem;
-  border-right: 1px solid var(--color-border);
-  border-bottom: 1px solid var(--color-border);
-  transition: background-color 0.2s ease, color 0.2s ease;
-  text-align: center;
-}
-
-.main-nav a:nth-child(4n) {
-  border-right: none;
-}
-
-.main-nav a:nth-last-child(-n+4) {
-  border-bottom: none;
+  padding: 0.35rem 0.75rem;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  background-color: var(--color-bg);
+  color: var(--color-gold);
+  font-family: var(--font-heading);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
 
 .main-nav a:hover {
   background-color: var(--color-gold);
   color: var(--color-black);
+  border-color: var(--color-gold);
   text-decoration: none;
 }
 
 .main-nav a:focus-visible {
   background-color: var(--color-gold);
   color: var(--color-black);
+  border-color: var(--color-gold);
   text-decoration: none;
 }
 
@@ -253,9 +252,16 @@ a:hover {
 
   .main-nav {
     display: grid;
+    grid-template-columns: repeat(4, 1fr);
     position: static;
   }
 
+  .main-nav a {
+    white-space: nowrap;
+    padding: 0.3rem 0.5rem;
+    font-size: 0.6rem;
+    text-align: center;
+  }
 }
 
 
@@ -276,31 +282,12 @@ a:hover {
   display: block;
   position: relative;
   margin: 0 auto 1.5rem;
-  max-width: 500px;
+  max-width: 640px;
   background-color: var(--color-bg);
   border-radius: 0.75rem;
   padding: 0.75rem;
   border: 1px solid var(--color-border);
   transition: border-color 0.2s ease, transform 0.2s ease;
-}
-
-.hero-banner::after {
-  content: '';
-  position: absolute;
-  top: 0.75rem;
-  left: 0.75rem;
-  right: 0.75rem;
-  bottom: 0.75rem;
-  background: repeating-linear-gradient(
-    to bottom,
-    transparent 0px,
-    transparent 2px,
-    rgba(0, 0, 0, 0.15) 2px,
-    rgba(0, 0, 0, 0.15) 4px
-  );
-  border-radius: 0.5rem;
-  pointer-events: none;
-  z-index: 1;
 }
 
 .hero-banner:hover {
@@ -313,11 +300,25 @@ a:hover {
   height: auto;
   border-radius: 0.5rem;
   display: block;
-  filter: contrast(1.1) saturate(1.2) brightness(0.95);
+}
+
+.hero-banner-label {
+  display: block;
+  text-align: center;
+  font-size: 0.8rem;
+  font-family: var(--font-heading);
+  color: var(--color-text-dim);
+  letter-spacing: 0.05em;
+  margin-top: 0.5rem;
+  text-decoration: none;
+}
+
+.hero-banner:hover .hero-banner-label {
+  color: var(--color-gold);
 }
 
 .hero-text h1 {
-  margin: 0 0 0.5rem;
+  margin: 0 0 1rem;
   font-size: clamp(1.8rem, 3vw, 2.4rem);
   font-family: var(--font-heading);
   font-weight: bold;
@@ -335,6 +336,17 @@ a:hover {
   text-transform: uppercase;
   -webkit-font-smoothing: none;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.hero-subtitle {
+  display: block;
+  font-size: 0.45em;
+  color: var(--color-text-muted);
+  font-weight: normal;
+  letter-spacing: 0.15em;
+  margin-top: 0.3rem;
+  padding-left: 5.5em;
+  text-shadow: none;
 }
 
 .hero-text p {
@@ -376,6 +388,44 @@ a:hover {
   padding: 0;
   color: var(--color-gold);
   text-decoration: underline;
+}
+
+.stat-strip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.4rem 0;
+  padding: 0.75rem 1rem;
+  margin-bottom: 2rem;
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.stat-strip strong {
+  color: var(--color-gold);
+  font-family: var(--font-heading);
+}
+
+.stat-strip-badge {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: bold;
+  font-family: var(--font-heading);
+  color: #c084fc;
+  background-color: rgba(192, 132, 252, 0.15);
+  border: 1px solid #c084fc;
+  border-radius: 1rem;
+  padding: 0.1rem 0.4rem;
+  margin-left: 0.2rem;
+  vertical-align: middle;
+}
+
+.stat-strip-divider {
+  margin: 0 0.6rem;
+  color: var(--color-border);
 }
 
 .btn-primary {
@@ -494,9 +544,7 @@ h2 {
 }
 
 .content > h2 {
-  text-align: center;
   color: var(--color-gold);
-  background-color: var(--color-bg);
   margin: 1.5rem 0 1rem 0;
   padding: 0.6rem 1rem;
   font-size: 1.1rem;
@@ -509,10 +557,23 @@ h2 {
   margin-top: 0;
 }
 
+h2.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  background: var(--color-bg);
+  color: var(--color-text-muted);
+  border: 1px solid var(--color-border);
+  border-left: none;
+  border-radius: var(--radius-sm);
+  padding: 0.4rem 1rem;
+  font-size: 0.85rem;
+  text-shadow: none;
+  box-shadow: none;
+}
+
 .content > h1 {
-  text-align: center;
   color: var(--color-gold);
-  background-color: var(--color-bg);
   margin: 0 0 1.5rem 0;
   padding: 0.75rem 1rem;
   font-size: 1.4rem;
@@ -530,7 +591,7 @@ h3 {
   padding: 0;
   margin: 0 0 2rem;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
 }
 
@@ -551,25 +612,25 @@ h3 {
 }
 
 .card h3 {
-  margin: 0;
-  text-align: center;
-  background-color: var(--color-bg);
+  margin: 0.5rem;
+  margin-top: 0;
+  text-align: left;
+  background: var(--color-bg);
   padding: 0.5rem 0.75rem;
   font-size: 0.75rem;
   font-family: var(--font-heading);
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  width: 100%;
-  border: 2px double var(--color-gold);
+  border: none;
+  border-radius: var(--radius-sm);
+  box-shadow: none;
+  text-shadow: none;
 }
 
 .card h3 a {
-  color: var(--color-gold);
+  color: var(--color-text-muted);
   text-decoration: none;
   display: block;
-  text-shadow:
-    1px 1px 0 var(--color-black),
-    -1px -1px 0 var(--color-black);
 }
 
 .card h3 a:hover {
@@ -585,13 +646,37 @@ h3 {
   margin-bottom: 0;
 }
 
+.card > a:first-child {
+  position: relative;
+  display: block;
+}
+
+.card > a:first-child::after {
+  content: '';
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  right: 6px;
+  bottom: calc(1rem + 6px);
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.15) 2px,
+    rgba(0, 0, 0, 0.15) 4px
+  );
+  pointer-events: none;
+  border-radius: 0.15rem;
+}
+
 .card-image {
   width: 100%;
   aspect-ratio: 4 / 3;
   object-fit: cover;
   margin: 0 auto 1rem;
   display: block;
-  border: 1px solid var(--color-border-hover);
+  border: 6px solid var(--color-black);
+  border-radius: 0.25rem;
   background-color: var(--color-bg-card);
 }
 
@@ -650,15 +735,13 @@ h3 {
 }
 
 .top-players-container h2 {
-  text-align: center;
-  color: var(--color-gold);
-  background-color: var(--color-bg);
   margin: 0 0 1.25rem 0;
-  padding: 0.75rem 1rem;
-  font-size: 1.2rem;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.95rem;
   font-family: var(--font-heading);
   text-transform: uppercase;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.1em;
+  color: var(--color-gold);
 }
 
 .top-players-link {
@@ -777,14 +860,13 @@ h3 {
 
 /* Hall of Fame Champions Section */
 .hof-champions {
-  background-color: var(--color-bg);
-  border: 4px double var(--color-gold);
-  border-radius: var(--radius);
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.08), transparent);
+  border: none;
+  border-left: 3px solid var(--color-gold);
+  border-radius: 0 var(--radius) var(--radius) 0;
   padding: 2rem 1.5rem;
   margin-bottom: 2rem;
-  box-shadow:
-    inset 0 0 30px rgba(212, 175, 55, 0.1),
-    0 0 20px rgba(212, 175, 55, 0.2);
+  box-shadow: none;
 }
 
 .hof-podium {
@@ -998,65 +1080,83 @@ h3 {
 
 .hof-leaderboard .leaderboard-header,
 .hof-leaderboard .leaderboard-row {
-  grid-template-columns: 80px 1fr 180px 80px 80px;
+  grid-template-columns: 80px 1fr 180px 80px;
 }
 
 
-.year-calendar {
-  margin-top: 2rem;
-  background-color: var(--color-bg-card);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius);
-  padding: 1.25rem;
+.month-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  margin-bottom: 2rem;
 }
 
-.year-calendar h2 {
-  text-align: center;
-  color: var(--color-gold);
-  background-color: var(--color-bg);
-  margin: 0 0 1rem 0;
-  padding: 0.6rem 1rem;
-  font-size: 1.3rem;
+.content > .calendar-year {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  color: var(--color-text-muted);
   font-family: var(--font-heading);
   text-transform: uppercase;
-  letter-spacing: 0.15em;
+  border: none;
+  border-left: none;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  padding: 0.35rem 0.9rem 0.35rem 0.65rem;
+  margin: 2rem 0 1.25rem;
+  box-shadow: none;
+  text-shadow: none;
 }
 
-.year-calendar-grid {
-  margin-top: 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-  gap: 1rem;
-  justify-items: center;
+.calendar-year:first-of-type {
+  margin-top: 0.5rem;
+}
+
+.calendar-year-icon {
+  font-size: 1rem;
+  line-height: 1;
 }
 
 .month-card {
-  background-color: var(--color-bg);
-  border: 2px solid var(--color-border);
+  background-color: var(--color-bg-card);
+  border: 1px solid var(--color-border);
   border-radius: var(--radius);
   padding: 0;
-  max-width: 220px;
   width: 100%;
   overflow: hidden;
-  transition: transform 0.2s ease, border-color 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  display: flex;
+  flex-direction: column;
 }
 
 .month-card:hover,
 .month-card:focus-visible {
   transform: translateY(-4px);
   border-color: var(--color-gold);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .month-boxart {
   width: 100%;
-  height: 200px;
-  object-fit: contain;
-  margin: 0;
+  aspect-ratio: 1;
+  object-fit: cover;
   display: block;
   border: none;
   border-bottom: 1px solid var(--color-border);
-  background-color: var(--color-bg-card);
-  padding: 0.5rem;
+}
+
+.month-info {
+  background-color: var(--color-bg);
+  padding: 0.6rem 0.75rem;
+  border-radius: var(--radius-sm);
+  margin: 0.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .month-name {
@@ -1065,29 +1165,24 @@ h3 {
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--color-gold);
-  background-color: var(--color-bg);
-  padding: 0.4rem 0.75rem;
-  margin: 0;
+  margin: 0 0 0.25rem;
   text-align: center;
   font-family: var(--font-heading);
-  border-top: 2px solid var(--color-gold);
-  border-bottom: 2px solid var(--color-gold);
   text-shadow: 1px 1px 0 var(--color-black);
 }
 
 .month-game {
   display: block;
   font-size: 0.9rem;
-  padding: 0.5rem 0.75rem 0.25rem;
   text-align: center;
   line-height: 1.3;
+  margin-bottom: 0.15rem;
 }
 
 .month-platform {
   font-size: 0.75rem;
   color: var(--color-text-dim);
   text-align: center;
-  padding: 0 0.75rem 0.75rem;
 }
 
 .sidebar ul {
@@ -1100,40 +1195,44 @@ h3 {
 }
 
 .sidebar h2 {
-  text-align: center;
-  color: var(--color-gold);
-  background-color: var(--color-bg);
   margin: 0 0 1rem 0;
-  padding: 0.6rem 1rem;
-  font-size: 1rem;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.95rem;
   font-family: var(--font-heading);
   text-transform: uppercase;
   letter-spacing: 0.1em;
+  color: var(--color-gold);
 }
 
 .calendar-header {
-  background-color: var(--color-bg);
-  color: var(--color-gold);
-  padding: 0.6rem 0.75rem;
-  border: 3px double var(--color-gold);
-  border-bottom: none;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  margin-bottom: 0.75rem;
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), transparent);
+  border-left: 3px solid var(--color-gold);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+
+.calendar-emoji {
+  font-size: 1.3rem;
+  line-height: 1;
 }
 
 .calendar-month {
   font-weight: bold;
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-family: var(--font-heading);
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  text-shadow: 1px 1px 0 var(--color-black);
+  color: var(--color-gold);
 }
 
 .date-list {
   display: flex;
   flex-direction: column;
-  border: 3px double var(--color-gold);
-  overflow: hidden;
+  gap: 0.5rem;
   margin-bottom: 1.5rem;
 }
 
@@ -1141,9 +1240,9 @@ h3 {
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  padding: 0.75rem;
-  background-color: var(--color-bg-card);
-  border-bottom: 1px solid var(--color-border);
+  padding: 0.6rem 0.75rem;
+  background-color: var(--color-bg);
+  border-radius: var(--radius-sm);
 }
 
 .date-item:last-child {
@@ -1151,21 +1250,46 @@ h3 {
 }
 
 .date-box {
-  background-color: var(--color-bg);
-  border: 2px double var(--color-gold);
   flex-shrink: 0;
-  min-width: 5.5rem;
-  padding: 0.4rem 0.5rem;
-  text-align: center;
-  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  background-color: rgba(212, 175, 55, 0.08);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  border-radius: var(--radius-sm);
+  padding: 0.3rem 0.5rem;
+  min-width: 4.5rem;
+  justify-content: center;
 }
 
-.date-days {
+.date-start,
+.date-end {
   font-weight: bold;
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-family: var(--font-heading);
   color: var(--color-gold);
-  text-shadow: 1px 1px 0 var(--color-black);
+  min-width: 1.4rem;
+  text-align: center;
+}
+
+.date-sep {
+  width: 0.6rem;
+  height: 1px;
+  background-color: var(--color-gold);
+  opacity: 0.5;
+}
+
+.event-date-box {
+  min-width: auto;
+  padding: 0.3rem 0.6rem;
+}
+
+.event-date {
+  font-weight: bold;
+  font-size: 0.85rem;
+  font-family: var(--font-heading);
+  color: var(--color-gold);
+  white-space: nowrap;
 }
 
 .date-description {
@@ -1173,6 +1297,11 @@ h3 {
   color: var(--color-text-muted);
   line-height: 1.4;
   flex: 1;
+}
+
+.discord-inline {
+  text-decoration: none;
+  font-weight: bold;
 }
 
 .site-footer {
@@ -1223,7 +1352,6 @@ h3 {
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: var(--color-gold);
-  background-color: var(--color-bg);
 }
 
 .achievement-list {
@@ -1256,14 +1384,22 @@ h3 {
 
 /* Gallery Section */
 .gallery-section h2 {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
   margin: 1.5rem 0 1rem;
-  padding: 0.5rem 1rem;
-  font-size: 1.1rem;
+  padding: 0.35rem 0.9rem 0.35rem 0.65rem;
+  font-size: 0.8rem;
   font-family: var(--font-heading);
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: var(--color-gold);
-  background-color: var(--color-bg);
+  color: var(--color-text-muted);
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-left: none;
+  border-radius: 999px;
+  box-shadow: none;
+  text-shadow: none;
 }
 
 .gallery-section:first-of-type h2 {
@@ -1403,7 +1539,6 @@ h3 {
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: var(--color-gold);
-  background-color: var(--color-bg);
 }
 
 .user-slogan {
@@ -1452,7 +1587,6 @@ h3 {
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: var(--color-gold);
-  background-color: var(--color-bg);
 }
 
 .trophy-empty {
@@ -1460,6 +1594,71 @@ h3 {
   padding: 2rem;
   color: var(--color-text-subtle);
   font-style: italic;
+}
+
+/* ============================================
+   Game Page — Prev / Next Navigation
+   ============================================ */
+.game-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0.5rem 0 1.5rem;
+  gap: 1rem;
+}
+
+.game-nav-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: var(--color-text-muted);
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background-color: var(--color-bg-card);
+  transition: border-color 0.2s ease, color 0.2s ease, background-color 0.2s ease;
+  max-width: 45%;
+}
+
+.game-nav-link:hover {
+  border-color: var(--color-gold);
+  color: var(--color-gold);
+  background-color: rgba(212, 175, 55, 0.05);
+}
+
+.game-nav-link.nav-prev {
+  margin-right: auto;
+}
+
+.game-nav-link.nav-next {
+  margin-left: auto;
+  text-align: right;
+}
+
+.game-nav-arrow {
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.game-nav-label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.game-nav-small {
+  font-size: 0.6rem;
+  color: var(--color-text-dim);
+  letter-spacing: 0.1em;
+}
+
+.game-nav-title {
+  line-height: 1.2;
 }
 
 .trophy-grid {
@@ -1547,7 +1746,6 @@ h3 {
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: var(--color-gold);
-  background-color: var(--color-bg);
 }
 
 .trophy-game {
@@ -1590,7 +1788,6 @@ h3 {
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: var(--color-gold);
-  background-color: var(--color-bg);
 }
 
 .trophy-description p {
@@ -1621,7 +1818,6 @@ h3 {
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: var(--color-gold);
-  background-color: var(--color-bg);
 }
 
 .winner-list {
@@ -1692,7 +1888,6 @@ h3 {
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: var(--color-gold);
-  background-color: var(--color-bg);
 }
 
 .trophy-related p {
@@ -1720,16 +1915,19 @@ h3 {
   font-family: var(--font-heading);
   margin-bottom: 0.75rem;
   padding: 0.4rem 0.8rem;
-  background-color: var(--color-bg);
-  border: 2px double var(--color-gold);
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), transparent);
+  border: none;
+  border-left: 3px solid var(--color-gold);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
   text-shadow: 1px 1px 0 var(--color-black);
 }
 
 .hop-to-links {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 0.5rem;
-  max-width: 400px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  justify-content: center;
+  max-width: 600px;
   margin: 0 auto;
 }
 
@@ -1756,41 +1954,271 @@ h3 {
   border-color: var(--color-gold);
 }
 
-.trophy-gallery {
-  margin: 1.5rem 0;
-}
+/* ============================================
+   Trophy Room — Gallery Page Redesign
+   ============================================ */
 
-.trophy-gallery h2 {
+.trophy-room-subtitle {
   text-align: center;
-  color: var(--color-gold);
-  background-color: var(--color-bg);
-  margin: 1.5rem 0 1rem;
-  padding: 0.5rem 1rem;
-  font-size: 0.95rem;
-  font-family: var(--font-heading);
-  text-transform: uppercase;
+  color: var(--color-text-muted);
+  font-style: italic;
+  font-size: 1rem;
+  margin: -0.5rem 0 1.5rem;
   letter-spacing: 0.05em;
 }
 
-.trophy-gallery h2:first-child {
-  margin-top: 0;
+.trophy-gallery {
+  margin: 1.5rem 0;
+  padding: 1.5rem;
+  background: linear-gradient(180deg, rgba(20, 18, 14, 0.6) 0%, rgba(15, 14, 12, 0.3) 100%);
+  border-radius: var(--radius);
+  border: 1px solid rgba(180, 140, 60, 0.08);
 }
 
-/* Smaller trophy cards for gallery page */
+/* --- Trophy Grid — continuous wall --- */
 .trophy-gallery .trophy-grid {
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
 }
 
-.trophy-gallery .trophy-card {
-  padding: 1rem;
-  min-width: unset;
+/* --- Trophy Plaque --- */
+.trophy-gallery .trophy-grid {
+  align-items: stretch;
 }
 
-.trophy-gallery .trophy-card-image {
-  width: 150px;
-  height: 150px;
+.trophy-plaque {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 3px solid;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  height: 100%;
 }
+
+/* Tier colors */
+.trophy-plaque.tier-gold {
+  border-color: var(--color-gold);
+  background: linear-gradient(180deg, #2a2518 0%, #1e1c18 30%, var(--color-bg-card) 60%, rgba(212, 175, 55, 0.06) 100%);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4), 0 1px 8px rgba(212, 175, 55, 0.12);
+}
+
+.trophy-plaque.tier-silver {
+  border-color: var(--color-silver);
+  background: linear-gradient(180deg, #222528 0%, #1c1d20 30%, var(--color-bg-card) 60%, rgba(192, 192, 192, 0.04) 100%);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4), 0 1px 8px rgba(192, 192, 192, 0.08);
+}
+
+.trophy-plaque.tier-bronze {
+  border-color: var(--color-bronze);
+  background: linear-gradient(180deg, #28201a 0%, #1e1a16 30%, var(--color-bg-card) 60%, rgba(205, 127, 50, 0.04) 100%);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4), 0 1px 8px rgba(205, 127, 50, 0.08);
+}
+
+/* Hover states */
+.trophy-plaque.tier-gold:hover,
+.trophy-plaque.tier-gold:focus-visible {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 24px rgba(212, 175, 55, 0.3), 0 0 20px rgba(212, 175, 55, 0.15);
+  border-color: var(--color-gold-hover);
+}
+
+.trophy-plaque.tier-silver:hover,
+.trophy-plaque.tier-silver:focus-visible {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 24px rgba(192, 192, 192, 0.25), 0 0 18px rgba(192, 192, 192, 0.12);
+  border-color: #d4d4d4;
+}
+
+.trophy-plaque.tier-bronze:hover,
+.trophy-plaque.tier-bronze:focus-visible {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 24px rgba(205, 127, 50, 0.25), 0 0 18px rgba(205, 127, 50, 0.12);
+  border-color: #e09040;
+}
+
+/* --- Plaque Showcase (trophy shelf nook) --- */
+.plaque-showcase {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 2rem 1rem 0;
+  background:
+    repeating-linear-gradient(
+      2deg,
+      transparent,
+      transparent 8px,
+      rgba(0, 0, 0, 0.06) 8px,
+      rgba(0, 0, 0, 0.06) 10px
+    ),
+    repeating-linear-gradient(
+      178deg,
+      transparent,
+      transparent 12px,
+      rgba(139, 90, 43, 0.08) 12px,
+      rgba(139, 90, 43, 0.08) 14px
+    ),
+    linear-gradient(180deg, #3a2a1a 0%, #4a3524 30%, #3d2b18 60%, #2e1f12 100%);
+  box-shadow:
+    inset 0 8px 20px rgba(0, 0, 0, 0.5),
+    inset 0 -3px 8px rgba(0, 0, 0, 0.3),
+    inset 6px 0 12px rgba(0, 0, 0, 0.2),
+    inset -6px 0 12px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+  min-height: 220px;
+}
+
+/* Spotlight from above */
+.plaque-showcase::before {
+  content: '';
+  position: absolute;
+  top: -20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  height: 80%;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.tier-gold .plaque-showcase::before {
+  background: radial-gradient(ellipse, rgba(212, 175, 55, 0.18), transparent 65%);
+}
+
+.tier-silver .plaque-showcase::before {
+  background: radial-gradient(ellipse, rgba(192, 192, 192, 0.14), transparent 65%);
+}
+
+.tier-bronze .plaque-showcase::before {
+  background: radial-gradient(ellipse, rgba(205, 127, 50, 0.14), transparent 65%);
+}
+
+/* Shelf surface the trophy sits on */
+.plaque-showcase::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 28px;
+  background: linear-gradient(180deg,
+    rgba(60, 45, 25, 0.25) 0%,
+    rgba(50, 38, 20, 0.4) 50%,
+    rgba(20, 15, 8, 0.6) 100%);
+  border-top: 1px solid rgba(180, 140, 60, 0.15);
+  box-shadow: inset 0 1px 0 rgba(255, 220, 120, 0.06);
+  pointer-events: none;
+}
+
+/* --- Plaque Image --- */
+.plaque-image {
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+  position: relative;
+  z-index: 1;
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.6)) drop-shadow(0 1px 3px rgba(0, 0, 0, 0.4));
+  transition: transform 0.4s ease, filter 0.4s ease;
+  margin-bottom: 4px;
+  transform: perspective(600px) rotateY(-2deg) rotateX(2deg);
+}
+
+.trophy-plaque:hover .plaque-image {
+  transform: perspective(600px) rotateY(0deg) rotateX(0deg) scale(1.08);
+  filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.7)) drop-shadow(0 2px 6px rgba(0, 0, 0, 0.5));
+}
+
+/* --- Plaque Nameplate (engraved look) --- */
+.plaque-nameplate {
+  padding: 0.6rem 0.75rem 0.75rem;
+  text-align: center;
+  border-top: none;
+  position: relative;
+  background-color: var(--color-bg);
+  border-radius: var(--radius-sm);
+  margin: 0 0.5rem 0.5rem;
+}
+
+.plaque-nameplate::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 10%;
+  right: 10%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(180, 140, 60, 0.2), transparent);
+}
+
+.plaque-game {
+  display: block;
+  font-size: 0.65rem;
+  font-family: var(--font-heading);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-text-dim);
+  margin-bottom: 0.2rem;
+}
+
+.plaque-nameplate h3 {
+  margin: 0 0 0.3rem;
+  font-size: 0.85rem;
+  color: var(--color-text);
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+
+.plaque-nameplate .trophy-tier {
+  margin: 0 0 0.5rem;
+  font-size: 0.75rem;
+}
+
+/* --- Rarity Bar --- */
+.trophy-card-rarity {
+  margin-top: 0.5rem;
+}
+
+.rarity-bar {
+  width: 100%;
+  height: 6px;
+  background-color: var(--color-bg);
+  border-radius: 3px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.rarity-fill {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.6s ease;
+  min-width: 0;
+}
+
+.tier-gold .rarity-fill {
+  background: linear-gradient(90deg, var(--color-gold), #f4cf5a);
+}
+
+.tier-silver .rarity-fill {
+  background: linear-gradient(90deg, #a0a0a0, var(--color-silver));
+}
+
+.tier-bronze .rarity-fill {
+  background: linear-gradient(90deg, #a06020, var(--color-bronze));
+}
+
+.rarity-label {
+  display: block;
+  margin-top: 0.3rem;
+  font-size: 0.7rem;
+  color: var(--color-text-dim);
+  letter-spacing: 0.05em;
+  font-family: var(--font-heading);
+  text-transform: uppercase;
+}
+
+/* --- Hop-to Nav Updates --- */
 
 .trophy-card {
   display: flex;
@@ -1951,20 +2379,130 @@ h3 {
   font-family: var(--font-heading);
 }
 
-/* User Gallery Styles */
-.user-gallery {
-  margin: 1.5rem 0;
+/* Game History Section */
+.game-history {
+  margin: 2rem 0;
   background-color: var(--color-bg-card);
   border: 1px solid var(--color-border);
   border-radius: var(--radius);
-  padding: 1.25rem;
+  padding: 1.5rem;
+}
+
+.game-history h2 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.game-history-text p {
+  color: var(--color-text-muted);
+  line-height: 1.7;
+  margin: 0 0 1rem;
+}
+
+.game-history-text p:last-child {
+  margin-bottom: 0;
+}
+
+/* Screenshot Gallery */
+.screenshot-gallery {
+  margin: 2rem 0;
+}
+
+.screenshot-gallery h2 {
+  margin-bottom: 1rem;
+}
+
+.screenshot-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+}
+
+.screenshot-item {
+  overflow: hidden;
+  border-radius: var(--radius);
+  border: 2px solid var(--color-border);
+  background-color: #000;
+  cursor: pointer;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.screenshot-item:hover {
+  border-color: var(--color-gold);
+  transform: scale(1.02);
+}
+
+.screenshot-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  aspect-ratio: 4/3;
+}
+
+.screenshot-credit {
+  margin-top: 0.5rem;
+  font-size: 0.75rem;
+  color: var(--color-text-dim);
+  font-style: italic;
+}
+
+.screenshot-credit a {
+  color: var(--color-text-muted);
+}
+
+/* Screenshot lightbox */
+.screenshot-lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.9);
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.screenshot-lightbox.active {
+  display: flex;
+}
+
+.screenshot-lightbox img {
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+  border-radius: var(--radius);
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 600px) {
+  .screenshot-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* User Gallery Styles */
+.user-gallery {
+  margin: 1.5rem 0;
 }
 
 .user-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
   margin-bottom: 0;
+}
+
+@media (max-width: 600px) {
+  .user-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+  .user-card-avatar {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1;
+  }
 }
 
 .user-card {
@@ -1988,27 +2526,50 @@ h3 {
 }
 
 .user-card-avatar {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  border: 2px solid var(--color-gold);
+  width: 160px;
+  height: 160px;
+  border-radius: var(--radius-sm);
+  border: 3px solid var(--color-gold);
   background-color: var(--color-bg-alt);
   object-fit: cover;
   margin-bottom: 0.75rem;
+  position: relative;
+}
+
+.user-card .user-card-avatar {
+  transition: transform 0.2s ease;
+}
+
+.user-card:hover .user-card-avatar,
+.user-card:focus-visible .user-card-avatar {
+  transform: scale(1.03);
+  animation: glitch-shift 0.3s steps(2) forwards;
+}
+
+@keyframes glitch-shift {
+  0% { filter: none; }
+  20% { filter: drop-shadow(-3px 0 0 rgba(255, 0, 50, 0.6)) drop-shadow(3px 0 0 rgba(0, 200, 255, 0.6)); }
+  40% { filter: drop-shadow(2px 0 0 rgba(255, 0, 50, 0.6)) drop-shadow(-2px 0 0 rgba(0, 200, 255, 0.6)); }
+  60% { filter: drop-shadow(-2px 1px 0 rgba(255, 0, 50, 0.5)) drop-shadow(2px -1px 0 rgba(0, 200, 255, 0.5)); }
+  80% { filter: drop-shadow(1px 0 0 rgba(255, 0, 50, 0.4)) drop-shadow(-1px 0 0 rgba(0, 200, 255, 0.4)); }
+  100% { filter: drop-shadow(-2px 0 0 rgba(255, 0, 50, 0.5)) drop-shadow(2px 0 0 rgba(0, 200, 255, 0.5)); }
 }
 
 .user-card h2 {
   margin: 0;
   font-size: 0.75rem;
-  color: var(--color-gold);
-  background-color: var(--color-bg);
-  padding: 0.4rem 0.6rem;
+  color: var(--color-text-muted);
+  background: var(--color-bg);
+  padding: 0.35rem 0.6rem;
   font-family: var(--font-heading);
   text-transform: uppercase;
   letter-spacing: 0.05em;
   width: 100%;
-  border: 2px double var(--color-gold);
-  text-shadow: 1px 1px 0 var(--color-black);
+  text-align: center;
+  border: none;
+  border-radius: var(--radius-sm);
+  text-shadow: none;
+  box-shadow: none;
 }
 
 /* Leaderboard Styles */
@@ -2022,7 +2583,7 @@ h3 {
 
 .leaderboard-header {
   display: grid;
-  grid-template-columns: 80px 1fr 2fr 180px 80px 80px;
+  grid-template-columns: 80px 1fr 2fr 180px 80px;
   gap: 1rem;
   padding: 1rem;
   background-color: var(--color-bg);
@@ -2033,7 +2594,7 @@ h3 {
 
 .leaderboard-row {
   display: grid;
-  grid-template-columns: 80px 1fr 2fr 180px 80px 80px;
+  grid-template-columns: 80px 1fr 2fr 180px 80px;
   gap: 1rem;
   padding: 1rem;
   border-bottom: 1px solid var(--color-bg-alt);
@@ -2153,43 +2714,26 @@ h3 {
   border: 1px solid var(--color-bronze);
 }
 
-.total-col,
-.top-player-total {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 2.5rem;
-  padding: 0.2rem 0.4rem;
-  border-radius: var(--radius-lg);
-  font-weight: 600;
-  font-size: 0.85rem;
-  text-align: center;
-  color: var(--color-red);
-  background-color: rgba(255, 51, 51, 0.08);
-  border: 1px solid rgba(255, 51, 51, 0.2);
-}
-
 .points-col,
 .top-player-points {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 2.5rem;
-  padding: 0.2rem 0.4rem;
-  border-radius: var(--radius-lg);
-  font-weight: 600;
-  font-size: 0.85rem;
+  min-width: 2rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--radius-sm);
+  font-weight: bold;
+  font-size: 0.8rem;
   text-align: center;
-  color: var(--color-green);
-  background-color: rgba(51, 255, 51, 0.08);
-  border: 1px solid rgba(51, 255, 51, 0.2);
-  font-family: var(--font-heading);
+  color: var(--color-text-muted);
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-border);
 }
 
 @media (max-width: 1100px) {
   .leaderboard-header,
   .leaderboard-row {
-    grid-template-columns: 60px 1fr 150px 80px 80px;
+    grid-template-columns: 60px 1fr 150px 80px;
     gap: 0.5rem;
     font-size: 0.9rem;
   }
@@ -2202,37 +2746,66 @@ h3 {
 @media (max-width: 450px) {
   .hof-leaderboard .leaderboard-header,
   .hof-leaderboard .leaderboard-row {
-    grid-template-columns: 32px 1fr 75px 35px 45px;
+    grid-template-columns: 28px minmax(0, 1fr) 100px 40px;
+    align-items: center;
   }
 
   .leaderboard-header,
   .leaderboard-row {
-    grid-template-columns: 32px 1fr 80px 45px;
-    gap: 0.3rem;
-    font-size: 0.8rem;
-    padding: 0.6rem 0.4rem;
+    grid-template-columns: 28px minmax(0, 1fr) 100px 40px;
+    gap: 0.4rem;
+    font-size: 0.75rem;
+    padding: 0.5rem 0.4rem;
+    align-items: center;
   }
 
-  .trophy-gold,
-  .trophy-silver,
-  .trophy-bronze {
-    padding: 0.1rem 0.25rem;
-    min-width: 16px;
-    font-size: 0.65rem;
+  .player-link {
+    overflow: hidden;
+  }
+
+  .player-link span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 0.75rem;
   }
 
   .player-avatar {
     width: 24px;
     height: 24px;
+    flex-shrink: 0;
   }
 
-  .player-link span {
-    font-size: 0.75rem;
+  .rank-col {
+    font-size: 0.7rem;
+    text-align: center;
   }
 
-  .total-col {
-    display: none;
+  .trophies-col {
+    overflow: hidden;
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.15rem;
   }
+
+  .trophy-gold,
+  .trophy-silver,
+  .trophy-bronze {
+    padding: 0.15rem 0.3rem;
+    min-width: 20px;
+    font-size: 0.65rem;
+    text-align: center;
+    flex-shrink: 0;
+  }
+
+  .points-col,
+  .top-player-points {
+    padding: 0.15rem 0.3rem;
+    min-width: 20px;
+    text-align: center;
+    font-size: 0.65rem;
+  }
+
 }
 
 /* Resources Page Styles */
@@ -2262,15 +2835,28 @@ h3 {
   grid-column: 1 / -1;
 }
 
+.resource-card-wide .resource-links {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
 .resource-title {
-  margin: 0 0 1.25rem;
-  padding: 0.5rem 1rem;
-  font-size: 1.1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  margin: 0 0 1rem;
+  padding: 0.35rem 0.9rem 0.35rem 0.65rem;
+  font-size: 0.8rem;
   font-family: var(--font-heading);
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: var(--color-gold);
-  background-color: var(--color-bg);
+  color: var(--color-text-muted);
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-left: none;
+  border-radius: 999px;
+  box-shadow: none;
+  text-shadow: none;
 }
 
 .resource-links {
@@ -2284,7 +2870,7 @@ h3 {
   flex-direction: column;
   gap: 0.25rem;
   padding: 1rem;
-  background-color: var(--color-bg-alt);
+  background-color: var(--color-bg);
   border: 1px solid var(--color-border);
   border-radius: var(--radius);
   text-decoration: none;
@@ -2322,6 +2908,10 @@ h3 {
 
   .resource-card-wide {
     grid-column: 1;
+  }
+
+  .resource-card-wide .resource-links {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -2753,17 +3343,64 @@ h3 {
   margin-top: 2rem;
 }
 
-.rss-list {
+.ctc-archive-month h3 {
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+  margin-bottom: 0.75rem;
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 0.4rem;
+}
+
+.ctc-archive-films {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
 }
 
+.ctc-archive-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.6rem 0.75rem;
+  background-color: var(--color-bg);
+  border-radius: var(--radius-sm);
+}
+
+.ctc-archive-poster {
+  width: 50px;
+  height: 75px;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+  border: 2px solid var(--color-border);
+  flex-shrink: 0;
+}
+
+.ctc-archive-info strong {
+  color: var(--color-gold);
+}
+
+.ctc-archive-info span {
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+}
+
+.ctc-archive-info p {
+  margin: 0.15rem 0 0;
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
+.rss-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
 .rss-item {
-  padding: 0.75rem;
-  background-color: var(--color-bg-card);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius);
+  padding: 0.6rem 0.75rem;
+  background-color: var(--color-bg);
+  border: none;
+  border-radius: var(--radius-sm);
 }
 
 .rss-title {
@@ -2803,7 +3440,6 @@ h3 {
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: var(--color-gold);
-  background-color: var(--color-bg);
 }
 
 .game-description p {
@@ -3051,7 +3687,7 @@ html {
   }
 
   .site-header {
-    margin: 0 0.5rem;
+    margin: 0.5rem 0.5rem 0;
     top: 0;
   }
 
@@ -3067,6 +3703,10 @@ html {
   .layout > .sidebar {
     grid-column: auto;
     grid-row: auto;
+  }
+
+  .layout > .sidebar {
+    order: -1;
   }
 
   .top-players-header {
@@ -3096,11 +3736,48 @@ html {
     gap: 0.25rem;
   }
 
-  .top-player-total,
   .top-player-points {
     min-width: 2rem;
     font-size: 0.8rem;
     padding: 0.15rem 0.3rem;
+  }
+
+  .stat-strip {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    justify-content: flex-start;
+    padding: 0.6rem 0.5rem;
+    font-size: 0.8rem;
+    -webkit-overflow-scrolling: touch;
+    mask-image: linear-gradient(to right, transparent 0, #000 0.5rem, #000 calc(100% - 1.5rem), transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0, #000 0.5rem, #000 calc(100% - 1.5rem), transparent 100%);
+  }
+
+  .stat-strip-item {
+    white-space: nowrap;
+  }
+
+  .stat-strip-divider {
+    white-space: nowrap;
+  }
+
+  .trophy-gallery {
+    padding: 0.75rem;
+  }
+
+  .trophy-gallery .trophy-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+
+  .plaque-showcase {
+    min-height: unset;
+    padding: 1rem 0.5rem 0;
+  }
+
+  .plaque-image {
+    width: 120px;
+    height: 120px;
   }
 
   .card-list {
@@ -3126,6 +3803,11 @@ html {
     min-width: 220px;
     z-index: 20;
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+    background-color: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    padding: 0.5rem;
+    gap: 0.3rem;
   }
 
   .nav-toggle:checked ~ .main-nav {
@@ -3183,9 +3865,6 @@ html {
     margin: 0 auto;
   }
 
-  .game-description h1 {
-    text-align: center;
-  }
 }
 
 @media (max-width: 700px) {
@@ -3213,14 +3892,10 @@ html {
 
   .hof-leaderboard .leaderboard-header,
   .hof-leaderboard .leaderboard-row {
-    grid-template-columns: 40px 1fr 90px 40px 50px;
+    grid-template-columns: 40px 1fr 90px 50px;
     gap: 0.5rem;
     font-size: 0.85rem;
     padding: 0.75rem 0.5rem;
-  }
-
-  .hof-leaderboard .total-col {
-    display: none;
   }
 
   .hof-leaderboard .trophies-col {
@@ -3267,14 +3942,9 @@ html {
   .main-nav a {
     width: 100%;
     padding: 0.5rem 0.8rem;
-    font-size: 0.75rem;
-    border-right: none;
-    border-bottom: none;
+    font-size: 0.7rem;
+    border-radius: var(--radius-sm);
     text-align: left;
-  }
-
-  .main-nav a + a {
-    border-top: 1px solid var(--color-border);
   }
 
   .site-header {
@@ -3325,6 +3995,49 @@ html {
     aspect-ratio: 1;
   }
 
+  .trophy-gallery {
+    padding: 0.5rem;
+  }
+
+  .trophy-gallery .trophy-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+  }
+
+  .plaque-showcase {
+    min-height: unset;
+    padding: 0.75rem 0.4rem 0;
+  }
+
+  .plaque-showcase::after {
+    height: 18px;
+  }
+
+  .plaque-image {
+    width: 100px;
+    height: 100px;
+  }
+
+  .plaque-nameplate {
+    padding: 0.5rem 0.5rem 0.75rem;
+  }
+
+  .plaque-nameplate h3 {
+    font-size: 0.7rem;
+  }
+
+  .plaque-game {
+    font-size: 0.55rem;
+  }
+
+  .plaque-nameplate .trophy-tier {
+    font-size: 0.65rem;
+  }
+
+  .rarity-label {
+    font-size: 0.6rem;
+  }
+
   .trophy-image-large {
     width: 100%;
     max-width: 300px;
@@ -3369,14 +4082,10 @@ html {
     grid-template-columns: 1fr;
   }
 
-  .year-calendar-grid {
+  .month-grid {
     grid-template-columns: 1fr;
-    max-width: 280px;
+    max-width: 320px;
     margin: 0 auto;
-  }
-
-  .month-card {
-    max-width: 100%;
   }
 
   .hop-to-links {

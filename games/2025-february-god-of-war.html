@@ -42,7 +42,7 @@
           <span class="main-nav-summary-icon">v</span>
         </label>
         <nav class="main-nav" aria-label="Primary">
-          <a href="../index.html">Home</a>
+          <a href="../rules.html">Rules &amp; FAQ</a>
           <a href="../game-of-the-month.html">Past Games</a>
           <a href="../resources.html">Resources</a>
           <a href="../gallery.html">Gallery</a>
@@ -56,16 +56,29 @@
 
     <main class="site-main container" id="main-content">
       <section class="content">
+        <nav class="game-nav">
+          <a href="2025-january-super-punch-out.html" class="game-nav-link nav-prev">
+            <span class="game-nav-arrow">&#8249;</span>
+            <span class="game-nav-label"><span class="game-nav-small">Previous</span><span class="game-nav-title">Super Punch-Out!!</span></span>
+          </a>
+          <a href="2025-march-kirby-64.html" class="game-nav-link nav-next">
+            <span class="game-nav-label"><span class="game-nav-small">Next</span><span class="game-nav-title">Kirby 64</span></span>
+            <span class="game-nav-arrow">&#8250;</span>
+          </a>
+        </nav>
+
         <div class="game-header">
           <div class="game-description">
             <h1>February 2025 – God of War</h1>
+
+
             <p>
               An action-adventure game set in ancient Greece with vengeance as its central theme. You play as Kratos, a Spartan warrior wielding the Blades of Chaos, on a quest to kill Ares, the God of War. The game features combo-based combat, challenging boss fights, environmental puzzles, and platforming through mythological settings. Widely regarded as one of the greatest action-adventure games ever made.
             </p>
           </div>
           <div class="game-infobox">
             <a href="../trophies/trophy-god-of-war-beatnormal.html">
-              <img src="../images/covers/God of War (USA).png" alt="God of War box art" class="game-infobox-image" loading="lazy" />
+              <img src="../images/covers/God of War (USA).png" alt="God of War box art" class="game-infobox-image" />
             </a>
             <table class="game-infobox-table">
               <tr>
@@ -114,13 +127,21 @@
           </div>
         </div>
 
+        <div class="game-history">
+          <h2>About This Game</h2>
+          <div class="game-history-text">
+            <p>God of War was the brainchild of David Jaffe at Sony’s Santa Monica Studio, released in 2005 for the PlayStation 2. Jaffe wanted to create an action game steeped in Greek mythology that felt cinematic without sacrificing gameplay depth. The team studied films like Clash of the Titans and Jason and the Argonauts, building a world where players could rip apart mythological creatures with their bare hands. The iconic Blades of Chaos—chained weapons that whip in wide arcs—were designed to make combat feel fundamentally different from the lock-on systems popularized by Devil May Cry.</p>
+            <p>The game was a massive commercial and critical success, selling over 4.6 million copies on PS2 alone and spawning a franchise that would span multiple console generations. Its seamless blend of brutal combat, environmental puzzles, and cinematic set pieces set a new standard for action games. The opening Hydra battle remains one of gaming’s most memorable introductions, throwing players into an epic confrontation before they’ve even learned all the controls.</p>
+          </div>
+        </div>
+
         <div class="club-achievements">
           <h2>Club Achievements</h2>
 
           <div class="trophy-grid">
             <div class="trophy-card-wrapper">
               <a href="../trophies/trophy-god-of-war-beatnormal.html" class="trophy-card">
-                <img src="../images/trophies/trophy-god-of-war-beatnormal.png" alt="Beat Game on Normal Trophy" class="trophy-card-image" loading="lazy" />
+                <img src="../images/trophies/trophy-god-of-war-beatnormal.png" alt="Beat Game on Normal Trophy" class="trophy-card-image" />
                 <h3>Beat Game on Normal</h3>
                 <p class="trophy-tier gold">Gold Trophy</p>
               </a>
@@ -136,7 +157,7 @@
 
             <div class="trophy-card-wrapper">
               <a href="../trophies/trophy-god-of-war-beateasy.html" class="trophy-card">
-                <img src="../images/trophies/trophy-god-of-war-beateasy.png" alt="Beat Game on Easy Trophy" class="trophy-card-image" loading="lazy" />
+                <img src="../images/trophies/trophy-god-of-war-beateasy.png" alt="Beat Game on Easy Trophy" class="trophy-card-image" />
                 <h3>Beat Game on Easy</h3>
                 <p class="trophy-tier silver">Silver Trophy</p>
               </a>
@@ -162,7 +183,43 @@
           </div>
         </div>
 
-        <p><a href="../index.html">Back to home</a></p>
+
+        
+        <div class="screenshot-gallery">
+          <h2>Screenshots</h2>
+          <div class="screenshot-grid">
+            <div class="screenshot-item" onclick="openLightbox(this)">
+              <img src="../images/screenshots/god-of-war-1.jpg" alt="God of War gameplay" />
+            </div>
+            <div class="screenshot-item" onclick="openLightbox(this)">
+              <img src="../images/screenshots/god-of-war-2.jpg" alt="God of War combat" />
+            </div>
+            <div class="screenshot-item" onclick="openLightbox(this)">
+              <img src="../images/screenshots/god-of-war-3.png" alt="God of War screenshot" />
+            </div>
+            <div class="screenshot-item" onclick="openLightbox(this)">
+              <img src="../images/screenshots/god-of-war-4.jpg" alt="God of War battle" />
+            </div>
+          </div>
+          <p class="screenshot-credit">Screenshots via <a href="https://gamesdb.launchbox-app.com/" target="_blank" rel="noopener noreferrer">LaunchBox Games Database</a></p>
+        </div>
+
+        <div class="screenshot-lightbox" id="screenshotLightbox" onclick="closeLightbox()">
+          <img id="lightboxImg" src="" alt="Screenshot enlarged" />
+        </div>
+        <script>
+          function openLightbox(el) {
+            var src = el.querySelector('img').src;
+            document.getElementById('lightboxImg').src = src;
+            document.getElementById('screenshotLightbox').classList.add('active');
+          }
+          function closeLightbox() {
+            document.getElementById('screenshotLightbox').classList.remove('active');
+          }
+          document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeLightbox();
+          });
+        </script>
       </section>
     </main>
 

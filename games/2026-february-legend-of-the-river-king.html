@@ -42,7 +42,7 @@
           <span class="main-nav-summary-icon">v</span>
         </label>
         <nav class="main-nav" aria-label="Primary">
-          <a href="../index.html">Home</a>
+          <a href="../rules.html">Rules &amp; FAQ</a>
           <a href="../game-of-the-month.html">Past Games</a>
           <a href="../resources.html">Resources</a>
           <a href="../gallery.html">Gallery</a>
@@ -56,16 +56,29 @@
 
     <main class="site-main container" id="main-content">
       <section class="content">
+        <nav class="game-nav">
+          <a href="2026-january-mega-man-legends.html" class="game-nav-link nav-prev">
+            <span class="game-nav-arrow">&#8249;</span>
+            <span class="game-nav-label"><span class="game-nav-small">Previous</span><span class="game-nav-title">Mega Man Legends</span></span>
+          </a>
+          <a href="2026-march-ape-escape.html" class="game-nav-link nav-next">
+            <span class="game-nav-label"><span class="game-nav-small">Next</span><span class="game-nav-title">Ape Escape</span></span>
+            <span class="game-nav-arrow">&#8250;</span>
+          </a>
+        </nav>
+
         <div class="game-header">
           <div class="game-description">
             <h1>February 2026 – Legend of the River King</h1>
+
+
             <p>
               A charming fishing RPG that combines relaxing angling gameplay with adventure elements. Players explore various locations, catch fish, and help characters along the way. The game features day and night cycles, weather effects, and a variety of fish to discover. With its cozy atmosphere and addictive fishing mechanics, Legend of the River King offers a unique handheld experience that stands out among Game Boy Color titles.
             </p>
           </div>
           <div class="game-infobox">
             <a href="../trophies/trophy-legend-of-the-river-king-allfish.html">
-              <img src="../images/covers/legendoftheriverking.png" alt="Legend of the River King box art" class="game-infobox-image" loading="lazy" />
+              <img src="../images/covers/legendoftheriverking.png" alt="Legend of the River King box art" class="game-infobox-image" />
             </a>
             <table class="game-infobox-table">
               <tr>
@@ -114,13 +127,21 @@
           </div>
         </div>
 
+        <div class="game-history">
+          <h2>About This Game</h2>
+          <div class="game-history-text">
+            <p>Legend of the River King was developed by Victor Interactive Software (published by Natsume in the West) and released for the Game Boy Color in 1999. Part of the long-running “Kawa no Nushi Tsuri” (River King) series that began on the Famicom in 1990, this entry blends fishing simulation with a JRPG-style overworld adventure. The premise is simple and heartfelt: your sister has fallen ill, and the only cure is to catch the legendary Guardian Fish. Getting there means traveling across diverse environments, battling wildlife, upgrading your gear, and mastering the art of angling.</p>
+            <p>The game arrived in the West during the Game Boy Color’s peak years, competing for attention against Pokemon and Zelda but carving out its own quiet niche. Its combination of fishing mechanics, monster battling, and RPG exploration was unlike anything else on the handheld. In Japan, the River King series is a well-known franchise with over a dozen entries, but Western releases have been sporadic—making this Game Boy Color version one of the most accessible entry points for English-speaking players. It’s a cozy, meditative game that rewards patience and exploration, perfectly suited for handheld play.</p>
+          </div>
+        </div>
+
         <div class="club-achievements">
           <h2>Club Achievements</h2>
 
           <div class="trophy-grid">
             <div class="trophy-card-wrapper">
               <a href="../trophies/trophy-legend-of-the-river-king-allfish.html" class="trophy-card">
-                <img src="../images/trophies/trophy-lotrk-catch-all-fish.png" alt="Catch All 45 Fish Trophy" class="trophy-card-image" loading="lazy" />
+                <img src="../images/trophies/trophy-lotrk-catch-all-fish.png" alt="Catch All 45 Fish Trophy" class="trophy-card-image" />
                 <h3>Catch All 45 Fish</h3>
                 <p class="trophy-tier gold">Gold Trophy</p>
               </a>
@@ -133,7 +154,7 @@
 
             <div class="trophy-card-wrapper">
               <a href="../trophies/trophy-legend-of-the-river-king-allrods.html" class="trophy-card">
-                <img src="../images/trophies/trophy-lotrk-get-all-rods.png" alt="Get All Rods Trophy" class="trophy-card-image" loading="lazy" />
+                <img src="../images/trophies/trophy-lotrk-get-all-rods.png" alt="Get All Rods Trophy" class="trophy-card-image" />
                 <h3>Get All Rods</h3>
                 <p class="trophy-tier silver">Silver Trophy</p>
               </a>
@@ -147,7 +168,7 @@
 
             <div class="trophy-card-wrapper">
               <a href="../trophies/trophy-legend-of-the-river-king-beatgame.html" class="trophy-card">
-                <img src="../images/trophies/trophy-lotrk-beat-the-game.png" alt="Beat the Game Trophy" class="trophy-card-image" loading="lazy" />
+                <img src="../images/trophies/trophy-lotrk-beat-the-game.png" alt="Beat the Game Trophy" class="trophy-card-image" />
                 <h3>Beat the Game</h3>
                 <p class="trophy-tier bronze">Bronze Trophy</p>
               </a>
@@ -177,7 +198,37 @@
           </div>
         </div>
 
-        <p><a href="../index.html">Back to home</a></p>
+
+        
+        <div class="screenshot-gallery">
+          <h2>Screenshots</h2>
+          <div class="screenshot-grid">
+            <div class="screenshot-item" onclick="openLightbox(this)">
+              <img src="../images/screenshots/legend-of-the-river-king-1.png" alt="Legend of the River King title screen" />
+            </div>
+            <div class="screenshot-item" onclick="openLightbox(this)">
+              <img src="../images/screenshots/legend-of-the-river-king-2.png" alt="Legend of the River King gameplay" />
+            </div>
+          </div>
+          <p class="screenshot-credit">Screenshots via <a href="https://gamesdb.launchbox-app.com/" target="_blank" rel="noopener noreferrer">LaunchBox Games Database</a></p>
+        </div>
+
+        <div class="screenshot-lightbox" id="screenshotLightbox" onclick="closeLightbox()">
+          <img id="lightboxImg" src="" alt="Screenshot enlarged" />
+        </div>
+        <script>
+          function openLightbox(el) {
+            var src = el.querySelector('img').src;
+            document.getElementById('lightboxImg').src = src;
+            document.getElementById('screenshotLightbox').classList.add('active');
+          }
+          function closeLightbox() {
+            document.getElementById('screenshotLightbox').classList.remove('active');
+          }
+          document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeLightbox();
+          });
+        </script>
       </section>
     </main>
 

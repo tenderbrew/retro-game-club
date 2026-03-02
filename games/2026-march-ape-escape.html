@@ -42,7 +42,7 @@
           <span class="main-nav-summary-icon">v</span>
         </label>
         <nav class="main-nav" aria-label="Primary">
-          <a href="../index.html">Home</a>
+          <a href="../rules.html">Rules &amp; FAQ</a>
           <a href="../game-of-the-month.html">Past Games</a>
           <a href="../resources.html">Resources</a>
           <a href="../gallery.html">Gallery</a>
@@ -56,16 +56,26 @@
 
     <main class="site-main container" id="main-content">
       <section class="content">
+        <nav class="game-nav">
+          <a href="2026-february-legend-of-the-river-king.html" class="game-nav-link nav-prev">
+            <span class="game-nav-arrow">&#8249;</span>
+            <span class="game-nav-label"><span class="game-nav-small">Previous</span><span class="game-nav-title">River King</span></span>
+          </a>
+          <span></span>
+        </nav>
+
         <div class="game-header">
           <div class="game-description">
             <h1>March 2026 – Ape Escape</h1>
+
+
             <p>
               The original monkey-catching adventure that made the DualShock controller a must-have. Armed with an arsenal of quirky gadgets like the Stun Club, Time Net, and Slingback Shooter, players chase down mischievous monkeys across time periods ranging from the prehistoric era to a futuristic cityscape. Ape Escape was the first PlayStation game to require the analog sticks, turning movement and gadget-swinging into a uniquely tactile experience that still feels inventive today.
             </p>
           </div>
           <div class="game-infobox">
             <a href="../trophies/trophy-ape-escape-gold.html">
-              <img src="../images/covers/ape-escape.png" alt="Ape Escape box art" class="game-infobox-image" loading="lazy" />
+              <img src="../images/covers/ape-escape.png" alt="Ape Escape box art" class="game-infobox-image" />
             </a>
             <table class="game-infobox-table">
               <tr>
@@ -114,13 +124,21 @@
           </div>
         </div>
 
+        <div class="game-history">
+          <h2>About This Game</h2>
+          <div class="game-history-text">
+            <p>Ape Escape was developed by SCE Japan Studio and released for the PlayStation in 1999, earning a place in gaming history as the first console game to require the DualShock analog controller. This wasn’t a marketing gimmick—the entire game was designed around dual-stick controls, with the left stick handling movement and the right stick swinging gadgets like the stun club, time net, and slingback shooter. Designer Naoto Ohshima, who had previously created Sonic the Hedgehog’s character design at Sega, brought a similarly colorful and expressive visual sensibility to the game’s world.</p>
+            <p>The premise is gleefully absurd: a white-haired monkey named Specter finds a prototype intelligence-boosting helmet called the Peak Point Helmet, gains human-level cognition, and promptly sends an army of monkeys through time to rewrite history. Players chase these monkeys across eras ranging from the dinosaur age to a futuristic city, each primate having its own name, personality, and alert level displayed on its pants indicator. Ape Escape was a critical and commercial hit that spawned sequels, spin-offs, and crossover appearances, but the original remains the most inventive—a game that proved new control schemes could create entirely new kinds of fun.</p>
+          </div>
+        </div>
+
         <div class="club-achievements">
           <h2>Club Achievements</h2>
 
           <div class="trophy-grid">
             <div class="trophy-card-wrapper">
               <a href="../trophies/trophy-ape-escape-gold.html" class="trophy-card">
-                <img src="../images/trophies/gold.png" alt="Gold Medal on Snake River Trophy" class="trophy-card-image" loading="lazy" />
+                <img src="../images/trophies/gold.png" alt="Gold Medal on Snake River Trophy" class="trophy-card-image" />
                 <h3>Gold Medal on Snake River</h3>
                 <p class="trophy-tier gold">Gold Trophy</p>
               </a>
@@ -133,7 +151,7 @@
 
             <div class="trophy-card-wrapper">
               <a href="../trophies/trophy-ape-escape-silver.html" class="trophy-card">
-                <img src="../images/trophies/silver.png" alt="Monkey Madness Under a Minute Trophy" class="trophy-card-image" loading="lazy" />
+                <img src="../images/trophies/silver.png" alt="Monkey Madness Under a Minute Trophy" class="trophy-card-image" />
                 <h3>Monkey Madness Under a Minute</h3>
                 <p class="trophy-tier silver">Silver Trophy</p>
               </a>
@@ -146,7 +164,7 @@
 
             <div class="trophy-card-wrapper">
               <a href="../trophies/trophy-ape-escape-beatgame.html" class="trophy-card">
-                <img src="../images/trophies/bronze.png" alt="Beat the Game Trophy" class="trophy-card-image" loading="lazy" />
+                <img src="../images/trophies/bronze.png" alt="Beat the Game Trophy" class="trophy-card-image" />
                 <h3>Beat the Game</h3>
                 <p class="trophy-tier bronze">Bronze Trophy</p>
               </a>
@@ -166,7 +184,43 @@
           </div>
         </div>
 
-        <p><a href="../index.html">Back to home</a></p>
+
+        
+        <div class="screenshot-gallery">
+          <h2>Screenshots</h2>
+          <div class="screenshot-grid">
+            <div class="screenshot-item" onclick="openLightbox(this)">
+              <img src="../images/screenshots/ape-escape-1.jpg" alt="Ape Escape gameplay" />
+            </div>
+            <div class="screenshot-item" onclick="openLightbox(this)">
+              <img src="../images/screenshots/ape-escape-2.png" alt="Ape Escape catching monkeys" />
+            </div>
+            <div class="screenshot-item" onclick="openLightbox(this)">
+              <img src="../images/screenshots/ape-escape-3.png" alt="Ape Escape level" />
+            </div>
+            <div class="screenshot-item" onclick="openLightbox(this)">
+              <img src="../images/screenshots/ape-escape-4.png" alt="Ape Escape screenshot" />
+            </div>
+          </div>
+          <p class="screenshot-credit">Screenshots via <a href="https://gamesdb.launchbox-app.com/" target="_blank" rel="noopener noreferrer">LaunchBox Games Database</a></p>
+        </div>
+
+        <div class="screenshot-lightbox" id="screenshotLightbox" onclick="closeLightbox()">
+          <img id="lightboxImg" src="" alt="Screenshot enlarged" />
+        </div>
+        <script>
+          function openLightbox(el) {
+            var src = el.querySelector('img').src;
+            document.getElementById('lightboxImg').src = src;
+            document.getElementById('screenshotLightbox').classList.add('active');
+          }
+          function closeLightbox() {
+            document.getElementById('screenshotLightbox').classList.remove('active');
+          }
+          document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeLightbox();
+          });
+        </script>
       </section>
     </main>
 

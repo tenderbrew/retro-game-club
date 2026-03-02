@@ -42,7 +42,7 @@
           <span class="main-nav-summary-icon">v</span>
         </label>
         <nav class="main-nav" aria-label="Primary">
-          <a href="../index.html">Home</a>
+          <a href="../rules.html">Rules &amp; FAQ</a>
           <a href="../game-of-the-month.html">Past Games</a>
           <a href="../resources.html">Resources</a>
           <a href="../gallery.html">Gallery</a>
@@ -56,16 +56,29 @@
 
     <main class="site-main container" id="main-content">
       <section class="content">
+        <nav class="game-nav">
+          <a href="2025-june-gamecube-on-switch-online.html" class="game-nav-link nav-prev">
+            <span class="game-nav-arrow">&#8249;</span>
+            <span class="game-nav-label"><span class="game-nav-small">Previous</span><span class="game-nav-title">GameCube NSO</span></span>
+          </a>
+          <a href="2025-august-umihara-kawase.html" class="game-nav-link nav-next">
+            <span class="game-nav-label"><span class="game-nav-small">Next</span><span class="game-nav-title">Umihara Kawase</span></span>
+            <span class="game-nav-arrow">&#8250;</span>
+          </a>
+        </nav>
+
         <div class="game-header">
           <div class="game-description">
             <h1>July 2025 – Resident Evil 2</h1>
+
+
             <p>
               A classic survival horror game set in zombie-infested Raccoon City two months after the original Resident Evil. Play as either Leon S. Kennedy or Claire Redfield through branching storylines as they escape the city and confront William Birkin, creator of the G-virus. Features limited saves and ammunition, fixed camera angles, puzzle-solving, and tense exploration. Widely considered one of the best video games ever made.
             </p>
           </div>
           <div class="game-infobox">
             <a href="../trophies/trophy-resident-evil-2-beatgame.html">
-              <img src="../images/covers/Resident Evil 2 (USA).png" alt="Resident Evil 2 box art" class="game-infobox-image" loading="lazy" />
+              <img src="../images/covers/Resident Evil 2 (USA).png" alt="Resident Evil 2 box art" class="game-infobox-image" />
             </a>
             <table class="game-infobox-table">
               <tr>
@@ -114,13 +127,21 @@
           </div>
         </div>
 
+        <div class="game-history">
+          <h2>About This Game</h2>
+          <div class="game-history-text">
+            <p>Resident Evil 2 was released for the PlayStation in 1998 and is one of the most celebrated survival horror games ever made. Directed by a young Hideki Kamiya—who would later create Devil May Cry and Bayonetta—the game famously went through a dramatic development reboot. The original version, now known as “Resident Evil 1.5,” was approximately 60–80% complete before Capcom scrapped it, feeling it wasn’t a worthy sequel. The team rebuilt the game from scratch with a new protagonist (Leon S. Kennedy replacing a different character named Elza Walker), reworked environments, and a more cinematic presentation.</p>
+            <p>The gamble paid off spectacularly. RE2 sold over 4.96 million copies on PlayStation alone, making it one of the console’s best-selling titles. Its “Zapping System”—where completing the game as one protagonist unlocks a second scenario from a different character’s perspective—effectively doubled the content and added genuine replay value. The Raccoon City Police Department remains one of gaming’s most iconic settings: a repurposed art museum turned police station, its labyrinthine layout packed with puzzles, secrets, and enough undead to fuel decades of nightmares.</p>
+          </div>
+        </div>
+
         <div class="club-achievements">
           <h2>Club Achievements</h2>
 
           <div class="trophy-grid">
             <div class="trophy-card-wrapper">
               <a href="../trophies/trophy-resident-evil-2-beatgame.html" class="trophy-card">
-                <img src="../images/trophies/trophy-resident-evil-2-beatgame.png" alt="Beat the Game Trophy" class="trophy-card-image" loading="lazy" />
+                <img src="../images/trophies/trophy-resident-evil-2-beatgame.png" alt="Beat the Game Trophy" class="trophy-card-image" />
                 <h3>Beat the Game</h3>
                 <p class="trophy-tier gold">Gold Trophy</p>
               </a>
@@ -146,7 +167,43 @@
           </div>
         </div>
 
-        <p><a href="../index.html">Back to home</a></p>
+
+        
+        <div class="screenshot-gallery">
+          <h2>Screenshots</h2>
+          <div class="screenshot-grid">
+            <div class="screenshot-item" onclick="openLightbox(this)">
+              <img src="../images/screenshots/resident-evil-2-1.jpg" alt="Resident Evil 2 gameplay" />
+            </div>
+            <div class="screenshot-item" onclick="openLightbox(this)">
+              <img src="../images/screenshots/resident-evil-2-2.jpg" alt="Resident Evil 2 exploration" />
+            </div>
+            <div class="screenshot-item" onclick="openLightbox(this)">
+              <img src="../images/screenshots/resident-evil-2-3.jpg" alt="Resident Evil 2 screenshot" />
+            </div>
+            <div class="screenshot-item" onclick="openLightbox(this)">
+              <img src="../images/screenshots/resident-evil-2-4.jpg" alt="Resident Evil 2 combat" />
+            </div>
+          </div>
+          <p class="screenshot-credit">Screenshots via <a href="https://gamesdb.launchbox-app.com/" target="_blank" rel="noopener noreferrer">LaunchBox Games Database</a></p>
+        </div>
+
+        <div class="screenshot-lightbox" id="screenshotLightbox" onclick="closeLightbox()">
+          <img id="lightboxImg" src="" alt="Screenshot enlarged" />
+        </div>
+        <script>
+          function openLightbox(el) {
+            var src = el.querySelector('img').src;
+            document.getElementById('lightboxImg').src = src;
+            document.getElementById('screenshotLightbox').classList.add('active');
+          }
+          function closeLightbox() {
+            document.getElementById('screenshotLightbox').classList.remove('active');
+          }
+          document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeLightbox();
+          });
+        </script>
       </section>
     </main>
 

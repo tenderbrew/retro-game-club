@@ -42,7 +42,7 @@
           <span class="main-nav-summary-icon">v</span>
         </label>
         <nav class="main-nav" aria-label="Primary">
-          <a href="../index.html">Home</a>
+          <a href="../rules.html">Rules &amp; FAQ</a>
           <a href="../game-of-the-month.html">Past Games</a>
           <a href="../resources.html">Resources</a>
           <a href="../gallery.html">Gallery</a>
@@ -56,16 +56,29 @@
 
     <main class="site-main container" id="main-content">
       <section class="content">
+        <nav class="game-nav">
+          <a href="2025-april-billy-hatcher.html" class="game-nav-link nav-prev">
+            <span class="game-nav-arrow">&#8249;</span>
+            <span class="game-nav-label"><span class="game-nav-small">Previous</span><span class="game-nav-title">Billy Hatcher</span></span>
+          </a>
+          <a href="2025-june-gamecube-on-switch-online.html" class="game-nav-link nav-next">
+            <span class="game-nav-label"><span class="game-nav-small">Next</span><span class="game-nav-title">GameCube NSO</span></span>
+            <span class="game-nav-arrow">&#8250;</span>
+          </a>
+        </nav>
+
         <div class="game-header">
           <div class="game-description">
             <h1>May 2025 – Snatcher</h1>
+
+
             <p>
               A cinematic cyberpunk adventure directed by Hideo Kojima. You play as Gillian Seed, an amnesiac investigating humanoid robots called "Snatchers" that kill humans and replace them in society. Heavily influenced by Blade Runner and The Terminator, the game features a text-menu interface, static visuals with animations, and action segments with light gun support. Known for its mature storytelling and atmospheric presentation.
             </p>
           </div>
           <div class="game-infobox">
             <a href="../trophies/trophy-snatcher-beatgame.html">
-              <img src="../images/covers/Snatcher (USA).png" alt="Snatcher box art" class="game-infobox-image" loading="lazy" />
+              <img src="../images/covers/Snatcher (USA).png" alt="Snatcher box art" class="game-infobox-image" />
             </a>
             <table class="game-infobox-table">
               <tr>
@@ -114,13 +127,21 @@
           </div>
         </div>
 
+        <div class="game-history">
+          <h2>About This Game</h2>
+          <div class="game-history-text">
+            <p>Snatcher is a cyberpunk graphic adventure created by Hideo Kojima, originally released for Japanese home computers in 1988 before receiving its definitive English localization on the Sega CD in 1994. Heavily inspired by Blade Runner and The Terminator, the game follows Gillian Seed, an amnesiac agent investigating bioroid infiltrators called “Snatchers” who kill humans and assume their identities. Kojima poured his love of cinema into every frame—the game features voice acting, an atmospheric soundtrack by Konami’s in-house composers, and a noir-drenched narrative that was far ahead of its time.</p>
+            <p>The Sega CD version is notorious for being one of the rarest and most expensive games for the platform, with complete copies regularly selling for hundreds of dollars. Konami produced a very limited English run, and the game never received another official Western release. Despite its obscurity, Snatcher is widely regarded as one of the finest adventure games ever made and a key work in Kojima’s career—containing many thematic seeds that would later bloom in Metal Gear Solid, including unreliable narrators, philosophical monologues, and fourth-wall-breaking moments.</p>
+          </div>
+        </div>
+
         <div class="club-achievements">
           <h2>Club Achievements</h2>
 
           <div class="trophy-grid">
             <div class="trophy-card-wrapper">
               <a href="../trophies/trophy-snatcher-beatgame.html" class="trophy-card">
-                <img src="../images/trophies/trophy-snatcher-beatgame.png" alt="Beat the Game Trophy" class="trophy-card-image" loading="lazy" />
+                <img src="../images/trophies/trophy-snatcher-beatgame.png" alt="Beat the Game Trophy" class="trophy-card-image" />
                 <h3>Beat the Game</h3>
                 <p class="trophy-tier gold">Gold Trophy</p>
               </a>
@@ -145,7 +166,43 @@
           </div>
         </div>
 
-        <p><a href="../index.html">Back to home</a></p>
+
+        
+        <div class="screenshot-gallery">
+          <h2>Screenshots</h2>
+          <div class="screenshot-grid">
+            <div class="screenshot-item" onclick="openLightbox(this)">
+              <img src="../images/screenshots/snatcher-1.jpg" alt="Snatcher gameplay" />
+            </div>
+            <div class="screenshot-item" onclick="openLightbox(this)">
+              <img src="../images/screenshots/snatcher-2.jpg" alt="Snatcher screenshot" />
+            </div>
+            <div class="screenshot-item" onclick="openLightbox(this)">
+              <img src="../images/screenshots/snatcher-3.jpg" alt="Snatcher game select" />
+            </div>
+            <div class="screenshot-item" onclick="openLightbox(this)">
+              <img src="../images/screenshots/snatcher-4.png" alt="Snatcher game over" />
+            </div>
+          </div>
+          <p class="screenshot-credit">Screenshots via <a href="https://gamesdb.launchbox-app.com/" target="_blank" rel="noopener noreferrer">LaunchBox Games Database</a></p>
+        </div>
+
+        <div class="screenshot-lightbox" id="screenshotLightbox" onclick="closeLightbox()">
+          <img id="lightboxImg" src="" alt="Screenshot enlarged" />
+        </div>
+        <script>
+          function openLightbox(el) {
+            var src = el.querySelector('img').src;
+            document.getElementById('lightboxImg').src = src;
+            document.getElementById('screenshotLightbox').classList.add('active');
+          }
+          function closeLightbox() {
+            document.getElementById('screenshotLightbox').classList.remove('active');
+          }
+          document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeLightbox();
+          });
+        </script>
       </section>
     </main>
 

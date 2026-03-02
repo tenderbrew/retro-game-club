@@ -42,7 +42,7 @@
           <span class="main-nav-summary-icon">v</span>
         </label>
         <nav class="main-nav" aria-label="Primary">
-          <a href="../index.html">Home</a>
+          <a href="../rules.html">Rules &amp; FAQ</a>
           <a href="../game-of-the-month.html">Past Games</a>
           <a href="../resources.html">Resources</a>
           <a href="../gallery.html">Gallery</a>
@@ -56,16 +56,29 @@
 
     <main class="site-main container" id="main-content">
       <section class="content">
+        <nav class="game-nav">
+          <a href="2025-october-koudelka.html" class="game-nav-link nav-prev">
+            <span class="game-nav-arrow">&#8249;</span>
+            <span class="game-nav-label"><span class="game-nav-small">Previous</span><span class="game-nav-title">Koudelka</span></span>
+          </a>
+          <a href="2025-december-nights.html" class="game-nav-link nav-next">
+            <span class="game-nav-label"><span class="game-nav-small">Next</span><span class="game-nav-title">NiGHTS</span></span>
+            <span class="game-nav-arrow">&#8250;</span>
+          </a>
+        </nav>
+
         <div class="game-header">
           <div class="game-description">
             <h1>November 2025 – Brave Fencer Musashi</h1>
+
+
             <p>
               A real-time action RPG from Squaresoft where young swordsman Musashi is summoned to defend the Allucaneet Kingdom from the Thirstquencher Empire. Features fluid, real-time swordplay with a dual-blade system and the ability to absorb enemy abilities similar to Kirby. The game includes a day-night cycle that affects NPC schedules, enemy behavior, and Musashi's physical abilities based on fatigue and hunger. An unusual and memorable Squaresoft title.
             </p>
           </div>
           <div class="game-infobox">
             <a href="../trophies/trophy-brave-fencer-musashi-beatgame.html">
-              <img src="../images/covers/Brave Fencer Musashi (USA).png" alt="Brave Fencer Musashi box art" class="game-infobox-image" loading="lazy" />
+              <img src="../images/covers/Brave Fencer Musashi (USA).png" alt="Brave Fencer Musashi box art" class="game-infobox-image" />
             </a>
             <table class="game-infobox-table">
               <tr>
@@ -114,13 +127,21 @@
           </div>
         </div>
 
+        <div class="game-history">
+          <h2>About This Game</h2>
+          <div class="game-history-text">
+            <p>Brave Fencer Musashi was developed by Square (now Square Enix) and released for the PlayStation in 1998, during the studio’s extraordinary late-90s creative peak. Loosely inspired by the legendary Japanese swordsman Miyamoto Musashi, the game is an action RPG where the pint-sized hero wields two swords—Fusion, which absorbs enemy abilities, and Lumina, a legendary blade that gains new powers throughout the story. The game featured a real-time day/night cycle that affected NPC schedules, shop availability, and enemy behavior—a design choice that was ambitious for its era.</p>
+            <p>In North America, Brave Fencer Musashi became famous for an unusual reason: it included a playable demo disc for Final Fantasy VIII, which for many players was the primary purchase motivation. This somewhat overshadowed the game itself, which was a charming and inventive action RPG in its own right. Square’s localization gave the game a playful, Saturday-morning-cartoon personality with voice acting and humor that set it apart from the studio’s more serious RPG output. While it never became a blockbuster, it remains a fan-favorite hidden gem from Square’s golden age.</p>
+          </div>
+        </div>
+
         <div class="club-achievements">
           <h2>Club Achievements</h2>
 
           <div class="trophy-grid">
             <div class="trophy-card-wrapper">
               <a href="../trophies/trophy-brave-fencer-musashi-beatgame.html" class="trophy-card">
-                <img src="../images/trophies/trophy-brave-fencer-musashi-beatgame.png" alt="Beat the Game Trophy" class="trophy-card-image" loading="lazy" />
+                <img src="../images/trophies/trophy-brave-fencer-musashi-beatgame.png" alt="Beat the Game Trophy" class="trophy-card-image" />
                 <h3>Beat the Game</h3>
                 <p class="trophy-tier gold">Gold Trophy</p>
               </a>
@@ -140,7 +161,43 @@
           </div>
         </div>
 
-        <p><a href="../index.html">Back to home</a></p>
+
+        
+        <div class="screenshot-gallery">
+          <h2>Screenshots</h2>
+          <div class="screenshot-grid">
+            <div class="screenshot-item" onclick="openLightbox(this)">
+              <img src="../images/screenshots/brave-fencer-musashi-1.jpg" alt="Brave Fencer Musashi gameplay" />
+            </div>
+            <div class="screenshot-item" onclick="openLightbox(this)">
+              <img src="../images/screenshots/brave-fencer-musashi-2.png" alt="Brave Fencer Musashi screenshot" />
+            </div>
+            <div class="screenshot-item" onclick="openLightbox(this)">
+              <img src="../images/screenshots/brave-fencer-musashi-3.jpg" alt="Brave Fencer Musashi combat" />
+            </div>
+            <div class="screenshot-item" onclick="openLightbox(this)">
+              <img src="../images/screenshots/brave-fencer-musashi-4.jpg" alt="Brave Fencer Musashi exploration" />
+            </div>
+          </div>
+          <p class="screenshot-credit">Screenshots via <a href="https://gamesdb.launchbox-app.com/" target="_blank" rel="noopener noreferrer">LaunchBox Games Database</a></p>
+        </div>
+
+        <div class="screenshot-lightbox" id="screenshotLightbox" onclick="closeLightbox()">
+          <img id="lightboxImg" src="" alt="Screenshot enlarged" />
+        </div>
+        <script>
+          function openLightbox(el) {
+            var src = el.querySelector('img').src;
+            document.getElementById('lightboxImg').src = src;
+            document.getElementById('screenshotLightbox').classList.add('active');
+          }
+          function closeLightbox() {
+            document.getElementById('screenshotLightbox').classList.remove('active');
+          }
+          document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeLightbox();
+          });
+        </script>
       </section>
     </main>
 

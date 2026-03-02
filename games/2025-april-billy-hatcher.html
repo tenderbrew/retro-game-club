@@ -42,7 +42,7 @@
           <span class="main-nav-summary-icon">v</span>
         </label>
         <nav class="main-nav" aria-label="Primary">
-          <a href="../index.html">Home</a>
+          <a href="../rules.html">Rules &amp; FAQ</a>
           <a href="../game-of-the-month.html">Past Games</a>
           <a href="../resources.html">Resources</a>
           <a href="../gallery.html">Gallery</a>
@@ -56,16 +56,29 @@
 
     <main class="site-main container" id="main-content">
       <section class="content">
+        <nav class="game-nav">
+          <a href="2025-march-kirby-64.html" class="game-nav-link nav-prev">
+            <span class="game-nav-arrow">&#8249;</span>
+            <span class="game-nav-label"><span class="game-nav-small">Previous</span><span class="game-nav-title">Kirby 64</span></span>
+          </a>
+          <a href="2025-may-snatcher.html" class="game-nav-link nav-next">
+            <span class="game-nav-label"><span class="game-nav-small">Next</span><span class="game-nav-title">Snatcher</span></span>
+            <span class="game-nav-arrow">&#8250;</span>
+          </a>
+        </nav>
+
         <div class="game-header">
           <div class="game-description">
             <h1>April 2025 – Billy Hatcher and the Giant Egg</h1>
+
+
             <p>
               A colorful 3D platformer from Sonic Team where gameplay revolves around rolling and hatching giant eggs. Billy and his friends must save Morning Land from sinister crows by using their chicken suits to move, grow, and hatch eggs containing helper animals and power-ups. The game features bright, whimsical visuals and puzzle-solving mechanics centered around the unique egg-rolling system.
             </p>
           </div>
           <div class="game-infobox">
             <a href="../trophies/trophy-billy-hatcher-beatlevel.html">
-              <img src="../images/covers/Billy Hatcher and the Giant Egg (USA).png" alt="Billy Hatcher and the Giant Egg box art" class="game-infobox-image" loading="lazy" />
+              <img src="../images/covers/Billy Hatcher and the Giant Egg (USA).png" alt="Billy Hatcher and the Giant Egg box art" class="game-infobox-image" />
             </a>
             <table class="game-infobox-table">
               <tr>
@@ -114,13 +127,21 @@
           </div>
         </div>
 
+        <div class="game-history">
+          <h2>About This Game</h2>
+          <div class="game-history-text">
+            <p>Billy Hatcher and the Giant Egg was developed by Sonic Team and released for the Nintendo GameCube in 2003. It was directed by Yuji Naka—the creator of Sonic the Hedgehog—as part of Sega’s post-console era push to create new original IP for Nintendo and other platforms. The game centers on rolling and hatching giant eggs, a mechanic that blends platforming with puzzle-solving in a way that’s unlike anything else in Sonic Team’s catalog. Hidden within some eggs are cameo characters from other Sega franchises, including NiGHTS and Sonic himself.</p>
+            <p>Despite its pedigree, Billy Hatcher received mixed reviews and modest sales, making it one of Sonic Team’s more obscure titles. Critics praised its colorful art direction and inventive egg mechanics but found the camera and controls frustrating. The game has since developed a small but devoted cult following, with fans appreciating its sheer originality and the fact that it represents one of the last times Yuji Naka’s Sonic Team attempted something genuinely new before Naka departed Sega in 2006.</p>
+          </div>
+        </div>
+
         <div class="club-achievements">
           <h2>Club Achievements</h2>
 
           <div class="trophy-grid">
             <div class="trophy-card-wrapper">
               <a href="../trophies/trophy-billy-hatcher-beatlevel.html" class="trophy-card">
-                <img src="../images/trophies/trophy-billy-hatcher-beatlevel.png" alt="Beat Every Level Trophy" class="trophy-card-image" loading="lazy" />
+                <img src="../images/trophies/trophy-billy-hatcher-beatlevel.png" alt="Beat Every Level Trophy" class="trophy-card-image" />
                 <h3>Beat Every Level</h3>
                 <p class="trophy-tier gold">Gold Trophy</p>
               </a>
@@ -135,7 +156,7 @@
 
             <div class="trophy-card-wrapper">
               <a href="../trophies/trophy-billy-hatcher-beatgame.html" class="trophy-card">
-                <img src="../images/trophies/trophy-billy-hatcher-beatgame.png" alt="Beat Game Trophy" class="trophy-card-image" loading="lazy" />
+                <img src="../images/trophies/trophy-billy-hatcher-beatgame.png" alt="Beat Game Trophy" class="trophy-card-image" />
                 <h3>Beat Game</h3>
                 <p class="trophy-tier silver">Silver Trophy</p>
               </a>
@@ -166,7 +187,40 @@
           </div>
         </div>
 
-        <p><a href="../index.html">Back to home</a></p>
+
+        
+        <div class="screenshot-gallery">
+          <h2>Screenshots</h2>
+          <div class="screenshot-grid">
+            <div class="screenshot-item" onclick="openLightbox(this)">
+              <img src="../images/screenshots/billy-hatcher-1.jpg" alt="Billy Hatcher gameplay" />
+            </div>
+            <div class="screenshot-item" onclick="openLightbox(this)">
+              <img src="../images/screenshots/billy-hatcher-2.jpg" alt="Billy Hatcher title screen" />
+            </div>
+            <div class="screenshot-item" onclick="openLightbox(this)">
+              <img src="../images/screenshots/billy-hatcher-3.png" alt="Billy Hatcher title screen (Japan)" />
+            </div>
+          </div>
+          <p class="screenshot-credit">Screenshots via <a href="https://gamesdb.launchbox-app.com/" target="_blank" rel="noopener noreferrer">LaunchBox Games Database</a></p>
+        </div>
+
+        <div class="screenshot-lightbox" id="screenshotLightbox" onclick="closeLightbox()">
+          <img id="lightboxImg" src="" alt="Screenshot enlarged" />
+        </div>
+        <script>
+          function openLightbox(el) {
+            var src = el.querySelector('img').src;
+            document.getElementById('lightboxImg').src = src;
+            document.getElementById('screenshotLightbox').classList.add('active');
+          }
+          function closeLightbox() {
+            document.getElementById('screenshotLightbox').classList.remove('active');
+          }
+          document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeLightbox();
+          });
+        </script>
       </section>
     </main>
 

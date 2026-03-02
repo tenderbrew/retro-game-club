@@ -42,7 +42,7 @@
           <span class="main-nav-summary-icon">v</span>
         </label>
         <nav class="main-nav" aria-label="Primary">
-          <a href="../index.html">Home</a>
+          <a href="../rules.html">Rules &amp; FAQ</a>
           <a href="../game-of-the-month.html">Past Games</a>
           <a href="../resources.html">Resources</a>
           <a href="../gallery.html">Gallery</a>
@@ -56,16 +56,29 @@
 
     <main class="site-main container" id="main-content">
       <section class="content">
+        <nav class="game-nav">
+          <a href="2025-july-resident-evil-2.html" class="game-nav-link nav-prev">
+            <span class="game-nav-arrow">&#8249;</span>
+            <span class="game-nav-label"><span class="game-nav-small">Previous</span><span class="game-nav-title">Resident Evil 2</span></span>
+          </a>
+          <a href="2025-september-gran-turismo-2.html" class="game-nav-link nav-next">
+            <span class="game-nav-label"><span class="game-nav-small">Next</span><span class="game-nav-title">Gran Turismo 2</span></span>
+            <span class="game-nav-arrow">&#8250;</span>
+          </a>
+        </nav>
+
         <div class="game-header">
           <div class="game-description">
             <h1>August 2025 – Umihara Kawase</h1>
+
+
             <p>
               A unique 2D platformer where sushi chef Kawase Umihara uses an elastic fishing line to navigate surreal worlds filled with salt-water and fresh-water creatures. The game is built around realistic physics as you swing between platforms, lower yourself down ledges, and catapult yourself by stretching the line to its breaking point. Inspired by arcade classics like Donkey Kong and Roc'n Rope.
             </p>
           </div>
           <div class="game-infobox">
             <a href="../trophies/trophy-umihara-kawase-beatgame.html">
-              <img src="../images/covers/Umihara Kawase (Japan).png" alt="Umihara Kawase box art" class="game-infobox-image" loading="lazy" />
+              <img src="../images/covers/Umihara Kawase (Japan).png" alt="Umihara Kawase box art" class="game-infobox-image" />
             </a>
             <table class="game-infobox-table">
               <tr>
@@ -114,13 +127,21 @@
           </div>
         </div>
 
+        <div class="game-history">
+          <h2>About This Game</h2>
+          <div class="game-history-text">
+            <p>Umihara Kawase was developed by TNN and released for the Super Famicom in 1994, exclusively in Japan. The game stars a young Japanese girl armed with a rubber fishing line that functions as a grappling hook, navigating surreal floating platforms populated by oversized walking fish. Beneath its cute exterior lies one of the most demanding physics-based platformers ever created—the fishing line stretches and bounces with realistic elasticity, and mastering its momentum is essential for reaching each stage’s exit door.</p>
+            <p>The game never received an official Western release during the 16-bit era, but it developed a fervent cult following among import gamers and speedrunners who were captivated by its deep, skill-rewarding mechanics. The fishing line physics were remarkably advanced for 1994, creating emergent movement possibilities that players are still discovering today. Umihara Kawase spawned several sequels across PlayStation, PSP, DS, and modern platforms, but the original Super Famicom version is still considered the purest expression of the concept—a deceptively simple game that reveals extraordinary depth to anyone willing to learn its unique language of swings, launches, and rubber-band trajectories.</p>
+          </div>
+        </div>
+
         <div class="club-achievements">
           <h2>Club Achievements</h2>
 
           <div class="trophy-grid">
             <div class="trophy-card-wrapper">
               <a href="../trophies/trophy-umihara-kawase-beatgame.html" class="trophy-card">
-                <img src="../images/trophies/trophy-umihara-kawase-beatgame.png" alt="Beat the Game Trophy" class="trophy-card-image" loading="lazy" />
+                <img src="../images/trophies/trophy-umihara-kawase-beatgame.png" alt="Beat the Game Trophy" class="trophy-card-image" />
                 <h3>Beat the Game</h3>
                 <p class="trophy-tier gold">Gold Trophy</p>
               </a>
@@ -143,7 +164,40 @@
           </div>
         </div>
 
-        <p><a href="../index.html">Back to home</a></p>
+
+        
+        <div class="screenshot-gallery">
+          <h2>Screenshots</h2>
+          <div class="screenshot-grid">
+            <div class="screenshot-item" onclick="openLightbox(this)">
+              <img src="../images/screenshots/umihara-kawase-1.png" alt="Umihara Kawase gameplay" />
+            </div>
+            <div class="screenshot-item" onclick="openLightbox(this)">
+              <img src="../images/screenshots/umihara-kawase-2.png" alt="Umihara Kawase level" />
+            </div>
+            <div class="screenshot-item" onclick="openLightbox(this)">
+              <img src="../images/screenshots/umihara-kawase-3.png" alt="Umihara Kawase screenshot" />
+            </div>
+          </div>
+          <p class="screenshot-credit">Screenshots via <a href="https://gamesdb.launchbox-app.com/" target="_blank" rel="noopener noreferrer">LaunchBox Games Database</a></p>
+        </div>
+
+        <div class="screenshot-lightbox" id="screenshotLightbox" onclick="closeLightbox()">
+          <img id="lightboxImg" src="" alt="Screenshot enlarged" />
+        </div>
+        <script>
+          function openLightbox(el) {
+            var src = el.querySelector('img').src;
+            document.getElementById('lightboxImg').src = src;
+            document.getElementById('screenshotLightbox').classList.add('active');
+          }
+          function closeLightbox() {
+            document.getElementById('screenshotLightbox').classList.remove('active');
+          }
+          document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeLightbox();
+          });
+        </script>
       </section>
     </main>
 

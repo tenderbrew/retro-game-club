@@ -42,7 +42,7 @@
           <span class="main-nav-summary-icon">v</span>
         </label>
         <nav class="main-nav" aria-label="Primary">
-          <a href="../index.html">Home</a>
+          <a href="../rules.html">Rules &amp; FAQ</a>
           <a href="../game-of-the-month.html">Past Games</a>
           <a href="../resources.html">Resources</a>
           <a href="../gallery.html">Gallery</a>
@@ -56,16 +56,26 @@
 
     <main class="site-main container" id="main-content">
       <section class="content">
+        <nav class="game-nav">
+          <span></span>
+          <a href="2025-february-god-of-war.html" class="game-nav-link nav-next">
+            <span class="game-nav-label"><span class="game-nav-small">Next</span><span class="game-nav-title">God of War</span></span>
+            <span class="game-nav-arrow">&#8250;</span>
+          </a>
+        </nav>
+
         <div class="game-header">
           <div class="game-description">
             <h1>January 2025 – Super Punch-Out!!</h1>
+
+
             <p>
               A fast-paced boxing game where you fight from a behind-the-back perspective to become the World Video Boxing Association champion. Success requires quick reflexes, pattern recognition, and perfect timing to counter colorful, outlandish opponents. While technically a boxing game, it's more of an arcade beat 'em up than a realistic boxing simulation.
             </p>
           </div>
           <div class="game-infobox">
             <a href="../trophies/trophy-super-punch-out-highscore.html">
-              <img src="../images/covers/Super Punch-Out!! (USA).png" alt="Super Punch-Out!! box art" class="game-infobox-image" loading="lazy" />
+              <img src="../images/covers/Super Punch-Out!! (USA).png" alt="Super Punch-Out!! box art" class="game-infobox-image" />
             </a>
             <table class="game-infobox-table">
               <tr>
@@ -114,13 +124,21 @@
           </div>
         </div>
 
+        <div class="game-history">
+          <h2>About This Game</h2>
+          <div class="game-history-text">
+            <p>Super Punch-Out!! was developed by Nintendo R&D3 and released for the Super Nintendo in 1994, following the massive success of its NES predecessor Mike Tyson’s Punch-Out!!. Unlike the original, this sequel was primarily an arcade port—based on the 1984 Super Punch-Out!! cabinet—and shifted to a transparent wireframe view of the player’s boxer rather than the small sprite used on the NES. The result was a faster, more reflex-driven game with less emphasis on narrative.</p>
+            <p>Despite its mechanical brilliance, Super Punch-Out!! never achieved the same cultural footprint as the NES original. It received no celebrity endorsement, no memorable trainer character like Doc Louis, and arrived late in the SNES lifecycle when attention was shifting to the next generation. Among speedrunners and fighting game enthusiasts, however, it’s often considered the tighter and more replayable entry in the series. The game remained a Japan and North America exclusive until its eventual worldwide re-release through Nintendo Switch Online decades later.</p>
+          </div>
+        </div>
+
         <div class="club-achievements">
           <h2>Club Achievements</h2>
 
           <div class="trophy-grid">
             <div class="trophy-card-wrapper">
               <a href="../trophies/trophy-super-punch-out-highscore.html" class="trophy-card">
-                <img src="../images/trophies/trophy-super-punch-out-highscore.png" alt="High Score Trophy" class="trophy-card-image" loading="lazy" />
+                <img src="../images/trophies/trophy-super-punch-out-highscore.png" alt="High Score Trophy" class="trophy-card-image" />
                 <h3>High Score</h3>
                 <p class="trophy-tier gold">Gold Trophy</p>
               </a>
@@ -152,7 +170,7 @@
 
             <div class="trophy-card-wrapper">
               <a href="../trophies/trophy-super-punch-out-beatgame.html" class="trophy-card">
-                <img src="../images/trophies/trophy-super-punch-out-beatgame.png" alt="Beat Game Trophy" class="trophy-card-image" loading="lazy" />
+                <img src="../images/trophies/trophy-super-punch-out-beatgame.png" alt="Beat Game Trophy" class="trophy-card-image" />
                 <h3>Beat Game</h3>
                 <p class="trophy-tier silver">Silver Trophy</p>
               </a>
@@ -178,7 +196,40 @@
           </div>
         </div>
 
-        <p><a href="../index.html">Back to home</a></p>
+
+        
+        <div class="screenshot-gallery">
+          <h2>Screenshots</h2>
+          <div class="screenshot-grid">
+            <div class="screenshot-item" onclick="openLightbox(this)">
+              <img src="../images/screenshots/super-punch-out-1.png" alt="Super Punch-Out!! game select screen" />
+            </div>
+            <div class="screenshot-item" onclick="openLightbox(this)">
+              <img src="../images/screenshots/super-punch-out-2.png" alt="Super Punch-Out!! gameplay" />
+            </div>
+            <div class="screenshot-item" onclick="openLightbox(this)">
+              <img src="../images/screenshots/super-punch-out-3.png" alt="Super Punch-Out!! title screen" />
+            </div>
+          </div>
+          <p class="screenshot-credit">Screenshots via <a href="https://gamesdb.launchbox-app.com/" target="_blank" rel="noopener noreferrer">LaunchBox Games Database</a></p>
+        </div>
+
+        <div class="screenshot-lightbox" id="screenshotLightbox" onclick="closeLightbox()">
+          <img id="lightboxImg" src="" alt="Screenshot enlarged" />
+        </div>
+        <script>
+          function openLightbox(el) {
+            var src = el.querySelector('img').src;
+            document.getElementById('lightboxImg').src = src;
+            document.getElementById('screenshotLightbox').classList.add('active');
+          }
+          function closeLightbox() {
+            document.getElementById('screenshotLightbox').classList.remove('active');
+          }
+          document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeLightbox();
+          });
+        </script>
       </section>
     </main>
 

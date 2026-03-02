@@ -42,7 +42,7 @@
           <span class="main-nav-summary-icon">v</span>
         </label>
         <nav class="main-nav" aria-label="Primary">
-          <a href="../index.html">Home</a>
+          <a href="../rules.html">Rules &amp; FAQ</a>
           <a href="../game-of-the-month.html">Past Games</a>
           <a href="../resources.html">Resources</a>
           <a href="../gallery.html">Gallery</a>
@@ -56,16 +56,29 @@
 
     <main class="site-main container" id="main-content">
       <section class="content">
+        <nav class="game-nav">
+          <a href="2025-september-gran-turismo-2.html" class="game-nav-link nav-prev">
+            <span class="game-nav-arrow">&#8249;</span>
+            <span class="game-nav-label"><span class="game-nav-small">Previous</span><span class="game-nav-title">Gran Turismo 2</span></span>
+          </a>
+          <a href="2025-november-brave-fencer-musashi.html" class="game-nav-link nav-next">
+            <span class="game-nav-label"><span class="game-nav-small">Next</span><span class="game-nav-title">Brave Fencer Musashi</span></span>
+            <span class="game-nav-arrow">&#8250;</span>
+          </a>
+        </nav>
+
         <div class="game-header">
           <div class="game-description">
             <h1>October 2025 – Koudelka</h1>
+
+
             <p>
               A unique hybrid of survival horror and turn-based RPG set in 1898 Wales at the ominous Nemeton Monastery. Three unlikely protagonists—psychic medium Koudelka, adventurer Edward, and Vatican Bishop James—investigate the monastery's dark history. Features Resident Evil-style exploration with fixed camera angles and pre-rendered backgrounds, combined with grid-based tactical combat. Predecessor to the Shadow Hearts series and a cult classic.
             </p>
           </div>
           <div class="game-infobox">
             <a href="../trophies/trophy-koudelka-beatgame.html">
-              <img src="../images/covers/Koudelka (USA).png" alt="Koudelka box art" class="game-infobox-image" loading="lazy" />
+              <img src="../images/covers/Koudelka (USA).png" alt="Koudelka box art" class="game-infobox-image" />
             </a>
             <table class="game-infobox-table">
               <tr>
@@ -114,13 +127,21 @@
           </div>
         </div>
 
+        <div class="game-history">
+          <h2>About This Game</h2>
+          <div class="game-history-text">
+            <p>Koudelka was the debut title from Sacnoth, a studio founded in 1997 by Hiroki Kikuta after his departure from Square, where he had composed the beloved soundtracks for Secret of Mana and Seiken Densetsu 3. Set in 1898 Wales, the game takes place entirely within the Nemeton Monastery—a real location reimagined as a gothic horror setting crawling with Lovecraftian monstrosities. Kikuta wanted to blend survival horror atmosphere with RPG combat, creating something that felt like a playable gothic novel.</p>
+            <p>The game’s development was fraught with creative conflict. Kikuta envisioned a more action-oriented experience, but the development team pushed for traditional turn-based combat on a grid, resulting in a tonal tension between the atmospheric exploration and the slow-paced battles. Despite mixed reviews at launch, Koudelka found its audience among horror RPG fans who appreciated its mature storytelling, stunning pre-rendered backgrounds, and genuinely unsettling atmosphere. The game’s legacy extends through its spiritual successor series, Shadow Hearts, which refined many of Koudelka’s ideas into a more polished package while continuing its alternate-history horror setting.</p>
+          </div>
+        </div>
+
         <div class="club-achievements">
           <h2>Club Achievements</h2>
 
           <div class="trophy-grid">
             <div class="trophy-card-wrapper">
               <a href="../trophies/trophy-koudelka-beatgame.html" class="trophy-card">
-                <img src="../images/trophies/trophy-koudelka-beatgame.png" alt="Beat the Game Trophy" class="trophy-card-image" loading="lazy" />
+                <img src="../images/trophies/trophy-koudelka-beatgame.png" alt="Beat the Game Trophy" class="trophy-card-image" />
                 <h3>Beat the Game</h3>
                 <p class="trophy-tier gold">Gold Trophy</p>
               </a>
@@ -142,7 +163,43 @@
           </div>
         </div>
 
-        <p><a href="../index.html">Back to home</a></p>
+
+        
+        <div class="screenshot-gallery">
+          <h2>Screenshots</h2>
+          <div class="screenshot-grid">
+            <div class="screenshot-item" onclick="openLightbox(this)">
+              <img src="../images/screenshots/koudelka-1.png" alt="Koudelka gameplay" />
+            </div>
+            <div class="screenshot-item" onclick="openLightbox(this)">
+              <img src="../images/screenshots/koudelka-2.png" alt="Koudelka screenshot" />
+            </div>
+            <div class="screenshot-item" onclick="openLightbox(this)">
+              <img src="../images/screenshots/koudelka-3.jpg" alt="Koudelka combat" />
+            </div>
+            <div class="screenshot-item" onclick="openLightbox(this)">
+              <img src="../images/screenshots/koudelka-4.jpg" alt="Koudelka exploration" />
+            </div>
+          </div>
+          <p class="screenshot-credit">Screenshots via <a href="https://gamesdb.launchbox-app.com/" target="_blank" rel="noopener noreferrer">LaunchBox Games Database</a></p>
+        </div>
+
+        <div class="screenshot-lightbox" id="screenshotLightbox" onclick="closeLightbox()">
+          <img id="lightboxImg" src="" alt="Screenshot enlarged" />
+        </div>
+        <script>
+          function openLightbox(el) {
+            var src = el.querySelector('img').src;
+            document.getElementById('lightboxImg').src = src;
+            document.getElementById('screenshotLightbox').classList.add('active');
+          }
+          function closeLightbox() {
+            document.getElementById('screenshotLightbox').classList.remove('active');
+          }
+          document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeLightbox();
+          });
+        </script>
       </section>
     </main>
 
