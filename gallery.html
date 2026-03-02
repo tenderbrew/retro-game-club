@@ -64,19 +64,19 @@
             <p class="art-credit">Art by Jenny</p>
             <div class="art-gallery">
               <div class="art-item">
-                <img src="images/art/kirby 64/jenny/kirby1.png" alt="Kirby fan art by Jenny" class="art-thumbnail gallery-thumb" />
+                <img src="images/art/kirby 64/jenny/kirby1.png" alt="Kirby 64 guide art by Jenny — ability colors and colored blocks explained" class="art-thumbnail gallery-thumb" tabindex="0" role="button" />
               </div>
               <div class="art-item">
-                <img src="images/art/kirby 64/jenny/kirby2.png" alt="Kirby fan art by Jenny" class="art-thumbnail gallery-thumb" />
+                <img src="images/art/kirby 64/jenny/kirby2.png" alt="Kirby 64 guide art by Jenny — fire ash and ice ceiling tips, Rick the hamster climbing walls" class="art-thumbnail gallery-thumb" tabindex="0" role="button" />
               </div>
               <div class="art-item">
-                <img src="images/art/kirby 64/jenny/kirby3.png" alt="Kirby fan art by Jenny" class="art-thumbnail gallery-thumb" />
+                <img src="images/art/kirby 64/jenny/kirby3.png" alt="Kirby 64 guide art by Jenny — Point Stars and Crystal Shard collecting tips" class="art-thumbnail gallery-thumb" tabindex="0" role="button" />
               </div>
               <div class="art-item">
-                <img src="images/art/kirby 64/jenny/kirby4.png" alt="Kirby fan art by Jenny" class="art-thumbnail gallery-thumb" />
+                <img src="images/art/kirby 64/jenny/kirby4.png" alt="Kirby 64 guide art by Jenny — Stone-Bomb ability with Kirby in a hard hat and TNT" class="art-thumbnail gallery-thumb" tabindex="0" role="button" />
               </div>
               <div class="art-item">
-                <img src="images/art/kirby 64/jenny/kirby5.png" alt="Kirby fan art by Jenny" class="art-thumbnail gallery-thumb" />
+                <img src="images/art/kirby 64/jenny/kirby5.png" alt="Kirby 64 guide art by Jenny — Crystal Shard tracking on the level select map" class="art-thumbnail gallery-thumb" tabindex="0" role="button" />
               </div>
             </div>
           </div>
@@ -88,13 +88,13 @@
             <p class="art-credit">Screenshots by <a href="users/user-anton.html">Anton</a></p>
             <div class="art-gallery">
               <div class="art-item">
-                <img src="images/art/mega man legends/anton/Mega_Man_Legends_USA-260110-055855.png" alt="Mega Man Legends screenshot by Anton" class="art-thumbnail gallery-thumb" />
+                <img src="images/art/mega man legends/anton/Mega_Man_Legends_USA-260110-055855.png" alt="Mega Man Legends screenshot by Anton — MegaMan Volnutt with a monkey on his back" class="art-thumbnail gallery-thumb" tabindex="0" role="button" />
               </div>
               <div class="art-item">
-                <img src="images/art/mega man legends/anton/Mega_Man_Legends_USA-260125-055140.png" alt="Mega Man Legends screenshot by Anton" class="art-thumbnail gallery-thumb" />
+                <img src="images/art/mega man legends/anton/Mega_Man_Legends_USA-260125-055140.png" alt="Mega Man Legends screenshot by Anton — townspeople celebrating on Kattelox Island" class="art-thumbnail gallery-thumb" tabindex="0" role="button" />
               </div>
               <div class="art-item">
-                <img src="images/art/mega man legends/anton/Mega_Man_Legends_USA-260125-055619.png" alt="Mega Man Legends screenshot by Anton" class="art-thumbnail gallery-thumb" />
+                <img src="images/art/mega man legends/anton/Mega_Man_Legends_USA-260125-055619.png" alt="Mega Man Legends screenshot by Anton — Tron Bonne piloting a mech at sunset over the ocean" class="art-thumbnail gallery-thumb" tabindex="0" role="button" />
               </div>
             </div>
           </div>
@@ -133,6 +133,12 @@
         document.querySelectorAll('.gallery-thumb').forEach(function(img) {
           img.addEventListener('click', function() {
             openLightbox(this.src, this.alt);
+          });
+          img.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              openLightbox(this.src, this.alt);
+            }
           });
         });
 
