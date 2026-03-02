@@ -26,6 +26,9 @@
     <meta name="twitter:image" content="https://nintendopipeline.club/nintendopipeline.png" />
     <meta name="robots" content="noindex" />
     <link rel="icon" type="image/png" href="nintendopipeline.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -56,7 +59,14 @@
 
     <main class="site-main container" id="main-content">
       <section class="content error-page-content">
-        <h1>404</h1>
+        <div class="error-crt">
+          <div class="error-crt-screen">
+            <p class="error-game-over">GAME OVER</p>
+            <p class="error-code">- 404 -</p>
+            <p class="error-msg">PAGE NOT FOUND</p>
+            <p class="error-continue">CONTINUE?<span class="error-blink"> _</span></p>
+          </div>
+        </div>
         <p class="error-page-message">The page you're looking for doesn't exist.</p>
         <p><a href="index.html" class="btn-primary">Back to Home</a></p>
       </section>

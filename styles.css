@@ -3604,6 +3604,94 @@ h3 {
   padding: 4rem 1rem;
 }
 
+.error-crt {
+  position: relative;
+  background: #0a0a0a;
+  border: 3px solid #333;
+  border-radius: 1.5rem;
+  padding: 3rem 2rem;
+  max-width: 480px;
+  margin: 0 auto 2.5rem;
+  box-shadow:
+    inset 0 0 80px rgba(0, 255, 0, 0.04),
+    0 0 30px rgba(0, 0, 0, 0.6);
+  overflow: hidden;
+}
+
+.error-crt::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.2) 2px,
+    rgba(0, 0, 0, 0.2) 4px
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+.error-crt::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 255, 0, 0.02);
+  pointer-events: none;
+  animation: crt-flicker 4s infinite;
+}
+
+.error-crt-screen {
+  font-family: 'Press Start 2P', monospace;
+  position: relative;
+  z-index: 2;
+}
+
+.error-game-over {
+  font-size: 2.2rem;
+  color: #ff4444;
+  text-shadow: 0 0 20px rgba(255, 68, 68, 0.6), 0 0 40px rgba(255, 68, 68, 0.3);
+  margin: 0 0 1.5rem;
+  letter-spacing: 0.15em;
+}
+
+.error-code {
+  font-size: 1rem;
+  color: #888;
+  margin: 0 0 0.75rem;
+}
+
+.error-msg {
+  font-size: 0.7rem;
+  color: #00cc00;
+  text-shadow: 0 0 8px rgba(0, 204, 0, 0.5);
+  margin: 0 0 2rem;
+  letter-spacing: 0.1em;
+}
+
+.error-continue {
+  font-size: 0.65rem;
+  color: #00cc00;
+  text-shadow: 0 0 6px rgba(0, 204, 0, 0.4);
+  margin: 0;
+}
+
+.error-blink {
+  animation: blink-404 1s step-end infinite;
+}
+
+@keyframes blink-404 {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes crt-flicker {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 1; }
+  51% { opacity: 0; }
+}
+
 .error-page-message {
   font-size: 1.4rem;
   margin-bottom: 2rem;
