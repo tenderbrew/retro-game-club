@@ -1665,6 +1665,7 @@ h3 {
 .game-nav-arrow {
   font-size: 1.1rem;
   flex-shrink: 0;
+  color: var(--color-gold);
 }
 
 .game-nav-label {
@@ -1681,6 +1682,7 @@ h3 {
 
 .game-nav-title {
   line-height: 1.2;
+  color: var(--color-gold);
 }
 
 .trophy-grid {
@@ -4716,22 +4718,44 @@ h3 {
   box-shadow: 0 2px 12px rgba(212, 175, 55, 0.15);
 }
 
-/* --- Game Nav — First/Last responsive --- */
+/* --- Game Nav — Mobile responsive --- */
 @media (max-width: 600px) {
+  .game-nav {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .game-nav-group {
+    width: 100%;
+    gap: 0.3rem;
+  }
+  .game-nav-group.nav-group-left {
+    margin-right: 0;
+  }
+  .game-nav-group.nav-group-right {
+    margin-left: 0;
+  }
+  .game-nav-link.nav-prev,
+  .game-nav-link.nav-next {
+    flex: 1;
+    min-width: 0;
+    margin: 0;
+  }
+  .game-nav-link.nav-prev .game-nav-title,
+  .game-nav-link.nav-next .game-nav-title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
   .game-nav-link.nav-first .game-nav-title,
   .game-nav-link.nav-last .game-nav-title {
     display: none;
-  }
-  .game-nav-link.nav-first .game-nav-small,
-  .game-nav-link.nav-last .game-nav-small {
-    font-size: 0.55rem;
   }
   .game-nav-link.nav-first,
   .game-nav-link.nav-last {
     padding: 0.4rem 0.5rem;
   }
-  .game-nav-group {
-    gap: 0.3rem;
+  .game-nav-link {
+    box-shadow: 0 2px 12px rgba(212, 175, 55, 0.15);
   }
 }
 
