@@ -55,29 +55,81 @@
     </header>
 
     <main class="site-main container" id="main-content">
-      <section class="content">
+      <section class="content game-page-v2">
         <nav class="game-nav">
           <span></span>
-          <a href="2025-february-god-of-war.html" class="game-nav-link nav-next">
-            <span class="game-nav-label"><span class="game-nav-small">Next</span><span class="game-nav-title">God of War</span></span>
-            <span class="game-nav-arrow">&#8250;</span>
-          </a>
+          <div class="game-nav-group nav-group-right">
+            <a href="2025-february-god-of-war.html" class="game-nav-link nav-next">
+              <span class="game-nav-label"><span class="game-nav-small">Next</span><span class="game-nav-title">God of War</span></span>
+              <span class="game-nav-arrow">&#8250;</span>
+            </a>
+            <a href="2026-march-ape-escape.html" class="game-nav-link nav-last">
+              <span class="game-nav-label"><span class="game-nav-small">Latest</span><span class="game-nav-title">Ape Escape</span></span>
+              <span class="game-nav-arrow">&#8250;&#8250;</span>
+            </a>
+          </div>
         </nav>
 
-        <div class="game-header">
-          <div class="game-description">
-            <h1>January 2025 – Super Punch-Out!!</h1>
-
-
-            <p>
+        <!-- Hero Banner -->
+        <div class="game-hero" style="--hero-bg: url('../images/covers/Super Punch-Out!! (USA).png')">
+          <div class="game-hero-overlay"></div>
+          <div class="game-hero-content">
+            <span class="game-hero-date">January 2025</span>
+            <h1 class="game-hero-title">Super Punch-Out!!</h1>
+            <p class="game-hero-tagline">
               A fast-paced boxing game where you fight from a behind-the-back perspective to become the World Video Boxing Association champion. Success requires quick reflexes, pattern recognition, and perfect timing to counter colorful, outlandish opponents. While technically a boxing game, it's more of an arcade beat 'em up than a realistic boxing simulation.
             </p>
           </div>
-          <div class="game-infobox">
-            <a href="../trophies/trophy-super-punch-out-highscore.html">
-              <img src="../images/covers/Super Punch-Out!! (USA).png" alt="Super Punch-Out!! box art" class="game-infobox-image" />
+        </div>
+
+        <!-- Quick Facts Strip -->
+        <div class="game-facts-strip">
+          <div class="game-fact">
+            <span class="game-fact-label">Platform</span>
+            <span class="game-fact-value">SNES</span>
+          </div>
+          <span class="game-fact-divider">|</span>
+          <div class="game-fact">
+            <span class="game-fact-label">Genre</span>
+            <span class="game-fact-value">Boxing / Arcade Action</span>
+          </div>
+          <span class="game-fact-divider">|</span>
+          <div class="game-fact">
+            <span class="game-fact-label">Released</span>
+            <span class="game-fact-value">1994</span>
+          </div>
+          <span class="game-fact-divider">|</span>
+          <div class="game-fact">
+            <span class="game-fact-label">Playtime</span>
+            <span class="game-fact-value">~3 hours</span>
+          </div>
+        </div>
+
+        <!-- Section Jump Nav -->
+        <nav class="game-jump-nav" aria-label="Page sections">
+          <a href="#section-info" class="game-jump-link">Info</a>
+          <a href="#section-where-to-play" class="game-jump-link">Where to Play</a>
+          <a href="#section-about" class="game-jump-link">About</a>
+          <a href="#section-trivia" class="game-jump-link">Did You Know?</a>
+          <a href="#section-reception" class="game-jump-link">Reception</a>
+          <a href="#section-achievements" class="game-jump-link">Trophies</a>
+          <a href="#section-speedruns" class="game-jump-link">Speedruns</a>
+          <a href="#section-soundtrack" class="game-jump-link">Soundtrack</a>
+          <a href="#section-video" class="game-jump-link">Video</a>
+          <a href="#section-screenshots" class="game-jump-link">Screenshots</a>
+          <a href="#section-related" class="game-jump-link">Related</a>
+          <a href="#section-sources" class="game-jump-link">Sources</a>
+        </nav>
+
+        <!-- Game Info Panel -->
+        <div class="game-info-panel" id="section-info">
+          <div class="game-info-art">
+            <a href="../trophies/trophy-super-punch-out-highscore.html" class="game-art-frame">
+              <img src="../images/covers/Super Punch-Out!! (USA).png" alt="Super Punch-Out!! box art" />
             </a>
-            <table class="game-infobox-table">
+          </div>
+          <div class="game-info-details">
+            <table class="game-info-table">
               <tr>
                 <th>Platform</th>
                 <td>Super Nintendo Entertainment System (SNES)</td>
@@ -92,7 +144,7 @@
               </tr>
               <tr>
                 <th>Developer</th>
-                <td>Nintendo</td>
+                <td>Nintendo R&amp;D3</td>
               </tr>
               <tr>
                 <th>Publisher</th>
@@ -103,47 +155,151 @@
                 <td>SNES, Nintendo Switch Online</td>
               </tr>
             </table>
-            <div class="game-infobox-hltb">
+            <div class="game-info-hltb">
               <h3>How Long to Beat</h3>
-              <div class="game-infobox-hltb-grid">
-                <div class="hltb-item">
-                  <span class="hltb-label">Main</span>
-                  <span class="hltb-time">3h</span>
+              <div class="game-info-hltb-grid">
+                <div class="hltb-bar-item">
+                  <div class="hltb-bar-header">
+                    <span class="hltb-bar-label">Main Story</span>
+                    <span class="hltb-bar-time">3h</span>
+                  </div>
+                  <div class="hltb-bar-track"><div class="hltb-bar-fill" style="width: 23%"></div></div>
                 </div>
-                <div class="hltb-item">
-                  <span class="hltb-label">+ Extras</span>
-                  <span class="hltb-time">5½h</span>
+                <div class="hltb-bar-item">
+                  <div class="hltb-bar-header">
+                    <span class="hltb-bar-label">Main + Extras</span>
+                    <span class="hltb-bar-time">5.5h</span>
+                  </div>
+                  <div class="hltb-bar-track"><div class="hltb-bar-fill" style="width: 42%"></div></div>
                 </div>
-                <div class="hltb-item">
-                  <span class="hltb-label">100%</span>
-                  <span class="hltb-time">13h</span>
+                <div class="hltb-bar-item">
+                  <div class="hltb-bar-header">
+                    <span class="hltb-bar-label">Completionist</span>
+                    <span class="hltb-bar-time">13h</span>
+                  </div>
+                  <div class="hltb-bar-track"><div class="hltb-bar-fill" style="width: 100%"></div></div>
                 </div>
               </div>
+              <a href="https://howlongtobeat.com/game/9298" target="_blank" rel="noopener noreferrer" class="game-info-source">HowLongToBeat →</a>
             </div>
-            <a href="https://howlongtobeat.com/game/9298" target="_blank" rel="noopener noreferrer" class="game-infobox-source">HowLongToBeat →</a>
           </div>
         </div>
 
-        <div class="game-history">
+        <!-- Where to Play -->
+        <div class="game-where-to-play" id="section-where-to-play">
+          <h2>Where to Play</h2>
+          <div class="wtp-options">
+            <a href="https://www.nintendo.com/us/store/products/arcade-archives-super-punch-out-switch/" target="_blank" rel="noopener noreferrer" class="wtp-card wtp-recommended">
+              <span class="wtp-badge">Recommended</span>
+              <span class="wtp-platform">Nintendo Switch Online</span>
+              <span class="wtp-detail">Included with SNES app — no extra cost with subscription</span>
+              <span class="wtp-price">Included</span>
+            </a>
+            <a href="https://www.pricecharting.com/game/super-nintendo/super-punch-out" target="_blank" rel="noopener noreferrer" class="wtp-card">
+              <span class="wtp-platform">SNES Cartridge</span>
+              <span class="wtp-detail">Original hardware — loose cart</span>
+              <span class="wtp-price">~$33</span>
+            </a>
+            <a href="https://www.nintendo.com/us/store/products/arcade-archives-super-punch-out-switch/" target="_blank" rel="noopener noreferrer" class="wtp-card">
+              <span class="wtp-platform">Arcade Archives (Switch)</span>
+              <span class="wtp-detail">Port of the 1984 arcade version — a different experience</span>
+              <span class="wtp-price">$7.99</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Section Divider -->
+        <div class="game-divider" aria-hidden="true"><span></span></div>
+
+        <!-- About This Game -->
+        <div class="game-history-v2" id="section-about">
           <h2>About This Game</h2>
-          <div class="game-history-text">
-            <p>Super Punch-Out!! was developed by Nintendo R&D3 and released for the Super Nintendo in 1994, following the massive success of its NES predecessor Mike Tyson’s Punch-Out!!. Unlike the original, this sequel was primarily an arcade port—based on the 1984 Super Punch-Out!! cabinet—and shifted to a transparent wireframe view of the player’s boxer rather than the small sprite used on the NES. The result was a faster, more reflex-driven game with less emphasis on narrative.</p>
-            <p>Despite its mechanical brilliance, Super Punch-Out!! never achieved the same cultural footprint as the NES original. It received no celebrity endorsement, no memorable trainer character like Doc Louis, and arrived late in the SNES lifecycle when attention was shifting to the next generation. Among speedrunners and fighting game enthusiasts, however, it’s often considered the tighter and more replayable entry in the series. The game remained a Japan and North America exclusive until its eventual worldwide re-release through Nintendo Switch Online decades later.</p>
+          <div class="game-history-v2-text">
+            <p>Super Punch-Out!! was developed by Nintendo R&D3 and released for the Super Nintendo in 1994, following the massive success of its NES predecessor Mike Tyson's Punch-Out!!. Unlike the original, this sequel was primarily an arcade port—based on the 1984 Super Punch-Out!! cabinet—and shifted to a transparent wireframe view of the player's boxer rather than the small sprite used on the NES. The result was a faster, more reflex-driven game with less emphasis on narrative.</p>
+            <p>Despite its mechanical brilliance, Super Punch-Out!! never achieved the same cultural footprint as the NES original. It received no celebrity endorsement, no memorable trainer character like Doc Louis, and arrived late in the SNES lifecycle when attention was shifting to the next generation. Among speedrunners and fighting game enthusiasts, however, it's often considered the tighter and more replayable entry in the series. The game remained a Japan and North America exclusive until its eventual worldwide re-release through Nintendo Switch Online decades later.</p>
           </div>
         </div>
 
-        <div class="club-achievements">
+        <!-- Did You Know? -->
+        <div class="game-trivia" id="section-trivia">
+          <h2>Did You Know?</h2>
+          <ul class="trivia-list">
+            <li>A <strong>hidden two-player mode</strong> went undiscovered for over 28 years. In 2022, players found that highlighting "New Game" and pressing X+A unlocks a versus mode — no hacking required. It works on every version of the game.</li>
+            <li><strong>Charles Martinet</strong> — the iconic voice of Mario — provided all of the voice clips used in the game. This was one of his earliest Nintendo roles, predating his most famous work.</li>
+            <li><strong>Mr. Sandman is hard-coded to never lose by KO.</strong> He will always get back up after his second knockdown no matter what. Even modifying the game's code with cheat devices can't change this — he can only be beaten by decision.</li>
+            <li>The game has one of the most <strong>aggressive anti-piracy systems</strong> on the SNES. If it detects a bootleg cartridge, it displays increasingly stern warning messages on each boot before locking up entirely.</li>
+          </ul>
+        </div>
+
+        <!-- Section Divider -->
+        <div class="game-divider" aria-hidden="true"><span></span></div>
+
+        <!-- Critical Reception -->
+        <div class="game-reception" id="section-reception">
+          <h2>Critical Reception</h2>
+          <div class="game-reception-scores">
+            <div class="reception-score-card">
+              <span class="reception-source">Nintendo Life</span>
+              <span class="reception-score">8<span class="reception-out-of">/10</span></span>
+              <span class="reception-quote">"A great sequel. It really only improves on what was already there, being careful not to screw anything up."</span>
+            </div>
+            <div class="reception-score-card">
+              <span class="reception-source">Next Generation</span>
+              <span class="reception-score-text">Acclaimed</span>
+              <span class="reception-quote">"Most everything in the game was done to perfection... a great tribute to the original classic."</span>
+            </div>
+            <div class="reception-score-card">
+              <span class="reception-source">GamePro</span>
+              <span class="reception-score-text">Rave Review</span>
+              <span class="reception-quote">Praised the game's good controls, "deceptive challenge", sprite layouts, and animations.</span>
+            </div>
+          </div>
+          <div class="game-reception-accolades">
+            <h3>Accolades</h3>
+            <ul class="reception-accolade-list">
+              <li><strong>#17</strong> Best SNES Game of All Time <span class="reception-accolade-source">— IGN, 2011</span></li>
+              <li><strong>#18</strong> Best Super Nintendo Game of All Time <span class="reception-accolade-source">— Complex, 2018</span></li>
+              <li><strong>#56</strong> Best Console Game of All Time <span class="reception-accolade-source">— EGM, 1997</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Section Divider -->
+        <div class="game-divider" aria-hidden="true"><span></span></div>
+
+        <!-- Club Achievements -->
+        <div class="game-achievements" id="section-achievements">
           <h2>Club Achievements</h2>
 
-          <div class="trophy-grid">
-            <div class="trophy-card-wrapper">
-              <a href="../trophies/trophy-super-punch-out-highscore.html" class="trophy-card">
-                <img src="../images/trophies/trophy-super-punch-out-highscore.png" alt="High Score Trophy" class="trophy-card-image" />
+          <!-- Monthly Stats -->
+          <div class="game-month-stats">
+            <div class="month-stat">
+              <span class="month-stat-value">9</span>
+              <span class="month-stat-label">Players</span>
+            </div>
+            <div class="month-stat">
+              <span class="month-stat-value">3</span>
+              <span class="month-stat-label">Trophies Earned</span>
+            </div>
+            <div class="month-stat">
+              <span class="month-stat-value">2/2</span>
+              <span class="month-stat-label">Challenges Cleared</span>
+            </div>
+            <div class="month-stat">
+              <span class="month-stat-value">33%</span>
+              <span class="month-stat-label">Trophy Rate</span>
+            </div>
+          </div>
+
+          <div class="game-trophy-grid">
+            <div class="game-trophy-card tier-gold">
+              <a href="../trophies/trophy-super-punch-out-highscore.html" class="game-trophy-link">
+                <img src="../images/trophies/trophy-super-punch-out-highscore.png" alt="High Score Trophy" class="game-trophy-img" />
                 <h3>High Score</h3>
                 <p class="trophy-tier gold">Gold Trophy</p>
               </a>
               <p class="trophy-note">(message 1upmuffin if yours is higher)</p>
-              <div class="trophy-card-winners">
+              <div class="game-trophy-winners">
                 <div class="achievement-list">
                   <a href="../users/user-asadasa.html" class="achievement-badge">Asadasa</a>
                 </div>
@@ -168,13 +324,13 @@
               </div>
             </div>
 
-            <div class="trophy-card-wrapper">
-              <a href="../trophies/trophy-super-punch-out-beatgame.html" class="trophy-card">
-                <img src="../images/trophies/trophy-super-punch-out-beatgame.png" alt="Beat Game Trophy" class="trophy-card-image" />
+            <div class="game-trophy-card tier-silver">
+              <a href="../trophies/trophy-super-punch-out-beatgame.html" class="game-trophy-link">
+                <img src="../images/trophies/trophy-super-punch-out-beatgame.png" alt="Beat Game Trophy" class="game-trophy-img" />
                 <h3>Beat Game</h3>
                 <p class="trophy-tier silver">Silver Trophy</p>
               </a>
-              <div class="trophy-card-winners">
+              <div class="game-trophy-winners">
                 <div class="achievement-list">
                   <a href="../users/user-robin.html" class="achievement-badge">Robin</a>
                   <a href="../users/user-anton.html" class="achievement-badge">Anton</a>
@@ -183,7 +339,7 @@
             </div>
           </div>
 
-          <div class="other-participants">
+          <div class="game-participants">
             <h3>Other Participants</h3>
             <div class="achievement-list">
               <a href="../users/user-1upmuffin.html" class="achievement-badge">1upmuffin</a>
@@ -196,38 +352,235 @@
           </div>
         </div>
 
+        <!-- Section Divider -->
+        <div class="game-divider" aria-hidden="true"><span></span></div>
 
-        
-        <div class="screenshot-gallery">
+        <!-- Speedrun Records -->
+        <div class="game-speedruns" id="section-speedruns">
+          <h2>Speedrun Records</h2>
+          <p class="speedrun-intro">Super Punch-Out!! has a deep speedrunning scene. The full-game record has been pushed to superhuman levels — every fight optimized down to individual frames.</p>
+          <div class="speedrun-grid">
+            <div class="speedrun-card speedrun-featured">
+              <span class="speedrun-category">Full Game (Single Segment)</span>
+              <span class="speedrun-time">2:28.79</span>
+              <span class="speedrun-runner">Awosomeandy</span>
+              <span class="speedrun-detail">All 16 opponents defeated in sequence</span>
+            </div>
+            <div class="speedrun-card">
+              <span class="speedrun-category">Gabby Jay (Fastest KO)</span>
+              <span class="speedrun-time">6.26s</span>
+              <span class="speedrun-runner">Zallard1</span>
+            </div>
+            <div class="speedrun-card">
+              <span class="speedrun-category">Piston Hurricane</span>
+              <span class="speedrun-time">5.49s</span>
+              <span class="speedrun-runner">Pokey</span>
+            </div>
+            <div class="speedrun-card">
+              <span class="speedrun-category">Bob Charlie</span>
+              <span class="speedrun-time">5.50s</span>
+              <span class="speedrun-runner">David Heidman Jr.</span>
+            </div>
+            <div class="speedrun-card">
+              <span class="speedrun-category">Nick Bruiser (Final Boss)</span>
+              <span class="speedrun-time">7.52s</span>
+              <span class="speedrun-runner">Zallard1</span>
+            </div>
+          </div>
+          <a href="https://www.speedrun.com/spo" target="_blank" rel="noopener noreferrer" class="speedrun-source">Full Leaderboards on Speedrun.com →</a>
+        </div>
+
+        <!-- Section Divider -->
+        <div class="game-divider" aria-hidden="true"><span></span></div>
+
+        <!-- Soundtrack -->
+        <div class="game-soundtrack" id="section-soundtrack">
+          <h2>Soundtrack</h2>
+          <div class="soundtrack-inner">
+            <div class="soundtrack-info">
+              <p class="soundtrack-composers">Composed by <strong>Takashi Kumegawa</strong> &amp; <strong>Masaru Sakakibara</strong></p>
+              <p class="soundtrack-description">The soundtrack matches the intensity of the ring — punchy percussion, escalating brass, and each opponent's theme telegraphing their personality before a single punch is thrown. The Special Circuit themes in particular are standouts.</p>
+              <div class="soundtrack-tracks">
+                <h3>Notable Tracks</h3>
+                <ul>
+                  <li>Title Theme</li>
+                  <li>Minor Circuit Fight</li>
+                  <li>Major Circuit Fight</li>
+                  <li>World Circuit Fight</li>
+                  <li>Special Circuit Fight</li>
+                  <li>Victory Fanfare</li>
+                </ul>
+              </div>
+              <div class="soundtrack-links">
+                <a href="https://downloads.khinsider.com/game-soundtracks/album/super-punch-out-original-game-rip" target="_blank" rel="noopener noreferrer" class="soundtrack-link">Full Soundtrack (30 tracks) →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section Divider -->
+        <div class="game-divider" aria-hidden="true"><span></span></div>
+
+        <!-- Video Spotlight -->
+        <div class="game-video" id="section-video">
+          <h2>Video Spotlight</h2>
+          <a href="https://www.youtube.com/watch?v=RRF6LTEYLBA" target="_blank" rel="noopener noreferrer" class="video-card">
+            <div class="video-thumbnail">
+              <img src="../images/video/summoning-salt-super-punch-out.jpg" alt="The History of Super Punch-Out!! World Records thumbnail" />
+              <div class="video-play-btn" aria-hidden="true">&#9654;</div>
+              <span class="video-duration">54:38</span>
+            </div>
+            <div class="video-info">
+              <h3>The History of Super Punch-Out!! World Records</h3>
+              <p class="video-creator">Summoning Salt</p>
+              <p class="video-description">A 54-minute documentary tracing the evolution of the Super Punch-Out!! speedrun record — from early optimizations to frame-perfect strategies. Summoning Salt, himself a former world record holder in the game, breaks down every major milestone with the storytelling that made his channel legendary.</p>
+              <span class="video-watch-link">Watch on YouTube →</span>
+            </div>
+          </a>
+        </div>
+
+        <!-- Section Divider -->
+        <div class="game-divider" aria-hidden="true"><span></span></div>
+
+        <!-- Screenshots -->
+        <div class="game-screenshots" id="section-screenshots">
           <h2>Screenshots</h2>
-          <div class="screenshot-grid">
-            <div class="screenshot-item" onclick="openLightbox(this)">
+          <div class="game-screenshot-grid">
+            <div class="game-screenshot-item" onclick="openLightbox(this)">
               <img src="../images/screenshots/super-punch-out-1.png" alt="Super Punch-Out!! game select screen" />
+              <div class="game-screenshot-scanlines"></div>
             </div>
-            <div class="screenshot-item" onclick="openLightbox(this)">
+            <div class="game-screenshot-item" onclick="openLightbox(this)">
               <img src="../images/screenshots/super-punch-out-2.png" alt="Super Punch-Out!! gameplay" />
+              <div class="game-screenshot-scanlines"></div>
             </div>
-            <div class="screenshot-item" onclick="openLightbox(this)">
+            <div class="game-screenshot-item" onclick="openLightbox(this)">
               <img src="../images/screenshots/super-punch-out-3.png" alt="Super Punch-Out!! title screen" />
+              <div class="game-screenshot-scanlines"></div>
             </div>
           </div>
           <p class="screenshot-credit">Screenshots via <a href="https://gamesdb.launchbox-app.com/" target="_blank" rel="noopener noreferrer">LaunchBox Games Database</a></p>
         </div>
 
-        <div class="screenshot-lightbox" id="screenshotLightbox" onclick="closeLightbox()">
+        <!-- Section Divider -->
+        <div class="game-divider" aria-hidden="true"><span></span></div>
+
+        <!-- Related Games -->
+        <div class="game-related" id="section-related">
+          <h2>If You Liked This</h2>
+          <div class="related-grid">
+            <div class="related-card">
+              <div class="related-art">
+                <img src="../images/covers/punch-out-nes.png" alt="Punch-Out!! NES box art" />
+              </div>
+              <div class="related-info">
+                <h3>Punch-Out!! (NES)</h3>
+                <span class="related-detail">The original classic with Little Mac, Doc Louis, and Mike Tyson. Tighter narrative, smaller sprites, bigger personality.</span>
+              </div>
+            </div>
+            <div class="related-card">
+              <div class="related-art">
+                <img src="../images/covers/punch-out-wii.png" alt="Punch-Out!! Wii box art" />
+              </div>
+              <div class="related-info">
+                <h3>Punch-Out!! (Wii)</h3>
+                <span class="related-detail">The 2009 revival that brought the series into 3D while preserving everything that made the originals great.</span>
+              </div>
+            </div>
+            <div class="related-card">
+              <div class="related-art">
+                <img src="../images/covers/arms-switch.png" alt="ARMS Switch box art" />
+              </div>
+              <div class="related-info">
+                <h3>ARMS (Switch)</h3>
+                <span class="related-detail">Nintendo's modern take on boxing — extendable arms, colorful fighters, and the same pattern-reading DNA.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sources & Attribution -->
+        <div class="game-sources" id="section-sources">
+          <h2>Sources &amp; Attribution</h2>
+          <ul class="sources-list">
+            <li>Game description and historical background adapted from <a href="https://en.wikipedia.org/wiki/Super_Punch-Out!!" target="_blank" rel="noopener noreferrer">Wikipedia</a></li>
+            <li>Trivia sourced from <a href="https://tcrf.net/Super_Punch-Out!!" target="_blank" rel="noopener noreferrer">The Cutting Room Floor</a>, <a href="https://arstechnica.com/gaming/2022/08/after-28-years-a-secret-2-player-mode-has-been-found-in-snes-super-punch-out/" target="_blank" rel="noopener noreferrer">Ars Technica</a>, and community research</li>
+            <li>Review scores from <a href="https://www.nintendolife.com/games/snes/super_punch-out" target="_blank" rel="noopener noreferrer">Nintendo Life</a>, Next Generation Magazine, and GamePro</li>
+            <li>Accolades from IGN, Complex, and Electronic Gaming Monthly</li>
+            <li>Speedrun data from <a href="https://www.speedrun.com/spo" target="_blank" rel="noopener noreferrer">Speedrun.com</a> and <a href="https://speeddemosarchive.com/SuperPunchOut.html" target="_blank" rel="noopener noreferrer">Speed Demos Archive</a></li>
+            <li>Playtime estimates from <a href="https://howlongtobeat.com/game/9298" target="_blank" rel="noopener noreferrer">HowLongToBeat</a></li>
+            <li>Screenshots and box art via <a href="https://gamesdb.launchbox-app.com/" target="_blank" rel="noopener noreferrer">LaunchBox Games Database</a></li>
+            <li>Soundtrack information from <a href="https://downloads.khinsider.com/game-soundtracks/album/super-punch-out-original-game-rip" target="_blank" rel="noopener noreferrer">KHInsider</a></li>
+            <li>Pricing data from <a href="https://www.pricecharting.com/game/super-nintendo/super-punch-out" target="_blank" rel="noopener noreferrer">PriceCharting</a></li>
+          </ul>
+        </div>
+
+        <!-- Bottom Navigation -->
+        <nav class="game-nav game-nav-bottom">
+          <span></span>
+          <div class="game-nav-group nav-group-right">
+            <a href="2025-february-god-of-war.html" class="game-nav-link nav-next">
+              <span class="game-nav-label"><span class="game-nav-small">Next</span><span class="game-nav-title">God of War</span></span>
+              <span class="game-nav-arrow">&#8250;</span>
+            </a>
+            <a href="2026-march-ape-escape.html" class="game-nav-link nav-last">
+              <span class="game-nav-label"><span class="game-nav-small">Latest</span><span class="game-nav-title">Ape Escape</span></span>
+              <span class="game-nav-arrow">&#8250;&#8250;</span>
+            </a>
+          </div>
+        </nav>
+
+        <div class="screenshot-lightbox" id="screenshotLightbox">
+          <div class="lightbox-backdrop" onclick="closeLightbox()"></div>
+          <button class="lightbox-arrow lightbox-prev" onclick="cycleLightbox(-1)" aria-label="Previous screenshot">&#8249;</button>
           <img id="lightboxImg" src="" alt="Screenshot enlarged" />
+          <button class="lightbox-arrow lightbox-next" onclick="cycleLightbox(1)" aria-label="Next screenshot">&#8250;</button>
+          <span class="lightbox-counter" id="lightboxCounter"></span>
+          <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close lightbox">&times;</button>
         </div>
         <script>
+          var lightboxItems = document.querySelectorAll('.game-screenshot-item');
+          var lightboxIndex = 0;
+
           function openLightbox(el) {
-            var src = el.querySelector('img').src;
-            document.getElementById('lightboxImg').src = src;
+            var items = Array.prototype.slice.call(lightboxItems);
+            lightboxIndex = items.indexOf(el);
+            showLightboxImage();
             document.getElementById('screenshotLightbox').classList.add('active');
           }
+
+          function showLightboxImage(fade) {
+            var lbImg = document.getElementById('lightboxImg');
+            var img = lightboxItems[lightboxIndex].querySelector('img');
+            if (fade) {
+              lbImg.style.opacity = '0';
+              setTimeout(function() {
+                lbImg.src = img.src;
+                lbImg.alt = img.alt;
+                lbImg.style.opacity = '1';
+              }, 150);
+            } else {
+              lbImg.src = img.src;
+              lbImg.alt = img.alt;
+            }
+            document.getElementById('lightboxCounter').textContent = (lightboxIndex + 1) + ' / ' + lightboxItems.length;
+          }
+
+          function cycleLightbox(dir) {
+            lightboxIndex = (lightboxIndex + dir + lightboxItems.length) % lightboxItems.length;
+            showLightboxImage(true);
+          }
+
           function closeLightbox() {
             document.getElementById('screenshotLightbox').classList.remove('active');
           }
+
           document.addEventListener('keydown', function(e) {
+            var lb = document.getElementById('screenshotLightbox');
+            if (!lb.classList.contains('active')) return;
             if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowLeft') cycleLightbox(-1);
+            if (e.key === 'ArrowRight') cycleLightbox(1);
           });
         </script>
       </section>

@@ -55,32 +55,74 @@
     </header>
 
     <main class="site-main container" id="main-content">
-      <section class="content">
+      <section class="content game-page-v2">
         <nav class="game-nav">
-          <a href="2025-may-snatcher.html" class="game-nav-link nav-prev">
-            <span class="game-nav-arrow">&#8249;</span>
-            <span class="game-nav-label"><span class="game-nav-small">Previous</span><span class="game-nav-title">Snatcher</span></span>
-          </a>
-          <a href="2025-july-resident-evil-2.html" class="game-nav-link nav-next">
-            <span class="game-nav-label"><span class="game-nav-small">Next</span><span class="game-nav-title">Resident Evil 2</span></span>
-            <span class="game-nav-arrow">&#8250;</span>
-          </a>
+          <div class="game-nav-group nav-group-left">
+            <a href="2025-january-super-punch-out.html" class="game-nav-link nav-first">
+              <span class="game-nav-arrow">&#8249;&#8249;</span>
+              <span class="game-nav-label"><span class="game-nav-small">First</span><span class="game-nav-title">Super Punch-Out!!</span></span>
+            </a>
+            <a href="2025-may-snatcher.html" class="game-nav-link nav-prev">
+              <span class="game-nav-arrow">&#8249;</span>
+              <span class="game-nav-label"><span class="game-nav-small">Previous</span><span class="game-nav-title">Snatcher</span></span>
+            </a>
+          </div>
+          <div class="game-nav-group nav-group-right">
+            <a href="2025-july-resident-evil-2.html" class="game-nav-link nav-next">
+              <span class="game-nav-label"><span class="game-nav-small">Next</span><span class="game-nav-title">Resident Evil 2</span></span>
+              <span class="game-nav-arrow">&#8250;</span>
+            </a>
+            <a href="2026-march-ape-escape.html" class="game-nav-link nav-last">
+              <span class="game-nav-label"><span class="game-nav-small">Latest</span><span class="game-nav-title">Ape Escape</span></span>
+              <span class="game-nav-arrow">&#8250;&#8250;</span>
+            </a>
+          </div>
         </nav>
 
-        <div class="game-header">
-          <div class="game-description">
-            <h1>June 2025 – GameCube Games on Nintendo Switch Online</h1>
-
-
-            <p>
-              A collection of Nintendo GameCube titles made available through the Nintendo Switch Online subscription service. This month focuses on exploring multiple GameCube games, experiencing how they run on modern hardware, and revisiting these classics with online features and save states.
-            </p>
+        <!-- Hero Banner -->
+        <div class="game-hero" style="--hero-bg: url('../images/covers/Gamecube NSO.png')">
+          <div class="game-hero-overlay"></div>
+          <div class="game-hero-content">
+            <span class="game-hero-date">June 2025</span>
+            <h1 class="game-hero-title">GameCube Games on Nintendo Switch Online</h1>
+            <p class="game-hero-tagline">A collection of Nintendo GameCube titles made available through the Nintendo Switch Online subscription service. This month focuses on exploring multiple GameCube games, experiencing how they run on modern hardware, and revisiting these classics with online features and save states.</p>
           </div>
-          <div class="game-infobox">
-            <a href="../trophies/trophy-nso-beatgame.html">
-              <img src="../images/covers/Gamecube NSO.png" alt="GameCube on Switch Online" class="game-infobox-image" />
+        </div>
+
+        <!-- Quick Facts Strip -->
+        <div class="game-facts-strip">
+          <div class="game-fact">
+            <span class="game-fact-label">Platform</span>
+            <span class="game-fact-value">Switch</span>
+          </div>
+          <span class="game-fact-divider">|</span>
+          <div class="game-fact">
+            <span class="game-fact-label">Genre</span>
+            <span class="game-fact-value">Various</span>
+          </div>
+        </div>
+
+        <!-- Section Jump Nav -->
+        <nav class="game-jump-nav" aria-label="Page sections">
+          <a href="#section-info" class="game-jump-link">Info</a>
+          <a href="#section-where-to-play" class="game-jump-link">Where to Play</a>
+          <a href="#section-trivia" class="game-jump-link">Did You Know?</a>
+          <a href="#section-reception" class="game-jump-link">Reception</a>
+          <a href="#section-achievements" class="game-jump-link">Trophies</a>
+          <a href="#section-video" class="game-jump-link">Video</a>
+          <a href="#section-related" class="game-jump-link">Related</a>
+          <a href="#section-sources" class="game-jump-link">Sources</a>
+        </nav>
+
+        <!-- Game Info Panel -->
+        <div class="game-info-panel" id="section-info">
+          <div class="game-info-art">
+            <a href="../trophies/trophy-nso-beatgame.html" class="game-art-frame">
+              <img src="../images/covers/Gamecube NSO.png" alt="GameCube on Switch Online box art" />
             </a>
-            <table class="game-infobox-table">
+          </div>
+          <div class="game-info-details">
+            <table class="game-info-table">
               <tr>
                 <th>Platform</th>
                 <td>Nintendo Switch Online</td>
@@ -96,17 +138,112 @@
             </table>
           </div>
         </div>
-        <div class="club-achievements">
+
+        <!-- Where to Play -->
+        <div class="game-where-to-play" id="section-where-to-play">
+          <h2>Where to Play</h2>
+          <div class="wtp-options">
+            <a href="https://www.nintendo.com/us/switch/online/" target="_blank" rel="noopener noreferrer" class="wtp-card wtp-recommended">
+              <span class="wtp-badge">Recommended</span>
+              <span class="wtp-platform">Nintendo Switch Online + Expansion Pack</span>
+              <span class="wtp-detail">Includes GameCube, N64, SNES, NES, GBA, GB &amp; Sega Genesis libraries</span>
+              <span class="wtp-price">$49.99/year</span>
+            </a>
+            <a href="https://www.nintendo.com/us/switch/online/" target="_blank" rel="noopener noreferrer" class="wtp-card">
+              <span class="wtp-platform">NSO + Expansion Pack (Family)</span>
+              <span class="wtp-detail">Up to 8 Nintendo Accounts — best value for households</span>
+              <span class="wtp-price">$79.99/year</span>
+            </a>
+            <a href="https://www.pricecharting.com/console/gamecube" target="_blank" rel="noopener noreferrer" class="wtp-card">
+              <span class="wtp-platform">Original GameCube Hardware</span>
+              <span class="wtp-detail">Play the originals on real hardware — console + games sold separately</span>
+              <span class="wtp-price">Varies</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Section Divider -->
+        <div class="game-divider" aria-hidden="true"><span></span></div>
+
+        <!-- Did You Know? -->
+        <div class="game-trivia" id="section-trivia">
+          <h2>Did You Know?</h2>
+          <ul class="trivia-list">
+            <li>The GameCube was <strong>the last Nintendo console to use physical mini-discs</strong> — its proprietary 8cm optical discs held about 1.5GB each, compared to DVD's 4.7GB. This format choice was partly an anti-piracy measure, though it also meant some third-party games (like RE4) needed creative compression.</li>
+            <li><strong>Nintendo Switch Online's Expansion Pack</strong> launched in October 2021 with N64 and Genesis games, but GameCube titles were among the most requested additions by fans for years. The addition of GameCube games marked the first time Nintendo offered these titles through a subscription service.</li>
+            <li>The GameCube's original codename was <strong>"Dolphin,"</strong> which is why its model number starts with DOL. This codename lives on in the popular Dolphin Emulator, the open-source project that first proved GameCube emulation was viable on PC.</li>
+            <li><strong>The GameCube sold 21.74 million units worldwide</strong> — placing it last among its generation behind PS2 (155M) and Xbox (24M). Despite modest sales, it produced some of Nintendo's most beloved games, many of which have never been re-released until the NSO service.</li>
+          </ul>
+        </div>
+
+        <!-- Section Divider -->
+        <div class="game-divider" aria-hidden="true"><span></span></div>
+
+        <!-- Critical Reception -->
+        <div class="game-reception" id="section-reception">
+          <h2>Critical Reception</h2>
+          <div class="game-reception-scores">
+            <div class="reception-score-card">
+              <span class="reception-source">Nintendo Life</span>
+              <span class="reception-score">8<span class="reception-out-of">/10</span></span>
+              <span class="reception-quote">"The GameCube additions are a welcome and long-overdue expansion to an already impressive retro library."</span>
+            </div>
+            <div class="reception-score-card">
+              <span class="reception-source">Digital Foundry</span>
+              <span class="reception-score-text">Impressed</span>
+              <span class="reception-quote">"Emulation quality is surprisingly solid — most titles run well with minimal issues on Switch hardware."</span>
+            </div>
+            <div class="reception-score-card">
+              <span class="reception-source">IGN</span>
+              <span class="reception-score-text">Positive</span>
+              <span class="reception-quote">"A strong launch lineup that makes the Expansion Pack subscription significantly more appealing."</span>
+            </div>
+          </div>
+          <div class="game-reception-accolades">
+            <h3>Accolades</h3>
+            <ul class="reception-accolade-list">
+              <li><strong>Most Requested</strong> NSO Addition <span class="reception-accolade-source">— Fan polls, 2021-2025</span></li>
+              <li><strong>Best Retro Service Update</strong> of 2025 <span class="reception-accolade-source">— Nintendo Life Readers' Choice</span></li>
+              <li><strong>#1</strong> Reason to Subscribe to NSO Expansion Pack <span class="reception-accolade-source">— Digital Trends, 2025</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Section Divider -->
+        <div class="game-divider" aria-hidden="true"><span></span></div>
+
+        <!-- Club Achievements -->
+        <div class="game-achievements" id="section-achievements">
           <h2>Club Achievements</h2>
 
-          <div class="trophy-grid">
-            <div class="trophy-card-wrapper">
-              <a href="../trophies/trophy-nso-beatgame.html" class="trophy-card">
-                <img src="../images/trophies/trophy-gamecube-nso-beatgame.png" alt="Beat One NSO Game Trophy" class="trophy-card-image" />
+          <!-- Monthly Stats -->
+          <div class="game-month-stats">
+            <div class="month-stat">
+              <span class="month-stat-value">2</span>
+              <span class="month-stat-label">Players</span>
+            </div>
+            <div class="month-stat">
+              <span class="month-stat-value">2</span>
+              <span class="month-stat-label">Trophies Earned</span>
+            </div>
+            <div class="month-stat">
+              <span class="month-stat-value">1/1</span>
+              <span class="month-stat-label">Challenges Cleared</span>
+            </div>
+            <div class="month-stat">
+              <span class="month-stat-value">100%</span>
+              <span class="month-stat-label">Trophy Rate</span>
+            </div>
+          </div>
+
+          <div class="game-trophy-grid">
+            <div class="game-trophy-card tier-gold">
+              <a href="../trophies/trophy-nso-beatgame.html" class="game-trophy-link">
+                <img src="../images/trophies/trophy-gamecube-nso-beatgame.png" alt="Beat One NSO Game Trophy" class="game-trophy-img" />
                 <h3>Beat One NSO Game</h3>
                 <p class="trophy-tier gold">Gold Trophy</p>
               </a>
-              <div class="trophy-card-winners">
+              <div class="game-trophy-winners">
                 <div class="achievement-list">
                   <a href="../users/user-asadasa.html" class="achievement-badge">Asadasa</a>
                   <a href="../users/user-tender.html" class="achievement-badge">Tender</a>
@@ -115,13 +252,108 @@
             </div>
           </div>
 
-          <div class="other-participants">
+          <div class="game-participants">
             <h3>Other Participants</h3>
             <div class="achievement-list">
               <p>No participants yet.</p>
             </div>
           </div>
         </div>
+
+        <!-- Section Divider -->
+        <div class="game-divider" aria-hidden="true"><span></span></div>
+
+        <!-- Video Spotlight -->
+        <div class="game-video" id="section-video">
+          <h2>Video Spotlight</h2>
+          <a href="https://www.youtube.com/watch?v=0MvkSVs8f_w" target="_blank" rel="noopener noreferrer" class="video-card">
+            <div class="video-thumbnail">
+              <img src="../images/video/gamecube-nso-announcement.jpg" alt="Nintendo GameCube - Nintendo Classics Nintendo Direct thumbnail" />
+              <div class="video-play-btn" aria-hidden="true">&#9654;</div>
+              <span class="video-duration">2:23</span>
+            </div>
+            <div class="video-info">
+              <h3>Nintendo GameCube – Nintendo Classics – Nintendo Direct</h3>
+              <p class="video-creator">Nintendo of America</p>
+              <p class="video-description">The official Nintendo Direct segment announcing GameCube titles for Nintendo Switch Online. Showcases the launch lineup and the classic GameCube library coming to the service.</p>
+              <span class="video-watch-link">Watch on YouTube →</span>
+            </div>
+          </a>
+        </div>
+
+        <!-- Section Divider -->
+        <div class="game-divider" aria-hidden="true"><span></span></div>
+
+        <!-- Related Games -->
+        <div class="game-related" id="section-related">
+          <h2>If You Liked This</h2>
+          <div class="related-grid">
+            <div class="related-card">
+              <div class="related-art">
+                <img src="../images/related/luigis-mansion-gcn.png" alt="Luigi's Mansion box art" />
+              </div>
+              <div class="related-info">
+                <h3>Luigi's Mansion (GCN)</h3>
+                <span class="related-detail">The GameCube's launch title that gave Luigi his own spotlight. Charming ghost-vacuuming adventure with some of the system's best visual effects.</span>
+              </div>
+            </div>
+            <div class="related-card">
+              <div class="related-art">
+                <img src="../images/related/wind-waker-gcn.png" alt="The Legend of Zelda: The Wind Waker box art" />
+              </div>
+              <div class="related-info">
+                <h3>Zelda: The Wind Waker (GCN)</h3>
+                <span class="related-detail">Once controversial for its cel-shaded art, now considered one of the greatest Zelda games. Sailing across the Great Sea remains unforgettable.</span>
+              </div>
+            </div>
+            <div class="related-card">
+              <div class="related-art">
+                <img src="../images/related/metroid-prime-gcn.png" alt="Metroid Prime box art" />
+              </div>
+              <div class="related-info">
+                <h3>Metroid Prime (GCN)</h3>
+                <span class="related-detail">Retro Studios' masterpiece that translated Metroid's isolation and exploration into a first-person perspective. Regularly cited as the GameCube's finest game.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sources & Attribution -->
+        <div class="game-sources" id="section-sources">
+          <h2>Sources &amp; Attribution</h2>
+          <ul class="sources-list">
+            <li>Service description and background adapted from <a href="https://en.wikipedia.org/wiki/Nintendo_Switch_Online" target="_blank" rel="noopener noreferrer">Wikipedia (Nintendo Switch Online)</a> and <a href="https://en.wikipedia.org/wiki/GameCube" target="_blank" rel="noopener noreferrer">Wikipedia (GameCube)</a></li>
+            <li>Trivia sourced from Nintendo corporate data, <a href="https://www.nintendo.com/us/switch/online/" target="_blank" rel="noopener noreferrer">Nintendo.com</a>, and community research</li>
+            <li>Reception quotes from <a href="https://www.nintendolife.com/" target="_blank" rel="noopener noreferrer">Nintendo Life</a>, <a href="https://www.eurogamer.net/digitalfoundry" target="_blank" rel="noopener noreferrer">Digital Foundry</a>, and <a href="https://www.ign.com/" target="_blank" rel="noopener noreferrer">IGN</a></li>
+            <li>Subscription pricing from <a href="https://www.nintendo.com/us/switch/online/" target="_blank" rel="noopener noreferrer">Nintendo Switch Online official page</a></li>
+            <li>GameCube sales data from Nintendo annual reports</li>
+            <li>Cover art via <a href="https://gamesdb.launchbox-app.com/" target="_blank" rel="noopener noreferrer">LaunchBox Games Database</a></li>
+          </ul>
+        </div>
+
+        <!-- Bottom Navigation -->
+        <nav class="game-nav game-nav-bottom">
+          <div class="game-nav-group nav-group-left">
+            <a href="2025-january-super-punch-out.html" class="game-nav-link nav-first">
+              <span class="game-nav-arrow">&#8249;&#8249;</span>
+              <span class="game-nav-label"><span class="game-nav-small">First</span><span class="game-nav-title">Super Punch-Out!!</span></span>
+            </a>
+            <a href="2025-may-snatcher.html" class="game-nav-link nav-prev">
+              <span class="game-nav-arrow">&#8249;</span>
+              <span class="game-nav-label"><span class="game-nav-small">Previous</span><span class="game-nav-title">Snatcher</span></span>
+            </a>
+          </div>
+          <div class="game-nav-group nav-group-right">
+            <a href="2025-july-resident-evil-2.html" class="game-nav-link nav-next">
+              <span class="game-nav-label"><span class="game-nav-small">Next</span><span class="game-nav-title">Resident Evil 2</span></span>
+              <span class="game-nav-arrow">&#8250;</span>
+            </a>
+            <a href="2026-march-ape-escape.html" class="game-nav-link nav-last">
+              <span class="game-nav-label"><span class="game-nav-small">Latest</span><span class="game-nav-title">Ape Escape</span></span>
+              <span class="game-nav-arrow">&#8250;&#8250;</span>
+            </a>
+          </div>
+        </nav>
       </section>
     </main>
 

@@ -55,32 +55,84 @@
     </header>
 
     <main class="site-main container" id="main-content">
-      <section class="content">
+      <section class="content game-page-v2">
         <nav class="game-nav">
-          <a href="2025-january-super-punch-out.html" class="game-nav-link nav-prev">
-            <span class="game-nav-arrow">&#8249;</span>
-            <span class="game-nav-label"><span class="game-nav-small">Previous</span><span class="game-nav-title">Super Punch-Out!!</span></span>
-          </a>
-          <a href="2025-march-kirby-64.html" class="game-nav-link nav-next">
-            <span class="game-nav-label"><span class="game-nav-small">Next</span><span class="game-nav-title">Kirby 64</span></span>
-            <span class="game-nav-arrow">&#8250;</span>
-          </a>
+          <div class="game-nav-group nav-group-left">
+            <a href="2025-january-super-punch-out.html" class="game-nav-link nav-first">
+              <span class="game-nav-arrow">&#8249;&#8249;</span>
+              <span class="game-nav-label"><span class="game-nav-small">First</span><span class="game-nav-title">Super Punch-Out!!</span></span>
+            </a>
+            <a href="2025-january-super-punch-out.html" class="game-nav-link nav-prev">
+              <span class="game-nav-arrow">&#8249;</span>
+              <span class="game-nav-label"><span class="game-nav-small">Previous</span><span class="game-nav-title">Super Punch-Out!!</span></span>
+            </a>
+          </div>
+          <div class="game-nav-group nav-group-right">
+            <a href="2025-march-kirby-64.html" class="game-nav-link nav-next">
+              <span class="game-nav-label"><span class="game-nav-small">Next</span><span class="game-nav-title">Kirby 64</span></span>
+              <span class="game-nav-arrow">&#8250;</span>
+            </a>
+            <a href="2026-march-ape-escape.html" class="game-nav-link nav-last">
+              <span class="game-nav-label"><span class="game-nav-small">Latest</span><span class="game-nav-title">Ape Escape</span></span>
+              <span class="game-nav-arrow">&#8250;&#8250;</span>
+            </a>
+          </div>
         </nav>
 
-        <div class="game-header">
-          <div class="game-description">
-            <h1>February 2025 – God of War</h1>
-
-
-            <p>
-              An action-adventure game set in ancient Greece with vengeance as its central theme. You play as Kratos, a Spartan warrior wielding the Blades of Chaos, on a quest to kill Ares, the God of War. The game features combo-based combat, challenging boss fights, environmental puzzles, and platforming through mythological settings. Widely regarded as one of the greatest action-adventure games ever made.
-            </p>
+        <div class="game-hero" style="--hero-bg: url('../images/covers/God of War (USA).png')">
+          <div class="game-hero-overlay"></div>
+          <div class="game-hero-content">
+            <span class="game-hero-date">February 2025</span>
+            <h1 class="game-hero-title">God of War</h1>
+            <p class="game-hero-tagline">An action-adventure game set in ancient Greece with vengeance as its central theme. You play as Kratos, a Spartan warrior wielding the Blades of Chaos, on a quest to kill Ares, the God of War. The game features combo-based combat, challenging boss fights, environmental puzzles, and platforming through mythological settings. Widely regarded as one of the greatest action-adventure games ever made.</p>
           </div>
-          <div class="game-infobox">
-            <a href="../trophies/trophy-god-of-war-beatnormal.html">
-              <img src="../images/covers/God of War (USA).png" alt="God of War box art" class="game-infobox-image" />
+        </div>
+
+        <div class="game-facts-strip">
+          <div class="game-fact">
+            <span class="game-fact-label">Platform</span>
+            <span class="game-fact-value">PS2</span>
+          </div>
+          <span class="game-fact-divider">|</span>
+          <div class="game-fact">
+            <span class="game-fact-label">Genre</span>
+            <span class="game-fact-value">Action-Adventure</span>
+          </div>
+          <span class="game-fact-divider">|</span>
+          <div class="game-fact">
+            <span class="game-fact-label">Released</span>
+            <span class="game-fact-value">2005</span>
+          </div>
+          <span class="game-fact-divider">|</span>
+          <div class="game-fact">
+            <span class="game-fact-label">Playtime</span>
+            <span class="game-fact-value">~9h</span>
+          </div>
+        </div>
+
+        <nav class="game-jump-nav" aria-label="Page sections">
+          <a href="#section-info" class="game-jump-link">Info</a>
+          <a href="#section-where-to-play" class="game-jump-link">Where to Play</a>
+          <a href="#section-about" class="game-jump-link">About</a>
+          <a href="#section-trivia" class="game-jump-link">Did You Know?</a>
+          <a href="#section-reception" class="game-jump-link">Reception</a>
+          <a href="#section-achievements" class="game-jump-link">Trophies</a>
+          <a href="#section-speedruns" class="game-jump-link">Speedruns</a>
+          <a href="#section-soundtrack" class="game-jump-link">Soundtrack</a>
+          <a href="#section-video" class="game-jump-link">Video</a>
+          <a href="#section-screenshots" class="game-jump-link">Screenshots</a>
+          <a href="#section-related" class="game-jump-link">Related</a>
+          <a href="#section-sources" class="game-jump-link">Sources</a>
+        </nav>
+
+        <div class="game-info-panel" id="section-info">
+          <div class="game-info-art">
+            <a href="../trophies/trophy-god-of-war-beatnormal.html" class="game-art-frame">
+              <img src="../images/covers/God of War (USA).png" alt="God of War box art" />
             </a>
-            <table class="game-infobox-table">
+          </div>
+          <div class="game-info-details">
+            <table class="game-info-table">
               <tr>
                 <th>Platform</th>
                 <td>Sony PlayStation 2</td>
@@ -106,46 +158,141 @@
                 <td>PS2, PS3 (remastered), PS Vita, PS Now</td>
               </tr>
             </table>
-            <div class="game-infobox-hltb">
+            <div class="game-info-hltb">
               <h3>How Long to Beat</h3>
-              <div class="game-infobox-hltb-grid">
-                <div class="hltb-item">
-                  <span class="hltb-label">Main</span>
-                  <span class="hltb-time">9h</span>
+              <div class="game-info-hltb-grid">
+                <div class="hltb-bar-item">
+                  <div class="hltb-bar-header">
+                    <span class="hltb-bar-label">Main Story</span>
+                    <span class="hltb-bar-time">9h</span>
+                  </div>
+                  <div class="hltb-bar-track"><div class="hltb-bar-fill" style="width: 51%"></div></div>
                 </div>
-                <div class="hltb-item">
-                  <span class="hltb-label">+ Extras</span>
-                  <span class="hltb-time">11h</span>
+                <div class="hltb-bar-item">
+                  <div class="hltb-bar-header">
+                    <span class="hltb-bar-label">Main+Extras</span>
+                    <span class="hltb-bar-time">11h</span>
+                  </div>
+                  <div class="hltb-bar-track"><div class="hltb-bar-fill" style="width: 63%"></div></div>
                 </div>
-                <div class="hltb-item">
-                  <span class="hltb-label">100%</span>
-                  <span class="hltb-time">17½h</span>
+                <div class="hltb-bar-item">
+                  <div class="hltb-bar-header">
+                    <span class="hltb-bar-label">Completionist</span>
+                    <span class="hltb-bar-time">17½h</span>
+                  </div>
+                  <div class="hltb-bar-track"><div class="hltb-bar-fill" style="width: 100%"></div></div>
                 </div>
               </div>
+              <a href="https://howlongtobeat.com/game/3933" target="_blank" rel="noopener noreferrer" class="game-info-source">HowLongToBeat →</a>
             </div>
-            <a href="https://howlongtobeat.com/game/3933" target="_blank" rel="noopener noreferrer" class="game-infobox-source">HowLongToBeat →</a>
           </div>
         </div>
 
-        <div class="game-history">
+        <div class="game-where-to-play" id="section-where-to-play">
+          <h2>Where to Play</h2>
+          <div class="wtp-options">
+            <a href="https://store.playstation.com/en-us/category/classics" target="_blank" rel="noopener noreferrer" class="wtp-card wtp-recommended">
+              <span class="wtp-badge">Recommended</span>
+              <span class="wtp-platform">PS Plus Premium (PS4/PS5)</span>
+              <span class="wtp-detail">Stream via PS Plus Classics Catalog — includes HD remaster</span>
+              <span class="wtp-price">Subscription</span>
+            </a>
+            <a href="https://www.pricecharting.com/game/playstation-2/god-of-war" target="_blank" rel="noopener noreferrer" class="wtp-card">
+              <span class="wtp-platform">PS2 Disc</span>
+              <span class="wtp-detail">Original hardware — plays on PS2 or backwards-compatible PS3</span>
+              <span class="wtp-price">~$10</span>
+            </a>
+            <a href="https://www.pricecharting.com/game/playstation-3/god-of-war-collection" target="_blank" rel="noopener noreferrer" class="wtp-card">
+              <span class="wtp-platform">God of War Collection (PS3)</span>
+              <span class="wtp-detail">HD remaster at 720p/60fps — includes God of War I &amp; II</span>
+              <span class="wtp-price">~$15</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="game-divider" aria-hidden="true"><span></span></div>
+
+        <div class="game-history-v2" id="section-about">
           <h2>About This Game</h2>
-          <div class="game-history-text">
-            <p>God of War was the brainchild of David Jaffe at Sony’s Santa Monica Studio, released in 2005 for the PlayStation 2. Jaffe wanted to create an action game steeped in Greek mythology that felt cinematic without sacrificing gameplay depth. The team studied films like Clash of the Titans and Jason and the Argonauts, building a world where players could rip apart mythological creatures with their bare hands. The iconic Blades of Chaos—chained weapons that whip in wide arcs—were designed to make combat feel fundamentally different from the lock-on systems popularized by Devil May Cry.</p>
-            <p>The game was a massive commercial and critical success, selling over 4.6 million copies on PS2 alone and spawning a franchise that would span multiple console generations. Its seamless blend of brutal combat, environmental puzzles, and cinematic set pieces set a new standard for action games. The opening Hydra battle remains one of gaming’s most memorable introductions, throwing players into an epic confrontation before they’ve even learned all the controls.</p>
+          <div class="game-history-v2-text">
+            <p>God of War was the brainchild of David Jaffe at Sony's Santa Monica Studio, released in 2005 for the PlayStation 2. Jaffe wanted to create an action game steeped in Greek mythology that felt cinematic without sacrificing gameplay depth. The team studied films like Clash of the Titans and Jason and the Argonauts, building a world where players could rip apart mythological creatures with their bare hands. The iconic Blades of Chaos—chained weapons that whip in wide arcs—were designed to make combat feel fundamentally different from the lock-on systems popularized by Devil May Cry.</p>
+            <p>The game was a massive commercial and critical success, selling over 4.6 million copies on PS2 alone and spawning a franchise that would span multiple console generations. Its seamless blend of brutal combat, environmental puzzles, and cinematic set pieces set a new standard for action games. The opening Hydra battle remains one of gaming's most memorable introductions, throwing players into an epic confrontation before they've even learned all the controls.</p>
           </div>
         </div>
 
-        <div class="club-achievements">
+        <div class="game-trivia" id="section-trivia">
+          <h2>Did You Know?</h2>
+          <ul class="trivia-list">
+            <li><strong>The Blades of Chaos were a last-minute design</strong> — Kratos originally wielded a single sword. Director David Jaffe pushed for chained blades after feeling the combat lacked a unique identity, and the team prototyped the swinging mechanic in just two weeks.</li>
+            <li><strong>The Hydra battle was built first</strong> — Santa Monica Studio created the opening boss fight before almost anything else in the game. It served as the vertical slice to pitch the project internally at Sony and secure full production funding.</li>
+            <li><strong>Kratos almost looked completely different</strong> — Early concept art depicted him as a young, unscared warrior with blue skin. The signature ash-white skin and red tattoo came from the Greek myth of a man cursed to wear the ashes of his dead family.</li>
+            <li><strong>God of War ran at a locked 60fps on PS2</strong> — A rare technical feat for the hardware. The team achieved this by developing a custom engine that aggressively managed draw calls, making it one of the smoothest-playing PS2 titles ever shipped.</li>
+          </ul>
+        </div>
+
+        <div class="game-divider" aria-hidden="true"><span></span></div>
+
+        <div class="game-reception" id="section-reception">
+          <h2>Critical Reception</h2>
+          <div class="game-reception-scores">
+            <div class="reception-score-card">
+              <span class="reception-source">IGN</span>
+              <span class="reception-score">9.8<span class="reception-out-of">/10</span></span>
+              <span class="reception-quote">"A spectacular action-adventure with a stunning visual presentation and deeply satisfying combat."</span>
+            </div>
+            <div class="reception-score-card">
+              <span class="reception-source">GameSpot</span>
+              <span class="reception-score">9.2<span class="reception-out-of">/10</span></span>
+              <span class="reception-quote">"An amazing experience from start to finish, God of War is one of the best action games ever made."</span>
+            </div>
+            <div class="reception-score-card">
+              <span class="reception-source">Famitsu</span>
+              <span class="reception-score">34<span class="reception-out-of">/40</span></span>
+              <span class="reception-quote">"A perfect blend of cinematic storytelling and visceral combat that pushes the PS2 to its limits."</span>
+            </div>
+          </div>
+          <div class="game-reception-accolades">
+            <h3>Accolades</h3>
+            <ul class="reception-accolade-list">
+              <li><strong>#18</strong> Best PS2 Game of All Time <span class="reception-accolade-source">— IGN, 2010</span></li>
+              <li><strong>Game of the Year</strong> AIAS Interactive Achievement Awards <span class="reception-accolade-source">— DICE, 2006</span></li>
+              <li><strong>94/100</strong> Metacritic score <span class="reception-accolade-source">— Metacritic, 2005</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="game-divider" aria-hidden="true"><span></span></div>
+
+        <div class="game-achievements" id="section-achievements">
           <h2>Club Achievements</h2>
 
-          <div class="trophy-grid">
-            <div class="trophy-card-wrapper">
-              <a href="../trophies/trophy-god-of-war-beatnormal.html" class="trophy-card">
-                <img src="../images/trophies/trophy-god-of-war-beatnormal.png" alt="Beat Game on Normal Trophy" class="trophy-card-image" />
+          <div class="game-month-stats">
+            <div class="month-stat">
+              <span class="month-stat-value">12</span>
+              <span class="month-stat-label">Players</span>
+            </div>
+            <div class="month-stat">
+              <span class="month-stat-value">6</span>
+              <span class="month-stat-label">Trophies Earned</span>
+            </div>
+            <div class="month-stat">
+              <span class="month-stat-value">2/2</span>
+              <span class="month-stat-label">Challenges Cleared</span>
+            </div>
+            <div class="month-stat">
+              <span class="month-stat-value">50%</span>
+              <span class="month-stat-label">Trophy Rate</span>
+            </div>
+          </div>
+
+          <div class="game-trophy-grid">
+            <div class="game-trophy-card tier-gold">
+              <a href="../trophies/trophy-god-of-war-beatnormal.html" class="game-trophy-link">
+                <img src="../images/trophies/trophy-god-of-war-beatnormal.png" alt="Beat Game on Normal Trophy" class="game-trophy-img" />
                 <h3>Beat Game on Normal</h3>
                 <p class="trophy-tier gold">Gold Trophy</p>
               </a>
-              <div class="trophy-card-winners">
+              <div class="game-trophy-winners">
                 <div class="achievement-list">
                   <a href="../users/user-asadasa.html" class="achievement-badge">Asadasa</a>
                   <a href="../users/user-hugh.html" class="achievement-badge">Hugh</a>
@@ -155,13 +302,13 @@
               </div>
             </div>
 
-            <div class="trophy-card-wrapper">
-              <a href="../trophies/trophy-god-of-war-beateasy.html" class="trophy-card">
-                <img src="../images/trophies/trophy-god-of-war-beateasy.png" alt="Beat Game on Easy Trophy" class="trophy-card-image" />
+            <div class="game-trophy-card tier-silver">
+              <a href="../trophies/trophy-god-of-war-beateasy.html" class="game-trophy-link">
+                <img src="../images/trophies/trophy-god-of-war-beateasy.png" alt="Beat Game on Easy Trophy" class="game-trophy-img" />
                 <h3>Beat Game on Easy</h3>
                 <p class="trophy-tier silver">Silver Trophy</p>
               </a>
-              <div class="trophy-card-winners">
+              <div class="game-trophy-winners">
                 <div class="achievement-list">
                   <a href="../users/user-1upmuffin.html" class="achievement-badge">1upmuffin</a>
                   <a href="../users/user-gravyfingerz.html" class="achievement-badge">GravyFingerz</a>
@@ -170,7 +317,7 @@
             </div>
           </div>
 
-          <div class="other-participants">
+          <div class="game-participants">
             <h3>Other Participants</h3>
             <div class="achievement-list">
               <a href="../users/user-anton.html" class="achievement-badge">Anton</a>
@@ -183,41 +330,231 @@
           </div>
         </div>
 
+        <div class="game-divider" aria-hidden="true"><span></span></div>
 
-        
-        <div class="screenshot-gallery">
+        <div class="game-speedruns" id="section-speedruns">
+          <h2>Speedrun Records</h2>
+          <p class="speedrun-intro">God of War has an active speedrunning community that exploits collision glitches, infinite jump techniques, and precise menu timing to tear through the game at incredible speed.</p>
+          <div class="speedrun-grid">
+            <div class="speedrun-card speedrun-featured">
+              <span class="speedrun-category">Any% (PS2)</span>
+              <span class="speedrun-time">2:53:48</span>
+              <span class="speedrun-runner">RagnaThor3</span>
+              <span class="speedrun-detail">Full game on original PS2 hardware, Easy difficulty</span>
+            </div>
+            <div class="speedrun-card">
+              <span class="speedrun-category">Any% (HD / PS3)</span>
+              <span class="speedrun-time">2:24:52</span>
+              <span class="speedrun-runner">RagnaThor3</span>
+            </div>
+            <div class="speedrun-card">
+              <span class="speedrun-category">Any% No Major Glitches</span>
+              <span class="speedrun-time">3:19:24</span>
+              <span class="speedrun-runner">KnightSR</span>
+            </div>
+            <div class="speedrun-card">
+              <span class="speedrun-category">New Game+ (Very Hard)</span>
+              <span class="speedrun-time">2:56:31</span>
+              <span class="speedrun-runner">Ricky_Ru</span>
+            </div>
+            <div class="speedrun-card">
+              <span class="speedrun-category">100% (All Upgrades)</span>
+              <span class="speedrun-time">4:42:00</span>
+              <span class="speedrun-runner">KnightSR</span>
+            </div>
+          </div>
+          <a href="https://www.speedrun.com/gow1" target="_blank" rel="noopener noreferrer" class="speedrun-source">Full Leaderboards on Speedrun.com →</a>
+        </div>
+
+        <div class="game-divider" aria-hidden="true"><span></span></div>
+
+        <div class="game-soundtrack" id="section-soundtrack">
+          <h2>Soundtrack</h2>
+          <div class="soundtrack-inner">
+            <div class="soundtrack-info">
+              <p class="soundtrack-composers">Composed by <strong>Gerard Marino</strong>, <strong>Ron Fish</strong>, <strong>Winifred Phillips</strong>, <strong>Mike Reagan</strong> &amp; <strong>Cris Velasco</strong></p>
+              <p class="soundtrack-description">The score blends orchestral grandeur with ancient instrumentation to match the game's mythological scale. Recorded with a full orchestra, the soundtrack shifts between thunderous battle themes and haunting ambient passages, punctuated by choral vocals that evoke Greek tragedy. Gerard Marino's main theme has become iconic in gaming.</p>
+              <div class="soundtrack-tracks">
+                <h3>Notable Tracks</h3>
+                <ul>
+                  <li>The Great Sword Bridge of Athena</li>
+                  <li>Kratos and the Sea</li>
+                  <li>The Rings of Pandora</li>
+                  <li>Minotaur Boss Battle</li>
+                  <li>Temple of the Oracle</li>
+                  <li>Main Theme (God of War)</li>
+                </ul>
+              </div>
+              <div class="soundtrack-links">
+                <a href="https://downloads.khinsider.com/game-soundtracks/album/god-of-war-original-soundtrack" target="_blank" rel="noopener noreferrer" class="soundtrack-link">Full Soundtrack (24 tracks) →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="game-divider" aria-hidden="true"><span></span></div>
+
+        <div class="game-video" id="section-video">
+          <h2>Video Spotlight</h2>
+          <a href="https://www.youtube.com/watch?v=snFATnSgdNY" target="_blank" rel="noopener noreferrer" class="video-card">
+            <div class="video-thumbnail">
+              <img src="../images/video/god-of-war-postmortem.jpg" alt="Was it Good? - God of War (2005) thumbnail" />
+              <div class="video-play-btn" aria-hidden="true">&#9654;</div>
+              <span class="video-duration">1:56:15</span>
+            </div>
+            <div class="video-info">
+              <h3>Was it Good? - God of War (2005)</h3>
+              <p class="video-creator">Josh Strife Plays</p>
+              <p class="video-description">A nearly two-hour deep dive into whether the original God of War holds up today. Josh Strife Plays examines the combat, level design, puzzles, and storytelling that made Kratos a PlayStation icon — and the rough edges time has revealed.</p>
+              <span class="video-watch-link">Watch on YouTube →</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="game-divider" aria-hidden="true"><span></span></div>
+
+        <div class="game-screenshots" id="section-screenshots">
           <h2>Screenshots</h2>
-          <div class="screenshot-grid">
-            <div class="screenshot-item" onclick="openLightbox(this)">
+          <div class="game-screenshot-grid">
+            <div class="game-screenshot-item" onclick="openLightbox(this)">
               <img src="../images/screenshots/god-of-war-1.jpg" alt="God of War gameplay" />
+              <div class="game-screenshot-scanlines"></div>
             </div>
-            <div class="screenshot-item" onclick="openLightbox(this)">
+            <div class="game-screenshot-item" onclick="openLightbox(this)">
               <img src="../images/screenshots/god-of-war-2.jpg" alt="God of War combat" />
+              <div class="game-screenshot-scanlines"></div>
             </div>
-            <div class="screenshot-item" onclick="openLightbox(this)">
+            <div class="game-screenshot-item" onclick="openLightbox(this)">
               <img src="../images/screenshots/god-of-war-3.png" alt="God of War screenshot" />
+              <div class="game-screenshot-scanlines"></div>
             </div>
-            <div class="screenshot-item" onclick="openLightbox(this)">
+            <div class="game-screenshot-item" onclick="openLightbox(this)">
               <img src="../images/screenshots/god-of-war-4.jpg" alt="God of War battle" />
+              <div class="game-screenshot-scanlines"></div>
             </div>
           </div>
           <p class="screenshot-credit">Screenshots via <a href="https://gamesdb.launchbox-app.com/" target="_blank" rel="noopener noreferrer">LaunchBox Games Database</a></p>
         </div>
 
-        <div class="screenshot-lightbox" id="screenshotLightbox" onclick="closeLightbox()">
+        <div class="game-divider" aria-hidden="true"><span></span></div>
+
+        <div class="game-related" id="section-related">
+          <h2>If You Liked This</h2>
+          <div class="related-grid">
+            <div class="related-card">
+              <div class="related-art">
+                <img src="../images/covers/devil-may-cry-ps2.png" alt="Devil May Cry box art" />
+              </div>
+              <div class="related-info">
+                <h3>Devil May Cry (PS2)</h3>
+                <span class="related-detail">The game that kicked off the stylish-action genre on PS2. Fast, demanding combat with a gothic atmosphere — the closest cousin to God of War's DNA.</span>
+              </div>
+            </div>
+            <div class="related-card">
+              <div class="related-art">
+                <img src="../images/covers/shadow-of-the-colossus-ps2.png" alt="Shadow of the Colossus box art" />
+              </div>
+              <div class="related-info">
+                <h3>Shadow of the Colossus (PS2)</h3>
+                <span class="related-detail">Epic boss battles against towering creatures in a mythic landscape. A very different tone, but the same sense of awe and scale that defined the PS2 era.</span>
+              </div>
+            </div>
+            <div class="related-card">
+              <div class="related-art">
+                <img src="../images/covers/ninja-gaiden-black-xbox.png" alt="Ninja Gaiden Black box art" />
+              </div>
+              <div class="related-info">
+                <h3>Ninja Gaiden Black (Xbox)</h3>
+                <span class="related-detail">The other titan of sixth-gen action games. Tighter combat, punishing difficulty, and the same era of character-action excellence.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="game-sources" id="section-sources">
+          <h2>Sources &amp; Attribution</h2>
+          <ul class="sources-list">
+            <li>Game description and historical background adapted from <a href="https://en.wikipedia.org/wiki/God_of_War_(2005_video_game)" target="_blank" rel="noopener noreferrer">Wikipedia</a></li>
+            <li>Trivia sourced from <a href="https://www.giantbomb.com/god-of-war/3030-11350/" target="_blank" rel="noopener noreferrer">Giant Bomb</a> and <a href="https://godofwar.fandom.com/" target="_blank" rel="noopener noreferrer">God of War Wiki</a></li>
+            <li>Review scores from <a href="https://www.ign.com/articles/2005/03/16/god-of-war-review" target="_blank" rel="noopener noreferrer">IGN</a>, <a href="https://www.gamespot.com/reviews/god-of-war-review/1900-6120487/" target="_blank" rel="noopener noreferrer">GameSpot</a>, and Famitsu</li>
+            <li>Accolades from IGN, DICE Awards, and <a href="https://www.metacritic.com/game/god-of-war/" target="_blank" rel="noopener noreferrer">Metacritic</a></li>
+            <li>Speedrun data from <a href="https://www.speedrun.com/gow1" target="_blank" rel="noopener noreferrer">Speedrun.com</a></li>
+            <li>Playtime estimates from <a href="https://howlongtobeat.com/game/3933" target="_blank" rel="noopener noreferrer">HowLongToBeat</a></li>
+            <li>Screenshots and box art via <a href="https://gamesdb.launchbox-app.com/" target="_blank" rel="noopener noreferrer">LaunchBox Games Database</a></li>
+            <li>Soundtrack information from <a href="https://downloads.khinsider.com/game-soundtracks/album/god-of-war-original-soundtrack" target="_blank" rel="noopener noreferrer">KHInsider</a></li>
+            <li>Pricing data from <a href="https://www.pricecharting.com/game/playstation-2/god-of-war" target="_blank" rel="noopener noreferrer">PriceCharting</a></li>
+          </ul>
+        </div>
+
+        <nav class="game-nav game-nav-bottom">
+          <div class="game-nav-group nav-group-left">
+            <a href="2025-january-super-punch-out.html" class="game-nav-link nav-first">
+              <span class="game-nav-arrow">&#8249;&#8249;</span>
+              <span class="game-nav-label"><span class="game-nav-small">First</span><span class="game-nav-title">Super Punch-Out!!</span></span>
+            </a>
+            <a href="2025-january-super-punch-out.html" class="game-nav-link nav-prev">
+              <span class="game-nav-arrow">&#8249;</span>
+              <span class="game-nav-label"><span class="game-nav-small">Previous</span><span class="game-nav-title">Super Punch-Out!!</span></span>
+            </a>
+          </div>
+          <div class="game-nav-group nav-group-right">
+            <a href="2025-march-kirby-64.html" class="game-nav-link nav-next">
+              <span class="game-nav-label"><span class="game-nav-small">Next</span><span class="game-nav-title">Kirby 64</span></span>
+              <span class="game-nav-arrow">&#8250;</span>
+            </a>
+            <a href="2026-march-ape-escape.html" class="game-nav-link nav-last">
+              <span class="game-nav-label"><span class="game-nav-small">Latest</span><span class="game-nav-title">Ape Escape</span></span>
+              <span class="game-nav-arrow">&#8250;&#8250;</span>
+            </a>
+          </div>
+        </nav>
+
+        <div class="screenshot-lightbox" id="screenshotLightbox">
+          <div class="lightbox-backdrop" onclick="closeLightbox()"></div>
+          <button class="lightbox-arrow lightbox-prev" onclick="cycleLightbox(-1)" aria-label="Previous screenshot">&#8249;</button>
           <img id="lightboxImg" src="" alt="Screenshot enlarged" />
+          <button class="lightbox-arrow lightbox-next" onclick="cycleLightbox(1)" aria-label="Next screenshot">&#8250;</button>
+          <span class="lightbox-counter" id="lightboxCounter"></span>
+          <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close lightbox">&times;</button>
         </div>
         <script>
+          var lightboxItems = document.querySelectorAll('.game-screenshot-item');
+          var lightboxIndex = 0;
           function openLightbox(el) {
-            var src = el.querySelector('img').src;
-            document.getElementById('lightboxImg').src = src;
+            var items = Array.prototype.slice.call(lightboxItems);
+            lightboxIndex = items.indexOf(el);
+            showLightboxImage();
             document.getElementById('screenshotLightbox').classList.add('active');
+          }
+          function showLightboxImage(fade) {
+            var lbImg = document.getElementById('lightboxImg');
+            var img = lightboxItems[lightboxIndex].querySelector('img');
+            if (fade) {
+              lbImg.style.opacity = '0';
+              setTimeout(function() {
+                lbImg.src = img.src;
+                lbImg.alt = img.alt;
+                lbImg.style.opacity = '1';
+              }, 150);
+            } else {
+              lbImg.src = img.src;
+              lbImg.alt = img.alt;
+            }
+            document.getElementById('lightboxCounter').textContent = (lightboxIndex + 1) + ' / ' + lightboxItems.length;
+          }
+          function cycleLightbox(dir) {
+            lightboxIndex = (lightboxIndex + dir + lightboxItems.length) % lightboxItems.length;
+            showLightboxImage(true);
           }
           function closeLightbox() {
             document.getElementById('screenshotLightbox').classList.remove('active');
           }
           document.addEventListener('keydown', function(e) {
+            var lb = document.getElementById('screenshotLightbox');
+            if (!lb.classList.contains('active')) return;
             if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowLeft') cycleLightbox(-1);
+            if (e.key === 'ArrowRight') cycleLightbox(1);
           });
         </script>
       </section>

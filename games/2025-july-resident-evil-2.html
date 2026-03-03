@@ -55,32 +55,88 @@
     </header>
 
     <main class="site-main container" id="main-content">
-      <section class="content">
+      <section class="content game-page-v2">
         <nav class="game-nav">
-          <a href="2025-june-gamecube-on-switch-online.html" class="game-nav-link nav-prev">
-            <span class="game-nav-arrow">&#8249;</span>
-            <span class="game-nav-label"><span class="game-nav-small">Previous</span><span class="game-nav-title">GameCube NSO</span></span>
-          </a>
-          <a href="2025-august-umihara-kawase.html" class="game-nav-link nav-next">
-            <span class="game-nav-label"><span class="game-nav-small">Next</span><span class="game-nav-title">Umihara Kawase</span></span>
-            <span class="game-nav-arrow">&#8250;</span>
-          </a>
+          <div class="game-nav-group nav-group-left">
+            <a href="2025-january-super-punch-out.html" class="game-nav-link nav-first">
+              <span class="game-nav-arrow">&#8249;&#8249;</span>
+              <span class="game-nav-label"><span class="game-nav-small">First</span><span class="game-nav-title">Super Punch-Out!!</span></span>
+            </a>
+            <a href="2025-june-gamecube-on-switch-online.html" class="game-nav-link nav-prev">
+              <span class="game-nav-arrow">&#8249;</span>
+              <span class="game-nav-label"><span class="game-nav-small">Previous</span><span class="game-nav-title">GameCube NSO</span></span>
+            </a>
+          </div>
+          <div class="game-nav-group nav-group-right">
+            <a href="2025-august-umihara-kawase.html" class="game-nav-link nav-next">
+              <span class="game-nav-label"><span class="game-nav-small">Next</span><span class="game-nav-title">Umihara Kawase</span></span>
+              <span class="game-nav-arrow">&#8250;</span>
+            </a>
+            <a href="2026-march-ape-escape.html" class="game-nav-link nav-last">
+              <span class="game-nav-label"><span class="game-nav-small">Latest</span><span class="game-nav-title">Ape Escape</span></span>
+              <span class="game-nav-arrow">&#8250;&#8250;</span>
+            </a>
+          </div>
         </nav>
 
-        <div class="game-header">
-          <div class="game-description">
-            <h1>July 2025 – Resident Evil 2</h1>
-
-
-            <p>
-              A classic survival horror game set in zombie-infested Raccoon City two months after the original Resident Evil. Play as either Leon S. Kennedy or Claire Redfield through branching storylines as they escape the city and confront William Birkin, creator of the G-virus. Features limited saves and ammunition, fixed camera angles, puzzle-solving, and tense exploration. Widely considered one of the best video games ever made.
-            </p>
+        <!-- Hero Banner -->
+        <div class="game-hero" style="--hero-bg: url('../images/covers/Resident Evil 2 (USA).png')">
+          <div class="game-hero-overlay"></div>
+          <div class="game-hero-content">
+            <span class="game-hero-date">July 2025</span>
+            <h1 class="game-hero-title">Resident Evil 2</h1>
+            <p class="game-hero-tagline">A classic survival horror game set in zombie-infested Raccoon City two months after the original Resident Evil. Play as either Leon S. Kennedy or Claire Redfield through branching storylines as they escape the city and confront William Birkin, creator of the G-virus. Features limited saves and ammunition, fixed camera angles, puzzle-solving, and tense exploration. Widely considered one of the best video games ever made.</p>
           </div>
-          <div class="game-infobox">
-            <a href="../trophies/trophy-resident-evil-2-beatgame.html">
-              <img src="../images/covers/Resident Evil 2 (USA).png" alt="Resident Evil 2 box art" class="game-infobox-image" />
+        </div>
+
+        <!-- Quick Facts Strip -->
+        <div class="game-facts-strip">
+          <div class="game-fact">
+            <span class="game-fact-label">Platform</span>
+            <span class="game-fact-value">PS1</span>
+          </div>
+          <span class="game-fact-divider">|</span>
+          <div class="game-fact">
+            <span class="game-fact-label">Genre</span>
+            <span class="game-fact-value">Survival Horror</span>
+          </div>
+          <span class="game-fact-divider">|</span>
+          <div class="game-fact">
+            <span class="game-fact-label">Released</span>
+            <span class="game-fact-value">1998</span>
+          </div>
+          <span class="game-fact-divider">|</span>
+          <div class="game-fact">
+            <span class="game-fact-label">Playtime</span>
+            <span class="game-fact-value">~8.5h</span>
+          </div>
+        </div>
+
+        <!-- Section Jump Nav -->
+        <nav class="game-jump-nav" aria-label="Page sections">
+          <a href="#section-info" class="game-jump-link">Info</a>
+          <a href="#section-where-to-play" class="game-jump-link">Where to Play</a>
+          <a href="#section-about" class="game-jump-link">About</a>
+          <a href="#section-trivia" class="game-jump-link">Did You Know?</a>
+          <a href="#section-reception" class="game-jump-link">Reception</a>
+          <a href="#section-achievements" class="game-jump-link">Trophies</a>
+          <a href="#section-speedruns" class="game-jump-link">Speedruns</a>
+          <a href="#section-soundtrack" class="game-jump-link">Soundtrack</a>
+          <a href="#section-video" class="game-jump-link">Video</a>
+          <a href="#section-screenshots" class="game-jump-link">Screenshots</a>
+          <a href="#section-related" class="game-jump-link">Related</a>
+          <a href="#section-sources" class="game-jump-link">Sources</a>
+        </nav>
+
+        <!-- Game Info Panel -->
+        <div class="game-info-panel" id="section-info">
+          <div class="game-info-art">
+            <a href="../trophies/trophy-resident-evil-2-beatgame.html" class="game-art-frame">
+              <img src="../images/covers/Resident Evil 2 (USA).png" alt="Resident Evil 2 box art" />
             </a>
-            <table class="game-infobox-table">
+          </div>
+          <div class="game-info-details">
+            <table class="game-info-table">
               <tr>
                 <th>Platform</th>
                 <td>Sony PlayStation</td>
@@ -106,46 +162,150 @@
                 <td>PS1, N64, DC, GCN, PSN</td>
               </tr>
             </table>
-            <div class="game-infobox-hltb">
+            <div class="game-info-hltb">
               <h3>How Long to Beat</h3>
-              <div class="game-infobox-hltb-grid">
-                <div class="hltb-item">
-                  <span class="hltb-label">Main</span>
-                  <span class="hltb-time">8½h</span>
+              <div class="game-info-hltb-grid">
+                <div class="hltb-bar-item">
+                  <div class="hltb-bar-header">
+                    <span class="hltb-bar-label">Main Story</span>
+                    <span class="hltb-bar-time">8.5h</span>
+                  </div>
+                  <div class="hltb-bar-track"><div class="hltb-bar-fill" style="width: 57%"></div></div>
                 </div>
-                <div class="hltb-item">
-                  <span class="hltb-label">+ Extras</span>
-                  <span class="hltb-time">12h</span>
+                <div class="hltb-bar-item">
+                  <div class="hltb-bar-header">
+                    <span class="hltb-bar-label">Main + Extras</span>
+                    <span class="hltb-bar-time">12h</span>
+                  </div>
+                  <div class="hltb-bar-track"><div class="hltb-bar-fill" style="width: 80%"></div></div>
                 </div>
-                <div class="hltb-item">
-                  <span class="hltb-label">100%</span>
-                  <span class="hltb-time">15h</span>
+                <div class="hltb-bar-item">
+                  <div class="hltb-bar-header">
+                    <span class="hltb-bar-label">Completionist</span>
+                    <span class="hltb-bar-time">15h</span>
+                  </div>
+                  <div class="hltb-bar-track"><div class="hltb-bar-fill" style="width: 100%"></div></div>
                 </div>
               </div>
+              <a href="https://howlongtobeat.com/game/7719" target="_blank" rel="noopener noreferrer" class="game-info-source">HowLongToBeat →</a>
             </div>
-            <a href="https://howlongtobeat.com/game/7719" target="_blank" rel="noopener noreferrer" class="game-infobox-source">HowLongToBeat →</a>
           </div>
         </div>
 
-        <div class="game-history">
+        <!-- Where to Play -->
+        <div class="game-where-to-play" id="section-where-to-play">
+          <h2>Where to Play</h2>
+          <div class="wtp-options">
+            <a href="https://store.playstation.com/en-us/product/UP9000-NPUJ00748_00-0000000000000001" target="_blank" rel="noopener noreferrer" class="wtp-card wtp-recommended">
+              <span class="wtp-badge">Recommended</span>
+              <span class="wtp-platform">PlayStation Store (PS3/PSP/Vita)</span>
+              <span class="wtp-detail">PS1 Classic — digital download on legacy PlayStation platforms</span>
+              <span class="wtp-price">$5.99</span>
+            </a>
+            <a href="https://www.pricecharting.com/game/playstation/resident-evil-2" target="_blank" rel="noopener noreferrer" class="wtp-card">
+              <span class="wtp-platform">PS1 Disc</span>
+              <span class="wtp-detail">Original hardware — complete with both discs (Leon &amp; Claire)</span>
+              <span class="wtp-price">~$40</span>
+            </a>
+            <a href="https://www.pricecharting.com/game/nintendo-64/resident-evil-2" target="_blank" rel="noopener noreferrer" class="wtp-card">
+              <span class="wtp-platform">Nintendo 64 Cartridge</span>
+              <span class="wtp-detail">Impressive N64 port with all content on one cartridge — includes exclusive EX Files</span>
+              <span class="wtp-price">~$45</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Section Divider -->
+        <div class="game-divider" aria-hidden="true"><span></span></div>
+
+        <!-- About This Game -->
+        <div class="game-history-v2" id="section-about">
           <h2>About This Game</h2>
-          <div class="game-history-text">
-            <p>Resident Evil 2 was released for the PlayStation in 1998 and is one of the most celebrated survival horror games ever made. Directed by a young Hideki Kamiya—who would later create Devil May Cry and Bayonetta—the game famously went through a dramatic development reboot. The original version, now known as “Resident Evil 1.5,” was approximately 60–80% complete before Capcom scrapped it, feeling it wasn’t a worthy sequel. The team rebuilt the game from scratch with a new protagonist (Leon S. Kennedy replacing a different character named Elza Walker), reworked environments, and a more cinematic presentation.</p>
-            <p>The gamble paid off spectacularly. RE2 sold over 4.96 million copies on PlayStation alone, making it one of the console’s best-selling titles. Its “Zapping System”—where completing the game as one protagonist unlocks a second scenario from a different character’s perspective—effectively doubled the content and added genuine replay value. The Raccoon City Police Department remains one of gaming’s most iconic settings: a repurposed art museum turned police station, its labyrinthine layout packed with puzzles, secrets, and enough undead to fuel decades of nightmares.</p>
+          <div class="game-history-v2-text">
+            <p>Resident Evil 2 was released for the PlayStation in 1998 and is one of the most celebrated survival horror games ever made. Directed by a young Hideki Kamiya—who would later create Devil May Cry and Bayonetta—the game famously went through a dramatic development reboot. The original version, now known as "Resident Evil 1.5," was approximately 60–80% complete before Capcom scrapped it, feeling it wasn't a worthy sequel. The team rebuilt the game from scratch with a new protagonist (Leon S. Kennedy replacing a different character named Elza Walker), reworked environments, and a more cinematic presentation.</p>
+            <p>The gamble paid off spectacularly. RE2 sold over 4.96 million copies on PlayStation alone, making it one of the console's best-selling titles. Its "Zapping System"—where completing the game as one protagonist unlocks a second scenario from a different character's perspective—effectively doubled the content and added genuine replay value. The Raccoon City Police Department remains one of gaming's most iconic settings: a repurposed art museum turned police station, its labyrinthine layout packed with puzzles, secrets, and enough undead to fuel decades of nightmares.</p>
           </div>
         </div>
 
-        <div class="club-achievements">
+        <!-- Did You Know? -->
+        <div class="game-trivia" id="section-trivia">
+          <h2>Did You Know?</h2>
+          <ul class="trivia-list">
+            <li>The original version of RE2, known as <strong>"Resident Evil 1.5,"</strong> was scrapped when it was 60-80% complete. It featured a completely different female protagonist named Elza Walker (a college student), a more destroyed R.P.D. building, and no interconnected "Zapping System." Capcom felt it wasn't scary enough and rebuilt the game from scratch.</li>
+            <li><strong>The N64 port is considered a technical miracle.</strong> Angel Studios (later Rockstar San Diego) compressed the entire two-disc PS1 game — including all FMV cutscenes — onto a single 64MB cartridge. It also added exclusive "EX Files" documents that expand the lore and connect to other Resident Evil titles.</li>
+            <li>The R.P.D. building's layout is based on <strong>a real art museum</strong> because, in the game's lore, it literally was one — the Raccoon City government converted a museum into a police station. This explains the building's ornate architecture, statue puzzles, and impractical room layouts.</li>
+            <li><strong>Hideki Kamiya directed RE2 at just 25 years old.</strong> It was his directorial debut. He would go on to create Devil May Cry (born from a scrapped RE4 prototype), Viewtiful Joe, Okami, and Bayonetta — making him one of gaming's most influential directors.</li>
+          </ul>
+        </div>
+
+        <!-- Section Divider -->
+        <div class="game-divider" aria-hidden="true"><span></span></div>
+
+        <!-- Critical Reception -->
+        <div class="game-reception" id="section-reception">
+          <h2>Critical Reception</h2>
+          <div class="game-reception-scores">
+            <div class="reception-score-card">
+              <span class="reception-source">IGN</span>
+              <span class="reception-score">9.5<span class="reception-out-of">/10</span></span>
+              <span class="reception-quote">"It's an incredible experience — not just the best horror game on the PlayStation, but one of the finest games of the year."</span>
+            </div>
+            <div class="reception-score-card">
+              <span class="reception-source">GameSpot</span>
+              <span class="reception-score">8.9<span class="reception-out-of">/10</span></span>
+              <span class="reception-quote">"The game is a wonderful piece of software that delivers genuine frights, challenging puzzles, and a deeply satisfying adventure."</span>
+            </div>
+            <div class="reception-score-card">
+              <span class="reception-source">Famitsu</span>
+              <span class="reception-score">37<span class="reception-out-of">/40</span></span>
+              <span class="reception-quote">"A masterful evolution of the survival horror genre that surpasses its predecessor in every meaningful way."</span>
+            </div>
+          </div>
+          <div class="game-reception-accolades">
+            <h3>Accolades</h3>
+            <ul class="reception-accolade-list">
+              <li><strong>#2</strong> Best PlayStation Game of All Time <span class="reception-accolade-source">— IGN, 2000</span></li>
+              <li><strong>#31</strong> Greatest Games of All Time <span class="reception-accolade-source">— Electronic Gaming Monthly, 2001</span></li>
+              <li><strong>Game of the Year</strong> (Console) <span class="reception-accolade-source">— GameSpot, 1998</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Section Divider -->
+        <div class="game-divider" aria-hidden="true"><span></span></div>
+
+        <!-- Club Achievements -->
+        <div class="game-achievements" id="section-achievements">
           <h2>Club Achievements</h2>
 
-          <div class="trophy-grid">
-            <div class="trophy-card-wrapper">
-              <a href="../trophies/trophy-resident-evil-2-beatgame.html" class="trophy-card">
-                <img src="../images/trophies/trophy-resident-evil-2-beatgame.png" alt="Beat the Game Trophy" class="trophy-card-image" />
+          <!-- Monthly Stats -->
+          <div class="game-month-stats">
+            <div class="month-stat">
+              <span class="month-stat-value">7</span>
+              <span class="month-stat-label">Players</span>
+            </div>
+            <div class="month-stat">
+              <span class="month-stat-value">7</span>
+              <span class="month-stat-label">Trophies Earned</span>
+            </div>
+            <div class="month-stat">
+              <span class="month-stat-value">1/1</span>
+              <span class="month-stat-label">Challenges Cleared</span>
+            </div>
+            <div class="month-stat">
+              <span class="month-stat-value">100%</span>
+              <span class="month-stat-label">Trophy Rate</span>
+            </div>
+          </div>
+
+          <div class="game-trophy-grid">
+            <div class="game-trophy-card tier-gold">
+              <a href="../trophies/trophy-resident-evil-2-beatgame.html" class="game-trophy-link">
+                <img src="../images/trophies/trophy-resident-evil-2-beatgame.png" alt="Beat the Game Trophy" class="game-trophy-img" />
                 <h3>Beat the Game</h3>
                 <p class="trophy-tier gold">Gold Trophy</p>
               </a>
-              <div class="trophy-card-winners">
+              <div class="game-trophy-winners">
                 <div class="achievement-list">
                   <a href="../users/user-asadasa.html" class="achievement-badge">Asadasa</a>
                   <a href="../users/user-zou.html" class="achievement-badge">Zou</a>
@@ -159,7 +319,7 @@
             </div>
           </div>
 
-          <div class="other-participants">
+          <div class="game-participants">
             <h3>Other Participants</h3>
             <div class="achievement-list">
               <p>No participants yet.</p>
@@ -167,41 +327,243 @@
           </div>
         </div>
 
+        <!-- Section Divider -->
+        <div class="game-divider" aria-hidden="true"><span></span></div>
 
-        
-        <div class="screenshot-gallery">
+        <!-- Speedrun Records -->
+        <div class="game-speedruns" id="section-speedruns">
+          <h2>Speedrun Records</h2>
+          <p class="speedrun-intro">Resident Evil 2 has one of the most active speedrunning communities in survival horror. Players exploit precise routing, inventory management, and damage boosts to shatter times on both Leon and Claire scenarios.</p>
+          <div class="speedrun-grid">
+            <div class="speedrun-card speedrun-featured">
+              <span class="speedrun-category">Leon A (New Game)</span>
+              <span class="speedrun-time">49:47</span>
+              <span class="speedrun-runner">Bawkbasoup</span>
+              <span class="speedrun-detail">Single-segment, real time — PS1 version</span>
+            </div>
+            <div class="speedrun-card">
+              <span class="speedrun-category">Claire A (New Game)</span>
+              <span class="speedrun-time">50:38</span>
+              <span class="speedrun-runner">Bawkbasoup</span>
+            </div>
+            <div class="speedrun-card">
+              <span class="speedrun-category">Leon B (2nd Run)</span>
+              <span class="speedrun-time">52:21</span>
+              <span class="speedrun-runner">7rayD</span>
+            </div>
+            <div class="speedrun-card">
+              <span class="speedrun-category">Claire B (2nd Run)</span>
+              <span class="speedrun-time">55:12</span>
+              <span class="speedrun-runner">7rayD</span>
+            </div>
+            <div class="speedrun-card">
+              <span class="speedrun-category">Leon A (PC, 120fps)</span>
+              <span class="speedrun-time">47:33</span>
+              <span class="speedrun-runner">Bawkbasoup</span>
+            </div>
+          </div>
+          <a href="https://www.speedrun.com/re2" target="_blank" rel="noopener noreferrer" class="speedrun-source">Full Leaderboards on Speedrun.com →</a>
+        </div>
+
+        <!-- Section Divider -->
+        <div class="game-divider" aria-hidden="true"><span></span></div>
+
+        <!-- Soundtrack -->
+        <div class="game-soundtrack" id="section-soundtrack">
+          <h2>Soundtrack</h2>
+          <div class="soundtrack-inner">
+            <div class="soundtrack-info">
+              <p class="soundtrack-composers">Composed by <strong>Masami Ueda</strong>, <strong>Shusaku Uchiyama</strong> &amp; <strong>Syun Nishigaki</strong></p>
+              <p class="soundtrack-description">The RE2 soundtrack masterfully blends ambient dread with sudden orchestral stings. The main hall's save room theme offers brief sanctuary, while the underground laboratory pulses with industrial tension. The score does much of the heavy lifting in making Raccoon City feel genuinely terrifying.</p>
+              <div class="soundtrack-tracks">
+                <h3>Notable Tracks</h3>
+                <ul>
+                  <li>The Beginning of Story</li>
+                  <li>Save Room (Secure Place)</li>
+                  <li>R.P.D. Main Hall</li>
+                  <li>Ada's Theme</li>
+                  <li>T-103 Pursuit (Mr. X Theme)</li>
+                  <li>The Last Judgement (Final Boss)</li>
+                </ul>
+              </div>
+              <div class="soundtrack-links">
+                <a href="https://downloads.khinsider.com/game-soundtracks/album/resident-evil-2-original-soundtrack" target="_blank" rel="noopener noreferrer" class="soundtrack-link">Full Soundtrack (49 tracks) →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section Divider -->
+        <div class="game-divider" aria-hidden="true"><span></span></div>
+
+        <!-- Video Spotlight -->
+        <div class="game-video" id="section-video">
+          <h2>Video Spotlight</h2>
+          <a href="https://www.youtube.com/watch?v=3qnFFDwMBIc" target="_blank" rel="noopener noreferrer" class="video-card">
+            <div class="video-thumbnail">
+              <img src="../images/video/resident-evil-2-boundary-break.jpg" alt="Out of Bounds Discoveries - Resident Evil Games thumbnail" />
+              <div class="video-play-btn" aria-hidden="true">&#9654;</div>
+              <span class="video-duration">11:26</span>
+            </div>
+            <div class="video-info">
+              <h3>Out of Bounds Discoveries | Resident Evil Games</h3>
+              <p class="video-creator">Boundary Break</p>
+              <p class="video-description">Shesez takes the camera off its fixed rails to explore what Capcom hid beyond the borders of Raccoon City and beyond. Discover how the pre-rendered backgrounds connect, where character models go when off-screen, and the clever tricks used to create the series' cinematic atmosphere.</p>
+              <span class="video-watch-link">Watch on YouTube →</span>
+            </div>
+          </a>
+        </div>
+
+        <!-- Section Divider -->
+        <div class="game-divider" aria-hidden="true"><span></span></div>
+
+        <!-- Screenshots -->
+        <div class="game-screenshots" id="section-screenshots">
           <h2>Screenshots</h2>
-          <div class="screenshot-grid">
-            <div class="screenshot-item" onclick="openLightbox(this)">
+          <div class="game-screenshot-grid">
+            <div class="game-screenshot-item" onclick="openLightbox(this)">
               <img src="../images/screenshots/resident-evil-2-1.jpg" alt="Resident Evil 2 gameplay" />
+              <div class="game-screenshot-scanlines"></div>
             </div>
-            <div class="screenshot-item" onclick="openLightbox(this)">
+            <div class="game-screenshot-item" onclick="openLightbox(this)">
               <img src="../images/screenshots/resident-evil-2-2.jpg" alt="Resident Evil 2 exploration" />
+              <div class="game-screenshot-scanlines"></div>
             </div>
-            <div class="screenshot-item" onclick="openLightbox(this)">
+            <div class="game-screenshot-item" onclick="openLightbox(this)">
               <img src="../images/screenshots/resident-evil-2-3.jpg" alt="Resident Evil 2 screenshot" />
+              <div class="game-screenshot-scanlines"></div>
             </div>
-            <div class="screenshot-item" onclick="openLightbox(this)">
+            <div class="game-screenshot-item" onclick="openLightbox(this)">
               <img src="../images/screenshots/resident-evil-2-4.jpg" alt="Resident Evil 2 combat" />
+              <div class="game-screenshot-scanlines"></div>
             </div>
           </div>
           <p class="screenshot-credit">Screenshots via <a href="https://gamesdb.launchbox-app.com/" target="_blank" rel="noopener noreferrer">LaunchBox Games Database</a></p>
         </div>
 
-        <div class="screenshot-lightbox" id="screenshotLightbox" onclick="closeLightbox()">
+        <!-- Section Divider -->
+        <div class="game-divider" aria-hidden="true"><span></span></div>
+
+        <!-- Related Games -->
+        <div class="game-related" id="section-related">
+          <h2>If You Liked This</h2>
+          <div class="related-grid">
+            <div class="related-card">
+              <div class="related-art">
+                <img src="../images/related/resident-evil-1-ps1.png" alt="Resident Evil PS1 box art" />
+              </div>
+              <div class="related-info">
+                <h3>Resident Evil (PS1)</h3>
+                <span class="related-detail">The game that started it all. The Spencer Mansion is survival horror's ground zero — fixed cameras, limited ink ribbons, and the immortal "Jill sandwich" line.</span>
+              </div>
+            </div>
+            <div class="related-card">
+              <div class="related-art">
+                <img src="../images/related/silent-hill-ps1.png" alt="Silent Hill PS1 box art" />
+              </div>
+              <div class="related-info">
+                <h3>Silent Hill (PS1)</h3>
+                <span class="related-detail">Konami's answer to Resident Evil traded zombies for psychological terror. Fog-drenched streets, radio static, and a story that burrows under your skin.</span>
+              </div>
+            </div>
+            <div class="related-card">
+              <div class="related-art">
+                <img src="../images/related/dino-crisis-ps1.png" alt="Dino Crisis PS1 box art" />
+              </div>
+              <div class="related-info">
+                <h3>Dino Crisis (PS1)</h3>
+                <span class="related-detail">Shinji Mikami swapped zombies for velociraptors. Built on the RE2 engine with real-time 3D backgrounds, it's survival horror with teeth — literally.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sources & Attribution -->
+        <div class="game-sources" id="section-sources">
+          <h2>Sources &amp; Attribution</h2>
+          <ul class="sources-list">
+            <li>Game description and historical background adapted from <a href="https://en.wikipedia.org/wiki/Resident_Evil_2" target="_blank" rel="noopener noreferrer">Wikipedia</a></li>
+            <li>Trivia sourced from <a href="https://tcrf.net/Resident_Evil_2_(PlayStation)" target="_blank" rel="noopener noreferrer">The Cutting Room Floor</a>, <a href="https://residentevil.fandom.com/wiki/Resident_Evil_1.5" target="_blank" rel="noopener noreferrer">Resident Evil Wiki</a>, and community research</li>
+            <li>Review scores from <a href="https://www.ign.com/articles/1998/01/22/resident-evil-2-2" target="_blank" rel="noopener noreferrer">IGN</a>, <a href="https://www.gamespot.com/reviews/resident-evil-2-review/1900-2545435/" target="_blank" rel="noopener noreferrer">GameSpot</a>, and Famitsu</li>
+            <li>Accolades from IGN, Electronic Gaming Monthly, and GameSpot editorial archives</li>
+            <li>Speedrun data from <a href="https://www.speedrun.com/re2" target="_blank" rel="noopener noreferrer">Speedrun.com</a></li>
+            <li>Playtime estimates from <a href="https://howlongtobeat.com/game/7719" target="_blank" rel="noopener noreferrer">HowLongToBeat</a></li>
+            <li>Screenshots and box art via <a href="https://gamesdb.launchbox-app.com/" target="_blank" rel="noopener noreferrer">LaunchBox Games Database</a></li>
+            <li>Soundtrack information from <a href="https://downloads.khinsider.com/game-soundtracks/album/resident-evil-2-original-soundtrack" target="_blank" rel="noopener noreferrer">KHInsider</a></li>
+            <li>Pricing data from <a href="https://www.pricecharting.com/game/playstation/resident-evil-2" target="_blank" rel="noopener noreferrer">PriceCharting</a></li>
+          </ul>
+        </div>
+
+        <!-- Bottom Navigation -->
+        <nav class="game-nav game-nav-bottom">
+          <div class="game-nav-group nav-group-left">
+            <a href="2025-january-super-punch-out.html" class="game-nav-link nav-first">
+              <span class="game-nav-arrow">&#8249;&#8249;</span>
+              <span class="game-nav-label"><span class="game-nav-small">First</span><span class="game-nav-title">Super Punch-Out!!</span></span>
+            </a>
+            <a href="2025-june-gamecube-on-switch-online.html" class="game-nav-link nav-prev">
+              <span class="game-nav-arrow">&#8249;</span>
+              <span class="game-nav-label"><span class="game-nav-small">Previous</span><span class="game-nav-title">GameCube NSO</span></span>
+            </a>
+          </div>
+          <div class="game-nav-group nav-group-right">
+            <a href="2025-august-umihara-kawase.html" class="game-nav-link nav-next">
+              <span class="game-nav-label"><span class="game-nav-small">Next</span><span class="game-nav-title">Umihara Kawase</span></span>
+              <span class="game-nav-arrow">&#8250;</span>
+            </a>
+            <a href="2026-march-ape-escape.html" class="game-nav-link nav-last">
+              <span class="game-nav-label"><span class="game-nav-small">Latest</span><span class="game-nav-title">Ape Escape</span></span>
+              <span class="game-nav-arrow">&#8250;&#8250;</span>
+            </a>
+          </div>
+        </nav>
+
+        <div class="screenshot-lightbox" id="screenshotLightbox">
+          <div class="lightbox-backdrop" onclick="closeLightbox()"></div>
+          <button class="lightbox-arrow lightbox-prev" onclick="cycleLightbox(-1)" aria-label="Previous screenshot">&#8249;</button>
           <img id="lightboxImg" src="" alt="Screenshot enlarged" />
+          <button class="lightbox-arrow lightbox-next" onclick="cycleLightbox(1)" aria-label="Next screenshot">&#8250;</button>
+          <span class="lightbox-counter" id="lightboxCounter"></span>
+          <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close lightbox">&times;</button>
         </div>
         <script>
+          var lightboxItems = document.querySelectorAll('.game-screenshot-item');
+          var lightboxIndex = 0;
           function openLightbox(el) {
-            var src = el.querySelector('img').src;
-            document.getElementById('lightboxImg').src = src;
+            var items = Array.prototype.slice.call(lightboxItems);
+            lightboxIndex = items.indexOf(el);
+            showLightboxImage();
             document.getElementById('screenshotLightbox').classList.add('active');
+          }
+          function showLightboxImage(fade) {
+            var lbImg = document.getElementById('lightboxImg');
+            var img = lightboxItems[lightboxIndex].querySelector('img');
+            if (fade) {
+              lbImg.style.opacity = '0';
+              setTimeout(function() {
+                lbImg.src = img.src;
+                lbImg.alt = img.alt;
+                lbImg.style.opacity = '1';
+              }, 150);
+            } else {
+              lbImg.src = img.src;
+              lbImg.alt = img.alt;
+            }
+            document.getElementById('lightboxCounter').textContent = (lightboxIndex + 1) + ' / ' + lightboxItems.length;
+          }
+          function cycleLightbox(dir) {
+            lightboxIndex = (lightboxIndex + dir + lightboxItems.length) % lightboxItems.length;
+            showLightboxImage(true);
           }
           function closeLightbox() {
             document.getElementById('screenshotLightbox').classList.remove('active');
           }
           document.addEventListener('keydown', function(e) {
+            var lb = document.getElementById('screenshotLightbox');
+            if (!lb.classList.contains('active')) return;
             if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowLeft') cycleLightbox(-1);
+            if (e.key === 'ArrowRight') cycleLightbox(1);
           });
         </script>
       </section>
