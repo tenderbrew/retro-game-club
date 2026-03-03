@@ -5634,6 +5634,15 @@ html {
     padding: 1.5rem;
   }
 
+  .game-month-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .month-stat {
+    justify-items: center;
+  }
+
   .trophy-grid {
     grid-template-columns: 1fr;
   }
