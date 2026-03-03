@@ -59,6 +59,7 @@
         <h1>Trophy Room</h1>
 
         <div class="trophy-gallery">
+          <div class="trophy-shelf-container">
           <div class="trophy-grid">
 
             <a href="trophies/trophy-super-punch-out-highscore.html" class="trophy-plaque tier-gold">
@@ -437,6 +438,7 @@
             </a>
 
           </div>
+          </div>
         </div>
       </section>
     </main>
@@ -450,5 +452,72 @@
           new Date().getFullYear();
       </script>
     </footer>
+
+    <script>
+    (function () {
+      var container = document.querySelector('.trophy-shelf-container');
+      var grid = container ? container.querySelector('.trophy-grid') : null;
+      if (!container || !grid) return;
+
+      var shelves = [];
+      var resizeTimer = null;
+
+      function positionShelves() {
+        var plaques = grid.querySelectorAll('.trophy-plaque');
+        if (!plaques.length) return;
+
+        var rows = [];
+        var currentRowTop = null;
+        var currentRowBottom = 0;
+
+        for (var i = 0; i < plaques.length; i++) {
+          var top = plaques[i].offsetTop;
+          var bottom = top + plaques[i].offsetHeight;
+
+          if (currentRowTop === null || Math.abs(top - currentRowTop) > 10) {
+            if (currentRowTop !== null) rows.push(currentRowBottom);
+            currentRowTop = top;
+            currentRowBottom = bottom;
+          } else if (bottom > currentRowBottom) {
+            currentRowBottom = bottom;
+          }
+        }
+        if (currentRowTop !== null) rows.push(currentRowBottom);
+
+        var gridStyle = window.getComputedStyle(grid);
+        var rowGap = parseFloat(gridStyle.rowGap) || parseFloat(gridStyle.gap) || 0;
+
+        while (shelves.length < rows.length) {
+          var shelf = document.createElement('div');
+          shelf.className = 'trophy-shelf';
+          shelf.setAttribute('aria-hidden', 'true');
+          container.appendChild(shelf);
+          shelves.push(shelf);
+        }
+
+        for (var j = 0; j < shelves.length; j++) {
+          if (j < rows.length) {
+            shelves[j].style.display = '';
+            var shelfHeight = shelves[j].offsetHeight;
+            var topPos = rows[j];
+            shelves[j].style.top = topPos + 'px';
+          } else {
+            shelves[j].style.display = 'none';
+          }
+        }
+      }
+
+      if (document.readyState === 'complete') {
+        positionShelves();
+      } else {
+        window.addEventListener('load', positionShelves);
+      }
+
+      window.addEventListener('resize', function () {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(positionShelves, 150);
+      });
+    })();
+    </script>
   </body>
 </html>

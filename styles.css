@@ -1992,15 +1992,81 @@ h3 {
   border: 1px solid rgba(180, 140, 60, 0.08);
 }
 
+/* --- Trophy Shelf Container --- */
+.trophy-shelf-container {
+  position: relative;
+  padding-bottom: 26px;
+}
+
 /* --- Trophy Grid — continuous wall --- */
 .trophy-gallery .trophy-grid {
   grid-template-columns: repeat(3, 1fr);
-  gap: 1.75rem;
+  column-gap: 1.75rem;
+  row-gap: 3.5rem;
 }
 
 /* --- Trophy Plaque --- */
 .trophy-gallery .trophy-grid {
   align-items: stretch;
+}
+
+/* --- Full-width trophy shelves --- */
+.trophy-shelf {
+  position: absolute;
+  left: -12px;
+  right: -12px;
+  height: 32px;
+  pointer-events: none;
+  z-index: 2;
+  background:
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 60px,
+      rgba(160, 110, 50, 0.1) 60px,
+      rgba(160, 110, 50, 0.1) 63px
+    ),
+    linear-gradient(180deg,
+      #5a3d1e 0%,
+      #4a3018 30%,
+      #3d2612 60%,
+      #2a1a0c 100%);
+  border-top: 3px solid rgba(212, 175, 55, 0.5);
+  border-bottom: 2px solid rgba(0, 0, 0, 0.8);
+  box-shadow:
+    0 6px 16px rgba(0, 0, 0, 0.7),
+    0 3px 6px rgba(0, 0, 0, 0.5),
+    inset 0 2px 0 rgba(255, 220, 120, 0.15),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.4);
+  border-radius: 0 0 3px 3px;
+}
+
+.trophy-shelf::before {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 3%;
+  right: 3%;
+  height: 2px;
+  background: linear-gradient(90deg,
+    transparent,
+    rgba(212, 175, 55, 0.3),
+    transparent);
+  pointer-events: none;
+}
+
+.trophy-shelf::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  right: 0;
+  height: 10px;
+  background: linear-gradient(180deg,
+    rgba(30, 20, 10, 0.9) 0%,
+    rgba(20, 15, 8, 0.5) 40%,
+    transparent 100%);
+  pointer-events: none;
 }
 
 .trophy-plaque {
@@ -2012,6 +2078,8 @@ h3 {
   border: 3px solid;
   transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
   height: 100%;
+  position: relative;
+  z-index: 3;
 }
 
 /* Tier colors */
@@ -5403,7 +5471,21 @@ html {
 
   .trophy-gallery .trophy-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 0.75rem;
+    column-gap: 0.75rem;
+    row-gap: 2.5rem;
+  }
+
+  .trophy-shelf-container {
+    padding-bottom: 20px;
+  }
+
+  .trophy-shelf {
+    height: 16px;
+  }
+
+  .trophy-shelf::after {
+    height: 4px;
+    bottom: -4px;
   }
 
   .plaque-showcase {
@@ -5689,7 +5771,21 @@ html {
 
   .trophy-gallery .trophy-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 0.5rem;
+    column-gap: 0.5rem;
+    row-gap: 2rem;
+  }
+
+  .trophy-shelf-container {
+    padding-bottom: 15px;
+  }
+
+  .trophy-shelf {
+    height: 12px;
+  }
+
+  .trophy-shelf::after {
+    height: 3px;
+    bottom: -3px;
   }
 
   .plaque-showcase {
