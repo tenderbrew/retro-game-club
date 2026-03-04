@@ -4,7 +4,6 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="preconnect" href="https://www.googletagmanager.com" />
-    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-WX2NTMVS3Y"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -56,35 +55,88 @@
 
     <main class="site-main container" id="main-content">
       <section class="content">
-        <div class="user-profile">
-          <div class="user-header">
-            <div class="user-avatar">
-              <img src="../images/users/nabeel.png" alt="Nabeel's avatar" />
-            </div>
-            <div class="user-info">
-              <h1 class="user-name">Nabeel</h1>            </div>
-          </div>
 
-          <div class="user-stats">
-            <div class="stat-item">
-              <span class="stat-number">0</span>
-              <span class="stat-label">Trophies</span>
-            </div>
-            <div class="stat-item">
-              <span class="stat-number">0</span>
-              <span class="stat-label">Challenges Completed</span>
-            </div>
-            <div class="stat-item">
-              <span class="stat-number">0</span>
-              <span class="stat-label">Games Played</span>
-            </div>
-          </div>
-
-          <div class="user-trophies">
-            <h2>Trophy Collection</h2>
-            <p class="trophy-empty">No trophies yet. Start completing challenges to earn your first trophy!</p>
+        <!-- Profile Nav -->
+        <div class="profile-nav">
+          <a href="../users.html" class="profile-nav-back"><span class="profile-nav-back-arrow">&larr;</span> All Users</a>
+          <div class="profile-nav-select-wrap">
+            <select class="profile-nav-select" onchange="if(this.value)window.location.href=this.value">
+              <option value="user-1defined.html">1defined</option>
+              <option value="user-1upmuffin.html">1upmuffin</option>
+              <option value="user-anton.html">Anton</option>
+              <option value="user-asadasa.html">Asadasa</option>
+              <option value="user-brannon.html">Brannon</option>
+              <option value="user-cmm.html">CMM</option>
+              <option value="user-gravyfingerz.html">GravyFingerz</option>
+              <option value="user-holly.html">Holly</option>
+              <option value="user-hugh.html">Hugh</option>
+              <option value="user-kb.html">kb</option>
+              <option value="user-luke_barz.html">Luke_Barz</option>
+              <option value="user-metroid.html">Metroid</option>
+              <option value="user-mrcafecito.html">MrCafecito</option>
+              <option value="user-nabeel.html" selected>Nabeel</option>
+              <option value="user-noise.html">Noise</option>
+              <option value="user-otbwy.html">OTBWY</option>
+              <option value="user-phyl0x.html">phyl0x</option>
+              <option value="user-poochy.html">Poochy</option>
+              <option value="user-robert.html">Robert</option>
+              <option value="user-robin.html">Robin</option>
+              <option value="user-slaycoco.html">slaycoco</option>
+              <option value="user-splendor.html">Splendor</option>
+              <option value="user-tender.html">Tender</option>
+              <option value="user-wookiee.html">Wookiee</option>
+              <option value="user-zou.html">Zou</option>
+            </select>
+            <span class="profile-nav-select-arrow">&#9660;</span>
           </div>
         </div>
+
+
+        <!-- Profile Hero -->
+        <div class="profile-hero">
+          <div class="profile-hero-overlay"></div>
+          <div class="profile-hero-content">
+            <img src="../images/users/nabeel.png" alt="Nabeel's avatar" class="profile-hero-avatar" />
+            <div class="profile-hero-text">
+              <h1 class="profile-hero-name">Nabeel</h1>
+              <div class="profile-hero-meta">
+                <span class="profile-hero-meta-item"><span class="profile-hero-meta-icon">&#128197;</span> Member since Jan 2025</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Stats Strip -->
+        <div class="profile-stats-strip">
+          <div class="game-fact">
+            <span class="game-fact-label">Rank</span>
+            <span class="game-fact-value">&mdash;</span>
+          </div>
+          <span class="game-fact-divider">|</span>
+          <div class="game-fact">
+            <span class="game-fact-label">Points</span>
+            <span class="game-fact-value"><span class="count-up" data-target="0">0</span></span>
+          </div>
+          <span class="game-fact-divider">|</span>
+          <div class="game-fact">
+            <span class="game-fact-label">Trophies</span>
+            <span class="game-fact-value"><span class="count-up" data-target="0">0</span></span>
+          </div>
+          <span class="game-fact-divider">|</span>
+          <div class="game-fact">
+            <span class="game-fact-label">Games Played</span>
+            <span class="game-fact-value"><span class="count-up" data-target="0">0</span></span>
+          </div>
+        </div>
+
+        <!-- Profile Body -->
+        <div class="user-profile">
+          <div class="user-trophies">
+            <h2>Trophy Collection</h2>
+            <p class="empty-collection">No trophies yet — start playing to earn your first!</p>
+          </div>
+        </div>
+
       </section>
     </main>
 
@@ -97,5 +149,42 @@
           new Date().getFullYear();
       </script>
     </footer>
+
+    <script>
+    // Count-up animation on stats strip
+    (function () {
+      var strip = document.querySelector('.profile-stats-strip');
+      if (!strip) return;
+      var counters = strip.querySelectorAll('.count-up');
+      if (!counters.length) return;
+      var animated = false;
+
+      function animate() {
+        if (animated) return;
+        animated = true;
+        counters.forEach(function (el) {
+          var target = parseInt(el.getAttribute('data-target'), 10);
+          var duration = 1200;
+          var start = performance.now();
+          function step(now) {
+            var elapsed = now - start;
+            var progress = Math.min(elapsed / duration, 1);
+            var ease = 1 - Math.pow(1 - progress, 3);
+            el.textContent = Math.round(target * ease);
+            if (progress < 1) requestAnimationFrame(step);
+          }
+          requestAnimationFrame(step);
+        });
+      }
+
+      var observer = new IntersectionObserver(function (entries) {
+        if (entries[0].isIntersecting) {
+          animate();
+          observer.disconnect();
+        }
+      }, { threshold: 0.5 });
+      observer.observe(strip);
+    })();
+    </script>
   </body>
 </html>

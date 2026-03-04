@@ -57,7 +57,26 @@
     <main class="site-main container" id="main-content">
       <section class="content game-page-v2">
         <nav class="game-nav">
-          <span></span>
+          <div class="game-nav-select-wrap">
+            <select class="profile-nav-select" onchange="if(this.value)window.location.href=this.value">
+              <option value="2025-january-super-punch-out.html" selected>Jan 2025 — Super Punch-Out!!</option>
+              <option value="2025-february-god-of-war.html">Feb 2025 — God of War</option>
+              <option value="2025-march-kirby-64.html">Mar 2025 — Kirby 64</option>
+              <option value="2025-april-billy-hatcher.html">Apr 2025 — Billy Hatcher</option>
+              <option value="2025-may-snatcher.html">May 2025 — Snatcher</option>
+              <option value="2025-june-gamecube-on-switch-online.html">Jun 2025 — GC on Switch Online</option>
+              <option value="2025-july-resident-evil-2.html">Jul 2025 — Resident Evil 2</option>
+              <option value="2025-august-umihara-kawase.html">Aug 2025 — Umihara Kawase</option>
+              <option value="2025-september-gran-turismo-2.html">Sep 2025 — Gran Turismo 2</option>
+              <option value="2025-october-koudelka.html">Oct 2025 — Koudelka</option>
+              <option value="2025-november-brave-fencer-musashi.html">Nov 2025 — Brave Fencer Musashi</option>
+              <option value="2025-december-nights.html">Dec 2025 — NiGHTS</option>
+              <option value="2026-january-mega-man-legends.html">Jan 2026 — Mega Man Legends</option>
+              <option value="2026-february-legend-of-the-river-king.html">Feb 2026 — Legend of the River King</option>
+              <option value="2026-march-ape-escape.html">Mar 2026 — Ape Escape</option>
+            </select>
+            <span class="profile-nav-select-arrow">&#9660;</span>
+          </div>
           <div class="game-nav-group nav-group-right">
             <a href="2025-february-god-of-war.html" class="game-nav-link nav-next">
               <span class="game-nav-label"><span class="game-nav-small">Next</span><span class="game-nav-title">God of War</span></span>
@@ -291,19 +310,36 @@
             </div>
           </div>
 
-          <div class="game-trophy-grid">
-            <div class="game-trophy-card tier-gold">
-              <a href="../trophies/trophy-super-punch-out-highscore.html" class="game-trophy-link">
-                <img src="../images/trophies/trophy-super-punch-out-highscore.png" alt="High Score Trophy" class="game-trophy-img" />
-                <h3>High Score</h3>
-                <p class="trophy-tier gold">Gold Trophy</p>
-              </a>
-              <p class="trophy-note">(message 1upmuffin if yours is higher)</p>
-              <div class="game-trophy-winners">
-                <div class="achievement-list">
-                  <a href="../users/user-asadasa.html" class="achievement-badge">Asadasa</a>
+                    <div class="trophy-gallery">
+            <div class="trophy-shelf-container">
+            <div class="trophy-grid">
+                        <div class="game-trophy-card"><a href="../trophies/trophy-super-punch-out-highscore.html" class="trophy-plaque tier-gold">
+                <div class="plaque-showcase">
+                  <img src="../images/trophies/trophy-super-punch-out-highscore.png" alt="High Score Trophy" class="plaque-image" />
                 </div>
-                <div class="highscore-list">
+                <div class="plaque-nameplate">
+                  <h3>High Score</h3>
+                  <span class="plaque-tier gold">Gold</span>
+                
+                    </div>
+              </a><div class="plaque-winners"><span class="plaque-winner">Asadasa</span></div></div>
+
+                        <div class="game-trophy-card"><a href="../trophies/trophy-super-punch-out-beatgame.html" class="trophy-plaque tier-silver">
+                <div class="plaque-showcase">
+                  <img src="../images/trophies/trophy-super-punch-out-beatgame.png" alt="Beat Game Trophy" class="plaque-image" />
+                </div>
+                <div class="plaque-nameplate">
+                  <h3>Beat Game</h3>
+                  <span class="plaque-tier silver">Silver</span>
+                
+                    </div>
+              </a><div class="plaque-winners"><span class="plaque-winner">Robin</span><span class="plaque-winner">Anton</span></div></div>
+          </div>
+            </div>
+          </div>
+          
+          <p class="trophy-note">(message 1upmuffin if yours is higher)</p>
+          <div class="highscore-list">
                   <div class="highscore-item">
                     <span class="highscore-circuit">Special Circuit</span>
                     <span class="highscore-score">410,410</span>
@@ -321,23 +357,6 @@
                     <span class="highscore-score">196,290</span>
                   </div>
                 </div>
-              </div>
-            </div>
-
-            <div class="game-trophy-card tier-silver">
-              <a href="../trophies/trophy-super-punch-out-beatgame.html" class="game-trophy-link">
-                <img src="../images/trophies/trophy-super-punch-out-beatgame.png" alt="Beat Game Trophy" class="game-trophy-img" />
-                <h3>Beat Game</h3>
-                <p class="trophy-tier silver">Silver Trophy</p>
-              </a>
-              <div class="game-trophy-winners">
-                <div class="achievement-list">
-                  <a href="../users/user-robin.html" class="achievement-badge">Robin</a>
-                  <a href="../users/user-anton.html" class="achievement-badge">Anton</a>
-                </div>
-              </div>
-            </div>
-          </div>
 
           <div class="game-participants">
             <h3>Other Participants</h3>
@@ -595,5 +614,53 @@
           new Date().getFullYear();
       </script>
     </footer>
+      <script>
+    (function () {
+      var container = document.querySelector('.trophy-shelf-container');
+      var grid = container ? container.querySelector('.trophy-grid') : null;
+      if (!container || !grid) return;
+      var shelves = [];
+      var resizeTimer = null;
+      function positionShelves() {
+        var items = grid.querySelectorAll('.game-trophy-card'); if (!items.length) items = grid.querySelectorAll('.trophy-plaque');
+        if (!items.length) return;
+        var rows = [];
+        var currentRowTop = null;
+        var currentRowBottom = 0;
+        for (var i = 0; i < items.length; i++) {
+          var top = items[i].offsetTop;
+          var bottom = top + items[i].offsetHeight;
+          if (currentRowTop === null || Math.abs(top - currentRowTop) > 10) {
+            if (currentRowTop !== null) rows.push(currentRowBottom);
+            currentRowTop = top;
+            currentRowBottom = bottom;
+          } else if (bottom > currentRowBottom) {
+            currentRowBottom = bottom;
+          }
+        }
+        if (currentRowTop !== null) rows.push(currentRowBottom);
+        while (shelves.length < rows.length) {
+          var shelf = document.createElement('div');
+          shelf.className = 'trophy-shelf';
+          shelf.setAttribute('aria-hidden', 'true');
+          container.appendChild(shelf);
+          shelves.push(shelf);
+        }
+        for (var j = 0; j < shelves.length; j++) {
+          if (j < rows.length) {
+            shelves[j].style.display = '';
+            shelves[j].style.top = rows[j] + 'px';
+          } else {
+            shelves[j].style.display = 'none';
+          }
+        }
+      }
+      positionShelves();
+      window.addEventListener('resize', function () {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(positionShelves, 150);
+      });
+    })();
+    </script>
   </body>
 </html>

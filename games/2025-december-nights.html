@@ -57,6 +57,26 @@
     <main class="site-main container" id="main-content">
       <section class="content game-page-v2">
         <nav class="game-nav">
+          <div class="game-nav-select-wrap">
+            <select class="profile-nav-select" onchange="if(this.value)window.location.href=this.value">
+              <option value="2025-january-super-punch-out.html">Jan 2025 — Super Punch-Out!!</option>
+              <option value="2025-february-god-of-war.html">Feb 2025 — God of War</option>
+              <option value="2025-march-kirby-64.html">Mar 2025 — Kirby 64</option>
+              <option value="2025-april-billy-hatcher.html">Apr 2025 — Billy Hatcher</option>
+              <option value="2025-may-snatcher.html">May 2025 — Snatcher</option>
+              <option value="2025-june-gamecube-on-switch-online.html">Jun 2025 — GC on Switch Online</option>
+              <option value="2025-july-resident-evil-2.html">Jul 2025 — Resident Evil 2</option>
+              <option value="2025-august-umihara-kawase.html">Aug 2025 — Umihara Kawase</option>
+              <option value="2025-september-gran-turismo-2.html">Sep 2025 — Gran Turismo 2</option>
+              <option value="2025-october-koudelka.html">Oct 2025 — Koudelka</option>
+              <option value="2025-november-brave-fencer-musashi.html">Nov 2025 — Brave Fencer Musashi</option>
+              <option value="2025-december-nights.html" selected>Dec 2025 — NiGHTS</option>
+              <option value="2026-january-mega-man-legends.html">Jan 2026 — Mega Man Legends</option>
+              <option value="2026-february-legend-of-the-river-king.html">Feb 2026 — Legend of the River King</option>
+              <option value="2026-march-ape-escape.html">Mar 2026 — Ape Escape</option>
+            </select>
+            <span class="profile-nav-select-arrow">&#9660;</span>
+          </div>
           <div class="game-nav-group nav-group-left">
             <a href="2025-january-super-punch-out.html" class="game-nav-link nav-first">
               <span class="game-nav-arrow">&#8249;&#8249;</span>
@@ -262,21 +282,23 @@
             </div>
           </div>
 
-          <div class="game-trophy-grid">
-            <div class="game-trophy-card tier-gold">
-              <a href="../trophies/trophy-nights-beatgame.html" class="game-trophy-link">
-                <img src="../images/trophies/trophy-nights-beatgame.png" alt="Beat the Game Trophy" class="game-trophy-img" />
-                <h3>Beat the Game</h3>
-                <p class="trophy-tier gold">Gold Trophy</p>
-              </a>
-              <div class="game-trophy-winners">
-                <div class="achievement-list">
-                  <a href="../users/user-anton.html" class="achievement-badge">Anton</a>
-                  <a href="../users/user-asadasa.html" class="achievement-badge">Asadasa</a>
+                    <div class="trophy-gallery">
+            <div class="trophy-shelf-container">
+            <div class="trophy-grid">
+                        <div class="game-trophy-card"><a href="../trophies/trophy-nights-beatgame.html" class="trophy-plaque tier-gold">
+                <div class="plaque-showcase">
+                  <img src="../images/trophies/trophy-nights-beatgame.png" alt="Beat the Game Trophy" class="plaque-image" />
                 </div>
-              </div>
+                <div class="plaque-nameplate">
+                  <h3>Beat the Game</h3>
+                  <span class="plaque-tier gold">Gold</span>
+                
+                    </div>
+              </a><div class="plaque-winners"><span class="plaque-winner">Anton</span><span class="plaque-winner">Asadasa</span></div></div>
+          </div>
             </div>
           </div>
+          
 
           <div class="game-participants">
             <h3>Other Participants</h3>
@@ -494,5 +516,53 @@
           new Date().getFullYear();
       </script>
     </footer>
+      <script>
+    (function () {
+      var container = document.querySelector('.trophy-shelf-container');
+      var grid = container ? container.querySelector('.trophy-grid') : null;
+      if (!container || !grid) return;
+      var shelves = [];
+      var resizeTimer = null;
+      function positionShelves() {
+        var items = grid.querySelectorAll('.game-trophy-card'); if (!items.length) items = grid.querySelectorAll('.trophy-plaque');
+        if (!items.length) return;
+        var rows = [];
+        var currentRowTop = null;
+        var currentRowBottom = 0;
+        for (var i = 0; i < items.length; i++) {
+          var top = items[i].offsetTop;
+          var bottom = top + items[i].offsetHeight;
+          if (currentRowTop === null || Math.abs(top - currentRowTop) > 10) {
+            if (currentRowTop !== null) rows.push(currentRowBottom);
+            currentRowTop = top;
+            currentRowBottom = bottom;
+          } else if (bottom > currentRowBottom) {
+            currentRowBottom = bottom;
+          }
+        }
+        if (currentRowTop !== null) rows.push(currentRowBottom);
+        while (shelves.length < rows.length) {
+          var shelf = document.createElement('div');
+          shelf.className = 'trophy-shelf';
+          shelf.setAttribute('aria-hidden', 'true');
+          container.appendChild(shelf);
+          shelves.push(shelf);
+        }
+        for (var j = 0; j < shelves.length; j++) {
+          if (j < rows.length) {
+            shelves[j].style.display = '';
+            shelves[j].style.top = rows[j] + 'px';
+          } else {
+            shelves[j].style.display = 'none';
+          }
+        }
+      }
+      positionShelves();
+      window.addEventListener('resize', function () {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(positionShelves, 150);
+      });
+    })();
+    </script>
   </body>
 </html>

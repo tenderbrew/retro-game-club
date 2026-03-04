@@ -56,91 +56,679 @@
 
     <main class="site-main container" id="main-content">
       <section class="content">
-        <div class="user-profile">
-          <div class="user-header">
-            <div class="user-avatar">
-              <img src="../images/users/tender.gif" alt="Tender's avatar" />
-            </div>
-            <div class="user-info">
-              <h1 class="user-name">Tender</h1>
-            </div>
-          </div>
 
-          <div class="user-stats">
-            <div class="stat-item">
-              <span class="stat-number">9</span>
-              <span class="stat-label">Trophies</span>
-            </div>
-            <div class="stat-item">
-              <span class="stat-number">6</span>
-              <span class="stat-label">Challenges Completed</span>
-            </div>
-            <div class="stat-item">
-              <span class="stat-number">6</span>
-              <span class="stat-label">Games Played</span>
-            </div>
+        <!-- Profile Nav -->
+        <div class="profile-nav">
+          <a href="../users.html" class="profile-nav-back"><span class="profile-nav-back-arrow">&larr;</span> All Users</a>
+          <div class="profile-nav-select-wrap">
+            <select class="profile-nav-select" onchange="if(this.value)window.location.href=this.value">
+              <option value="user-1defined.html">1defined</option>
+              <option value="user-1upmuffin.html">1upmuffin</option>
+              <option value="user-anton.html">Anton</option>
+              <option value="user-asadasa.html">Asadasa</option>
+              <option value="user-brannon.html">Brannon</option>
+              <option value="user-cmm.html">CMM</option>
+              <option value="user-gravyfingerz.html">GravyFingerz</option>
+              <option value="user-holly.html">Holly</option>
+              <option value="user-hugh.html">Hugh</option>
+              <option value="user-kb.html">kb</option>
+              <option value="user-luke_barz.html">Luke_Barz</option>
+              <option value="user-metroid.html">Metroid</option>
+              <option value="user-mrcafecito.html">MrCafecito</option>
+              <option value="user-nabeel.html">Nabeel</option>
+              <option value="user-noise.html">Noise</option>
+              <option value="user-otbwy.html">OTBWY</option>
+              <option value="user-phyl0x.html">phyl0x</option>
+              <option value="user-poochy.html">Poochy</option>
+              <option value="user-robert.html">Robert</option>
+              <option value="user-robin.html">Robin</option>
+              <option value="user-slaycoco.html">slaycoco</option>
+              <option value="user-splendor.html">Splendor</option>
+              <option value="user-tender.html" selected>Tender</option>
+              <option value="user-wookiee.html">Wookiee</option>
+              <option value="user-zou.html">Zou</option>
+            </select>
+            <span class="profile-nav-select-arrow">&#9660;</span>
           </div>
+        </div>
 
-          <div class="user-trophies">
-            <h2>Trophy Collection</h2>
-            <div class="trophy-grid">
-              <a href="../trophies/trophy-snatcher-beatgame.html" class="trophy-item">
-                <img src="../images/trophies/trophy-snatcher-beatgame.png" alt="Snatcher Beatgame trophy" class="trophy-image" />
-                <h3 class="trophy-name">Beat the Game</h3>
-                <p class="trophy-item-description">Snatcher</p>
-                <p class="trophy-tier gold">Gold Trophy</p>
-              </a>
-              <a href="../trophies/trophy-nso-beatgame.html" class="trophy-item">
-                <img src="../images/trophies/trophy-gamecube-nso-beatgame.png" alt="Gamecube Nso Beatgame trophy" class="trophy-image" />
-                <h3 class="trophy-name">Beat One NSO Game</h3>
-                <p class="trophy-item-description">GameCube Games on NSO</p>
-                <p class="trophy-tier gold">Gold Trophy</p>
-              </a>
-              <a href="../trophies/trophy-resident-evil-2-beatgame.html" class="trophy-item">
-                <img src="../images/trophies/trophy-resident-evil-2-beatgame.png" alt="Resident Evil 2 Beatgame trophy" class="trophy-image" />
-                <h3 class="trophy-name">Beat the Game</h3>
-                <p class="trophy-item-description">Resident Evil 2</p>
-                <p class="trophy-tier gold">Gold Trophy</p>
-              </a>
-              <a href="../trophies/trophy-kirby-64-100percent.html" class="trophy-item">
-                <img src="../images/trophies/trophy-kirby-64-100percent.png" alt="Kirby 64 100percent trophy" class="trophy-image" />
-                <h3 class="trophy-name">100% Completion</h3>
-                <p class="trophy-item-description">Kirby 64: The Crystal Shards</p>
-                <p class="trophy-tier gold">Gold Trophy</p>
-              </a>
-              <a href="../trophies/trophy-mega-man-legends-busterparts.html" class="trophy-item">
-                <img src="../images/trophies/trophy-mega-man-legends-busterparts.png" alt="Mega Man Legends Busterparts trophy" class="trophy-image" />
-                <h3 class="trophy-name">Get All Buster Parts</h3>
-                <p class="trophy-item-description">Mega Man Legends</p>
-                <p class="trophy-tier gold">Gold Trophy</p>
-              </a>
-              <a href="../trophies/trophy-mega-man-legends-minigamesscore.html" class="trophy-item">
-                <img src="../images/trophies/trophy-mega-man-legends-minigamesscore.png" alt="Mega Man Legends Minigamesscore trophy" class="trophy-image" />
-                <h3 class="trophy-name">High Score on All Mini Games</h3>
-                <p class="trophy-item-description">Mega Man Legends</p>
-                <p class="trophy-tier silver">Silver Trophy</p>
-              </a>
-              <a href="../trophies/trophy-mega-man-legends-beatgame.html" class="trophy-item">
-                <img src="../images/trophies/trophy-mega-man-legends-beatgame.png" alt="Mega Man Legends Beatgame trophy" class="trophy-image" />
-                <h3 class="trophy-name">Beat the Game</h3>
-                <p class="trophy-item-description">Mega Man Legends</p>
-                <p class="trophy-tier bronze">Bronze Trophy</p>
-              </a>
-              <a href="../trophies/trophy-legend-of-the-river-king-allrods.html" class="trophy-item">
-                <img src="../images/trophies/trophy-lotrk-get-all-rods.png" alt="Lotrk Get All Rods trophy" class="trophy-image" />
-                <h3 class="trophy-name">Get All Rods</h3>
-                <p class="trophy-item-description">Legend of the River King</p>
-                <p class="trophy-tier silver">Silver Trophy</p>
-              </a>
-              <a href="../trophies/trophy-legend-of-the-river-king-beatgame.html" class="trophy-item">
-                <img src="../images/trophies/trophy-lotrk-beat-the-game.png" alt="Lotrk Beat The Game trophy" class="trophy-image" />
-                <h3 class="trophy-name">Beat the Game</h3>
-                <p class="trophy-item-description">Legend of the River King</p>
-                <p class="trophy-tier bronze">Bronze Trophy</p>
-              </a>
+
+        <!-- Profile Hero -->
+        <div class="profile-hero tier-gold">
+          <div class="profile-hero-overlay"></div>
+          <div class="profile-hero-content">
+            <img src="../images/users/tender.gif" alt="Tender's avatar" class="profile-hero-avatar" />
+            <div class="profile-hero-text">
+              <span class="profile-hero-rank">#3 Overall</span>
+              <h1 class="profile-hero-name">Tender</h1>
+              <div class="profile-hero-meta">
+                <span class="profile-hero-meta-item"><span class="profile-hero-meta-icon">&#128197;</span> Member since Jan 2025</span>
+                <span class="profile-hero-meta-item"><span class="profile-hero-meta-icon">&#128293;</span> <span class="meta-streak">3-month streak</span></span>
+              </div>
+              <div class="profile-hero-tags">
+                <span class="profile-tag">Founding Member</span>
+                <span class="profile-tag">Trophy Hunter</span>
+                <span class="profile-tag">Completionist</span>
+              </div>
             </div>
           </div>
         </div>
+
+        <!-- Stats Strip -->
+        <div class="profile-stats-strip">
+          <div class="game-fact">
+            <span class="game-fact-label">Rank</span>
+            <span class="game-fact-value">#<span class="count-up" data-target="3">0</span></span>
+          </div>
+          <span class="game-fact-divider">|</span>
+          <div class="game-fact">
+            <span class="game-fact-label">Points</span>
+            <span class="game-fact-value"><span class="count-up" data-target="67">0</span></span>
+          </div>
+          <span class="game-fact-divider">|</span>
+          <div class="game-fact">
+            <span class="game-fact-label">Trophies</span>
+            <span class="game-fact-value">
+              <span class="trophy-gold"><span class="count-up" data-target="5">0</span></span>
+              <span class="trophy-silver"><span class="count-up" data-target="3">0</span></span>
+              <span class="trophy-bronze"><span class="count-up" data-target="2">0</span></span>
+            </span>
+            <div class="tier-bar">
+              <div class="tier-bar-segment tier-bar-gold" style="width: 50%"></div>
+              <div class="tier-bar-segment tier-bar-silver" style="width: 30%"></div>
+              <div class="tier-bar-segment tier-bar-bronze" style="width: 20%"></div>
+            </div>
+          </div>
+          <span class="game-fact-divider">|</span>
+          <div class="game-fact">
+            <span class="game-fact-label">Games Played</span>
+            <span class="game-fact-value"><span class="count-up" data-target="6">0</span></span>
+          </div>
+        </div>
+
+        <!-- Achievement Milestones -->
+        <div class="milestones-strip">
+          <div class="milestone">
+            <span class="milestone-icon">&#127942;</span>
+            <span class="milestone-label">First Trophy</span>
+          </div>
+          <div class="milestone">
+            <span class="milestone-icon">&#9989;</span>
+            <span class="milestone-label">5 Trophies</span>
+          </div>
+          <div class="milestone">
+            <span class="milestone-icon">&#127775;</span>
+            <span class="milestone-label">Perfect Month</span>
+          </div>
+          <div class="milestone">
+            <span class="milestone-icon">&#128081;</span>
+            <span class="milestone-label">Founding Member</span>
+          </div>
+          <div class="milestone">
+            <span class="milestone-icon">&#128175;</span>
+            <span class="milestone-label">10 Trophies</span>
+          </div>
+          <div class="milestone locked">
+            <span class="milestone-icon">&#128293;</span>
+            <span class="milestone-label">12-Mo Streak</span>
+          </div>
+          <div class="milestone locked">
+            <span class="milestone-icon">&#128142;</span>
+            <span class="milestone-label">20 Trophies</span>
+          </div>
+          <div class="milestone locked">
+            <span class="milestone-icon">&#127919;</span>
+            <span class="milestone-label">All Gold</span>
+          </div>
+        </div>
+
+        <!-- Profile Body -->
+        <div class="user-profile">
+
+          <!-- Crown Jewel -->
+          <div class="crown-jewel">
+            <a href="../trophies/trophy-nso-beatgame.html" class="crown-jewel-stage">
+              <div class="crown-jewel-spotlight"></div>
+              <img src="../images/trophies/trophy-gamecube-nso-beatgame.png" alt="Beat One NSO Game Trophy" class="crown-jewel-image" />
+            </a>
+            <div class="crown-jewel-info">
+              <div class="crown-jewel-label">Rarest Trophy</div>
+              <h3 class="crown-jewel-name">Beat One NSO Game</h3>
+              <p class="crown-jewel-game">GameCube Games on NSO</p>
+              <p class="crown-jewel-rarity">8% of members earned</p>
+              <p class="crown-jewel-desc">Only 2 out of 25 club members have unlocked this trophy.</p>
+            </div>
+          </div>
+
+          <!-- Closest Rival -->
+          <div class="rival-card">
+            <div class="rival-card-label">Closest Rival</div>
+            <img src="../images/users/anton.png" alt="Anton" class="rival-card-avatar" />
+            <div class="rival-card-info">
+              <div class="rival-card-name"><a href="user-anton.html">Anton</a></div>
+              <div class="rival-card-rank">#2 Overall</div>
+              <div class="rival-card-stats">
+                <div class="rival-stat">
+                  <span class="rival-stat-value behind">10</span>
+                  <span class="rival-stat-label">Trophies</span>
+                </div>
+                <div class="rival-stat">
+                  <span class="rival-stat-value behind">vs 10</span>
+                  <span class="rival-stat-label">Rival</span>
+                </div>
+                <div class="rival-stat">
+                  <span class="rival-stat-value behind">6</span>
+                  <span class="rival-stat-label">Games</span>
+                </div>
+                <div class="rival-stat">
+                  <span class="rival-stat-value behind">vs 8</span>
+                  <span class="rival-stat-label">Rival</span>
+                </div>
+              </div>
+            </div>
+            <div class="rival-card-gap">
+              <span class="rival-gap-number">-1</span>
+              <span class="rival-gap-label">Trophies<br />Behind</span>
+            </div>
+          </div>
+
+          <!-- Trophy Collection -->
+          <div class="user-trophies">
+            <h2>Trophy Collection</h2>
+            <div class="trophy-gallery">
+              <div class="trophy-shelf-container">
+                <div class="trophy-grid">
+
+                  <a href="../trophies/trophy-snatcher-beatgame.html" class="trophy-plaque tier-gold">
+                    <div class="plaque-showcase">
+                      <img src="../images/trophies/trophy-snatcher-beatgame.png" alt="Snatcher Beat the Game trophy" class="plaque-image" />
+                    </div>
+                    <div class="plaque-nameplate">
+                      <span class="plaque-game">Snatcher</span>
+                      <h3>Beat the Game</h3>
+                      <p class="trophy-tier gold">Gold</p>
+                    </div>
+                  </a>
+
+                  <a href="../trophies/trophy-nso-beatgame.html" class="trophy-plaque tier-gold">
+                    <div class="plaque-showcase">
+                      <img src="../images/trophies/trophy-gamecube-nso-beatgame.png" alt="GameCube NSO Beat One NSO Game trophy" class="plaque-image" />
+                    </div>
+                    <div class="plaque-nameplate">
+                      <span class="plaque-game">GameCube Games on NSO</span>
+                      <h3>Beat One NSO Game</h3>
+                      <p class="trophy-tier gold">Gold</p>
+                    </div>
+                  </a>
+
+                  <a href="../trophies/trophy-resident-evil-2-beatgame.html" class="trophy-plaque tier-gold">
+                    <div class="plaque-showcase">
+                      <img src="../images/trophies/trophy-resident-evil-2-beatgame.png" alt="Resident Evil 2 Beat the Game trophy" class="plaque-image" />
+                    </div>
+                    <div class="plaque-nameplate">
+                      <span class="plaque-game">Resident Evil 2</span>
+                      <h3>Beat the Game</h3>
+                      <p class="trophy-tier gold">Gold</p>
+                    </div>
+                  </a>
+
+                  <a href="../trophies/trophy-kirby-64-100percent.html" class="trophy-plaque tier-gold">
+                    <div class="plaque-showcase">
+                      <img src="../images/trophies/trophy-kirby-64-100percent.png" alt="Kirby 64 100% Completion trophy" class="plaque-image" />
+                    </div>
+                    <div class="plaque-nameplate">
+                      <span class="plaque-game">Kirby 64: The Crystal Shards</span>
+                      <h3>100% Completion</h3>
+                      <p class="trophy-tier gold">Gold</p>
+                    </div>
+                  </a>
+
+                  <a href="../trophies/trophy-kirby-64-beatgame.html" class="trophy-plaque tier-silver">
+                    <div class="plaque-showcase">
+                      <img src="../images/trophies/trophy-kirby-64-beatgame.png" alt="Kirby 64 Beat Game trophy" class="plaque-image" />
+                    </div>
+                    <div class="plaque-nameplate">
+                      <span class="plaque-game">Kirby 64</span>
+                      <h3>Beat the Game</h3>
+                      <span class="plaque-tier silver">Silver</span>
+                      <div class="rarity-bar-mini"><div class="rarity-bar-fill" style="width:52%;background:var(--color-silver)"></div></div>
+                      <span class="rarity-label">52% of members</span>
+                    </div>
+                  </a>
+
+                  <a href="../trophies/trophy-mega-man-legends-busterparts.html" class="trophy-plaque tier-gold">
+                    <div class="plaque-showcase">
+                      <img src="../images/trophies/trophy-mega-man-legends-busterparts.png" alt="Mega Man Legends Get All Buster Parts trophy" class="plaque-image" />
+                    </div>
+                    <div class="plaque-nameplate">
+                      <span class="plaque-game">Mega Man Legends</span>
+                      <h3>Get All Buster Parts</h3>
+                      <p class="trophy-tier gold">Gold</p>
+                    </div>
+                  </a>
+
+                  <a href="../trophies/trophy-mega-man-legends-minigamesscore.html" class="trophy-plaque tier-silver">
+                    <div class="plaque-showcase">
+                      <img src="../images/trophies/trophy-mega-man-legends-minigamesscore.png" alt="Mega Man Legends High Score on All Mini Games trophy" class="plaque-image" />
+                    </div>
+                    <div class="plaque-nameplate">
+                      <span class="plaque-game">Mega Man Legends</span>
+                      <h3>High Score on All Mini Games</h3>
+                      <p class="trophy-tier silver">Silver</p>
+                    </div>
+                  </a>
+
+                  <a href="../trophies/trophy-mega-man-legends-beatgame.html" class="trophy-plaque tier-bronze">
+                    <div class="plaque-showcase">
+                      <img src="../images/trophies/trophy-mega-man-legends-beatgame.png" alt="Mega Man Legends Beat the Game trophy" class="plaque-image" />
+                    </div>
+                    <div class="plaque-nameplate">
+                      <span class="plaque-game">Mega Man Legends</span>
+                      <h3>Beat the Game</h3>
+                      <p class="trophy-tier bronze">Bronze</p>
+                    </div>
+                  </a>
+
+                  <a href="../trophies/trophy-legend-of-the-river-king-allrods.html" class="trophy-plaque tier-silver">
+                    <div class="plaque-showcase">
+                      <img src="../images/trophies/trophy-lotrk-get-all-rods.png" alt="Legend of the River King Get All Rods trophy" class="plaque-image" />
+                    </div>
+                    <div class="plaque-nameplate">
+                      <span class="plaque-game">Legend of the River King</span>
+                      <h3>Get All Rods</h3>
+                      <p class="trophy-tier silver">Silver</p>
+                    </div>
+                  </a>
+
+                  <a href="../trophies/trophy-legend-of-the-river-king-beatgame.html" class="trophy-plaque tier-bronze latest-trophy">
+                    <div class="plaque-showcase">
+                      <img src="../images/trophies/trophy-lotrk-beat-the-game.png" alt="Legend of the River King Beat the Game trophy" class="plaque-image" />
+                    </div>
+                    <div class="plaque-nameplate">
+                      <span class="plaque-game">Legend of the River King</span>
+                      <h3>Beat the Game</h3>
+                      <p class="trophy-tier bronze">Bronze</p>
+                    </div>
+                  </a>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Games Played -->
+          <div class="user-games-played">
+            <h2>Games Played</h2>
+            <div class="games-played-grid">
+              <a href="../games/2025-march-kirby-64.html" class="games-played-item">
+                <div class="games-played-cover-wrap">
+                  <img src="../images/covers/Kirby 64 - The Crystal Shards (USA).png" alt="Kirby 64" class="games-played-cover" />
+                  <div class="games-played-overlay">
+                    <span class="overlay-trophy gold">100% Completion</span>
+                  </div>
+                </div>
+                <span class="games-played-name">Kirby 64</span>
+                <span class="completion-ring-wrap"><svg class="completion-ring" viewBox="0 0 32 32"><circle class="completion-ring-bg" cx="16" cy="16" r="12"/><circle class="completion-ring-fill ring-gold" cx="16" cy="16" r="12" stroke-dasharray="75.4" stroke-dashoffset="0"/></svg><span class="completion-ring-text">2/2</span></span>
+              </a>
+              <a href="../games/2025-may-snatcher.html" class="games-played-item">
+                <div class="games-played-cover-wrap">
+                  <img src="../images/covers/Snatcher (USA).png" alt="Snatcher" class="games-played-cover" />
+                  <div class="games-played-overlay">
+                    <span class="overlay-trophy gold">Beat the Game</span>
+                  </div>
+                </div>
+                <span class="games-played-name">Snatcher</span>
+                <span class="completion-ring-wrap"><svg class="completion-ring" viewBox="0 0 32 32"><circle class="completion-ring-bg" cx="16" cy="16" r="12"/><circle class="completion-ring-fill ring-gold" cx="16" cy="16" r="12" stroke-dasharray="75.4" stroke-dashoffset="0"/></svg><span class="completion-ring-text">1/1</span></span>
+              </a>
+              <a href="../games/2025-june-gamecube-on-switch-online.html" class="games-played-item">
+                <div class="games-played-cover-wrap">
+                  <img src="../images/covers/Gamecube NSO.png" alt="GameCube NSO" class="games-played-cover" />
+                  <div class="games-played-overlay">
+                    <span class="overlay-trophy gold">Beat One NSO Game</span>
+                  </div>
+                </div>
+                <span class="games-played-name">GameCube NSO</span>
+                <span class="completion-ring-wrap"><svg class="completion-ring" viewBox="0 0 32 32"><circle class="completion-ring-bg" cx="16" cy="16" r="12"/><circle class="completion-ring-fill ring-gold" cx="16" cy="16" r="12" stroke-dasharray="75.4" stroke-dashoffset="0"/></svg><span class="completion-ring-text">1/1</span></span>
+              </a>
+              <a href="../games/2025-july-resident-evil-2.html" class="games-played-item">
+                <div class="games-played-cover-wrap">
+                  <img src="../images/covers/Resident Evil 2 (USA).png" alt="Resident Evil 2" class="games-played-cover" />
+                  <div class="games-played-overlay">
+                    <span class="overlay-trophy gold">Beat the Game</span>
+                  </div>
+                </div>
+                <span class="games-played-name">Resident Evil 2</span>
+                <span class="completion-ring-wrap"><svg class="completion-ring" viewBox="0 0 32 32"><circle class="completion-ring-bg" cx="16" cy="16" r="12"/><circle class="completion-ring-fill ring-gold" cx="16" cy="16" r="12" stroke-dasharray="75.4" stroke-dashoffset="0"/></svg><span class="completion-ring-text">1/1</span></span>
+              </a>
+              <a href="../games/2026-january-mega-man-legends.html" class="games-played-item">
+                <div class="games-played-cover-wrap">
+                  <img src="../images/covers/Mega Man Legends (USA).png" alt="Mega Man Legends" class="games-played-cover" />
+                  <div class="games-played-overlay">
+                    <span class="overlay-trophy gold">Get All Buster Parts</span>
+                    <span class="overlay-trophy silver">Mini Games</span>
+                    <span class="overlay-trophy bronze">Beat the Game</span>
+                  </div>
+                </div>
+                <span class="games-played-name">Mega Man Legends</span>
+                <span class="completion-ring-wrap"><svg class="completion-ring" viewBox="0 0 32 32"><circle class="completion-ring-bg" cx="16" cy="16" r="12"/><circle class="completion-ring-fill ring-gold" cx="16" cy="16" r="12" stroke-dasharray="75.4" stroke-dashoffset="0"/></svg><span class="completion-ring-text">3/3</span></span>
+              </a>
+              <a href="../games/2026-february-legend-of-the-river-king.html" class="games-played-item">
+                <div class="games-played-cover-wrap">
+                  <img src="../images/covers/legendoftheriverking.png" alt="Legend of the River King" class="games-played-cover" />
+                  <div class="games-played-overlay">
+                    <span class="overlay-trophy silver">Get All Rods</span>
+                    <span class="overlay-trophy bronze">Beat the Game</span>
+                  </div>
+                </div>
+                <span class="games-played-name">Legend of the River King</span>
+                <span class="completion-ring-wrap"><svg class="completion-ring" viewBox="0 0 32 32"><circle class="completion-ring-bg" cx="16" cy="16" r="12"/><circle class="completion-ring-fill ring-silver" cx="16" cy="16" r="12" stroke-dasharray="75.4" stroke-dashoffset="25.1"/></svg><span class="completion-ring-text">2/3</span></span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Personal Best Spotlight -->
+          <div class="spotlight-section">
+            <h2>Personal Bests</h2>
+            <div class="spotlight-scroller">
+              <div class="spotlight-card">
+                <div class="spotlight-card-header">
+                  <span class="spotlight-card-icon">&#128142;</span>
+                  <span class="spotlight-card-title">Rarest Trophy</span>
+                </div>
+                <span class="spotlight-card-value">8%</span>
+                <span class="spotlight-card-desc">Beat One NSO Game (GameCube NSO) — only 2 of 25 members earned it</span>
+              </div>
+              <div class="spotlight-card">
+                <div class="spotlight-card-header">
+                  <span class="spotlight-card-icon">&#127775;</span>
+                  <span class="spotlight-card-title">Best Month</span>
+                </div>
+                <span class="spotlight-card-value">3 Trophies</span>
+                <span class="spotlight-card-desc">January 2026 — earned all three Mega Man Legends trophies</span>
+              </div>
+              <div class="spotlight-card">
+                <div class="spotlight-card-header">
+                  <span class="spotlight-card-icon">&#128293;</span>
+                  <span class="spotlight-card-title">Longest Streak</span>
+                </div>
+                <span class="spotlight-card-value">3 Months</span>
+                <span class="spotlight-card-desc">May–Jul 2025 (Snatcher, GameCube NSO, Resident Evil 2)</span>
+              </div>
+              <div class="spotlight-card">
+                <div class="spotlight-card-header">
+                  <span class="spotlight-card-icon">&#127941;</span>
+                  <span class="spotlight-card-title">Gold Rate</span>
+                </div>
+                <span class="spotlight-card-value">50%</span>
+                <span class="spotlight-card-desc">5 of 10 trophies earned are gold</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Head-to-Head vs Club Average -->
+          <div class="h2h-section">
+            <h2>vs Club Average</h2>
+            <div class="h2h-bars">
+              <div class="h2h-row">
+                <span class="h2h-label">Trophies</span>
+                <div class="h2h-bar-track">
+                  <div class="h2h-bar-fill bar-average" style="width: 42%">4.2</div>
+                  <div class="h2h-bar-fill bar-player" style="width: 100%">10</div>
+                </div>
+              </div>
+              <div class="h2h-row">
+                <span class="h2h-label">Points</span>
+                <div class="h2h-bar-track">
+                  <div class="h2h-bar-fill bar-average" style="width: 48%">32</div>
+                  <div class="h2h-bar-fill bar-player" style="width: 100%">67</div>
+                </div>
+              </div>
+              <div class="h2h-row">
+                <span class="h2h-label">Games Played</span>
+                <div class="h2h-bar-track">
+                  <div class="h2h-bar-fill bar-average" style="width: 100%">6.5</div>
+                  <div class="h2h-bar-fill bar-player" style="width: 92%">6</div>
+                </div>
+              </div>
+              <div class="h2h-row">
+                <span class="h2h-label">Gold Rate</span>
+                <div class="h2h-bar-track">
+                  <div class="h2h-bar-fill bar-average" style="width: 52%">52%</div>
+                  <div class="h2h-bar-fill bar-player" style="width: 50%">50%</div>
+                </div>
+              </div>
+              <div class="h2h-row">
+                <span class="h2h-label">Completion</span>
+                <div class="h2h-bar-track">
+                  <div class="h2h-bar-fill bar-average" style="width: 38%">38%</div>
+                  <div class="h2h-bar-fill bar-player" style="width: 82%">82%</div>
+                </div>
+              </div>
+            </div>
+            <div class="h2h-legend">
+              <span class="h2h-legend-item"><span class="h2h-legend-swatch swatch-player"></span> Tender</span>
+              <span class="h2h-legend-item"><span class="h2h-legend-swatch swatch-average"></span> Club Average</span>
+            </div>
+          </div>
+
+          <!-- Monthly Participation Heatmap -->
+          <div class="heatmap-section">
+            <h2>Monthly Activity</h2>
+            <div class="heatmap-grid">
+              <!-- Header row -->
+              <span class="heatmap-year-label"></span>
+              <span class="heatmap-month-label">Jan</span>
+              <span class="heatmap-month-label">Feb</span>
+              <span class="heatmap-month-label">Mar</span>
+              <span class="heatmap-month-label">Apr</span>
+              <span class="heatmap-month-label">May</span>
+              <span class="heatmap-month-label">Jun</span>
+              <span class="heatmap-month-label">Jul</span>
+              <span class="heatmap-month-label">Aug</span>
+              <span class="heatmap-month-label">Sep</span>
+              <span class="heatmap-month-label">Oct</span>
+              <span class="heatmap-month-label">Nov</span>
+              <span class="heatmap-month-label">Dec</span>
+              <!-- 2025 -->
+              <span class="heatmap-year-label">2025</span>
+              <span class="heatmap-cell heat-empty" title="Jan 2025"></span>
+              <span class="heatmap-cell heat-empty" title="Feb 2025"></span>
+              <span class="heatmap-cell heat-gold" title="Mar 2025 — Gold"></span>
+              <span class="heatmap-cell heat-empty" title="Apr 2025"></span>
+              <span class="heatmap-cell heat-gold" title="May 2025 — Gold"></span>
+              <span class="heatmap-cell heat-gold" title="Jun 2025 — Gold"></span>
+              <span class="heatmap-cell heat-gold" title="Jul 2025 — Gold"></span>
+              <span class="heatmap-cell heat-empty" title="Aug 2025"></span>
+              <span class="heatmap-cell heat-empty" title="Sep 2025"></span>
+              <span class="heatmap-cell heat-empty" title="Oct 2025"></span>
+              <span class="heatmap-cell heat-empty" title="Nov 2025"></span>
+              <span class="heatmap-cell heat-empty" title="Dec 2025"></span>
+              <!-- 2026 -->
+              <span class="heatmap-year-label">2026</span>
+              <span class="heatmap-cell heat-gold" title="Jan 2026 — Gold"></span>
+              <span class="heatmap-cell heat-silver" title="Feb 2026 — Silver"></span>
+              <span class="heatmap-cell heat-future"></span>
+              <span class="heatmap-cell heat-future"></span>
+              <span class="heatmap-cell heat-future"></span>
+              <span class="heatmap-cell heat-future"></span>
+              <span class="heatmap-cell heat-future"></span>
+              <span class="heatmap-cell heat-future"></span>
+              <span class="heatmap-cell heat-future"></span>
+              <span class="heatmap-cell heat-future"></span>
+              <span class="heatmap-cell heat-future"></span>
+              <span class="heatmap-cell heat-future"></span>
+            </div>
+            <div class="heatmap-legend">
+              <span class="heatmap-legend-item"><span class="heatmap-legend-swatch" style="background: rgba(212, 175, 55, 0.6)"></span> Gold</span>
+              <span class="heatmap-legend-item"><span class="heatmap-legend-swatch" style="background: rgba(192, 192, 192, 0.5)"></span> Silver</span>
+              <span class="heatmap-legend-item"><span class="heatmap-legend-swatch" style="background: rgba(205, 127, 50, 0.5)"></span> Bronze</span>
+              <span class="heatmap-legend-item"><span class="heatmap-legend-swatch" style="background: rgba(255, 255, 255, 0.04); border: 1px dashed rgba(255,255,255,0.1)"></span> Future</span>
+            </div>
+          </div>
+
+          <!-- Trophy Rarity Distribution -->
+          <div class="rarity-section">
+            <h2>Rarity Breakdown</h2>
+            <div class="rarity-chart">
+              <div class="rarity-row">
+                <span class="rarity-label">Ultra Rare</span>
+                <div class="rarity-bar-track">
+                  <div class="rarity-bar-fill rarity-ultra" style="width: 40%"></div>
+                </div>
+                <span class="rarity-count">4</span>
+              </div>
+              <div class="rarity-row">
+                <span class="rarity-label">Rare</span>
+                <div class="rarity-bar-track">
+                  <div class="rarity-bar-fill rarity-rare" style="width: 10%"></div>
+                </div>
+                <span class="rarity-count">1</span>
+              </div>
+              <div class="rarity-row">
+                <span class="rarity-label">Uncommon</span>
+                <div class="rarity-bar-track">
+                  <div class="rarity-bar-fill rarity-uncommon" style="width: 30%"></div>
+                </div>
+                <span class="rarity-count">3</span>
+              </div>
+              <div class="rarity-row">
+                <span class="rarity-label">Common</span>
+                <div class="rarity-bar-track">
+                  <div class="rarity-bar-fill rarity-common" style="width: 20%"></div>
+                </div>
+                <span class="rarity-count">2</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Trophy Timeline -->
+          <div class="trophy-timeline">
+            <h2>Trophy Timeline</h2>
+            <div class="timeline-track">
+
+              <div class="timeline-year">
+                <span class="timeline-year-label">2026</span>
+              </div>
+
+              <a href="../trophies/trophy-legend-of-the-river-king-beatgame.html" class="timeline-entry tier-bronze">
+                <span class="timeline-dot"><span class="timeline-dot-inner"></span></span>
+                <img src="../images/trophies/trophy-lotrk-beat-the-game.png" alt="" class="timeline-icon" />
+                <span class="timeline-info">
+                  <span class="timeline-trophy-name">Beat the Game</span>
+                  <span class="timeline-game-name">Legend of the River King</span>
+                </span>
+                <span class="timeline-tier-badge bronze">Bronze</span>
+                <span class="timeline-date">Feb 2026</span>
+              </a>
+
+              <a href="../trophies/trophy-legend-of-the-river-king-allrods.html" class="timeline-entry tier-silver">
+                <span class="timeline-dot"><span class="timeline-dot-inner"></span></span>
+                <img src="../images/trophies/trophy-lotrk-get-all-rods.png" alt="" class="timeline-icon" />
+                <span class="timeline-info">
+                  <span class="timeline-trophy-name">Get All Rods</span>
+                  <span class="timeline-game-name">Legend of the River King</span>
+                </span>
+                <span class="timeline-tier-badge silver">Silver</span>
+                <span class="timeline-date">Feb 2026</span>
+              </a>
+
+              <a href="../trophies/trophy-mega-man-legends-beatgame.html" class="timeline-entry tier-bronze">
+                <span class="timeline-dot"><span class="timeline-dot-inner"></span></span>
+                <img src="../images/trophies/trophy-mega-man-legends-beatgame.png" alt="" class="timeline-icon" />
+                <span class="timeline-info">
+                  <span class="timeline-trophy-name">Beat the Game</span>
+                  <span class="timeline-game-name">Mega Man Legends</span>
+                </span>
+                <span class="timeline-tier-badge bronze">Bronze</span>
+                <span class="timeline-date">Jan 2026</span>
+              </a>
+
+              <a href="../trophies/trophy-mega-man-legends-minigamesscore.html" class="timeline-entry tier-silver">
+                <span class="timeline-dot"><span class="timeline-dot-inner"></span></span>
+                <img src="../images/trophies/trophy-mega-man-legends-minigamesscore.png" alt="" class="timeline-icon" />
+                <span class="timeline-info">
+                  <span class="timeline-trophy-name">High Score on All Mini Games</span>
+                  <span class="timeline-game-name">Mega Man Legends</span>
+                </span>
+                <span class="timeline-tier-badge silver">Silver</span>
+                <span class="timeline-date">Jan 2026</span>
+              </a>
+
+              <a href="../trophies/trophy-mega-man-legends-busterparts.html" class="timeline-entry tier-gold">
+                <span class="timeline-dot"><span class="timeline-dot-inner"></span></span>
+                <img src="../images/trophies/trophy-mega-man-legends-busterparts.png" alt="" class="timeline-icon" />
+                <span class="timeline-info">
+                  <span class="timeline-trophy-name">Get All Buster Parts</span>
+                  <span class="timeline-game-name">Mega Man Legends</span>
+                </span>
+                <span class="timeline-tier-badge gold">Gold</span>
+                <span class="timeline-date">Jan 2026</span>
+              </a>
+
+              <div class="timeline-year">
+                <span class="timeline-year-label">2025</span>
+              </div>
+
+              <a href="../trophies/trophy-resident-evil-2-beatgame.html" class="timeline-entry tier-gold">
+                <span class="timeline-dot"><span class="timeline-dot-inner"></span></span>
+                <img src="../images/trophies/trophy-resident-evil-2-beatgame.png" alt="" class="timeline-icon" />
+                <span class="timeline-info">
+                  <span class="timeline-trophy-name">Beat the Game</span>
+                  <span class="timeline-game-name">Resident Evil 2</span>
+                </span>
+                <span class="timeline-tier-badge gold">Gold</span>
+                <span class="timeline-date">Jul 2025</span>
+              </a>
+
+              <a href="../trophies/trophy-nso-beatgame.html" class="timeline-entry tier-gold">
+                <span class="timeline-dot"><span class="timeline-dot-inner"></span></span>
+                <img src="../images/trophies/trophy-gamecube-nso-beatgame.png" alt="" class="timeline-icon" />
+                <span class="timeline-info">
+                  <span class="timeline-trophy-name">Beat One NSO Game</span>
+                  <span class="timeline-game-name">GameCube Games on NSO</span>
+                </span>
+                <span class="timeline-tier-badge gold">Gold</span>
+                <span class="timeline-date">Jun 2025</span>
+              </a>
+
+              <a href="../trophies/trophy-snatcher-beatgame.html" class="timeline-entry tier-gold">
+                <span class="timeline-dot"><span class="timeline-dot-inner"></span></span>
+                <img src="../images/trophies/trophy-snatcher-beatgame.png" alt="" class="timeline-icon" />
+                <span class="timeline-info">
+                  <span class="timeline-trophy-name">Beat the Game</span>
+                  <span class="timeline-game-name">Snatcher</span>
+                </span>
+                <span class="timeline-tier-badge gold">Gold</span>
+                <span class="timeline-date">May 2025</span>
+              </a>
+
+              <a href="../trophies/trophy-kirby-64-100percent.html" class="timeline-entry tier-gold">
+                <span class="timeline-dot"><span class="timeline-dot-inner"></span></span>
+                <img src="../images/trophies/trophy-kirby-64-100percent.png" alt="" class="timeline-icon" />
+                <span class="timeline-info">
+                  <span class="timeline-trophy-name">100% Completion</span>
+                  <span class="timeline-game-name">Kirby 64: The Crystal Shards</span>
+                </span>
+                <span class="timeline-tier-badge gold">Gold</span>
+                <span class="timeline-date">Mar 2025</span>
+              </a>
+
+              <a href="../trophies/trophy-kirby-64-beatgame.html" class="timeline-entry tier-silver">
+                <span class="timeline-dot"><span class="timeline-dot-inner"></span></span>
+                <img src="../images/trophies/trophy-kirby-64-beatgame.png" alt="" class="timeline-icon" />
+                <span class="timeline-info">
+                  <span class="timeline-trophy-name">Beat the Game</span>
+                  <span class="timeline-game-name">Kirby 64: The Crystal Shards</span>
+                </span>
+                <span class="timeline-tier-badge silver">Silver</span>
+                <span class="timeline-date">Mar 2025</span>
+              </a>
+
+            </div>
+          </div>
+
+        </div>
+
       </section>
     </main>
 
@@ -153,5 +741,102 @@
           new Date().getFullYear();
       </script>
     </footer>
+
+    <script>
+    (function () {
+      var container = document.querySelector('.trophy-shelf-container');
+      var grid = container ? container.querySelector('.trophy-grid') : null;
+      if (!container || !grid) return;
+
+      var shelves = [];
+      var resizeTimer = null;
+
+      function positionShelves() {
+        var plaques = grid.querySelectorAll('.trophy-plaque');
+        if (!plaques.length) return;
+
+        var rows = [];
+        var currentRowTop = null;
+        var currentRowBottom = 0;
+
+        for (var i = 0; i < plaques.length; i++) {
+          var top = plaques[i].offsetTop;
+          var bottom = top + plaques[i].offsetHeight;
+
+          if (currentRowTop === null || Math.abs(top - currentRowTop) > 10) {
+            if (currentRowTop !== null) rows.push(currentRowBottom);
+            currentRowTop = top;
+            currentRowBottom = bottom;
+          } else if (bottom > currentRowBottom) {
+            currentRowBottom = bottom;
+          }
+        }
+        if (currentRowTop !== null) rows.push(currentRowBottom);
+
+        while (shelves.length < rows.length) {
+          var shelf = document.createElement('div');
+          shelf.className = 'trophy-shelf';
+          shelf.setAttribute('aria-hidden', 'true');
+          container.appendChild(shelf);
+          shelves.push(shelf);
+        }
+
+        for (var j = 0; j < shelves.length; j++) {
+          if (j < rows.length) {
+            shelves[j].style.display = '';
+            shelves[j].style.top = rows[j] + 'px';
+          } else {
+            shelves[j].style.display = 'none';
+          }
+        }
+      }
+
+      if (document.readyState === 'complete') {
+        positionShelves();
+      } else {
+        window.addEventListener('load', positionShelves);
+      }
+
+      window.addEventListener('resize', function () {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(positionShelves, 150);
+      });
+    })();
+
+    // Count-up animation on stats strip
+    (function () {
+      var strip = document.querySelector('.profile-stats-strip');
+      if (!strip) return;
+      var counters = strip.querySelectorAll('.count-up');
+      if (!counters.length) return;
+      var animated = false;
+
+      function animate() {
+        if (animated) return;
+        animated = true;
+        counters.forEach(function (el) {
+          var target = parseInt(el.getAttribute('data-target'), 10);
+          var duration = 1200;
+          var start = performance.now();
+          function step(now) {
+            var elapsed = now - start;
+            var progress = Math.min(elapsed / duration, 1);
+            var ease = 1 - Math.pow(1 - progress, 3);
+            el.textContent = Math.round(target * ease);
+            if (progress < 1) requestAnimationFrame(step);
+          }
+          requestAnimationFrame(step);
+        });
+      }
+
+      var observer = new IntersectionObserver(function (entries) {
+        if (entries[0].isIntersecting) {
+          animate();
+          observer.disconnect();
+        }
+      }, { threshold: 0.5 });
+      observer.observe(strip);
+    })();
+    </script>
   </body>
 </html>
