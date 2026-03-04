@@ -56,58 +56,99 @@
 
     <main class="site-main container" id="main-content">
       <section class="content">
-        <div class="trophy-page">
-          <div class="trophy-header">
-            <img
-              src="../images/trophies/trophy-lotrk-beat-the-game.png"
-              alt="Legend of the River King Beat the Game Trophy"
-              class="trophy-image-large"
-            />
-            <div class="trophy-info">
-              <h1>Beat the Game</h1>
-              <p class="trophy-game"><a href="../games/2026-february-legend-of-the-river-king.html">Legend of the River King</a></p>
-              <p class="trophy-tier bronze">Bronze Trophy</p>
+
+        <!-- Trophy Display Case -->
+        <div class="tcase">
+          <!-- Glass-fronted cabinet frame -->
+          <div class="tcase-frame">
+            <div class="tcase-glass">
+              <div class="tcase-vignette"></div>
+              <div class="tcase-glare"></div>
+
+              <!-- Trophy on pedestal -->
+              <div class="tcase-exhibit">
+                <div class="tcase-spotlight tcase-spotlight-bronze"></div>
+                <img
+                  src="../images/trophies/trophy-lotrk-beat-the-game.png"
+                  alt="Beat the Game - Legend of the River King Trophy"
+                  class="tcase-trophy-img"
+                />
+              </div>
+
+              <!-- Engraved nameplate -->
+              <div class="tcase-nameplate tcase-nameplate-bronze">
+                <span class="tcase-nameplate-tier">Bronze Trophy</span>
+                <h1 class="tcase-nameplate-title">Beat the Game</h1>
+                <a href="../games/2026-february-legend-of-the-river-king.html" class="tcase-nameplate-game">Legend of the River King</a>
+              </div>
             </div>
           </div>
 
-          <div class="trophy-description">
-            <h2>Achievement</h2>
-            <p>Completed Legend of the River King, mastering the art of fishing and completing the adventure on the Game Boy Color.</p>
+          <!-- Rarity badge -->
+          <div class="tcase-rarity tcase-rarity-rare">
+            <div class="tcase-rarity-bar">
+              <div class="tcase-rarity-fill" style="width: 12%"></div>
+            </div>
+            <div class="tcase-rarity-info">
+              <span class="tcase-rarity-label">Rare</span>
+              <span class="tcase-rarity-stat">3 of 25 members (12%)</span>
+            </div>
           </div>
 
-          <div class="trophy-winners">
-            <h2>Trophy Holders</h2>
-            <div class="winner-list">
-              <a href="../users/user-asadasa.html" class="winner-item">
-                <img src="../images/users/asadasa.png" alt="Asadasa's avatar" class="winner-avatar" />
-                <div class="winner-details">
-                  <h3>Asadasa</h3>
-                  <p class="winner-date">February 2026</p>
+          <!-- Achievement plaque -->
+          <div class="tcase-plaque">
+            <div class="tcase-plaque-inner">
+              <h2 class="tcase-plaque-heading">Achievement</h2>
+              <p class="tcase-plaque-text">Completed Legend of the River King, mastering the art of fishing and completing the adventure on the Game Boy Color.</p>
+            </div>
+          </div>
+
+          <!-- Scoreboard — trophy holders -->
+          <div class="tcase-scoreboard">
+            <div class="tcase-scoreboard-header">
+              <span class="tcase-scoreboard-led"></span>
+              <h2 class="tcase-scoreboard-title">Trophy Holders</h2>
+              <span class="tcase-scoreboard-led"></span>
+            </div>
+            <div class="tcase-scoreboard-entries">
+              <a href="../users/user-asadasa.html" class="tcase-entry">
+                <span class="tcase-entry-rank">01</span>
+                <img src="../images/users/asadasa.png" alt="Asadasa's avatar" class="tcase-entry-avatar" />
+                <div class="tcase-entry-info">
+                  <span class="tcase-entry-name">Asadasa</span>
                 </div>
+                <span class="tcase-entry-date">February 2026</span>
               </a>
-              <a href="../users/user-kb.html" class="winner-item">
-                <img src="../images/users/kb.png" alt="kb's avatar" class="winner-avatar" />
-                <div class="winner-details">
-                  <h3>kb</h3>
-                  <p class="winner-date">February 2026</p>
+              <a href="../users/user-kb.html" class="tcase-entry">
+                <span class="tcase-entry-rank">02</span>
+                <img src="../images/users/kb.png" alt="kb's avatar" class="tcase-entry-avatar" />
+                <div class="tcase-entry-info">
+                  <span class="tcase-entry-name">kb</span>
                 </div>
+                <span class="tcase-entry-date">February 2026</span>
               </a>
-              <a href="../users/user-tender.html" class="winner-item">
-                <img src="../images/users/tender.gif" alt="Tender's avatar" class="winner-avatar" />
-                <div class="winner-details">
-                  <h3>Tender</h3>
-                  <p class="winner-date">February 2026</p>
+              <a href="../users/user-tender.html" class="tcase-entry">
+                <span class="tcase-entry-rank">03</span>
+                <img src="../images/users/tender.gif" alt="Tender's avatar" class="tcase-entry-avatar" />
+                <div class="tcase-entry-info">
+                  <span class="tcase-entry-name">Tender</span>
                 </div>
+                <span class="tcase-entry-date">February 2026</span>
               </a>
             </div>
           </div>
 
-          <div class="trophy-related">
-            <h2>Related</h2>
-            <p><a href="../games/2026-february-legend-of-the-river-king.html">&larr; Back to Legend of the River King game page</a></p>
-            <p><a href="../trophy-challenges.html">View all Trophies</a></p>
+          <!-- Navigation links -->
+          <div class="tcase-nav">
+            <a href="../games/2026-february-legend-of-the-river-king.html" class="tcase-nav-btn">
+              <span class="tcase-nav-btn-icon">&larr;</span> Game Page
+            </a>
+            <a href="../trophy-challenges.html" class="tcase-nav-btn">
+              All Trophies <span class="tcase-nav-btn-icon">&rarr;</span>
+            </a>
           </div>
         </div>
+
       </section>
     </main>
 

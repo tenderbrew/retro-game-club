@@ -1465,36 +1465,21 @@ h3 {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: rgba(0, 0, 0, 0.92);
   z-index: 100;
   justify-content: center;
   align-items: center;
-  cursor: pointer;
   padding: 20px;
 }
 
 .lightbox-content {
-  max-width: 90vw;
-  max-height: 90vh;
+  max-width: 85vw;
+  max-height: 85vh;
   object-fit: contain;
   border-radius: var(--radius-sm);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-}
-
-.lightbox-close {
-  position: fixed;
-  top: 20px;
-  right: 30px;
-  color: var(--color-text);
-  font-size: 40px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: color 0.2s ease;
-  z-index: 101;
-}
-
-.lightbox-close:hover {
-  color: var(--color-gold);
+  position: relative;
+  z-index: 1;
 }
 
 /* User Profile */
@@ -4249,6 +4234,537 @@ h3 {
   border: 2px solid;
   border-color: transparent #1e1b18 #1e1b18 #4a4540;
   border-top: none;
+}
+
+/* ========================================
+   Trophy Display Case (tcase-*)
+   ======================================== */
+
+.tcase {
+  max-width: 720px;
+  margin: 0 auto 2rem;
+}
+
+/* Cabinet frame — matches CRT bezel vibe */
+.tcase-frame {
+  background: linear-gradient(
+    170deg,
+    #3e3328 0%,
+    #2e2418 20%,
+    #221c12 50%,
+    #1c1610 80%,
+    #16120e 100%
+  );
+  border-radius: 16px;
+  padding: 24px;
+  border: 3px solid;
+  border-color: #5a4e3a #2a2218 #1e1a14 #4a4030;
+  box-shadow:
+    0 8px 40px rgba(0, 0, 0, 0.6),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.3);
+}
+
+/* Glass panel inside the cabinet */
+.tcase-glass {
+  position: relative;
+  background: linear-gradient(180deg, #111118 0%, #0a0a10 100%);
+  border-radius: 10px;
+  overflow: hidden;
+  border: 4px solid;
+  border-color: #111 #222 #282828 #111;
+  box-shadow:
+    inset 0 0 60px rgba(0, 0, 0, 0.8),
+    inset 0 0 4px rgba(0, 0, 0, 1);
+  padding: 2rem 2rem 1.5rem;
+  text-align: center;
+}
+
+.tcase-vignette {
+  position: absolute;
+  inset: 0;
+  border-radius: 10px;
+  box-shadow: inset 0 0 80px rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+  z-index: 3;
+}
+
+.tcase-glare {
+  position: absolute;
+  inset: 0;
+  border-radius: 10px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.03) 0%,
+    transparent 40%,
+    transparent 60%,
+    rgba(255, 255, 255, 0.01) 100%
+  );
+  pointer-events: none;
+  z-index: 4;
+}
+
+/* Trophy exhibit — image with spotlight */
+.tcase-exhibit {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 0 1.5rem;
+}
+
+.tcase-spotlight {
+  position: absolute;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.35;
+  z-index: 0;
+  animation: spotlight-pulse 3s ease-in-out infinite;
+}
+
+.tcase-spotlight-gold {
+  background: radial-gradient(circle, #d4af37, transparent 70%);
+}
+
+.tcase-spotlight-silver {
+  background: radial-gradient(circle, #c0c0c0, transparent 70%);
+}
+
+.tcase-spotlight-bronze {
+  background: radial-gradient(circle, #cd7f32, transparent 70%);
+}
+
+@keyframes spotlight-pulse {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 0.45; transform: scale(1.05); }
+}
+
+.tcase-trophy-img {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 280px;
+  aspect-ratio: 1;
+  object-fit: contain;
+  filter: drop-shadow(0 0 20px rgba(212, 175, 55, 0.3));
+  animation: trophy-float 4s ease-in-out infinite;
+}
+
+@keyframes trophy-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+/* Engraved nameplate — brass plate look */
+.tcase-nameplate {
+  position: relative;
+  z-index: 2;
+  margin: 0 auto;
+  max-width: 400px;
+  padding: 1rem 1.5rem;
+  border-radius: 6px;
+  text-align: center;
+  background: linear-gradient(
+    180deg,
+    #2a2520 0%,
+    #1e1a16 100%
+  );
+  border: 2px solid;
+  border-color: #4a4030 #2a2218 #1e1a14 #3a3020;
+  box-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.tcase-nameplate-tier {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  margin-bottom: 0.4rem;
+}
+
+.tcase-nameplate-gold .tcase-nameplate-tier { color: var(--color-gold); }
+.tcase-nameplate-silver .tcase-nameplate-tier { color: var(--color-silver); }
+.tcase-nameplate-bronze .tcase-nameplate-tier { color: var(--color-bronze); }
+
+.tcase-nameplate-title {
+  margin: 0 0 0.3rem;
+  font-family: var(--font-heading);
+  font-size: clamp(1.4rem, 4vw, 2rem);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  line-height: 1.2;
+}
+
+.tcase-nameplate-gold .tcase-nameplate-title {
+  color: var(--color-gold);
+  text-shadow: 0 0 20px rgba(212, 175, 55, 0.4), 0 0 40px rgba(212, 175, 55, 0.15);
+}
+.tcase-nameplate-silver .tcase-nameplate-title {
+  color: var(--color-silver);
+  text-shadow: 0 0 20px rgba(192, 192, 192, 0.4), 0 0 40px rgba(192, 192, 192, 0.15);
+}
+.tcase-nameplate-bronze .tcase-nameplate-title {
+  color: var(--color-bronze);
+  text-shadow: 0 0 20px rgba(205, 127, 50, 0.4), 0 0 40px rgba(205, 127, 50, 0.15);
+}
+
+.tcase-nameplate-game {
+  display: block;
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.tcase-nameplate-game:hover {
+  color: var(--color-gold);
+}
+
+/* Rarity badge — progress bar + label */
+.tcase-rarity {
+  margin: 1.5rem 0;
+  padding: 1rem 1.25rem;
+  background: linear-gradient(180deg, #1e1e1e 0%, #181818 100%);
+  border-radius: 8px;
+  border: 2px solid #333;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.tcase-rarity-bar {
+  height: 6px;
+  background: #2a2a2a;
+  border-radius: 3px;
+  overflow: hidden;
+  margin-bottom: 0.6rem;
+  border: 1px solid #333;
+}
+
+.tcase-rarity-fill {
+  height: 100%;
+  border-radius: 3px;
+  min-width: 4px;
+  transition: width 1s ease;
+}
+
+/* Rarity tiers — color the fill bar and label */
+.tcase-rarity-legendary .tcase-rarity-fill {
+  background: linear-gradient(90deg, #d4af37, #f4cf5a);
+  box-shadow: 0 0 8px rgba(212, 175, 55, 0.5);
+}
+
+.tcase-rarity-rare .tcase-rarity-fill {
+  background: linear-gradient(90deg, #9b59b6, #c39bd3);
+  box-shadow: 0 0 8px rgba(155, 89, 182, 0.5);
+}
+
+.tcase-rarity-uncommon .tcase-rarity-fill {
+  background: linear-gradient(90deg, #27ae60, #58d68d);
+  box-shadow: 0 0 8px rgba(39, 174, 96, 0.5);
+}
+
+.tcase-rarity-common .tcase-rarity-fill {
+  background: linear-gradient(90deg, #7f8c8d, #b0b8b8);
+  box-shadow: 0 0 8px rgba(127, 140, 141, 0.3);
+}
+
+.tcase-rarity-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tcase-rarity-label {
+  font-family: var(--font-heading);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  font-weight: bold;
+}
+
+.tcase-rarity-legendary .tcase-rarity-label { color: var(--color-gold); }
+.tcase-rarity-rare .tcase-rarity-label { color: #c39bd3; }
+.tcase-rarity-uncommon .tcase-rarity-label { color: #58d68d; }
+.tcase-rarity-common .tcase-rarity-label { color: #b0b8b8; }
+.tcase-rarity-unclaimed .tcase-rarity-label { color: #666; }
+
+.tcase-rarity-unclaimed .tcase-rarity-fill {
+  background: #444;
+  box-shadow: none;
+}
+
+.tcase-entry-empty {
+  pointer-events: none;
+  opacity: 0.5;
+  font-style: italic;
+}
+
+.tcase-rarity-stat {
+  font-family: var(--font-heading);
+  font-size: 0.7rem;
+  color: var(--color-text-subtle);
+  letter-spacing: 0.05em;
+}
+
+/* Achievement plaque — wall-mounted brass look */
+.tcase-plaque {
+  margin: 1.5rem 0;
+  background: linear-gradient(
+    170deg,
+    #3e3328 0%,
+    #2e2418 50%,
+    #221c12 100%
+  );
+  border-radius: 10px;
+  padding: 3px;
+  border: 2px solid;
+  border-color: #5a4e3a #2a2218 #1e1a14 #4a4030;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+.tcase-plaque-inner {
+  background: linear-gradient(180deg, #1a1714 0%, #141210 100%);
+  border-radius: 8px;
+  padding: 1.5rem 2rem;
+  text-align: center;
+}
+
+.tcase-plaque-heading {
+  margin: 0 0 0.75rem;
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  color: var(--color-gold);
+}
+
+.tcase-plaque-text {
+  margin: 0 0 0.75rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+.tcase-plaque-note {
+  margin: 0;
+  font-style: italic;
+  font-size: 0.8rem;
+  color: var(--color-text-subtle);
+}
+
+/* Scoreboard — retro LED board for trophy holders */
+.tcase-scoreboard {
+  margin: 0 0 1.5rem;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 3px solid;
+  border-color: #444 #222 #222 #444;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+.tcase-scoreboard-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  background: linear-gradient(180deg, #222 0%, #1a1a1a 100%);
+  border-bottom: 2px solid #333;
+}
+
+.tcase-scoreboard-led {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-gold);
+  box-shadow: 0 0 6px rgba(212, 175, 55, 0.6), 0 0 12px rgba(212, 175, 55, 0.3);
+  animation: led-pulse-gold 2s ease-in-out infinite;
+}
+
+@keyframes led-pulse-gold {
+  0%, 100% { box-shadow: 0 0 6px rgba(212, 175, 55, 0.6), 0 0 12px rgba(212, 175, 55, 0.3); }
+  50% { box-shadow: 0 0 8px rgba(212, 175, 55, 0.8), 0 0 20px rgba(212, 175, 55, 0.4); }
+}
+
+.tcase-scoreboard-title {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  color: var(--color-gold);
+}
+
+.tcase-scoreboard-entries {
+  background: linear-gradient(180deg, #1a1a1a 0%, #141414 100%);
+}
+
+.tcase-entry {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  text-decoration: none;
+  color: inherit;
+  transition: background-color 0.2s ease;
+  border-bottom: 1px solid #2a2a2a;
+}
+
+.tcase-entry:last-child {
+  border-bottom: none;
+}
+
+.tcase-entry:hover {
+  background-color: rgba(212, 175, 55, 0.06);
+}
+
+.tcase-entry-rank {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  color: var(--color-gold);
+  min-width: 2ch;
+  text-align: center;
+  text-shadow: 0 0 8px rgba(212, 175, 55, 0.3);
+}
+
+.tcase-entry-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 2px solid #444;
+  background-color: var(--color-bg-card);
+  object-fit: cover;
+  transition: border-color 0.2s ease;
+}
+
+.tcase-entry:hover .tcase-entry-avatar {
+  border-color: var(--color-gold);
+}
+
+.tcase-entry-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.tcase-entry-name {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  color: var(--color-text);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.tcase-entry-score {
+  font-size: 0.8rem;
+  color: var(--color-text-subtle);
+  font-family: var(--font-heading);
+  letter-spacing: 0.05em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.tcase-entry-date {
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  color: var(--color-text-subtle);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+/* Navigation buttons — arcade cabinet style */
+.tcase-nav {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.tcase-nav-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  text-decoration: none;
+  color: var(--color-text-muted);
+  background: linear-gradient(180deg, #2a2a2a 0%, #1e1e1e 100%);
+  border: 2px solid;
+  border-color: #555 #333 #222 #444;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.tcase-nav-btn:hover {
+  color: var(--color-gold);
+  border-color: var(--color-gold);
+  box-shadow: 0 2px 12px rgba(212, 175, 55, 0.2);
+  transform: translateY(-2px);
+}
+
+.tcase-nav-btn-icon {
+  font-size: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .tcase-frame {
+    padding: 16px;
+    border-radius: 12px;
+  }
+
+  .tcase-glass {
+    padding: 1.5rem 1rem 1rem;
+  }
+
+  .tcase-trophy-img {
+    max-width: 200px;
+  }
+
+  .tcase-spotlight {
+    width: 200px;
+    height: 200px;
+  }
+
+  .tcase-nameplate {
+    padding: 0.75rem 1rem;
+  }
+
+  .tcase-plaque-inner {
+    padding: 1rem 1.25rem;
+  }
+
+  .tcase-entry {
+    padding: 0.75rem 1rem;
+    gap: 0.75rem;
+  }
+
+  .tcase-entry-avatar {
+    width: 36px;
+    height: 36px;
+  }
+
+  .tcase-entry-rank {
+    font-size: 1rem;
+  }
+
+  .tcase-nav {
+    flex-direction: column;
+  }
+
+  .tcase-nav-btn {
+    justify-content: center;
+  }
 }
 
 /* Arcade marquee header — now inside the CRT glass */

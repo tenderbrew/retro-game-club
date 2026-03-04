@@ -101,8 +101,12 @@
         </div>
 
         <div id="lightbox" class="lightbox">
-          <span class="lightbox-close">&times;</span>
+          <div class="lightbox-backdrop"></div>
+          <button class="lightbox-arrow lightbox-prev" id="lightbox-prev" aria-label="Previous image">&#10094;</button>
           <img id="lightbox-img" class="lightbox-content" alt="" />
+          <button class="lightbox-arrow lightbox-next" id="lightbox-next" aria-label="Next image">&#10095;</button>
+          <button class="lightbox-close" id="lightbox-close" aria-label="Close lightbox">&times;</button>
+          <div class="lightbox-counter" id="lightbox-counter"></div>
         </div>
       </section>
     </main>
@@ -115,35 +119,60 @@
         document.getElementById("year").textContent =
           new Date().getFullYear();
 
-        function openLightbox(src, alt) {
-          var img = document.getElementById('lightbox-img');
-          img.src = src;
-          img.alt = alt || '';
-          document.getElementById('lightbox').style.display = 'flex';
+        var thumbs = Array.prototype.slice.call(document.querySelectorAll('.gallery-thumb'));
+        var currentIndex = 0;
+        var lightbox = document.getElementById('lightbox');
+        var lbImg = document.getElementById('lightbox-img');
+        var lbCounter = document.getElementById('lightbox-counter');
+
+        function showImage(index) {
+          if (index < 0) index = thumbs.length - 1;
+          if (index >= thumbs.length) index = 0;
+          currentIndex = index;
+          lbImg.src = thumbs[index].src;
+          lbImg.alt = thumbs[index].alt || '';
+          lbCounter.textContent = (index + 1) + ' / ' + thumbs.length;
+        }
+
+        function openLightbox(index) {
+          showImage(index);
+          lightbox.style.display = 'flex';
           document.body.style.overflow = 'hidden';
         }
 
         function closeLightbox() {
-          document.getElementById('lightbox').style.display = 'none';
+          lightbox.style.display = 'none';
           document.body.style.overflow = '';
         }
 
-        document.getElementById('lightbox').addEventListener('click', closeLightbox);
-
-        document.querySelectorAll('.gallery-thumb').forEach(function(img) {
-          img.addEventListener('click', function() {
-            openLightbox(this.src, this.alt);
-          });
+        thumbs.forEach(function(img, i) {
+          img.addEventListener('click', function() { openLightbox(i); });
           img.addEventListener('keydown', function(e) {
             if (e.key === 'Enter' || e.key === ' ') {
               e.preventDefault();
-              openLightbox(this.src, this.alt);
+              openLightbox(i);
             }
           });
         });
 
+        document.getElementById('lightbox-prev').addEventListener('click', function(e) {
+          e.stopPropagation();
+          showImage(currentIndex - 1);
+        });
+
+        document.getElementById('lightbox-next').addEventListener('click', function(e) {
+          e.stopPropagation();
+          showImage(currentIndex + 1);
+        });
+
+        document.getElementById('lightbox-close').addEventListener('click', closeLightbox);
+        document.querySelector('.lightbox-backdrop').addEventListener('click', closeLightbox);
+
         document.addEventListener('keydown', function(e) {
+          if (lightbox.style.display !== 'flex') return;
           if (e.key === 'Escape') closeLightbox();
+          if (e.key === 'ArrowLeft') showImage(currentIndex - 1);
+          if (e.key === 'ArrowRight') showImage(currentIndex + 1);
         });
       </script>
     </footer>

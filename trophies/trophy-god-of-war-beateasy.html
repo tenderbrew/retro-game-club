@@ -56,51 +56,91 @@
 
     <main class="site-main container" id="main-content">
       <section class="content">
-        <div class="trophy-page">
-          <div class="trophy-header">
-            <img
-              src="../images/trophies/trophy-god-of-war-beateasy.png"
-              alt="God of War Beat Game on Easy Trophy"
-              class="trophy-image-large"
-            />
-            <div class="trophy-info">
-              <h1>Beat Game on Easy</h1>
-              <p class="trophy-game"><a href="../games/2025-february-god-of-war.html">God of War</a></p>
-              <p class="trophy-tier silver">Silver Trophy</p>
+
+        <!-- Trophy Display Case -->
+        <div class="tcase">
+          <!-- Glass-fronted cabinet frame -->
+          <div class="tcase-frame">
+            <div class="tcase-glass">
+              <div class="tcase-vignette"></div>
+              <div class="tcase-glare"></div>
+
+              <!-- Trophy on pedestal -->
+              <div class="tcase-exhibit">
+                <div class="tcase-spotlight tcase-spotlight-silver"></div>
+                <img
+                  src="../images/trophies/trophy-god-of-war-beateasy.png"
+                  alt="Beat Game on Easy - God of War Trophy"
+                  class="tcase-trophy-img"
+                />
+              </div>
+
+              <!-- Engraved nameplate -->
+              <div class="tcase-nameplate tcase-nameplate-silver">
+                <span class="tcase-nameplate-tier">Silver Trophy</span>
+                <h1 class="tcase-nameplate-title">Beat Game on Easy</h1>
+                <a href="../games/2025-february-god-of-war.html" class="tcase-nameplate-game">God of War</a>
+              </div>
             </div>
           </div>
 
-          <div class="trophy-description">
-            <h2>Achievement</h2>
-            <p>Successfully completed God of War on Easy difficulty, experiencing Kratos's epic journey through ancient Greece.</p>
+          <!-- Rarity badge -->
+          <div class="tcase-rarity tcase-rarity-legendary">
+            <div class="tcase-rarity-bar">
+              <div class="tcase-rarity-fill" style="width: 8%"></div>
+            </div>
+            <div class="tcase-rarity-info">
+              <span class="tcase-rarity-label">Legendary</span>
+              <span class="tcase-rarity-stat">2 of 25 members (8%)</span>
+            </div>
           </div>
 
-          <div class="trophy-winners">
-            <h2>Trophy Holders</h2>
-            <div class="winner-list">
-              <a href="../users/user-1upmuffin.html" class="winner-item">
-                <img src="../images/users/1upmuffin.png" alt="1upmuffin's avatar" class="winner-avatar" />
-                <div class="winner-details">
-                  <h3>1upmuffin</h3>
-                  <p class="winner-date">February 2025</p>
+          <!-- Achievement plaque -->
+          <div class="tcase-plaque">
+            <div class="tcase-plaque-inner">
+              <h2 class="tcase-plaque-heading">Achievement</h2>
+              <p class="tcase-plaque-text">Successfully completed God of War on Easy difficulty, experiencing Kratos's epic journey through ancient Greece.</p>
+            </div>
+          </div>
+
+          <!-- Scoreboard — trophy holders -->
+          <div class="tcase-scoreboard">
+            <div class="tcase-scoreboard-header">
+              <span class="tcase-scoreboard-led"></span>
+              <h2 class="tcase-scoreboard-title">Trophy Holders</h2>
+              <span class="tcase-scoreboard-led"></span>
+            </div>
+            <div class="tcase-scoreboard-entries">
+              <a href="../users/user-1upmuffin.html" class="tcase-entry">
+                <span class="tcase-entry-rank">01</span>
+                <img src="../images/users/1upmuffin.png" alt="1upmuffin's avatar" class="tcase-entry-avatar" />
+                <div class="tcase-entry-info">
+                  <span class="tcase-entry-name">1upmuffin</span>
                 </div>
+                <span class="tcase-entry-date">February 2025</span>
               </a>
-              <a href="../users/user-gravyfingerz.html" class="winner-item">
-                <img src="../images/users/gravyfingerz.png" alt="GravyFingerz's avatar" class="winner-avatar" />
-                <div class="winner-details">
-                  <h3>GravyFingerz</h3>
-                  <p class="winner-date">February 2025</p>
+              <a href="../users/user-gravyfingerz.html" class="tcase-entry">
+                <span class="tcase-entry-rank">02</span>
+                <img src="../images/users/gravyfingerz.png" alt="GravyFingerz's avatar" class="tcase-entry-avatar" />
+                <div class="tcase-entry-info">
+                  <span class="tcase-entry-name">GravyFingerz</span>
                 </div>
+                <span class="tcase-entry-date">February 2025</span>
               </a>
             </div>
           </div>
 
-          <div class="trophy-related">
-            <h2>Related</h2>
-            <p><a href="../games/2025-february-god-of-war.html">← Back to God of War game page</a></p>
-            <p><a href="../trophy-challenges.html">View all Trophies</a></p>
+          <!-- Navigation links -->
+          <div class="tcase-nav">
+            <a href="../games/2025-february-god-of-war.html" class="tcase-nav-btn">
+              <span class="tcase-nav-btn-icon">&larr;</span> Game Page
+            </a>
+            <a href="../trophy-challenges.html" class="tcase-nav-btn">
+              All Trophies <span class="tcase-nav-btn-icon">&rarr;</span>
+            </a>
           </div>
         </div>
+
       </section>
     </main>
 

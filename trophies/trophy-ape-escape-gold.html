@@ -56,38 +56,82 @@
 
     <main class="site-main container" id="main-content">
       <section class="content">
-        <div class="trophy-page">
-          <div class="trophy-header">
-            <img
-              src="../images/trophies/trophy-ape-escape-gold.png"
-              alt="Ape Escape Gold Trophy"
-              class="trophy-image-large"
-            />
-            <div class="trophy-info">
-              <h1>Gold Medal on Snake River</h1>
-              <p class="trophy-game"><a href="../games/2026-march-ape-escape.html">Ape Escape</a></p>
-              <p class="trophy-tier gold">Gold Trophy</p>
+
+        <!-- Trophy Display Case -->
+        <div class="tcase">
+          <!-- Glass-fronted cabinet frame -->
+          <div class="tcase-frame">
+            <div class="tcase-glass">
+              <div class="tcase-vignette"></div>
+              <div class="tcase-glare"></div>
+
+              <!-- Trophy on pedestal -->
+              <div class="tcase-exhibit">
+                <div class="tcase-spotlight tcase-spotlight-gold"></div>
+                <img
+                  src="../images/trophies/trophy-ape-escape-gold.png"
+                  alt="Gold Medal on Snake River - Ape Escape Trophy"
+                  class="tcase-trophy-img"
+                />
+              </div>
+
+              <!-- Engraved nameplate -->
+              <div class="tcase-nameplate tcase-nameplate-gold">
+                <span class="tcase-nameplate-tier">Gold Trophy</span>
+                <h1 class="tcase-nameplate-title">Gold Medal on Snake River</h1>
+                <a href="../games/2026-march-ape-escape.html" class="tcase-nameplate-game">Ape Escape</a>
+              </div>
             </div>
           </div>
 
-          <div class="trophy-description">
-            <h2>Achievement</h2>
-            <p>Earned a gold medal on the Snake River mini game in Ape Escape.</p>
-          </div>
-
-          <div class="trophy-winners">
-            <h2>Trophy Holders</h2>
-            <div class="winner-list">
-              <p>No winners yet.</p>
+          <!-- Rarity badge -->
+          <div class="tcase-rarity tcase-rarity-unclaimed">
+            <div class="tcase-rarity-bar">
+              <div class="tcase-rarity-fill" style="width: 0%"></div>
+            </div>
+            <div class="tcase-rarity-info">
+              <span class="tcase-rarity-label">Unclaimed</span>
+              <span class="tcase-rarity-stat">0 of 25 members</span>
             </div>
           </div>
 
-          <div class="trophy-related">
-            <h2>Related</h2>
-            <p><a href="../games/2026-march-ape-escape.html">&larr; Back to Ape Escape game page</a></p>
-            <p><a href="../trophy-challenges.html">View all Trophies</a></p>
+          <!-- Achievement plaque -->
+          <div class="tcase-plaque">
+            <div class="tcase-plaque-inner">
+              <h2 class="tcase-plaque-heading">Achievement</h2>
+              <p class="tcase-plaque-text">Earned a gold medal on the Snake River mini game in Ape Escape.</p>
+            </div>
+          </div>
+
+          <!-- Scoreboard — trophy holders -->
+          <div class="tcase-scoreboard">
+            <div class="tcase-scoreboard-header">
+              <span class="tcase-scoreboard-led"></span>
+              <h2 class="tcase-scoreboard-title">Trophy Holders</h2>
+              <span class="tcase-scoreboard-led"></span>
+            </div>
+            <div class="tcase-scoreboard-entries">
+              <div class="tcase-entry tcase-entry-empty">
+                <span class="tcase-entry-rank">--</span>
+                <div class="tcase-entry-info">
+                  <span class="tcase-entry-name">No holders yet</span>
+                  <span class="tcase-entry-score">Be the first to claim this trophy!</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Navigation links -->
+          <div class="tcase-nav">
+            <a href="../games/2026-march-ape-escape.html" class="tcase-nav-btn">
+              <span class="tcase-nav-btn-icon">&larr;</span> Game Page
+            </a>
+            <a href="../trophy-challenges.html" class="tcase-nav-btn">
+              All Trophies <span class="tcase-nav-btn-icon">&rarr;</span>
+            </a>
           </div>
         </div>
+
       </section>
     </main>
 

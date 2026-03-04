@@ -56,100 +56,147 @@
 
     <main class="site-main container" id="main-content">
       <section class="content">
-        <div class="trophy-page">
-          <div class="trophy-header">
-            <img
-              src="../images/trophies/trophy-billy-hatcher-beatgame.png"
-              alt="Billy Hatcher Beat Game Trophy"
-              class="trophy-image-large"
-            />
-            <div class="trophy-info">
-              <h1>Beat Game</h1>
-              <p class="trophy-game"><a href="../games/2025-april-billy-hatcher.html">Billy Hatcher and the Giant Egg</a></p>
-              <p class="trophy-tier silver">Silver Trophy</p>
+
+        <!-- Trophy Display Case -->
+        <div class="tcase">
+          <!-- Glass-fronted cabinet frame -->
+          <div class="tcase-frame">
+            <div class="tcase-glass">
+              <div class="tcase-vignette"></div>
+              <div class="tcase-glare"></div>
+
+              <!-- Trophy on pedestal -->
+              <div class="tcase-exhibit">
+                <div class="tcase-spotlight tcase-spotlight-silver"></div>
+                <img
+                  src="../images/trophies/trophy-billy-hatcher-beatgame.png"
+                  alt="Beat Game - Billy Hatcher and the Giant Egg Trophy"
+                  class="tcase-trophy-img"
+                />
+              </div>
+
+              <!-- Engraved nameplate -->
+              <div class="tcase-nameplate tcase-nameplate-silver">
+                <span class="tcase-nameplate-tier">Silver Trophy</span>
+                <h1 class="tcase-nameplate-title">Beat Game</h1>
+                <a href="../games/2025-april-billy-hatcher.html" class="tcase-nameplate-game">Billy Hatcher and the Giant Egg</a>
+              </div>
             </div>
           </div>
 
-          <div class="trophy-description">
-            <h2>Achievement</h2>
-            <p>Completed Billy Hatcher and the Giant Egg's main story, saving Morning Land from the sinister crows.</p>
+          <!-- Rarity badge -->
+          <div class="tcase-rarity tcase-rarity-uncommon">
+            <div class="tcase-rarity-bar">
+              <div class="tcase-rarity-fill" style="width: 36%"></div>
+            </div>
+            <div class="tcase-rarity-info">
+              <span class="tcase-rarity-label">Uncommon</span>
+              <span class="tcase-rarity-stat">9 of 25 members (36%)</span>
+            </div>
           </div>
 
-          <div class="trophy-winners">
-            <h2>Trophy Holders</h2>
-            <div class="winner-list">
-              <a href="../users/user-anton.html" class="winner-item">
-                <img src="../images/users/anton.png" alt="Anton's avatar" class="winner-avatar" />
-                <div class="winner-details">
-                  <h3>Anton</h3>
-                  <p class="winner-date">April 2025</p>
+          <!-- Achievement plaque -->
+          <div class="tcase-plaque">
+            <div class="tcase-plaque-inner">
+              <h2 class="tcase-plaque-heading">Achievement</h2>
+              <p class="tcase-plaque-text">Completed Billy Hatcher and the Giant Egg's main story, saving Morning Land from the sinister crows.</p>
+            </div>
+          </div>
+
+          <!-- Scoreboard — trophy holders -->
+          <div class="tcase-scoreboard">
+            <div class="tcase-scoreboard-header">
+              <span class="tcase-scoreboard-led"></span>
+              <h2 class="tcase-scoreboard-title">Trophy Holders</h2>
+              <span class="tcase-scoreboard-led"></span>
+            </div>
+            <div class="tcase-scoreboard-entries">
+              <a href="../users/user-anton.html" class="tcase-entry">
+                <span class="tcase-entry-rank">01</span>
+                <img src="../images/users/anton.png" alt="Anton's avatar" class="tcase-entry-avatar" />
+                <div class="tcase-entry-info">
+                  <span class="tcase-entry-name">Anton</span>
                 </div>
+                <span class="tcase-entry-date">April 2025</span>
               </a>
-              <a href="../users/user-metroid.html" class="winner-item">
-                <img src="../images/users/metroid.png" alt="Metroid's avatar" class="winner-avatar" />
-                <div class="winner-details">
-                  <h3>Metroid</h3>
-                  <p class="winner-date">April 2025</p>
+              <a href="../users/user-metroid.html" class="tcase-entry">
+                <span class="tcase-entry-rank">02</span>
+                <img src="../images/users/metroid.png" alt="Metroid's avatar" class="tcase-entry-avatar" />
+                <div class="tcase-entry-info">
+                  <span class="tcase-entry-name">Metroid</span>
                 </div>
+                <span class="tcase-entry-date">April 2025</span>
               </a>
-              <a href="../users/user-mrcafecito.html" class="winner-item">
-                <img src="../images/users/mrcafecito.png" alt="MrCafecito's avatar" class="winner-avatar" />
-                <div class="winner-details">
-                  <h3>MrCafecito</h3>
-                  <p class="winner-date">April 2025</p>
+              <a href="../users/user-mrcafecito.html" class="tcase-entry">
+                <span class="tcase-entry-rank">03</span>
+                <img src="../images/users/mrcafecito.png" alt="MrCafecito's avatar" class="tcase-entry-avatar" />
+                <div class="tcase-entry-info">
+                  <span class="tcase-entry-name">MrCafecito</span>
                 </div>
+                <span class="tcase-entry-date">April 2025</span>
               </a>
-              <a href="../users/user-kb.html" class="winner-item">
-                <img src="../images/users/kb.png" alt="kb's avatar" class="winner-avatar" />
-                <div class="winner-details">
-                  <h3>kb</h3>
-                  <p class="winner-date">April 2025</p>
+              <a href="../users/user-kb.html" class="tcase-entry">
+                <span class="tcase-entry-rank">04</span>
+                <img src="../images/users/kb.png" alt="kb's avatar" class="tcase-entry-avatar" />
+                <div class="tcase-entry-info">
+                  <span class="tcase-entry-name">kb</span>
                 </div>
+                <span class="tcase-entry-date">April 2025</span>
               </a>
-              <a href="../users/user-poochy.html" class="winner-item">
-                <img src="../images/users/poochy.png" alt="Poochy's avatar" class="winner-avatar" />
-                <div class="winner-details">
-                  <h3>Poochy</h3>
-                  <p class="winner-date">April 2025</p>
+              <a href="../users/user-poochy.html" class="tcase-entry">
+                <span class="tcase-entry-rank">05</span>
+                <img src="../images/users/poochy.png" alt="Poochy's avatar" class="tcase-entry-avatar" />
+                <div class="tcase-entry-info">
+                  <span class="tcase-entry-name">Poochy</span>
                 </div>
+                <span class="tcase-entry-date">April 2025</span>
               </a>
-              <a href="../users/user-robert.html" class="winner-item">
-                <img src="../images/users/robert.png" alt="Robert's avatar" class="winner-avatar" />
-                <div class="winner-details">
-                  <h3>Robert</h3>
-                  <p class="winner-date">April 2025</p>
+              <a href="../users/user-robert.html" class="tcase-entry">
+                <span class="tcase-entry-rank">06</span>
+                <img src="../images/users/robert.png" alt="Robert's avatar" class="tcase-entry-avatar" />
+                <div class="tcase-entry-info">
+                  <span class="tcase-entry-name">Robert</span>
                 </div>
+                <span class="tcase-entry-date">April 2025</span>
               </a>
-              <a href="../users/user-holly.html" class="winner-item">
-                <img src="../images/users/holly.png" alt="Holly's avatar" class="winner-avatar" />
-                <div class="winner-details">
-                  <h3>Holly</h3>
-                  <p class="winner-date">April 2025</p>
+              <a href="../users/user-holly.html" class="tcase-entry">
+                <span class="tcase-entry-rank">07</span>
+                <img src="../images/users/holly.png" alt="Holly's avatar" class="tcase-entry-avatar" />
+                <div class="tcase-entry-info">
+                  <span class="tcase-entry-name">Holly</span>
                 </div>
+                <span class="tcase-entry-date">April 2025</span>
               </a>
-              <a href="../users/user-zou.html" class="winner-item">
-                <img src="../images/users/zou.png" alt="Zou's avatar" class="winner-avatar" />
-                <div class="winner-details">
-                  <h3>Zou</h3>
-                  <p class="winner-date">April 2025</p>
+              <a href="../users/user-zou.html" class="tcase-entry">
+                <span class="tcase-entry-rank">08</span>
+                <img src="../images/users/zou.png" alt="Zou's avatar" class="tcase-entry-avatar" />
+                <div class="tcase-entry-info">
+                  <span class="tcase-entry-name">Zou</span>
                 </div>
+                <span class="tcase-entry-date">April 2025</span>
               </a>
-              <a href="../users/user-asadasa.html" class="winner-item">
-                <img src="../images/users/asadasa.png" alt="Asadasa's avatar" class="winner-avatar" />
-                <div class="winner-details">
-                  <h3>Asadasa</h3>
-                  <p class="winner-date">April 2025</p>
+              <a href="../users/user-asadasa.html" class="tcase-entry">
+                <span class="tcase-entry-rank">09</span>
+                <img src="../images/users/asadasa.png" alt="Asadasa's avatar" class="tcase-entry-avatar" />
+                <div class="tcase-entry-info">
+                  <span class="tcase-entry-name">Asadasa</span>
                 </div>
+                <span class="tcase-entry-date">April 2025</span>
               </a>
             </div>
           </div>
 
-          <div class="trophy-related">
-            <h2>Related</h2>
-            <p><a href="../games/2025-april-billy-hatcher.html">← Back to Billy Hatcher game page</a></p>
-            <p><a href="../trophy-challenges.html">View all Trophies</a></p>
+          <!-- Navigation links -->
+          <div class="tcase-nav">
+            <a href="../games/2025-april-billy-hatcher.html" class="tcase-nav-btn">
+              <span class="tcase-nav-btn-icon">&larr;</span> Game Page
+            </a>
+            <a href="../trophy-challenges.html" class="tcase-nav-btn">
+              All Trophies <span class="tcase-nav-btn-icon">&rarr;</span>
+            </a>
           </div>
         </div>
+
       </section>
     </main>
 
