@@ -21,6 +21,7 @@
   --color-bg-hover: #3a3a3a;
   --color-red: #ff3333;
   --color-green: #33ff33;
+  --color-rival-red: #e05555;
 }
 
 *,
@@ -44,6 +45,22 @@ body {
   overflow-x: hidden;
   width: 100%;
   max-width: 100vw;
+}
+
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--color-bg);
+  color: var(--color-gold);
+  padding: 8px 16px;
+  text-decoration: none;
+  z-index: 1000;
+  font-family: var(--font-heading);
+}
+
+.skip-link:focus {
+  top: 0;
 }
 
 /* Gold heading accent styles */
@@ -1140,6 +1157,7 @@ h3 {
 
 .month-boxart {
   width: 100%;
+  height: auto;
   aspect-ratio: 1;
   object-fit: cover;
   display: block;
@@ -1623,7 +1641,8 @@ h3 {
   align-items: center;
 }
 
-.profile-nav-select {
+.profile-nav-select,
+.game-nav-select {
   font-family: var(--font-heading);
   font-size: 0.65rem;
   text-transform: uppercase;
@@ -1640,17 +1659,21 @@ h3 {
 }
 
 .profile-nav-select:hover,
-.profile-nav-select:focus {
+.profile-nav-select:focus,
+.game-nav-select:hover,
+.game-nav-select:focus {
   border-color: var(--color-gold);
   outline: none;
 }
 
-.profile-nav-select option {
+.profile-nav-select option,
+.game-nav-select option {
   background: var(--color-bg);
   color: var(--color-text);
 }
 
-.profile-nav-select-arrow {
+.profile-nav-select-arrow,
+.game-nav-select-arrow {
   position: absolute;
   right: 0.5rem;
   pointer-events: none;
@@ -1761,7 +1784,7 @@ h3 {
   font-size: 2.2rem;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  color: #ffffff;
+  color: var(--color-text);
   text-shadow:
     2px 2px 0 #000, -2px 2px 0 #000,
     2px -2px 0 #000, -2px -2px 0 #000,
@@ -2029,7 +2052,7 @@ h3 {
   font-size: 0.5rem;
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  color: #e05555;
+  color: var(--color-rival-red);
   background: rgba(192, 50, 50, 0.12);
   padding: 0.15rem 0.55rem;
   border-radius: 2px;
@@ -2104,7 +2127,7 @@ h3 {
 }
 
 .rival-stat-value.behind {
-  color: #e05555;
+  color: var(--color-rival-red);
 }
 
 .rival-stat-value.tied {
@@ -4200,7 +4223,7 @@ h3 {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #33ff33;
+  background: var(--color-green);
   box-shadow: 0 0 6px rgba(51, 255, 51, 0.6), 0 0 12px rgba(51, 255, 51, 0.3);
   animation: led-pulse 2s ease-in-out infinite;
 }
@@ -5855,6 +5878,30 @@ h3 {
   margin-top: 0.5rem;
 }
 
+.ctc-stage:has(.ctc-film-card:only-child) {
+  grid-template-columns: 1fr;
+}
+
+.ctc-film-card:only-child {
+  display: grid;
+  grid-template-columns: minmax(240px, 360px) 1fr;
+  gap: 2rem;
+  text-align: left;
+  align-items: start;
+}
+
+.ctc-film-card:only-child .ctc-spotlight {
+  margin-bottom: 0;
+}
+
+.ctc-film-card:only-child .ctc-poster {
+  max-width: 100%;
+}
+
+.ctc-film-card:only-child .ctc-film-content > :first-child {
+  margin-top: 0;
+}
+
 .ctc-archive {
   margin-top: 2rem;
 }
@@ -6143,7 +6190,7 @@ h3 {
   font-size: 2.2rem;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  color: #ffffff;
+  color: var(--color-text);
   text-shadow:
     2px 2px 0 #000,
     -2px 2px 0 #000,
@@ -7125,7 +7172,8 @@ h3 {
     order: 0;
     width: 100%;
   }
-  .game-nav-select-wrap .profile-nav-select {
+  .game-nav-select-wrap .profile-nav-select,
+  .game-nav-select-wrap .game-nav-select {
     width: 100%;
     max-width: none;
   }
@@ -7987,7 +8035,8 @@ html {
     font-size: 0.6rem;
   }
 
-  .profile-nav-select {
+  .profile-nav-select,
+  .game-nav-select {
     font-size: 0.6rem;
     max-width: 150px;
   }
@@ -8306,6 +8355,16 @@ html {
   }
 
   .ctc-poster {
+    width: 200px;
+  }
+
+  .ctc-film-card:only-child {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .ctc-film-card:only-child .ctc-poster {
     width: 200px;
   }
 }
