@@ -126,3 +126,62 @@ Then visit `http://localhost:8000/`.
 ## Contributing
 
 The site is maintained by club leadership, but trophy submissions, screenshots, fan art, and game nominations all flow through [Discord](https://discord.gg/2qv6qQbw4A). If you spot a bug or a broken link, open an issue or PR.
+
+---
+
+## Monthly Update Process
+
+This is the **default scope** for rolling the site over to a new month. Every step below is exercised by default — including the prior-month results pass and image generation. Skip a step only when the maintainer explicitly overrides.
+
+### Inputs to gather first
+
+- Next month's game: title, slug, platform/version
+- Trophies: name, tier (gold/silver/bronze + any bonus), requirement, and a short Courier New catchphrase per trophy
+- Calendar windows (default: **1–16 play / 16–23 discuss / 24–end vote**)
+- Group event date (default: **the first Saturday strictly after the 16th** — never the boundary day)
+- Speech bubble copy for the home hero
+- Prior month's trophy results (who earned what)
+- Cinema Toast Crunch film(s) for the month, if any
+
+### Files to create
+
+- `games/<year>-<month>-<slug>.html` — full game page (info, where-to-play, about, trivia, reception, trophies, speedruns, soundtrack, video, screenshots, sources)
+- `trophies/trophy-<slug>-{gold,silver,beatgame,...}.html` — one per trophy
+- `images/covers/<slug>.png` — 800×800, dark red plaid background (`rgb(68, 16, 26)`), box art centered at ~90%
+- `images/home/<slug>-banner.jpg` — representative in-game screenshot for the home hero
+- `images/screenshots/<slug>-1.jpg` … `-4.jpg` — pulled from PSXDataCenter or platform equivalent
+- `images/video/<slug>-playthrough.jpg` — YouTube `hqdefault.jpg` for the spotlight video
+- `images/trophies/trophy-<slug>-{gold,silver,beatgame,...}.png` — 800×800 with tier-colored gradient frame and Courier New nameplate
+
+### Files to update every month
+
+- `index.html` — hero banner + speech bubble, sidebar calendar, upcoming events, stat strip, 2026 top-players list
+- `game-of-the-month.html` — add the new month's card to the current year grid
+- `trophy-challenges.html` — append new trophies; bump prior-month rarity bars
+- `leaderboards.html` and `hall-of-fame.html` — apply prior month's earned trophies
+- `games/<previous-month>.html` — month stats (players, trophies earned, rate) and per-trophy winners
+- `trophies/trophy-<previous-month>-*.html` — rarity tier/percentage and holder list
+- `users/user-<member>.html` — for every member who earned a trophy: rank, points, trophy counts, tier bar, milestones, crown jewel, trophy collection, games played, heatmap cell, timeline, personal-best spotlights
+- `sitemap.xml` — add new URLs and bump `lastmod` on changed files
+
+### Asset generation conventions
+
+- Cover and trophy art are produced with `sharp` (Node). The reference scripts live under `C:\tmp\cover-fmt\` during the rollover and can be re-run if a swap is needed.
+- Trophy frame uses a tier-themed gradient (gold / silver / bronze) with subtle noise, dark nameplate, Courier New all-caps text.
+- Home hero image is wrapped in a CRT scanline + vignette + diagonal-glare overlay (see `.hero-banner-crt` styles).
+
+### Override discipline
+
+Don't trim scope on your own initiative. If a section feels uncertain (review scores for an obscure import, speedrun data, soundtrack credits), flag the placeholders for the maintainer to verify rather than dropping the section. Only skip a step if the maintainer says so.
+
+### Bonus games
+
+Occasionally we run a **bonus game** alongside the regular monthly pick — usually triggered by a real-world hook (a new official release, a notable anniversary, a Nintendo announcement). Bonus games run on an extended window that doesn't have to align with month boundaries, and they share the site's framework but use a few distinct conventions:
+
+- **Slug**: `games/<year>-bonus-<slug>.html` (e.g. `games/2026-bonus-star-fox-2.html`).
+- **Game page**: same template as monthly picks — but the hero's date pill becomes a `bonus-badge` ("⭐ Bonus Game · Date Range") and the game-nav at the top/bottom replaces prev/next monthly chaining with simple "Back to Home / Past Games" links.
+- **Trophies**: don't fabricate — if the maintainer hasn't supplied trophy info yet, render the `trophy-tbd-card` placeholder in the achievements section and log a follow-up so the trophies can be added later.
+- **Home page**: insert the `bonus-callout` strip immediately after the main monthly hero on `index.html`. It's visually subordinate to the monthly pick.
+- **Archive**: add the entry to a dedicated **Bonus Games** subsection on `game-of-the-month.html` — never mix bonus games into the monthly grid for that year.
+- **Sitemap**: add the bonus URL alongside the regular monthly URL.
+- **Stat strip / leaderboards / hall of fame**: bonus games do not contribute to the games count or trophy counts until trophies are defined and earned. Don't bump those numbers on bonus rollout.
