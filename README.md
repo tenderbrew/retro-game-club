@@ -159,10 +159,20 @@ This is the **default scope** for rolling the site over to a new month. Every st
 - `game-of-the-month.html` — add the new month's card to the current year grid
 - `trophy-challenges.html` — append new trophies; bump prior-month rarity bars
 - `leaderboards.html` and `hall-of-fame.html` — apply prior month's earned trophies
-- `games/<previous-month>.html` — month stats (players, trophies earned, rate) and per-trophy winners
-- `trophies/trophy-<previous-month>-*.html` — rarity tier/percentage and holder list
-- `users/user-<member>.html` — for every member who earned a trophy: rank, points, trophy counts, tier bar, milestones, crown jewel, trophy collection, games played, heatmap cell, timeline, personal-best spotlights
+- `games/<previous-month>.html` — month stats and per-trophy winners. **Stats are winners-only** (we do not track non-winning participants): Players = distinct trophy winners, Trophies Earned = total wins, Challenges Cleared = trophies-with-a-winner / total trophies, Trophy Rate = `round(wins ÷ (players × challenges) × 100)`. Set "Other Participants" to "All participants earned trophies this month!" whenever there's ≥1 winner.
+- `trophies/trophy-<previous-month>-*.html` — rarity tier/percentage and holder list (rarity formula in **Consistency rules** below).
+- `users/user-<member>.html` — for every member who earned a trophy, keep the **whole** profile in sync, not just the headline stats: rank badge (= Hall of Fame rank), points, trophy counts, tier bar, milestones, crown jewel, trophy collection, games played, heatmap cell, timeline, personal-best spotlights (Gold Rate, Best Month, streak), **plus the "vs Club Average" (h2h) bars, the "Rarity Breakdown" buckets, and the "Closest Rival" card**. Those last three drift silently if skipped — they are NOT optional.
 - `sitemap.xml` — add new URLs and bump `lastmod` on changed files
+
+### Consistency rules (enforced by the `rgc-site-audit` workflow)
+
+Site-wide invariants — keep them true by construction; the audit workflow checks them.
+
+- **Member count / rarity denominator:** the club currently has **27 active members**. Every trophy rarity % is `round(holders ÷ 27 × 100)`, and every "N of NN members" / "out of NN club members" string uses **27** — on trophy pages, `trophy-challenges.html`, AND each profile's crown-jewel + "Rarest Trophy" spotlight cards. When membership changes, **recompute every rarity figure** and update this number here.
+- **Points:** `gold×10 + silver×5 + bronze×1` (bonus = 1), identical on every leaderboard / Hall of Fame / index / profile row.
+- **Cross-file agreement:** a member's gold/silver/bronze/points/rank are identical across their profile, the yearly leaderboards, the Hall of Fame, the index top-players, and the trophy holder lists; per-year sums equal the all-time Hall of Fame totals; the profile rank badge equals the Hall of Fame rank.
+- **Profile analytics panels** ("vs Club Average", "Rarity Breakdown", "Closest Rival") reflect current totals and the **recomputed club averages** every month — not stale snapshots.
+- **Game month-stats are winners-only** (see the games bullet above).
 
 ### Asset generation conventions
 
