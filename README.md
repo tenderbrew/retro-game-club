@@ -172,6 +172,7 @@ Site-wide invariants — keep them true by construction; the audit workflow chec
 - **Points:** `gold×10 + silver×5 + bronze×1` (bonus = 1), identical on every leaderboard / Hall of Fame / index / profile row.
 - **Cross-file agreement:** a member's gold/silver/bronze/points/rank are identical across their profile, the yearly leaderboards, the Hall of Fame, the index top-players, and the trophy holder lists; per-year sums equal the all-time Hall of Fame totals; the profile rank badge equals the Hall of Fame rank.
 - **Profile analytics panels** ("vs Club Average", "Rarity Breakdown", "Closest Rival") reflect current totals and the **recomputed club averages** every month — not stale snapshots.
+- **Closest Rival card** is **points-based**: the rival is the member nearest in total points, *excluding exact-point ties* (tie on distance → pick the higher-pointed member). The card shows a gold/silver/bronze medal table comparing the **profile owner** (labelled with their own display name — never "You") against the rival, plus a points-gap badge reading `+N Ahead` / `-N Behind` / `Even`. Because earning a trophy shifts the points ladder, **rebuild every member's rival card** whenever standings change, not just the earner's — a single award can re-pair several members. Mandos's stripped-down profile has no rival card (or h2h panel) and is excluded from these refreshes.
 - **Game month-stats are winners-only** (see the games bullet above).
 
 ### Asset generation conventions
