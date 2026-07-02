@@ -103,6 +103,50 @@ for (const fp of allHtml) {
   }
 }
 
+// ---------- 6. Cross-file points/rank: each profile must match the trophy holder lists (source of truth) ----------
+// Canonical medal counts are computed from who-holds-what, so we're checking the DISPLAY against ground truth.
+// NOTE: bonus trophies (1 pt) are tallied separately; none are earned yet. If one is earned and a profile folds
+// it into the bronze COUNT, the counts check may flag it for a human to reconcile — that's intended, not a bug.
+const MPTS = { gold: 10, silver: 5, bronze: 1, bonus: 1 };
+const stat = {}; profiles.forEach(f => { stat[f.replace(/^user-|\.html$/g, '')] = { gold: 0, silver: 0, bronze: 0, bonus: 0 }; });
+for (const f of trophyFiles) {
+  const h = read(path.join(T, f));
+  const med = ((h.match(/tcase-nameplate-tier">(\w+)/) || [])[1] || '').toLowerCase();
+  if (!(med in MPTS)) continue;
+  for (const u of new Set([...h.matchAll(/users\/user-(\w+)\.html/g)].map(m => m[1]))) if (stat[u]) stat[u][med]++;
+}
+for (const u in stat) stat[u].points = stat[u].gold * 10 + stat[u].silver * 5 + stat[u].bronze + stat[u].bonus;
+for (const u in stat) stat[u].rank = 1 + Object.values(stat).filter(s => s.points > stat[u].points).length; // ties share a rank
+for (const f of profiles) {
+  const h = read(path.join(U, f)); const c = stat[f.replace(/^user-|\.html$/g, '')];
+  const heroRank = (h.match(/profile-hero-rank">#(\d+)/) || [])[1];
+  const stripRank = (h.match(/Rank<\/span>\s*<span class="game-fact-value">#?\s*<span class="count-up" data-target="(\d+)"/) || [])[1];
+  const pts = (h.match(/Points<\/span>\s*<span class="game-fact-value"><span class="count-up" data-target="(\d+)"/) || [])[1];
+  const g = (h.match(/trophy-gold"><span class="count-up" data-target="(\d+)"/) || [])[1];
+  const s = (h.match(/trophy-silver"><span class="count-up" data-target="(\d+)"/) || [])[1];
+  const b = (h.match(/trophy-bronze"><span class="count-up" data-target="(\d+)"/) || [])[1];
+  if (heroRank != null && +heroRank !== c.rank) fail('rank', `${f}: hero "#${heroRank} Overall" but trophies rank the member #${c.rank} (${c.points} pts)`);
+  if (stripRank != null && +stripRank !== c.rank) fail('rank', `${f}: stats-strip rank #${stripRank} but trophies rank the member #${c.rank}`);
+  if (pts != null && +pts !== c.points) fail('points', `${f}: shows ${pts} pts but ${c.gold}G/${c.silver}S/${c.bronze}B = ${c.points}`);
+  if (g != null && +g !== c.gold) fail('counts', `${f}: gold count ${g} but holds ${c.gold}`);
+  if (s != null && +s !== c.silver) fail('counts', `${f}: silver count ${s} but holds ${c.silver}`);
+  if (b != null && +b !== c.bronze) fail('counts', `${f}: bronze count ${b} but holds ${c.bronze}`);
+}
+
+// ---------- 7. Heatmaps: no FULLY-elapsed month may be heat-future (the current month is allowed to be) ----------
+const MON = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+const d = new Date(); const nowYM = d.getFullYear() * 12 + d.getMonth();
+for (const f of profiles) {
+  const h = read(path.join(U, f));
+  for (const row of h.matchAll(/heatmap-year-label">(\d{4})<\/span>([\s\S]*?)(?=<span class="heatmap-year-label"|<\/div>)/g)) {
+    const year = +row[1];
+    [...row[2].matchAll(/heatmap-cell (heat-\w+)/g)].forEach((m, i) => {
+      if (i <= 11 && m[1] === 'heat-future' && year * 12 + i < nowYM)
+        fail('heatmap', `${f}: ${MON[i]} ${year} is heat-future but has already elapsed (should be heat-empty or an activity class)`);
+    });
+  }
+}
+
 // ---------- report ----------
 const cats = [...new Set(problems.map(p => p.match(/^\[([^\]]+)\]/)[1]))];
 if (problems.length === 0) {

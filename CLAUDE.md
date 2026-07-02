@@ -17,7 +17,7 @@ Trigger the leader with something like: *"Use the orchestrator to roll the site 
 
 ## Standing rules
 
-- **Run `node tools/audit.js` before committing a rollover** — a fast, dependency-free checker for the drift-prone invariants (rarity tiers, profile Rarity Breakdowns, nav dropdowns + "Latest" links, member count, missing images, broken internal links). It must exit clean. This is the guard that keeps the site from silently drifting between rollovers.
+- **Run `node tools/audit.js` before committing a rollover** — a fast, dependency-free checker for the drift-prone invariants (rarity tiers, profile Rarity Breakdowns, nav dropdowns + "Latest" links, member count, missing images, broken internal links, points/rank vs trophy holder lists, and elapsed heatmap months wrongly marked `heat-future`). It must exit clean. This is the guard that keeps the site from silently drifting between rollovers.
 - **Never fabricate trophies for bonus games** — if trophy info isn't supplied, render the `trophy-tbd-card` placeholder and log a follow-up.
 - **Group event date**: the first Saturday strictly after the 16th (Sat in 17–23 range, never the 16th itself).
 - **Bonus games do not contribute** to stat-strip / leaderboards / hall-of-fame counts until trophies are defined and earned.
