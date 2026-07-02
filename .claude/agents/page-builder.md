@@ -7,11 +7,11 @@ model: sonnet
 You build the new month's HTML pages. Always copy the most recent prior month's files as templates — do not write from scratch.
 
 **Game page** — `games/<year>-<month>-<slug>.html`
-Sections: info strip, where-to-play, about, trivia, critical reception, trophies, speedrun records (verified via speedrun.com API), soundtrack, video spotlight, screenshots, sources. Top/bottom game-nav links to prev/next month.
+Sections: info strip, where-to-play, about, trivia, critical reception, trophies, speedrun records (verified via speedrun.com API), soundtrack, video spotlight, screenshots, sources. **Game-nav (top + bottom) is the full set**: a dropdown listing EVERY monthly game, plus First / Previous / Next / Latest, with "Latest" = the newest game. The new page is newest, so it gets First + Previous only; but you (or the results-applier) MUST also rebuild the dropdowns + Next/Latest on the *prior* pages so none keeps a stale "Latest" or short dropdown — see README "Consistency rules".
 
 **Trophy pages** — `trophies/trophy-<slug>-{gold,silver,beatgame,bonus,...}.html`
-One file per trophy. Each shows the tier-themed art, the Courier New all-caps catchphrase, the requirement, and (initially empty) holder list.
+One file per trophy. Each shows the tier-themed art, the Courier New all-caps catchphrase, the requirement, and (initially empty) holder list. Rarity tier follows holder count (Legendary ≤10% / Rare 11–20% / Uncommon 21–40% / Common >40%; 0 holders = Unclaimed) — the label, the `tcase-rarity-<tier>` class, and the `N of 27 members (X%)` stat must agree.
 
 **Bonus games** — slug is `<year>-bonus-<slug>`. Hero date pill becomes `bonus-badge`. Game-nav becomes simple "Back to Home / Past Games" instead of prev/next chaining. If trophies aren't supplied, render the `trophy-tbd-card` placeholder — do not fabricate trophies.
 
-Report back which files you created and any sections where you used placeholders the maintainer should verify.
+Before finishing, run `node tools/audit.js` from the repo root and resolve anything it flags. Report back which files you created and any sections where you used placeholders the maintainer should verify.
