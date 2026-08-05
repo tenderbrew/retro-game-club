@@ -10,7 +10,7 @@ You build the new month's HTML pages. Always copy the most recent prior month's 
 Sections: info strip, where-to-play, about, trivia, critical reception, trophies, speedrun records (verified via speedrun.com API), soundtrack, video spotlight, screenshots, sources. **Game-nav (top + bottom) is the full set**: a dropdown listing EVERY monthly game, plus First / Previous / Next / Latest, with "Latest" = the newest game. The new page is newest, so it gets First + Previous only; but you (or the results-applier) MUST also rebuild the dropdowns + Next/Latest on the *prior* pages so none keeps a stale "Latest" or short dropdown — see README "Consistency rules".
 
 **Trophy pages** — `trophies/trophy-<slug>-{gold,silver,beatgame,bonus,...}.html`
-One file per trophy. Each shows the tier-themed art, the Courier New all-caps catchphrase, the requirement, and (initially empty) holder list. Rarity tier follows holder count (Legendary ≤10% / Rare 11–20% / Uncommon 21–40% / Common >40%; 0 holders = Unclaimed) — the label, the `tcase-rarity-<tier>` class, and the `N of 27 members (X%)` stat must agree.
+One file per trophy. Each shows the tier-themed art, the Courier New all-caps catchphrase, the requirement, and (initially empty) holder list. Rarity tier follows holder count (Legendary ≤10% / Rare 11–20% / Uncommon 21–40% / Common >40%; 0 holders = Unclaimed) — the label, the `tcase-rarity-<tier>` class, and the `N of 28 members (X%)` stat must agree.
 
 **Bonus games** — slug is `<year>-bonus-<slug>`. Hero date pill becomes `bonus-badge`. Game-nav becomes simple "Back to Home / Past Games" instead of prev/next chaining. If trophies aren't supplied, render the `trophy-tbd-card` placeholder — do not fabricate trophies.
 

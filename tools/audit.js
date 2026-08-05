@@ -14,7 +14,7 @@ const ROOT = path.resolve(__dirname, '..');
 const G = path.join(ROOT, 'games');
 const T = path.join(ROOT, 'trophies');
 const U = path.join(ROOT, 'users');
-const DENOM = 27; // active members = rarity denominator. Bump here + in README when membership changes.
+const DENOM = 28; // active members = rarity denominator. Bump here + in README when membership changes.
 
 const QUIET = process.argv.includes('--quiet');
 const read = p => fs.readFileSync(p, 'utf8');
@@ -22,7 +22,8 @@ const problems = [];
 const fail = (cat, msg) => problems.push(`[${cat}] ${msg}`);
 
 // Rarity tier by holder count (README "Consistency rules"): Legendary <=10% / Rare 11-20% / Uncommon 21-40% / Common >40%.
-const tierOf = n => (n <= 2 ? 'Legendary' : n <= 5 ? 'Rare' : n <= 10 ? 'Uncommon' : 'Common');
+// Bands are derived from DENOM=28 (e.g. Uncommon's n<=11 upper bound: 11/28 = 39.3% <= 40%).
+const tierOf = n => (n <= 2 ? 'Legendary' : n <= 5 ? 'Rare' : n <= 11 ? 'Uncommon' : 'Common');
 
 const MONTHS = { january: 0, february: 1, march: 2, april: 3, may: 4, june: 5, july: 6, august: 7, september: 8, october: 9, november: 10, december: 11 };
 const htmlFiles = dir => fs.readdirSync(dir).filter(f => f.endsWith('.html'));
@@ -43,16 +44,16 @@ const trophyFiles = htmlFiles(T);
 for (const f of trophyFiles) {
   const h = read(path.join(T, f));
   if (/tcase-rarity-unclaimed/.test(h)) continue;           // 0-holder trophies are legitimately "Unclaimed"
-  const nm = h.match(/(\d+) of 27/); if (!nm) continue;
+  const nm = h.match(new RegExp(`(\\d+) of ${DENOM}`)); if (!nm) continue;
   const n = +nm[1]; if (n === 0) continue;
   const pct = Math.round(n / DENOM * 100);
   const tier = tierOf(n);
   const lbl = (h.match(/tcase-rarity-label">([^<]*)</) || [])[1];
   const cls = (h.match(/tcase-rarity tcase-rarity-(\w+)"/) || [])[1];
   const stat = (h.match(/tcase-rarity-stat">([^<]*)</) || [])[1];
-  if (lbl && lbl !== tier) fail('rarity-tier', `${f}: label "${lbl}" but ${n}/27 (${pct}%) => ${tier}`);
+  if (lbl && lbl !== tier) fail('rarity-tier', `${f}: label "${lbl}" but ${n}/${DENOM} (${pct}%) => ${tier}`);
   if (cls && cls !== tier.toLowerCase()) fail('rarity-tier', `${f}: class tcase-rarity-${cls} but expected tcase-rarity-${tier.toLowerCase()}`);
-  const want = `${n} of 27 members (${pct}%)`;
+  const want = `${n} of ${DENOM} members (${pct}%)`;
   if (stat && stat !== want) fail('rarity-fmt', `${f}: stat "${stat}" should be "${want}"`);
 }
 
