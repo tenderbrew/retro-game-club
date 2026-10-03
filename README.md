@@ -189,6 +189,20 @@ Site-wide invariants — keep them true by construction. **Run `node tools/audit
 
 Don't trim scope on your own initiative. If a section feels uncertain (review scores for an obscure import, speedrun data, soundtrack credits), flag the placeholders for the maintainer to verify rather than dropping the section. Only skip a step if the maintainer says so.
 
+### Trophy requirement catalog
+
+Trophy objective copy has one canonical source: `data/trophy-requirements.json`. During a monthly update, add each new trophy definition ID and its polished, imperative, sentence-case requirement to that catalog. Preserve every gameplay condition, number, proof requirement, and competitive rule.
+
+After editing the catalog or adding trophy presentations, regenerate the static HTML and verify that no surface has drifted:
+
+```sh
+node tools/sync-trophy-cards.js --write
+node tools/sync-trophy-cards.js --check
+node tools/test-trophy-cards.js
+```
+
+The synchronizer manages visible CHALLENGE plates on detail cases, game and index plaques, profile collections, timelines, crown jewels, and rarest-trophy spotlights. Leaderboard latest-trophy links remain text-only. Do not hand-edit generated requirement text or challenge plates; update the catalog and rerun the synchronizer.
+
 ### Bonus games
 
 Occasionally we run a **bonus game** alongside the regular monthly pick — usually triggered by a real-world hook (a new official release, a notable anniversary, a Nintendo announcement). Bonus games run on an extended window that doesn't have to align with month boundaries, and they share the site's framework but use a few distinct conventions:
