@@ -8991,3 +8991,261 @@ html {
   .trophy-challenge-requirement { font-size: 0.78rem; line-height: 1.42; }
   .timeline-entry .trophy-challenge-plate { flex-basis: 100%; margin-left: 0; }
 }
+
+/* Cross-page card geometry. Reserves come from the longest current content
+   in each presentation/breakpoint, not the inherited body font size. Keep
+   nameplate tracks compact; intrinsic growth still supports enlarged text
+   and future longer objectives without clipping. */
+.trophy-gallery .trophy-plaque .plaque-nameplate,
+.user-trophies .trophy-plaque .plaque-nameplate,
+.game-page-v2 .game-trophy-card .plaque-nameplate {
+  box-sizing: border-box;
+  min-width: 0;
+  flex: none;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  justify-content: stretch;
+  align-content: start;
+}
+
+.trophy-gallery .trophy-plaque,
+.user-trophies .trophy-plaque { height: auto; }
+
+.trophy-gallery .trophy-plaque .plaque-nameplate > *,
+.user-trophies .trophy-plaque .plaque-nameplate > *,
+.game-page-v2 .game-trophy-card .plaque-nameplate > * {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.trophy-gallery .trophy-plaque .plaque-nameplate {
+  min-height: 9rem;
+  grid-template-rows: minmax(1.05rem, auto) minmax(2.05rem, auto) minmax(1.2rem, auto) minmax(3rem, auto);
+}
+
+.trophy-gallery .trophy-plaque .plaque-nameplate > *,
+.user-trophies .trophy-plaque .plaque-nameplate > *,
+.game-page-v2 .game-trophy-card .plaque-nameplate > * { margin-bottom: 0; }
+
+.trophy-gallery .trophy-plaque .trophy-card-rarity { margin-top: 0; }
+.trophy-gallery .trophy-plaque > .trophy-challenge-plate {
+  min-height: 145px;
+  margin-top: 0;
+}
+
+.user-trophies .trophy-plaque .plaque-nameplate {
+  min-height: 9.75rem;
+  grid-template-rows: minmax(2.1rem, auto) minmax(2.05rem, auto) minmax(1.2rem, auto) minmax(0, auto) minmax(2.6rem, auto);
+}
+
+.user-trophies .trophy-plaque .rarity-bar-mini { grid-row: 4; }
+.user-trophies .trophy-plaque .rarity-label { grid-row: 5; }
+.user-trophies .trophy-plaque .plaque-tier {
+  font-size: 0.75rem;
+  line-height: 1.6;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.user-trophies .trophy-plaque > .trophy-challenge-plate {
+  min-height: 145px;
+  margin-top: 0;
+}
+
+/* The narrow game shelf stays compact and retains its established tier type. */
+.game-page-v2 .game-trophy-card .plaque-nameplate {
+  min-height: 90px;
+  grid-template-rows: minmax(2.05rem, auto) minmax(1.8rem, auto);
+}
+
+.game-page-v2 .game-trophy-card .trophy-plaque > .trophy-challenge-plate {
+  min-height: 163px;
+  margin-top: 0;
+}
+
+.tcase-nameplate {
+  box-sizing: border-box;
+  min-height: 10rem;
+  min-width: 0;
+  display: grid;
+  grid-template-rows: minmax(1.05rem, auto) minmax(4.8rem, auto) minmax(1.52rem, auto);
+  align-content: start;
+}
+.tcase-nameplate-title { overflow-wrap: anywhere; min-width: 0; }
+
+.tcase-nameplate-tier,
+.tcase-nameplate-title { margin-bottom: 0; }
+.tcase-glass > .trophy-challenge-plate {
+  min-height: 73px;
+  margin-top: 0.55rem;
+}
+
+.crown-jewel-info {
+  box-sizing: border-box;
+  min-height: 139px;
+  display: grid;
+  grid-template-rows: minmax(2.6em, auto) minmax(1.6em, auto) minmax(1.8em, auto) minmax(0, 1fr);
+  gap: 0;
+  align-content: start;
+}
+
+.crown-jewel-name,
+.crown-jewel-game,
+.crown-jewel-rarity,
+.crown-jewel-desc { margin: 0; }
+.crown-jewel-name,
+.crown-jewel-game { min-width: 0; overflow-wrap: anywhere; }
+.crown-jewel > .trophy-challenge-plate { min-height: 54px; }
+
+.timeline-entry {
+  display: grid;
+  grid-template-columns: 40px minmax(0, 1fr) auto;
+  grid-template-rows: minmax(40px, auto) minmax(73px, auto);
+  align-items: center;
+}
+
+.timeline-icon { grid-column: 1; grid-row: 1; }
+.timeline-info {
+  grid-column: 2;
+  grid-row: 1;
+  min-height: 40px;
+  display: grid;
+  grid-template-rows: minmax(20px, auto) minmax(20px, auto);
+}
+.timeline-trophy-name,
+.timeline-game-name { line-height: 20px; }
+.timeline-date { grid-column: 3; grid-row: 1; }
+.timeline-tier-badge {
+  display: inline-block;
+  grid-column: 3;
+  grid-row: 1;
+  align-self: start;
+}
+.timeline-date { align-self: end; }
+.timeline-entry .trophy-challenge-plate {
+  grid-column: 2 / -1;
+  grid-row: 2;
+  width: 100%;
+  min-height: 73px;
+  margin: 0;
+}
+
+.spotlight-card[data-trophy-id] { min-height: 271px; }
+.spotlight-card .trophy-challenge-plate {
+  flex: 0 0 auto;
+  min-height: 127px;
+}
+
+@media (max-width: 800px) {
+  .trophy-gallery .trophy-plaque .plaque-nameplate {
+    min-height: 8.75rem;
+    grid-template-rows: minmax(1.05rem, auto) minmax(2.05rem, auto) minmax(1.2rem, auto) minmax(2.3rem, auto);
+  }
+  .trophy-gallery .trophy-plaque > .trophy-challenge-plate { min-height: 212px; }
+
+  .user-trophies .trophy-plaque .plaque-nameplate {
+    min-height: 9.25rem;
+    grid-template-rows: minmax(2.1rem, auto) minmax(2.05rem, auto) minmax(1.2rem, auto) minmax(0, auto) minmax(1.9rem, auto);
+  }
+  .user-trophies .trophy-plaque > .trophy-challenge-plate { min-height: 132px; }
+
+  .game-page-v2 .game-trophy-card .plaque-nameplate {
+    min-height: 88px;
+    grid-template-rows: minmax(2.05rem, auto) minmax(1.8rem, auto);
+  }
+  .game-page-v2 .game-trophy-card .trophy-plaque > .trophy-challenge-plate { min-height: 163px; }
+
+  .tcase-nameplate { min-height: 10rem; }
+  .tcase-glass > .trophy-challenge-plate { min-height: 91px; }
+  .crown-jewel-info {
+    min-height: 242px;
+    grid-template-rows: minmax(30px, auto) minmax(67px, auto) minmax(32px, auto) minmax(29px, auto) minmax(0, 1fr);
+  }
+  .crown-jewel > .trophy-challenge-plate { min-height: 106px; }
+
+  .timeline-entry { grid-template-rows: minmax(40px, auto) minmax(91px, auto); }
+  .timeline-entry .trophy-challenge-plate { min-height: 91px; }
+  .spotlight-card[data-trophy-id] { min-height: 273px; }
+}
+
+/* Four-column shelves are narrower just above the tablet breakpoint. */
+@media (min-width: 801px) and (max-width: 1100px) {
+  .trophy-gallery .trophy-plaque .plaque-nameplate {
+    min-height: 13rem;
+    grid-template-rows: minmax(3.2rem, auto) minmax(4.1rem, auto) minmax(1.2rem, auto) minmax(3rem, auto);
+  }
+  .trophy-gallery .trophy-plaque > .trophy-challenge-plate { min-height: 218px; }
+  .user-trophies .trophy-plaque .plaque-nameplate {
+    min-height: 13.5rem;
+    grid-template-rows: minmax(4.2rem, auto) minmax(4.1rem, auto) minmax(1.2rem, auto) minmax(0, auto) minmax(2.6rem, auto);
+  }
+  .user-trophies .trophy-plaque > .trophy-challenge-plate { min-height: 218px; }
+  .game-page-v2 .game-trophy-card .plaque-nameplate {
+    min-height: 90px;
+    grid-template-rows: minmax(2.05rem, auto) minmax(1.8rem, auto);
+  }
+  .game-page-v2 .game-trophy-card .trophy-plaque > .trophy-challenge-plate { min-height: 163px; }
+  .crown-jewel-info {
+    min-height: 170px;
+    grid-template-rows: minmax(4.2rem, auto) minmax(1.8rem, auto) minmax(1.8rem, auto) minmax(0, 1fr);
+  }
+  .crown-jewel > .trophy-challenge-plate { min-height: 73px; }
+}
+
+@media (max-width: 600px) {
+  .trophy-gallery .trophy-plaque .plaque-nameplate {
+    min-height: 11.5rem;
+    grid-template-rows: minmax(1.8rem, auto) minmax(3.4rem, auto) minmax(1.05rem, auto) minmax(3.6rem, auto);
+  }
+
+  .user-trophies .trophy-plaque .plaque-nameplate {
+    min-height: 11.25rem;
+    grid-template-rows: minmax(2.65rem, auto) minmax(3.4rem, auto) minmax(1.2rem, auto) minmax(0, auto) minmax(2.25rem, auto);
+    overflow: visible;
+    margin-left: 0.25rem;
+    margin-right: 0.25rem;
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+  }
+  .user-trophies .trophy-plaque .plaque-game,
+  .user-trophies .trophy-plaque .plaque-nameplate h3 {
+    min-height: 0;
+    word-break: normal;
+  }
+  .user-trophies .trophy-plaque > .trophy-challenge-plate { min-height: 230px; }
+
+  .game-page-v2 .game-trophy-card .plaque-nameplate {
+    min-height: 88px;
+    grid-template-rows: minmax(2.05rem, auto) minmax(1.8rem, auto);
+  }
+
+  .tcase-nameplate {
+    min-height: 11.25rem;
+    grid-template-rows: minmax(1.05rem, auto) minmax(5.05rem, auto) minmax(3.05rem, auto);
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+  .tcase-glass > .trophy-challenge-plate { min-height: 124px; }
+
+  .crown-jewel-info {
+    min-height: 242px;
+    grid-template-rows: minmax(30px, auto) minmax(67px, auto) minmax(32px, auto) minmax(29px, auto) minmax(0, 1fr);
+    align-items: stretch;
+  }
+  .crown-jewel-label { margin: 0; align-self: start; justify-self: center; }
+  .crown-jewel > .trophy-challenge-plate { min-height: 109px; }
+
+  .timeline-entry {
+    grid-template-columns: 32px minmax(0, 1fr) auto;
+    grid-template-rows: minmax(72px, auto) minmax(109px, auto);
+  }
+  .timeline-icon { width: 32px; height: 32px; }
+  .timeline-info {
+    min-height: 72px;
+    grid-template-rows: minmax(32px, auto) minmax(40px, auto);
+  }
+  .timeline-trophy-name { line-height: 16px; }
+  .timeline-entry .trophy-challenge-plate { grid-column: 1 / -1; min-height: 109px; }
+
+  .spotlight-card[data-trophy-id] { min-height: 274px; }
+  .spotlight-card .trophy-challenge-plate { min-height: 127px; }
+}

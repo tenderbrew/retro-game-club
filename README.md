@@ -121,6 +121,13 @@ python -m http.server 8000
 
 Then visit `http://localhost:8000/`.
 
+The trophy-card browser geometry regression uses Playwright. Install `playwright`
+in the usual Node resolution path, or point `PLAYWRIGHT_MODULE` at a portable
+Playwright module directory before running `node tools/test-trophy-card-layout.js`.
+The optional `--stress` mode checks readable text after font enlargement and a
+longer challenge; it does not require trophy cards to retain identical heights
+when future copy exceeds the current catalog reserve.
+
 ---
 
 ## Contributing
