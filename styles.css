@@ -7082,11 +7082,16 @@ h3 {
   border-left: none;
   border-radius: 0 var(--radius) var(--radius) 0;
   min-width: 80px;
-  max-height: 240px;
+  min-height: 0;
+  max-height: none;
+  flex: 1;
+  /* Let the adjacent plaque set the height; long lists scroll within it. */
+  contain: size;
   overflow-y: auto;
 }
 
 .plaque-winner {
+  flex-shrink: 0;
   font-family: var(--font-heading);
   font-size: 0.6rem;
   text-transform: uppercase;

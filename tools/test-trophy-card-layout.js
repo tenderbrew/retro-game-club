@@ -33,6 +33,8 @@ function server() {
   });
 }
 
+const gamePages = fs.readdirSync(path.join(ROOT, 'games')).filter(file => file.endsWith('.html') && fs.readFileSync(path.join(ROOT, 'games', file), 'utf8').includes('class="game-trophy-card"')).sort().map(file => `games/${file}`);
+
 const profiles = [
   'users/user-1defined.html', 'users/user-1upmuffin.html', 'users/user-anton.html',
   'users/user-asadasa.html', 'users/user-kb.html', 'users/user-metroid.html'
@@ -40,7 +42,7 @@ const profiles = [
 const families = [
   { name: 'index-shelf', pages: ['trophy-challenges.html'], card: '.trophy-gallery .trophy-grid .trophy-plaque',
     sections: { art: '.plaque-showcase', nameplate: '.plaque-nameplate', game: '.plaque-game', title: '.plaque-nameplate h3', tier: '.trophy-tier', rarity: '.trophy-card-rarity', challenge: '.trophy-challenge-plate' } },
-  { name: 'game-shelf', pages: ['games/2025-december-nights.html', 'games/2026-august-tomba.html', 'games/2026-april-cannon-spike.html'], card: '.trophy-shelf-container .trophy-grid .trophy-plaque',
+  { name: 'game-shelf', pages: gamePages, card: '.trophy-shelf-container .trophy-grid .trophy-plaque',
     sections: { art: '.plaque-showcase', nameplate: '.plaque-nameplate', title: '.plaque-nameplate h3', tier: '.plaque-tier', challenge: '.trophy-challenge-plate' } },
   { name: 'profile-collection', pages: profiles, card: '.trophy-shelf-container .trophy-grid .trophy-plaque',
     sections: { art: '.plaque-showcase', nameplate: '.plaque-nameplate', game: '.plaque-game', title: '.plaque-nameplate h3', tier: '.trophy-tier, .plaque-tier', challenge: '.trophy-challenge-plate' } },
@@ -122,7 +124,26 @@ async function measure(page, family, file) {
             box.width > 0 && box.height > 0 && requirement.scrollWidth <= requirement.clientWidth + tolerance &&
             requirement.scrollHeight <= requirement.clientHeight + tolerance;
         })();
+        let winners = null;
+        if (family.name === 'game-shelf') {
+          const panel = card.parentElement.querySelector(':scope > .plaque-winners');
+          if (panel) {
+            const box = panel.getBoundingClientRect();
+            const scrollTop = panel.scrollTop;
+            panel.scrollTop = panel.scrollHeight;
+            const last = panel.lastElementChild?.getBoundingClientRect();
+            winners = {
+              top: box.top - cardRect.top, height: box.height,
+              stressList: panel.dataset.layoutStressWinners === '1',
+              scrollHeight: panel.scrollHeight, clientHeight: panel.clientHeight,
+              overflowY: getComputedStyle(panel).overflowY,
+              lastReachable: !!last && last.bottom <= box.bottom + tolerance && last.top >= box.top - tolerance
+            };
+            panel.scrollTop = scrollTop;
+          }
+        }
         return {
+          winners,
           file, index, id: card.dataset.trophyId || card.querySelector('[data-trophy-id]')?.dataset.trophyId || card.getAttribute('href') || `card-${index}`,
           card: { height: cardRect.height }, sections, visible, textClipped,
           text: requirement && requirement.textContent.trim()
@@ -160,6 +181,16 @@ function assertPage(measurement, family, label, file, width) {
     nav.withoutNavWidth <= measurement.viewportWidth + TOLERANCE && nav.cardsWithinViewport),
   `${label}: NEW horizontal overflow ${measurement.documentWidth}px > ${measurement.viewportWidth}px (nav isolation ${JSON.stringify(nav)})`);
   for (const card of measurement.results) {
+    if (family.name === 'game-shelf') {
+      assert(card.winners, `${label}: ${card.id} missing winners panel`);
+      assert(Math.abs(card.winners.top) <= TOLERANCE && Math.abs(card.winners.height - card.card.height) <= TOLERANCE,
+        `${label}: ${card.id} winners panel does not match plaque (${rounded(card.winners.height)}px vs ${rounded(card.card.height)}px)`);
+      if (card.winners.stressList) {
+        assert(['auto', 'scroll'].includes(card.winners.overflowY) && card.winners.scrollHeight > card.winners.clientHeight,
+          `${label}: long winner list must scroll instead of changing the card height`);
+        assert(card.winners.lastReachable, `${label}: last winner is not reachable by scrolling`);
+      }
+    }
     assert(card.visible, `${label}: ${card.id} challenge is clipped, hidden, or overflowed (${card.text})`);
     assert(!card.textClipped.length, `${label}: ${card.id} text crosses a clipped ancestor: ${[...new Set(card.textClipped)].join('; ')}`);
     if (!process.argv.includes('--stress')) {
@@ -220,15 +251,26 @@ async function main() {
             await document.fonts.ready;
           });
           if (selected.stress) {
-            const mutation = await page.evaluate(({ selector, suffix }) => {
+            const mutation = await page.evaluate(({ selector, suffix, familyName }) => {
               document.documentElement.style.fontSize = '24px';
               const card = [...document.querySelectorAll(selector)].find(node => node.querySelector('.trophy-challenge-requirement'));
               const requirement = card?.querySelector('.trophy-challenge-requirement');
               if (!card?.matches(selector) || !requirement) return false;
               const before = requirement.textContent;
               requirement.textContent += suffix;
+              if (familyName === 'game-shelf') {
+                const panel = card.parentElement.querySelector(':scope > .plaque-winners');
+                if (!panel) return false;
+                panel.dataset.layoutStressWinners = '1';
+                for (let index = 0; index < 80; index++) {
+                  const winner = document.createElement('span');
+                  winner.className = 'plaque-winner';
+                  winner.textContent = `Layout-test winner ${index + 1}`;
+                  panel.append(winner);
+                }
+              }
               return requirement.textContent === before + suffix;
-            }, { selector: family.card, suffix: STRESS_SUFFIX });
+            }, { selector: family.card, suffix: STRESS_SUFFIX, familyName: family.name });
             assert(mutation, `${family.name}/${file}: stress did not mutate a challenge in the selected family`);
           }
           const label = `${family.name}/${file}/${width}px/js-${javaScriptEnabled ? 'on' : 'off'}`;
