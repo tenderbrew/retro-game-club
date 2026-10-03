@@ -15,11 +15,15 @@ const G = path.join(ROOT, 'games');
 const T = path.join(ROOT, 'trophies');
 const U = path.join(ROOT, 'users');
 const DENOM = 28; // active members = rarity denominator. Bump here + in README when membership changes.
+const { auditGames } = require('./audit-speedruns');
 
 const QUIET = process.argv.includes('--quiet');
 const read = p => fs.readFileSync(p, 'utf8');
 const problems = [];
 const fail = (cat, msg) => problems.push(`[${cat}] ${msg}`);
+
+// Every ordinary monthly and bonus page needs populated, structurally valid speedrun data.
+for (const message of auditGames(G)) fail('speedruns', message);
 
 // Rarity tier by holder count (README "Consistency rules"): Legendary <=10% / Rare 11-20% / Uncommon 21-40% / Common >40%.
 // Bands are derived from DENOM=28 (e.g. Uncommon's n<=11 upper bound: 11/28 = 39.3% <= 40%).
