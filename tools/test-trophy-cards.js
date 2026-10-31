@@ -33,11 +33,19 @@ const OCTOBER = {
   'trophy-decap-attack-silver': 'Collect both heart upgrades.',
   'trophy-decap-attack-gold': 'Complete Level 1 without losing a life.',
 };
+const NOVEMBER = {
+  'trophy-toy-commander-beatboss': 'Defeat your first room boss.',
+  'trophy-toy-commander-silver': 'Defeat three different room bosses and recruit them.',
+  'trophy-toy-commander-gold': 'Defeat Huggy Bear and finish the main game.',
+  'trophy-godzilla-destroy-all-monsters-melee-adventure': 'Complete Adventure mode with one monster.',
+  'trophy-godzilla-destroy-all-monsters-melee-roster': 'Win a match with each of three different monsters against CPU opponents.',
+  'trophy-godzilla-destroy-all-monsters-melee-scenery': 'Win a match using a building or other scenery as the finishing blow.',
+};
 const EXPECTED_COUNTS = {
-  'definition-detail': 60,
-  'game-achievement-prose': 6,
-  'game-shelf-plaque': 60,
-  'index-full-plaque': 60,
+  'definition-detail': 66,
+  'game-achievement-prose': 12,
+  'game-shelf-plaque': 66,
+  'index-full-plaque': 66,
   'profile-collection-plaque': 123,
   'profile-timeline-compact': 123,
   'profile-crown-jewel': 18,
@@ -177,10 +185,10 @@ const baselineRequirements = Object.fromEntries(documents
     return [id, prose ? normalized(text(prose)) : ''];
   }));
 
-check('the baseline exposes exactly 60 trophy definitions', () => assert.strictEqual(definitionFiles.length, 60));
+check('the November catalog exposes exactly 66 trophy definitions', () => assert.strictEqual(definitionFiles.length, 66));
 
 let catalog = null;
-check('one canonical requirement catalog maps all 60 definition IDs', () => {
+check('one canonical requirement catalog maps all 66 definition IDs', () => {
   assert.ok(fs.existsSync(CATALOG), 'missing data/trophy-requirements.json');
   catalog = JSON.parse(fs.readFileSync(CATALOG, 'utf8'));
   assert.deepStrictEqual(Object.keys(catalog).sort(), [...definitionIds].sort());
@@ -196,7 +204,21 @@ check('the six approved October requirements are exact', () => {
   for (const [id, requirement] of Object.entries(OCTOBER)) assert.strictEqual(source[id], requirement, id);
 });
 
-check('all 60 requirements are polished sentence-case prose', () => {
+check('the six frozen November requirements, tiers, and zero-holder states are exact', () => {
+  for (const [id, requirement] of Object.entries(NOVEMBER)) {
+    assert.strictEqual(catalog[id], requirement, id);
+    const detail = documents.find(d => path.basename(d.file, '.html') === id);
+    const nodes = walk(detail.dom);
+    const tier = nodes.find(n => hasClass(n, 'tcase-nameplate-tier'));
+    const expectedTier = id.endsWith('-gold') ? 'Gold' : id.endsWith('-silver') ? 'Silver' : 'Bronze';
+    assert.strictEqual(text(tier), `${expectedTier} Trophy`, id);
+    assert.strictEqual(text(nodes.find(n => hasClass(n, 'tcase-rarity-label'))), 'Unclaimed', id);
+    assert.strictEqual(text(nodes.find(n => hasClass(n, 'tcase-rarity-stat'))), '0 of 28 members (0%)', id);
+    assert.strictEqual(descendants(detail.dom, n => n.tag === 'a' && /users\/user-/.test(n.attrs.href || '')).length, 0, id);
+  }
+});
+
+check('all 66 requirements are polished sentence-case prose', () => {
   const source = catalog || baselineRequirements;
   assert.deepStrictEqual(Object.keys(source).sort(), [...definitionIds].sort());
   for (const [id, requirement] of Object.entries(source)) {
@@ -253,7 +275,7 @@ check('every discovered trophy presentation has an always-visible canonical CHAL
       assert.strictEqual(normalized(text(copy)), source[item.id], `${rel}: ${item.id} differs from canonical requirement`);
     }
   }
-  assert.deepStrictEqual(counts, EXPECTED_COUNTS, 'presentation inventory drifted from the approved 501-representation baseline');
+  assert.deepStrictEqual(counts, EXPECTED_COUNTS, 'presentation inventory drifted from the November presentation census');
 });
 
 check('game achievement prose and detail prose equal the canonical requirement', () => {
@@ -282,7 +304,7 @@ check('game achievement prose and detail prose equal the canonical requirement',
       if (requirement) assert.strictEqual(normalized(text(requirement)), source[id], `${rel}: ${id}`);
     }
   }
-  assert.strictEqual(gameProseCount, 6, 'must structurally discover all six game objective prose items');
+  assert.strictEqual(gameProseCount, 12, 'must structurally discover all twelve game objective prose items');
   for (const id of definitionIds) {
     const detail = documents.find(d => path.relative(ROOT, d.file) === `trophies/${id}.html`);
     const prose = walk(detail.dom).find(n => hasClass(n, 'tcase-plaque-text') && !descendants(n, x => x.tag === 'strong').length);
@@ -372,8 +394,18 @@ const replaceOnce = (file, pattern, replacement) => {
 
 check('every game non-achievement list retains its immutable baseline copy', () => {
   const revision = 'e6ddc38b99ff605b890ab35cda82182397a733df';
+  const originalGames = new Set(cp.execFileSync('git', ['ls-tree', '-r', '--name-only', revision, 'games/'], { cwd: ROOT, encoding: 'utf8' }).trim().split('\n'));
+  const novemberGames = new Set(['games/2026-november-toy-commander.html', 'games/2026-bonus-godzilla-destroy-all-monsters-melee.html']);
   for (const { file, dom } of documents.filter(d => path.relative(ROOT, d.file).startsWith('games/'))) {
     const rel = path.relative(ROOT, file);
+    if (!originalGames.has(rel)) {
+      assert.ok(novemberGames.has(rel), `${rel}: new game needs an explicit content-baseline decision`);
+      for (const item of walk(dom).filter(n => n.tag === 'li' && !ancestor(n, a => a.attrs.id === 'section-achievements'))) {
+        assert.ok(!item.attrs['data-trophy-id'], `${rel}: unrelated list item acquired a trophy ID`);
+        assert.ok(!descendants(item, n => hasClass(n, 'trophy-requirement')).length, `${rel}: unrelated list item acquired trophy prose`);
+      }
+      continue;
+    }
     const original = cp.execFileSync('git', ['show', `${revision}:${rel}`], { cwd: ROOT, encoding: 'utf8' });
     const outside = tree => walk(tree).filter(n => n.tag === 'li' && !ancestor(n, a => a.attrs.id === 'section-achievements'));
     const expected = outside(parse(original));
