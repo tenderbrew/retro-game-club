@@ -192,6 +192,8 @@ New or repaired speedrun sections use `data-speedrun-verified="true"`. They also
 
 ### Asset generation conventions
 
+All visual updates must pass [the artwork acceptance contract](docs/art-acceptance.md) before publication. It requires authentic complete retail-case artwork, the exact existing plaid canvas rather than a recreated pattern, a full consumer/reference census, desktop/tablet/phone pixel inspection, accurate provenance, and independent acceptance bound to the final files. A passing structural audit or decoded PNG is not a substitute.
+
 - Cover and trophy art are produced with `sharp` (Node). The reference scripts live under `C:\tmp\cover-fmt\` during the rollover and can be re-run if a swap is needed.
 - Trophy frame uses a tier-themed gradient (gold / silver / bronze) with subtle noise, dark nameplate, Courier New all-caps text.
 - Home hero image is wrapped in a CRT scanline + vignette + diagonal-glare overlay (see `.hero-banner-crt` styles).

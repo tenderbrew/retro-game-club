@@ -29,4 +29,24 @@ if (fs.existsSync(shimPath)) {
   if (!shim.includes('Compatibility Shim')) throw new Error('CLAUDE.md is not identified as a shim');
 }
 
+// Keep the visual release contract reachable from every project entry point.
+// This checks instruction coverage, not image quality or completed browser QA.
+const artContractPath = 'docs/art-acceptance.md';
+mustExist(artContractPath);
+for (const entry of ['AGENTS.md', 'README.md', '.hermes/skills/monthly-rollover/SKILL.md']) {
+  if (!read(entry).includes(artContractPath)) {
+    throw new Error(`${entry} must require ${artContractPath}`);
+  }
+}
+const artContract = read(artContractPath);
+for (const heading of [
+  '## Retail-case identity',
+  '## Exact accepted matte',
+  '## Gameplay and copy',
+  '## Every consumer',
+  '## Independent acceptance',
+]) {
+  if (!artContract.includes(heading)) throw new Error(`art acceptance contract missing ${heading}`);
+}
+
 console.log('Retro Game Club Hermes context OK');

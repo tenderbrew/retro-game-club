@@ -7,6 +7,7 @@ This repository is the static Retro Game Club site. `README.md`, especially **Mo
 ## Working model
 
 - Mr. Ashby owns code, site structure, assets, and verification.
+- Every visual update must satisfy `docs/art-acceptance.md`: authentic complete case art, exact accepted plaid, all-consumer browser checks, and independent final-hash acceptance. A green structural audit is not visual approval.
 - Mr. Bellamy owns source-backed game research and flags uncertainty rather than guessing.
 - For a monthly rollover, use `.hermes/skills/monthly-rollover/SKILL.md`; delegate independent research, assets, pages, results, and announcement work only when parallelism adds value.
 - Brief temporary workers with exact paths, inputs, and acceptance criteria. Reconcile every report against the working tree before accepting it.
@@ -44,4 +45,4 @@ node tools/audit.js
 node tools/test-hermes-context.js
 ```
 
-For visual changes, serve the repository and inspect the affected pages at desktop and phone widths. Report created files, modified files, placeholders, unresolved source questions, and the two command results.
+For visual changes, satisfy `docs/art-acceptance.md`: inspect every affected use on desktop, tablet and phone, test affected breakpoints, and obtain independent acceptance bound to final hashes. Report the reference census, pixel/matte proof, browser evidence, created/modified files, placeholders, source uncertainties, and both verification command results.
