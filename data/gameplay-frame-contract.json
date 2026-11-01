@@ -1,0 +1,92 @@
+[
+  {
+    "game": "Mischief Makers",
+    "slot": 1,
+    "destination": "images/screenshots/mischief-makers-forest-grab-v3.png",
+    "old_asset": "images/screenshots/mischief-makers-1.jpg",
+    "alt": "Marina lifts a masked enemy beside a tower of face blocks in a green landscape.",
+    "source_page": "https://gamesdb.launchbox-app.com/games/images/1111-mischief-makers",
+    "credit": "LaunchBox Games Database.",
+    "page": "games/2026-july-mischief-makers.html",
+    "sha256": "342b773e868ad4870034ff72ae5349814c3ff6d91724eaf1e451c7e62efaa6c2",
+    "dimensions": [
+      1440,
+      1080
+    ]
+  },
+  {
+    "game": "Mischief Makers",
+    "slot": 2,
+    "destination": "images/screenshots/mischief-makers-desert-block-robot-v3.jpg",
+    "old_asset": "images/screenshots/mischief-makers-2.jpg",
+    "alt": "Marina stands on a giant figure made of colored blocks in a desert stage.",
+    "source_page": "https://infinityretro.com/mischief-makers-review/",
+    "credit": "Infinity Retro, Mischief Makers review by jeremy1456.",
+    "page": "games/2026-july-mischief-makers.html",
+    "sha256": "a2524d966a432aa95fe8ee900c6342be31288c7290955bf2b70be3dd5616eed4",
+    "dimensions": [
+      1024,
+      769
+    ]
+  },
+  {
+    "game": "Mega Man Legends",
+    "slot": 2,
+    "destination": "images/screenshots/mega-man-legends-ruin-chamber-v3.jpg",
+    "old_asset": "images/screenshots/mega-man-legends-2.png",
+    "alt": "Mega Man faces a mechanical creature in a dark, patterned ruin chamber.",
+    "source_page": "https://psxdatacenter.com/games/U/M/SLUS-00603.html",
+    "credit": "PSX Data Center, Mega Man Legends SLUS-00603.",
+    "page": "games/2026-january-mega-man-legends.html",
+    "sha256": "04894e881a9391be94c1c1b90f2582750c9dfd58ff5c09cb9d3116c1b97e457d",
+    "dimensions": [
+      320,
+      240
+    ]
+  },
+  {
+    "game": "Mega Man Legends",
+    "slot": 4,
+    "destination": "images/screenshots/mega-man-legends-reaverbot-encounter-v3.jpg",
+    "old_asset": "images/screenshots/mega-man-legends-4.png",
+    "alt": "Mega Man confronts a tall mechanical enemy in a richly patterned chamber.",
+    "source_page": "https://psxdatacenter.com/games/U/M/SLUS-00603.html",
+    "credit": "PSX Data Center, Mega Man Legends SLUS-00603.",
+    "page": "games/2026-january-mega-man-legends.html",
+    "sha256": "04925840e4c8fec35b70cfe1a09738c344e58878a7476c725bf5170933b19928",
+    "dimensions": [
+      320,
+      240
+    ]
+  },
+  {
+    "game": "Billy Hatcher",
+    "slot": 2,
+    "destination": "images/screenshots/billy-hatcher-beach-striped-egg-v3.jpg",
+    "old_asset": "images/screenshots/billy-hatcher-2.jpg",
+    "alt": "Billy propels a striped egg across a sandy seaside area.",
+    "source_page": "https://www.vgchartz.com/game/197/billy-hatcher-and-the-giant-egg//screenshots",
+    "credit": "VGChartz / gamrReview screenshot.",
+    "page": "games/2025-april-billy-hatcher.html",
+    "sha256": "b5619129ca1566f823a263b39206ea71a79e4dbba719e4c1550bd133a8b0ea4f",
+    "dimensions": [
+      640,
+      480
+    ]
+  },
+  {
+    "game": "Billy Hatcher",
+    "slot": 3,
+    "destination": "images/screenshots/billy-hatcher-railway-spotted-egg-v3.jpg",
+    "old_asset": "images/screenshots/billy-hatcher-3.png",
+    "alt": "Billy rolls a spotted egg along a raised wooden track beside floating pineapples.",
+    "source_page": "https://www.vgchartz.com/game/197/billy-hatcher-and-the-giant-egg//screenshots",
+    "credit": "VGChartz / gamrReview screenshot.",
+    "page": "games/2025-april-billy-hatcher.html",
+    "sha256": "eef62e410f9d9291230a7d2c0fa109db96285f5e657f9ef6bd4e9d79e1e51c6b",
+    "dimensions": [
+      640,
+      480
+    ]
+  }
+]

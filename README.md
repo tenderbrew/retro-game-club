@@ -124,6 +124,22 @@ Then visit `http://localhost:8000/`.
 The trophy-card browser geometry regression uses Playwright. Install `playwright`
 in the usual Node resolution path, or point `PLAYWRIGHT_MODULE` at a portable
 Playwright module directory before running `node tools/test-trophy-card-layout.js`.
+For an installed Chromium outside that module's browser cache, also set
+`PLAYWRIGHT_EXECUTABLE_PATH` to its executable (no dependency installation is required
+when reusing an existing isolated runtime). The quality interaction suite uses the
+same variables: `node tools/test-quality-repairs.js`. Run
+`node tools/test-quality-content.js` for corrected source identities, review scores,
+quotation handling, screenshot descriptions and versioned cover consumers.
+`data/gameplay-frame-contract.json` pins the six approved gameplay files, hashes,
+slots, dimensions, scene descriptions and screenshot-source identities; both
+quality suites check those exact integrations, including modal images and no-JS links.
+`python3 tools/test-cover-mattes.py` verifies every exterior plaid pixel against
+its recorded Git donor, aspect ratio and accepted complete-front file hashes;
+it uses only the Python standard library. `--legacy` intentionally replays the
+rejected black-backed files and must fail. Neither mode grants visual acceptance.
+`data/non-achievement-copy-corrections.json` records exact authorized attribution
+changes against the trophy synchronizer's frozen non-achievement-copy baseline;
+all other list copy remains protected by that regression.
 The optional `--stress` mode checks readable text after font enlargement and a
 longer challenge; it does not require trophy cards to retain identical heights
 when future copy exceeds the current catalog reserve.

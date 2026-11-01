@@ -392,8 +392,9 @@ const replaceOnce = (file, pattern, replacement) => {
   fs.writeFileSync(file, changed);
 };
 
-check('every game non-achievement list retains its immutable baseline copy', () => {
+check('every game non-achievement list retains its baseline except exact authorized source corrections', () => {
   const revision = 'e6ddc38b99ff605b890ab35cda82182397a733df';
+  const corrections = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/non-achievement-copy-corrections.json'), 'utf8'));
   const originalGames = new Set(cp.execFileSync('git', ['ls-tree', '-r', '--name-only', revision, 'games/'], { cwd: ROOT, encoding: 'utf8' }).trim().split('\n'));
   const novemberGames = new Set(['games/2026-november-toy-commander.html', 'games/2026-bonus-godzilla-destroy-all-monsters-melee.html']);
   for (const { file, dom } of documents.filter(d => path.relative(ROOT, d.file).startsWith('games/'))) {
@@ -410,7 +411,14 @@ check('every game non-achievement list retains its immutable baseline copy', () 
     const outside = tree => walk(tree).filter(n => n.tag === 'li' && !ancestor(n, a => a.attrs.id === 'section-achievements'));
     const expected = outside(parse(original));
     const actual = outside(dom);
-    assert.deepStrictEqual(actual.map(text), expected.map(text), `${rel}: non-achievement list copy changed`);
+    const replacements = corrections[rel] || {};
+    const copyText = item => text(item).replace(/\s+([,;])/g, '$1');
+    for (const oldText of Object.keys(replacements)) {
+      assert.strictEqual(expected.filter(item => copyText(item) === oldText).length, 1,
+        `${rel}: correction must target exactly one immutable baseline item`);
+    }
+    const approved = expected.flatMap(item => replacements[copyText(item)] || [copyText(item)]);
+    assert.deepStrictEqual(actual.map(copyText), approved, `${rel}: non-achievement list copy changed outside exact source corrections`);
     for (const item of actual) {
       assert.ok(!item.attrs['data-trophy-id'], `${rel}: unrelated list item acquired a trophy ID`);
       assert.ok(!descendants(item, n => hasClass(n, 'trophy-requirement')).length, `${rel}: unrelated list item acquired trophy prose`);

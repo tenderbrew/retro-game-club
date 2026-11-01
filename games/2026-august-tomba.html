@@ -353,7 +353,8 @@
               <span class="speedrun-category">Any%</span>
               <span class="speedrun-time">46:58</span>
               <span class="speedrun-runner">Raikou</span>
-              <span class="speedrun-detail">Run on original PlayStation hardware</span>
+              <span class="speedrun-detail">Run on PlayStation Portable (not emulated)</span>
+              <a href="https://www.speedrun.com/tomba1/runs/yvo6gv8z" target="_blank" rel="noopener noreferrer" class="speedrun-source speedrun-run-link">View verified run &rarr;</a>
             </div>
             <div class="speedrun-card">
               <span class="speedrun-category">All Events (130/130)</span>
@@ -408,22 +409,22 @@
         <div class="game-screenshots" id="section-screenshots">
           <h2>Screenshots</h2>
           <div class="game-screenshot-grid">
-            <div class="game-screenshot-item" onclick="openLightbox(this)">
+            <a class="game-screenshot-item" href="../images/screenshots/tomba-1.jpg">
               <img src="../images/screenshots/tomba-1.jpg" alt="Close-up of the pink-haired Tomba scratching his head beside a tree, with water visible in the background" />
               <div class="game-screenshot-scanlines"></div>
-            </div>
-            <div class="game-screenshot-item" onclick="openLightbox(this)">
+            </a>
+            <a class="game-screenshot-item" href="../images/screenshots/tomba-2.jpg">
               <img src="../images/screenshots/tomba-2.jpg" alt="Side-scrolling gameplay as Tomba battles a red Koma Pig among thatched-roof platforms, with the Adventure Points counter in the top right" />
               <div class="game-screenshot-scanlines"></div>
-            </div>
-            <div class="game-screenshot-item" onclick="openLightbox(this)">
+            </a>
+            <a class="game-screenshot-item" href="../images/screenshots/tomba-3.jpg">
               <img src="../images/screenshots/tomba-3.jpg" alt="Tomba approaching a small red enemy in a mushroom-dotted forest clearing" />
               <div class="game-screenshot-scanlines"></div>
-            </div>
-            <div class="game-screenshot-item" onclick="openLightbox(this)">
+            </a>
+            <a class="game-screenshot-item" href="../images/screenshots/tomba-4.jpg">
               <img src="../images/screenshots/tomba-4.jpg" alt="Tomba and three companions gathered in a village courtyard beneath a building with green shutters and hanging vines" />
               <div class="game-screenshot-scanlines"></div>
-            </div>
+            </a>
           </div>
           <p class="screenshot-credit">Screenshots via <a href="https://psxdatacenter.com/games/U/T/SCUS-94236.html" target="_blank" rel="noopener noreferrer">PSXDataCenter</a></p>
         </div>
@@ -467,22 +468,14 @@
         </nav>
 
         <div class="screenshot-lightbox" id="screenshotLightbox">
-          <div class="lightbox-backdrop" onclick="closeLightbox()"></div>
-          <button class="lightbox-arrow lightbox-prev" onclick="cycleLightbox(-1)" aria-label="Previous screenshot">&#8249;</button>
+          <div class="lightbox-backdrop"></div>
+          <button class="lightbox-arrow lightbox-prev" aria-label="Previous screenshot">&#8249;</button>
           <img id="lightboxImg" src="" alt="Screenshot enlarged" />
-          <button class="lightbox-arrow lightbox-next" onclick="cycleLightbox(1)" aria-label="Next screenshot">&#8250;</button>
+          <button class="lightbox-arrow lightbox-next" aria-label="Next screenshot">&#8250;</button>
           <span class="lightbox-counter" id="lightboxCounter"></span>
-          <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close lightbox">&times;</button>
+          <button class="lightbox-close" aria-label="Close lightbox">&times;</button>
         </div>
-        <script>
-          var lightboxItems = document.querySelectorAll('.game-screenshot-item');
-          var lightboxIndex = 0;
-          function openLightbox(el) { var items = Array.prototype.slice.call(lightboxItems); lightboxIndex = items.indexOf(el); showLightboxImage(); document.getElementById('screenshotLightbox').classList.add('active'); }
-          function showLightboxImage(fade) { var lbImg = document.getElementById('lightboxImg'); var img = lightboxItems[lightboxIndex].querySelector('img'); if (fade) { lbImg.style.opacity = '0'; setTimeout(function() { lbImg.src = img.src; lbImg.alt = img.alt; lbImg.style.opacity = '1'; }, 150); } else { lbImg.src = img.src; lbImg.alt = img.alt; } document.getElementById('lightboxCounter').textContent = (lightboxIndex + 1) + ' / ' + lightboxItems.length; }
-          function cycleLightbox(dir) { lightboxIndex = (lightboxIndex + dir + lightboxItems.length) % lightboxItems.length; showLightboxImage(true); }
-          function closeLightbox() { document.getElementById('screenshotLightbox').classList.remove('active'); }
-          document.addEventListener('keydown', function(e) { var lb = document.getElementById('screenshotLightbox'); if (!lb.classList.contains('active')) return; if (e.key === 'Escape') closeLightbox(); if (e.key === 'ArrowLeft') cycleLightbox(-1); if (e.key === 'ArrowRight') cycleLightbox(1); });
-        </script>
+        <script src="../js/game-galleries.js" defer></script>
       </section>
     </main>
 

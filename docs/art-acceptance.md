@@ -13,7 +13,7 @@ This contract applies to monthly and bonus rollovers, artwork replacements, and 
 
 - Match accepted past-month covers side by side. The standard is the existing full 800×800 dark-red plaid, not merely a similar color.
 - Reuse a complete accepted donor canvas from Git. Never tile a sampled patch, redraw the plaid, synthesize a replacement pattern, or resize its weave. Record the donor path and revision.
-- Keep the established outer margins: approximately 720px artwork width inside an 800px canvas, centered and aspect-preserving. Use the accepted tall-case black fitting-mat convention when appropriate; do not stretch or crop the case to fill a square.
+- Center the complete front/case inside the 800px canvas, fitting within approximately 720×720px while preserving its original aspect ratio. Leave the exact accepted plaid visible beside tall or wide fronts. Added black fitting mats or rectangles beyond the authentic case/scan boundary are forbidden; genuine printed black console branding, borders and case details must remain. Never stretch or crop fronts to fill a square.
 - Prove all pixels outside the declared overlay rectangle equal the donor exactly. Confirm the overlay completely covers the donor's original artwork; no donor art, seams or exposed fragments may remain. If the geometry cannot satisfy both, select another accepted donor rather than inventing background pixels.
 - Inspect the full-size final PNG and a contact sheet alongside at least two accepted covers. Matching dimensions or mean color is not enough.
 

@@ -103,7 +103,9 @@ for (const fp of allHtml) {
     let ref = m[1];
     if (/^(https?:|mailto:|data:|#|\/\/)/.test(ref)) continue;   // external / anchor
     ref = ref.split('#')[0].split('?')[0]; if (!ref) continue;
-    const target = path.resolve(path.dirname(fp), ref);
+    const target = ref.startsWith('/')
+      ? path.resolve(ROOT, `.${ref}`)
+      : path.resolve(path.dirname(fp), ref);
     if (!fs.existsSync(target)) fail('missing-file', `${path.relative(ROOT, fp)} -> ${m[1]} (not on disk)`);
   }
 }

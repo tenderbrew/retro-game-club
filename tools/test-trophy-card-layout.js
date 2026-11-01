@@ -183,8 +183,9 @@ function assertPage(measurement, family, label, file, width) {
   for (const card of measurement.results) {
     if (family.name === 'game-shelf') {
       assert(card.winners, `${label}: ${card.id} missing winners panel`);
-      assert(Math.abs(card.winners.top) <= TOLERANCE && Math.abs(card.winners.height - card.card.height) <= TOLERANCE,
-        `${label}: ${card.id} winners panel does not match plaque (${rounded(card.winners.height)}px vs ${rounded(card.card.height)}px)`);
+      assert(Math.abs(card.winners.top - card.card.height) <= TOLERANCE &&
+        card.winners.height > 0 && card.winners.height <= 80,
+        `${label}: ${card.id} winners must be a compact strip below the full-width plaque (${JSON.stringify(card.winners)})`);
       if (card.winners.stressList) {
         assert(['auto', 'scroll'].includes(card.winners.overflowY) && card.winners.scrollHeight > card.winners.clientHeight,
           `${label}: long winner list must scroll instead of changing the card height`);
@@ -230,10 +231,12 @@ function assertNormalizedGeometry(cards, family, label) {
 
 async function main() {
   const selected = selection();
+  const { chromium } = loadPlaywright();
+  // Fail before opening a listener if the portable runtime cannot launch.
+  const browser = await chromium.launch({ headless: true,
+    ...(process.env.PLAYWRIGHT_EXECUTABLE_PATH ? { executablePath: process.env.PLAYWRIGHT_EXECUTABLE_PATH } : {}) });
   const listener = server();
   await new Promise((resolve, reject) => listener.listen(0, '127.0.0.1', resolve).once('error', reject));
-  const { chromium } = loadPlaywright();
-  const browser = await chromium.launch({ headless: true });
   let cases = 0;
   try {
     for (const javaScriptEnabled of selected.jsModes) for (const width of selected.widths) for (const family of selected.families) {
