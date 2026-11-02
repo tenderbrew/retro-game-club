@@ -46,11 +46,11 @@ const EXPECTED_COUNTS = {
   'game-achievement-prose': 12,
   'game-shelf-plaque': 66,
   'index-full-plaque': 66,
-  'profile-collection-plaque': 123,
-  'profile-timeline-compact': 123,
+  'profile-collection-plaque': 132,
+  'profile-timeline-compact': 132,
   'profile-crown-jewel': 18,
   'profile-rarest-spotlight-summary': 18,
-  'leaderboard-latest-text-link': 25,
+  'leaderboard-latest-text-link': 27,
   'ordinary-non-presentation-link': 18,
 };
 const VOID = new Set(['area', 'base', 'br', 'col', 'embed', 'hr', 'img', 'input', 'link', 'meta', 'param', 'source', 'track', 'wbr']);

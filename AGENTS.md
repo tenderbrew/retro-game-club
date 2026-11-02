@@ -27,6 +27,7 @@ This repository is the static Retro Game Club site. `README.md`, especially **Mo
 - A member award requires a full profile rebuild: headline totals, club-average comparison, rarity breakdown, closest rival, rank badge, heatmap, timeline, and spotlights.
 - Closest Rival is points-based, excludes exact-point ties, and resolves distance ties toward higher points. Mandos's minimal profile has no rival/head-to-head panels.
 - Monthly player counts are distinct trophy winners only.
+- Credit every tier of a bonus game's trophies to the first calendar month of its scheduled window; ordinary games use their scheduled month. Use that attribution throughout holder labels, profiles, month aggregates, streaks, and yearly totals. It is not an actual completion day: preserve separately supplied timestamps, and do not redate unrelated historical awards.
 
 ## Change discipline
 
